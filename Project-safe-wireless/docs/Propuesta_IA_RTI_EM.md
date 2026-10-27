@@ -48,7 +48,7 @@ This is an applied computational study using simulated measurements. The generat
 
 The base mixture uses Wilson and Patwari's published values [1]. The quick run has six nodes, 15 links, 36 grid cells, and 30 test queries. The larger base run uses 12 nodes, 66 links, 100 cells, and 120 test queries. Both configurations save separate reference, calibration, validation, fingerprint, development, and test data. The simulator can vary noise spread, quantization, temporal correlation, link loss, baseline drift, carrier frequency, and receiver margin. In this model, carrier frequency changes the illustrative free-space link budget and which weak links are censored; it does not change the spatial weight matrix or simulate signal penetration through materials.
 
-**System diagram.** The course requires this figure to be drawn by the student. Add the finished diagram here; the components to include are listed in `docs/DIAGRAMA_PENDIENTE_DE_DISENO_MANUAL.md`.
+**System diagram (Figure 1).** This is a flow diagram of the implemented synthetic experiment, not a map of a real room or a plot of results. It should show how the simulator creates separate data partitions, how calibration residuals enter EM, how the held-out noise block compares the mixture with a single Gaussian, and how the localization methods produce position estimates. The final evaluation compares those estimates with the reserved ground-truth positions. Keep ground truth out of the calibration and localization inputs. The course requires the student to draw and insert Figure 1 manually; `docs/DIAGRAMA_PENDIENTE_DE_DISENO_MANUAL.md` explains each box and arrow.
 
 ### 3.2. Inputs, partitions, and algorithms
 

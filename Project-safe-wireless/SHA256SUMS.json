@@ -44,8 +44,8 @@
     },
     {
       "path": "docs/DIAGRAMA_PENDIENTE_DE_DISENO_MANUAL.md",
-      "sha256": "23473f6b1a77f4583491828de85f35de30c49697ff90a0fdd473007b90820757",
-      "bytes": 1615
+      "sha256": "0003f9c1ebe0b42cdefabc7d7668a684b9f934e8b651293cb3b34f3c4e05057f",
+      "bytes": 3245
     },
     {
       "path": "docs/MATRIZ_DE_EVIDENCIA.md",
@@ -64,8 +64,8 @@
     },
     {
       "path": "docs/Propuesta_IA_RTI_EM.md",
-      "sha256": "40df076cbc7f0af440ab2175535d842aeb84afeddca3955777b99c4b3844db6d",
-      "bytes": 18184
+      "sha256": "bf39438ca8e2cd41f5c7bedca2fcedcacc2b625acb215c0a6b328405e2888650",
+      "bytes": 18665
     },
     {
       "path": "docs/README_BASE_ORIGINAL.md",
@@ -199,8 +199,8 @@
     },
     {
       "path": "report/Propuesta_IA_RTI_EM.pdf",
-      "sha256": "b1c094559830c425142034549eee5bd2b9bb70171837db886f64602a685032b9",
-      "bytes": 76151
+      "sha256": "959ffb44ac01e87f06cfca7792a42025e3a45c1bd4a2e08d0aaa9709616bae0c",
+      "bytes": 76360
     },
     {
       "path": "report/provenance.json",
