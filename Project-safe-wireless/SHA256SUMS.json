@@ -44,13 +44,13 @@
     },
     {
       "path": "docs/DIAGRAMA_PENDIENTE_DE_DISENO_MANUAL.md",
-      "sha256": "0003f9c1ebe0b42cdefabc7d7668a684b9f934e8b651293cb3b34f3c4e05057f",
-      "bytes": 3245
+      "sha256": "cd4d37380ab930356b40b78301663b6c3af42f0b1deb2bdeb3cc6c0f746befc1",
+      "bytes": 3325
     },
     {
       "path": "docs/MATRIZ_DE_EVIDENCIA.md",
-      "sha256": "8fa7b9dc139e1696fc1d74983c6ab43af810a165ae9dc494c367631a9ff345eb",
-      "bytes": 3687
+      "sha256": "5be045f73c3a3dc79cc5263ce8d9007c1025830eebe90805115dbd4f987ca715",
+      "bytes": 4965
     },
     {
       "path": "docs/ORIGEN_Y_LICENCIAS.md",
@@ -64,8 +64,8 @@
     },
     {
       "path": "docs/Propuesta_IA_RTI_EM.md",
-      "sha256": "920bbd3824bffa597299967fee26b0bfaa7656a1fc16d6e7aa987e888f0e8090",
-      "bytes": 18895
+      "sha256": "28e3bd149c9c70733f2335448604159634ce1ecec5e695da87a3714ac756533c",
+      "bytes": 21407
     },
     {
       "path": "docs/README_BASE_ORIGINAL.md",
@@ -134,8 +134,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "ee488e0d73f8d9a14c43a5e029eb5df04c72f25e18b4e922d85ac3df19346244",
-      "bytes": 8400
+      "sha256": "8a830768aefe01eb2cd50d94fb4946646cd8f0f9c522dba1bbcadb7d55c0fea0",
+      "bytes": 8794
     },
     {
       "path": "report/.gitignore",
@@ -199,8 +199,8 @@
     },
     {
       "path": "report/Propuesta_IA_RTI_EM.pdf",
-      "sha256": "6a279d434ae0024eda6d0f1a3848c268ce5b022ac34ac376aa65d880d725ea4c",
-      "bytes": 76416
+      "sha256": "4e15a8ffc271a9cb5f67227ec75037374282d9c62408156aab9ada3cb6f0627f",
+      "bytes": 79173
     },
     {
       "path": "report/provenance.json",

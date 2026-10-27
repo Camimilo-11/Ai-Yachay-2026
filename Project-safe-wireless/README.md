@@ -12,6 +12,8 @@ La carpeta completa también está disponible como [archivo ZIP](entrega_IA.zip)
 
 Evalúa si el algoritmo de Expectation-Maximization (EM) puede ajustar un modelo de ruido de mezcla gaussiana a datos sintéticos de intensidad recibida y si ese ajuste ayuda después a estimar la ubicación de un objeto mediante Radio Tomographic Imaging (RTI). Es un estudio de Inteligencia Artificial aplicado a localización por radio. Toda medición se genera en el simulador: el proyecto no necesita cámara, router en modo de captura, CSI ni datos recogidos en una habitación.
 
+A largo plazo, la motivación es investigar si un sistema de radio puede apoyar la búsqueda de personas bajo escombros. Esta primera etapa localiza un objetivo de atenuación sintético y no incorpora escombros ni propiedades de materiales. Cada consulta de prueba contiene un objetivo, así que los resultados actuales miden localización, no detección de presencia o capacidad de rescate.
+
 La pregunta de investigación, los artículos relacionados, la metodología y los resultados preliminares están en [la propuesta de investigación](docs/Propuesta_IA_RTI_EM.md) y en su versión PDF [Propuesta_IA_RTI_EM.pdf](report/Propuesta_IA_RTI_EM.pdf).
 
 Para regenerar el PDF desde el Markdown, instala la dependencia documental opcional en el entorno virtual y ejecuta el generador:
