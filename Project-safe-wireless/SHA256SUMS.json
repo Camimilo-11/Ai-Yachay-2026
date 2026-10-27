@@ -64,8 +64,8 @@
     },
     {
       "path": "docs/Propuesta_IA_RTI_EM.md",
-      "sha256": "bf39438ca8e2cd41f5c7bedca2fcedcacc2b625acb215c0a6b328405e2888650",
-      "bytes": 18665
+      "sha256": "920bbd3824bffa597299967fee26b0bfaa7656a1fc16d6e7aa987e888f0e8090",
+      "bytes": 18895
     },
     {
       "path": "docs/README_BASE_ORIGINAL.md",
@@ -199,8 +199,8 @@
     },
     {
       "path": "report/Propuesta_IA_RTI_EM.pdf",
-      "sha256": "959ffb44ac01e87f06cfca7792a42025e3a45c1bd4a2e08d0aaa9709616bae0c",
-      "bytes": 76360
+      "sha256": "6a279d434ae0024eda6d0f1a3848c268ce5b022ac34ac376aa65d880d725ea4c",
+      "bytes": 76416
     },
     {
       "path": "report/provenance.json",
