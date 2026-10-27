@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Safe Wireless · Demo de resultados preliminares</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script id="demo-data" type="application/json">__DEMO_DATA__</script>
+  <script src="charts.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">SW</span><div><strong>Safe Wireless</strong><small>Laboratorio de localización por radio</small></div></div>
+    <span class="tag">Simulación · resultados guardados</span>
+  </header>
+  <main>
+    <div class="page-heading"><div><p class="eyebrow">Propuesta de investigación / Inteligencia Artificial</p><h1>Del ruido RSS a una posición estimada</h1><p class="lede">Explora el piloto que acompaña al artículo: una habitación, un objetivo sintético y cinco comparadores.</p></div><button id="fullscreen" class="quiet" type="button">Pantalla completa</button></div>
+    <section class="toolbar" aria-label="Configuración del visor">
+      <div class="field"><label for="frequency">Frecuencia del escenario</label><select id="frequency"><option value="all">Todas las frecuencias</option><option value="2400">2,4 GHz</option><option value="5000">5 GHz</option></select></div>
+      <div class="field wide"><label for="scenario">Escenario guardado</label><select id="scenario"></select></div>
+      <div class="field wide"><label for="method">Método de localización</label><select id="method"></select></div>
+      <button id="reset" class="quiet" type="button">Volver al caso base</button>
+    </section>
+    <p id="scenario-description" class="scenario-description"></p>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <div class="workspace">
+      <section class="scene-panel" aria-labelledby="map-heading">
+        <div class="panel-heading"><div><p class="eyebrow">Vista superior</p><h2 id="map-heading">Posiciones y enlaces</h2></div><span id="geometry-label" class="meta"></span></div>
+        <svg id="scene" viewBox="0 0 660 620" role="img" aria-label="Habitación sintética con nodos, posición real y estimación del método seleccionado"></svg>
+        <div class="legend"><span><i class="real-dot" aria-hidden="true"></i>Objetivo simulado</span><span><i class="estimate-dot" aria-hidden="true"></i>Posición estimada</span><span><i class="node-dot" aria-hidden="true"></i>Nodo de radio</span></div>
+        <div class="playback"><button id="previous" class="quiet square" type="button" aria-label="Caso anterior">←</button><button id="play" class="primary" type="button">Recorrer casos</button><button id="next" class="quiet square" type="button" aria-label="Caso siguiente">→</button><div class="scrubber"><label for="case">Consulta de prueba <strong id="case-label">1 / 30</strong></label><input id="case" type="range" min="0" max="29" value="0" step="1"></div></div>
+        <p class="micro">La secuencia no representa una trayectoria; la dependencia del ruido cambia según el escenario.</p>
+      </section>
+      <aside class="inspector" aria-labelledby="case-heading">
+        <p class="eyebrow">Consulta seleccionada</p><h2 id="case-heading">¿Qué tan cerca quedó?</h2>
+        <div class="error-reading"><strong id="case-error">—</strong><span>error de posición</span></div>
+        <dl class="readings"><div><dt>Posición simulada</dt><dd id="truth-position">—</dd></div><div><dt>Posición estimada</dt><dd id="estimated-position">—</dd></div><div><dt>Enlaces disponibles</dt><dd id="available-links">—</dd></div><div><dt>Frecuencia</dt><dd id="frequency-label">—</dd></div></dl>
+        <p id="case-message" class="case-message"></p>
+        <div class="switches"><label><input id="show-truth" type="checkbox" checked> Mostrar posición simulada</label><label><input id="show-links" type="checkbox" checked> Mostrar enlaces de radio</label><label><input id="show-field" type="checkbox"> Mapa ilustrativo de señal (FSPL)</label></div>
+        <div id="field-controls" hidden><label for="field-node">Nodo emisor del mapa de señal</label><select id="field-node"></select><div class="field-scale" aria-hidden="true"></div><p class="micro">−100 a −30 dBm. Modelo de espacio libre; gris si queda bajo el umbral de recepción. Esta capa no entra a la estimación.</p></div>
+        <div class="method-note"><strong id="method-label"></strong><p id="method-description"></p></div>
+        <div class="scope"><strong>Qué representa</strong><p>Un objetivo de atenuación en una cuadrícula. El piloto usa una sola semilla y no incorpora paredes, materiales ni detección de personas reales.</p></div>
+      </aside>
+    </div>
+    <section class="analysis" aria-label="Análisis de los resultados">
+      <div class="tabs" role="tablist" aria-label="Resultados del experimento"><button id="tab-results" role="tab" aria-selected="true" aria-controls="panel-results" type="button">Comparación de métodos</button><button id="tab-noise" role="tab" aria-selected="false" aria-controls="panel-noise" tabindex="-1" type="button">Calibración con EM</button><button id="tab-rss" role="tab" aria-selected="false" aria-controls="panel-rss" tabindex="-1" type="button">Mediciones RSS</button></div>
+      <div id="panel-results" role="tabpanel" aria-labelledby="tab-results" class="tab-panel">
+        <div class="panel-heading"><div><h2>Resultado del escenario completo</h2><p class="muted">Métricas agregadas de sus 30 consultas. Pulsa un método para verlo en el mapa.</p></div><span class="tag secondary">Menor error es mejor</span></div>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Método</th><th scope="col">Error medio (m)</th><th scope="col">RMSE (m)</th><th scope="col">Predicciones válidas</th><th scope="col">Error en esta consulta (m)</th></tr></thead><tbody id="results-body"></tbody></table></div>
+        <p id="results-note" class="explanation"></p>
+      </div>
+      <div id="panel-noise" role="tabpanel" aria-labelledby="tab-noise" class="tab-panel" hidden>
+        <div class="panel-heading"><div><h2>EM aprende la distribución del ruido</h2><p class="muted">Histograma de residuos de calibración y modelos ajustados. La validación usa otro bloque de datos.</p></div><span id="em-state" class="tag secondary"></span></div>
+        <div class="noise-layout"><div class="chart-scroll"><svg id="noise-chart" viewBox="0 0 720 300" role="img" aria-label="Histograma de residuos RSS con mezcla gaussiana ajustada y gaussiana única"></svg></div><div><dl class="readings compact" id="em-parameters"></dl><p class="micro">En RTI + EM, el escalar Fisher cambia la regularización. Su control equivalente produce el mismo resultado.</p></div></div>
+        <div id="validation-results" class="validation-results"></div>
+      </div>
+      <div id="panel-rss" role="tabpanel" aria-labelledby="tab-rss" class="tab-panel" hidden>
+        <div class="panel-heading"><div><h2>La señal que recibió cada enlace</h2><p class="muted">Lecturas sintéticas de la consulta seleccionada. Los enlaces ausentes se muestran sin valor.</p></div><span class="tag secondary">RSS en dBm</span></div>
+        <div class="chart-scroll"><svg id="rss-chart" viewBox="0 0 1000 280" role="img" aria-label="RSS por enlace para la consulta seleccionada"></svg></div>
+        <p class="micro">Los enlaces del mapa muestran mediciones guardadas; no son un mapa físico de alcance Wi-Fi.</p>
+      </div>
+    </section>
+    <footer><span id="source-label"></span><span>Camilo Vásquez · Yachay Tech · Demo local sin conexión</span></footer>
+    <noscript>Activa JavaScript para utilizar el visor de resultados.</noscript>
+  </main>
+</body>
+</html>

@@ -14,3 +14,4 @@ report/main.pdf
 
 build/
 *.exe
+/tmp/

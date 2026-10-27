@@ -8,6 +8,18 @@
 
 La carpeta completa también está disponible como [archivo ZIP](entrega_IA.zip). Su hash SHA-256 está en `entrega_IA.zip.sha256`; `SHA256SUMS.json` contiene los hashes de los archivos incluidos.
 
+## Demo visual para la exposición
+
+Abre [demo/index.html](demo/index.html) con doble clic, o ejecuta `ABRIR_DEMO.cmd`. Funciona sin internet, sin servidor y sin instalar dependencias. Mantén los archivos de `demo/` juntos. El recorrido para explicar los resultados en clase está en [demo/LEEME.md](demo/LEEME.md).
+
+La demo permite seleccionar frecuencia y escenario guardado, comparar RTI/K-NN, recorrer las consultas y ver la calibración EM y las lecturas RSS. Una capa opcional ilustra la señal del modelo de espacio libre (FSPL) desde el nodo seleccionado. Utiliza las nueve ejecuciones preliminares incluidas; cada consulta contiene un objetivo sintético. Los avisos de no convergencia y calibración insuficiente se conservan. El selector cambia entre datos existentes, no modifica un router ni genera mediciones nuevas.
+
+Para regenerarla después de revisar sus archivos de origen:
+
+```powershell
+.\.venv\Scripts\python.exe tools/crear_demo.py
+```
+
 ## ¿Qué investiga el proyecto?
 
 Evalúa si el algoritmo de Expectation-Maximization (EM) puede ajustar un modelo de ruido de mezcla gaussiana a datos sintéticos de intensidad recibida y si ese ajuste ayuda después a estimar la ubicación de un objeto mediante Radio Tomographic Imaging (RTI). Es un estudio de Inteligencia Artificial aplicado a localización por radio. Toda medición se genera en el simulador: el proyecto no necesita cámara, router en modo de captura, CSI ni datos recogidos en una habitación.
