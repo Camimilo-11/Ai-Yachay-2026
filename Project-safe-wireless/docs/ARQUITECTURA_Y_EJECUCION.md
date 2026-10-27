@@ -1,4 +1,4 @@
-# Arquitectura revisada y viabilidad (27 octubre 2026)
+# Arquitectura y viabilidad 
 
 Fuente: IsukaW/wifi-sensing-human-presence, revisión 91aee04ea938274d014a3981d409f83267ea15c0.
 La revisión se hizo sobre el código, no solo sobre el árbol de carpetas del README.
