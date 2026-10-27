@@ -1,0 +1,4 @@
+# Solo para --features-upstream; no necesarios para la simulación principal.
+pandas>=2.0
+scipy>=1.10
+

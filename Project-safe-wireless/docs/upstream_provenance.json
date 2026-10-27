@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/IsukaW/wifi-sensing-human-presence",
+  "revision": "91aee04ea938274d014a3981d409f83267ea15c0",
+  "license": "MIT",
+  "original_source_sha256": "044771747b66480cc081f180b657a04423827563619fd04075274950a00be96d",
+  "reuse": "WiFiMeasurement y WiFiFeatureExtractor; l\u00f3gica intacta, imports reducidos",
+  "omitted": [
+    ".venv",
+    ".github instructions"
+  ],
+  "verified_git_blobs": 28
+}

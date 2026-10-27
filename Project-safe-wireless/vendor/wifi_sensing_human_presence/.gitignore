@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project specific
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+models/*
+!models/.gitkeep
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Camera/video files
+*.mp4
+*.avi
+*.mov
+screenshots/
+
+# Model files (if large)
+*.joblib
+*.pkl
+*.h5
+*.pt
+*.pth
+
+# Configuration overrides
+config/my_config.yaml
+config/local_*.yaml
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Test coverage
+.coverage
+htmlcov/
+
+# Documentation builds
+docs/_build/

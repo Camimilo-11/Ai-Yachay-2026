@@ -1,0 +1,100 @@
+# WiFi Sensing Human Presence Detection Configuration
+
+# Camera settings
+camera:
+  device_id: 0  # Default webcam
+  width: 640
+  height: 480
+  fps: 30
+  person_detection:
+    confidence_threshold: 0.5
+    nms_threshold: 0.4
+    model_path: "models/yolo_person_detection.onnx"  # Optional: custom model
+    
+# WiFi settings
+wifi:
+  # Data collection method: 'rssi', 'csi', or 'both'
+  data_type: "rssi"
+  
+  # RSSI settings
+  rssi:
+    interface: "wlan0"  # WiFi interface name (adapt to your system)
+    scan_interval: 0.5  # seconds between scans
+    target_ssids: []    # Empty means all SSIDs, or specify specific ones
+    
+  # CSI settings (for Intel 5300 or ESP32)
+  csi:
+    device_type: "intel5300"  # "intel5300" or "esp32"
+    sampling_rate: 20  # Hz
+    # For ESP32
+    esp32:
+      serial_port: "/dev/ttyUSB0"
+      baud_rate: 115200
+    # For Intel 5300
+    intel5300:
+      monitor_interface: "mon0"
+      
+# Machine Learning settings
+ml:
+  # Features to extract from WiFi data
+  features:
+    window_size: 5.0  # seconds
+    overlap: 0.5      # 50% overlap between windows
+    rssi_features:
+      - "mean"
+      - "std" 
+      - "variance"
+      - "range"
+      - "skewness"
+      - "kurtosis"
+    csi_features:
+      - "amplitude_mean"
+      - "amplitude_std"
+      - "phase_variance"
+      - "doppler_shift"
+      
+  # Model settings
+  model:
+    type: "random_forest"  # "random_forest", "svm", "neural_network"
+    random_forest:
+      n_estimators: 100
+      max_depth: 10
+      random_state: 42
+    svm:
+      kernel: "rbf"
+      C: 1.0
+      gamma: "scale"
+    neural_network:
+      hidden_layers: [64, 32, 16]
+      learning_rate: 0.001
+      epochs: 100
+      
+  # Training settings
+  training:
+    test_size: 0.2
+    validation_size: 0.1
+    cross_validation_folds: 5
+    
+# Data collection settings
+data_collection:
+  session_duration: 300  # seconds (5 minutes)
+  data_dir: "data/raw"
+  labels:
+    - "visible_camera"    # Person visible to camera
+    - "behind_wall"       # Person behind wall/door
+    - "in_room_hidden"    # Person in room but not visible
+    - "left_area"         # Person left the monitored area
+    
+# System settings
+system:
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_file: "logs/wifi_sensing.log"
+  save_raw_data: true
+  data_retention_days: 30
+  
+# Privacy and ethics
+privacy:
+  consent_required: true
+  anonymize_data: true
+  max_recording_duration: 3600  # 1 hour max per session
+  delete_video_after_processing: true  # Keep only metadata

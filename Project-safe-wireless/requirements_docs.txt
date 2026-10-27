@@ -1,0 +1,2 @@
+# Optional dependency to regenerate the proposal PDF from its Markdown source.
+reportlab>=4.0
