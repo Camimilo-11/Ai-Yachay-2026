@@ -112,6 +112,8 @@ La entrega de la materia requiere un diagrama del sistema diseñado por el estud
 
 El flujo principal necesita solo `requirements.txt` y C++17. Los paquetes de `requirements_opcionales.txt` habilitan estadísticas de diagnóstico reutilizadas del repositorio de IsukaW; no intervienen en EM ni en RTI.
 
+Las cachés, el entorno virtual, `build/`, `tmp/`, las figuras generadas en la raíz y la salida de trabajo predeterminada `results/integracion_nueva/` se crean localmente y están excluidos de Git. La entrega conserva los resultados verificados, el escenario completo y las figuras del informe histórico en sus carpetas correspondientes. Los inventarios de la base documentan el estado original del proyecto.
+
 ## Fuente y estado de publicación
 
 La carpeta está dentro del repositorio local `Ai-Yachay-2026`. El enlace previsto es [Project-safe-wireless en GitHub](https://github.com/Camimilo-11/Ai-Yachay-2026/tree/main/Project-safe-wireless); debe verificarse después de sincronizar los cambios con GitHub y antes de enviar el enlace al docente. No se han publicado cambios desde esta tarea.

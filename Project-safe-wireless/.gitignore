@@ -15,3 +15,6 @@ report/main.pdf
 build/
 *.exe
 /tmp/
+.venv/
+/figures/
+/results/integracion_nueva/

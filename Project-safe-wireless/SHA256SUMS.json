@@ -1,11 +1,11 @@
 {
   "algorithm": "sha256",
-  "file_count": 246,
+  "file_count": 233,
   "files": [
     {
       "path": ".gitignore",
-      "sha256": "9b09e35f7372582f95c1902034b85a5e469e817b67e35160935f992745caab33",
-      "bytes": 219
+      "sha256": "9e72d231fdf67e26be352cd4f992cbed184a4fb5a68b17cfe104dca83f147bd9",
+      "bytes": 267
     },
     {
       "path": "ABRIR_DEMO.cmd",
@@ -153,29 +153,14 @@
       "bytes": 3669
     },
     {
-      "path": "figures/em_initialization_sensitivity.png",
-      "sha256": "a5787d5880738616198af692d5a30d7f8eb0bba36a092a0fa34719ea6e3270e8",
-      "bytes": 90591
-    },
-    {
-      "path": "figures/em_parameter_recovery.png",
-      "sha256": "f43b467b782ae20f16173a44266b312171aa2d3f71f9f5a3f640e7e660794d12",
-      "bytes": 124038
-    },
-    {
-      "path": "figures/localization_mean_error.png",
-      "sha256": "a9d9765328043c0fb5b6c8876597768b8e4be1ae192956cb35a8474d670ed12d",
-      "bytes": 90985
-    },
-    {
       "path": "INICIAR_SIMULACION.bat",
       "sha256": "9849c1484d6e1394b937c1406a294fbc82848039f6677395e1f4151644b21fda",
       "bytes": 192
     },
     {
       "path": "README.md",
-      "sha256": "53370f5c0ac7e0483027cc24caaa513e9f61667803e2f8b6bcefaa085eda28a8",
-      "bytes": 9890
+      "sha256": "2940a245f1886bf32a916f7e1f85ef9cd22d0393d497690b88ad9207ada27f0a",
+      "bytes": 10302
     },
     {
       "path": "report/.gitignore",
@@ -356,56 +341,6 @@
       "path": "results/integracion_completa/run_manifest.json",
       "sha256": "20cbe5478610b8f0d25ec53555095fa8ca7f34bdce51bf33f10dfb1e7f55d517",
       "bytes": 1192
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/calibration_residuals.csv",
-      "sha256": "12848f14c1a461d61b3873a76611dc2f5236f7bffb06ffcc1c63ddccc0d7357e",
-      "bytes": 23874
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/config.json",
-      "sha256": "0739b435f670ecd1372968cc9116b1c688f8ec50f7d29a6f20e535b505ab1fe9",
-      "bytes": 942
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/geometry.npz",
-      "sha256": "52e2c406783c722ed626090a2b12902b5cad7f1f219a21c48a285d68d9089a51",
-      "bytes": 1139
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/ground_truth.csv",
-      "sha256": "9b6fff5188441d6235793a804d17f3eaa43ef576ea4eda57c47c3a89db336698",
-      "bytes": 7093
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/calibration.csv",
-      "sha256": "7eb0c1e2a8684479993da46181d53df0c24b9adf27ea8f12dd50b2c546fc6257",
-      "bytes": 114774
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/development.csv",
-      "sha256": "7710567d8d14212f259244bb621105ef898a6d8dc4967912884e7a76274770c1",
-      "bytes": 38552
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/fingerprint.csv",
-      "sha256": "a633c7088c62bb405bbbb9c89b5fd9cd21e9142fad5cf17da8f0ad6385100fe2",
-      "bytes": 208193
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/noise_validation.csv",
-      "sha256": "fc93a0ca93f8d12ca9a4911e9f27424cb34a2902f48f09c84ebf2ad37a38e6dd",
-      "bytes": 61871
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/reference.csv",
-      "sha256": "63f51d19d3fbde7fc90760d0f0f38ca47524202943507d208d5305cb82e01e34",
-      "bytes": 73812
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/test.csv",
-      "sha256": "83a3ac3684757d0285790054166c7f1de33ceefc6a1c5d400e083abed5e12a6c",
-      "bytes": 51505
     },
     {
       "path": "results/integracion_verificada/base_r00/calibration_residuals.csv",
