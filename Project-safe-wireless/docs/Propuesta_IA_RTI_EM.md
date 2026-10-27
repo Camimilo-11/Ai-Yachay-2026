@@ -55,7 +55,9 @@ This is an applied computational study using simulated measurements. The generat
 
 The base mixture uses Wilson and Patwari's published values [1]. The quick run has six nodes, 15 links, 36 grid cells, and 30 test queries. The larger base run uses 12 nodes, 66 links, 100 cells, and 120 test queries. Both configurations save separate reference, calibration, validation, fingerprint, development, and test data. The simulator can vary noise spread, quantization, temporal correlation, link loss, baseline drift, carrier frequency, and receiver margin. In this model, carrier frequency changes the illustrative free-space link budget and which weak links are censored; it does not change the spatial weight matrix or simulate signal penetration through materials.
 
-**System diagram (Figure 1).** This is a flow diagram of the implemented synthetic experiment, not a map of a real room or a plot of results. It should show how the simulator creates separate data partitions, how calibration residuals enter EM, how the held-out noise block compares the mixture with a single Gaussian, and how the localization methods produce position estimates. Known fingerprint positions are used by K-NN and development positions select hyperparameters; the true positions of test queries are reserved for final evaluation. The course requires the student to draw and insert Figure 1 manually; `docs/DIAGRAMA_PENDIENTE_DE_DISENO_MANUAL.md` explains each box and arrow.
+The system workflow connects synthetic data generation, EM noise calibration, held-out noise validation, localization, and evaluation. Known fingerprint positions are used by K-NN and development positions select hyperparameters; the true positions of test queries are reserved for final evaluation.
+
+**Figure 1. System workflow.** [The author must insert the system diagram before submission.]
 
 ### 3.2. Inputs, partitions, and algorithms
 
@@ -107,7 +109,7 @@ This study provides a reproducible comparison of mixture fitting and localizatio
 
 ## Data Availability Statement
 
-The generator, configuration, preliminary synthetic CSV files, predictions, summaries, and plotting outputs are included in this project directory. No external dataset is required to reproduce the reported preliminary simulation. The intended GitHub location is listed in the README; it should be checked for accessibility after the local repository changes are synchronized.
+The generator, configuration, preliminary synthetic CSV files, predictions, summaries, and plotting outputs are included in the accompanying project repository: https://github.com/Camimilo-11/Ai-Yachay-2026/tree/main/Project-safe-wireless. No external dataset is required to reproduce the reported preliminary simulation. The README gives the execution commands, and each run records its configuration, seed, and code hashes.
 
 ## 6. References
 
