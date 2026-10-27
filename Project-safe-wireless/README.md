@@ -12,6 +12,8 @@ La carpeta completa también está disponible como [archivo ZIP](entrega_IA.zip)
 
 Abre [demo/index.html](demo/index.html) con doble clic, o ejecuta `ABRIR_DEMO.cmd`. Funciona sin internet, sin servidor y sin instalar dependencias. Mantén los archivos de `demo/` juntos. El recorrido para explicar los resultados en clase está en [demo/LEEME.md](demo/LEEME.md).
 
+Para llevar solo la demo a otro equipo, extrae [demo_exposicion.zip](demo_exposicion.zip) y abre `Safe_Wireless_Demo/ABRIR_DEMO.cmd`.
+
 La demo permite seleccionar frecuencia y escenario guardado, comparar RTI/K-NN, recorrer las consultas y ver la calibración EM y las lecturas RSS. Una capa opcional ilustra la señal del modelo de espacio libre (FSPL) desde el nodo seleccionado. Utiliza las nueve ejecuciones preliminares incluidas; cada consulta contiene un objetivo sintético. Los avisos de no convergencia y calibración insuficiente se conservan. El selector cambia entre datos existentes, no modifica un router ni genera mediciones nuevas.
 
 Para regenerarla después de revisar sus archivos de origen:

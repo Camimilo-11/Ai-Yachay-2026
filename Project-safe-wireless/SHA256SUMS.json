@@ -1,11 +1,16 @@
 {
   "algorithm": "sha256",
-  "file_count": 237,
+  "file_count": 246,
   "files": [
     {
       "path": ".gitignore",
-      "sha256": "7e306813874f160b85e80e9a54a530e47b85e640d1130497fdd6a6f2ea6f1782",
-      "bytes": 212
+      "sha256": "9b09e35f7372582f95c1902034b85a5e469e817b67e35160935f992745caab33",
+      "bytes": 219
+    },
+    {
+      "path": "ABRIR_DEMO.cmd",
+      "sha256": "0b48c8d42d558ea4085db02683c20adbd40936735fe29cd7bc507c63404481e9",
+      "bytes": 42
     },
     {
       "path": "analizar_resultados.py",
@@ -21,6 +26,41 @@
       "path": "config_integracion/base.json",
       "sha256": "93398dd9b6858dc71c2f17db94f14c7bdad744afdbcda518208a4b177dad2d2c",
       "bytes": 946
+    },
+    {
+      "path": "demo/app.js",
+      "sha256": "02a1c4d76295d57197afd2022530a3c41fe608b051c32f0df7265d0bca4a8aa9",
+      "bytes": 10504
+    },
+    {
+      "path": "demo/charts.js",
+      "sha256": "6ccb472dd66be115d4689ec6cd202b853e78e81c8759dc338d50d7109aa85ea8",
+      "bytes": 8537
+    },
+    {
+      "path": "demo/datos_preliminares.json",
+      "sha256": "813b7161f00961590e46bde5bed2a8c00ecbab3775903e74403a114b65dd3172",
+      "bytes": 428485
+    },
+    {
+      "path": "demo/index.html",
+      "sha256": "65fd6261f1efd4d953d0b0d1d5ad0ec519a2ad489ec3578d45b2aa4e632369a5",
+      "bytes": 436458
+    },
+    {
+      "path": "demo/LEEME.md",
+      "sha256": "42888ec0c0dd963f541a740bda25510e5f17697671f3d925f12caf8dfddd73a8",
+      "bytes": 4349
+    },
+    {
+      "path": "demo/plantilla.html",
+      "sha256": "873a5ba2930ab84fb80c46384f042fe46d924df96559efa01f8e17c0e64823df",
+      "bytes": 7918
+    },
+    {
+      "path": "demo/styles.css",
+      "sha256": "8e7225de706f04bd4f0d7fed730bf78f26e9c65a2caff86c62748f82a970b3f0",
+      "bytes": 9204
     },
     {
       "path": "docs/Arquitectura_dificultades_y_frecuencias_RTI_EM.md",
@@ -134,8 +174,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "8a830768aefe01eb2cd50d94fb4946646cd8f0f9c522dba1bbcadb7d55c0fea0",
-      "bytes": 8794
+      "sha256": "53370f5c0ac7e0483027cc24caaa513e9f61667803e2f8b6bcefaa085eda28a8",
+      "bytes": 9890
     },
     {
       "path": "report/.gitignore",
@@ -991,6 +1031,11 @@
       "path": "test_integracion.py",
       "sha256": "ec5beeb800bfb67ea97156b38ab2351c56eca3bdc1caf16c50edd76f57a1c84a",
       "bytes": 8175
+    },
+    {
+      "path": "tools/crear_demo.py",
+      "sha256": "d66a2c5faec7cdffee2e9bf699538637214df5351691f6730f8bb70f44c0ce6d",
+      "bytes": 9378
     },
     {
       "path": "tools/render_proposal_pdf.py",
