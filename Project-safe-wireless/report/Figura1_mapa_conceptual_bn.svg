@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1120" viewBox="0 0 1400 1120">
+<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 z" fill="#000"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="700.0" y="77" text-anchor="middle" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="#000">Study workflow</text>
+<rect x="480" y="125" width="440" height="105" fill="#fff" stroke="#000" stroke-width="3"/>
+<text x="700.0" y="168.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#000">Scenario setup</text>
+<text x="700.0" y="206.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#000">Room, nodes, target and noise</text>
+<line x1="700" y1="235" x2="700" y2="275" stroke="#000" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="420" y="285" width="560" height="105" fill="#fff" stroke="#000" stroke-width="3"/>
+<text x="700.0" y="328.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#000">Generate synthetic RSS data</text>
+<text x="700.0" y="366.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#000">Link model: y = Wx + n</text>
+<line x1="700" y1="395" x2="700" y2="435" stroke="#000" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="340" y="445" width="720" height="105" fill="#fff" stroke="#000" stroke-width="3"/>
+<text x="700.0" y="488.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#000">Separate data</text>
+<text x="700.0" y="526.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#000">Calibration | validation | fingerprints | development | test</text>
+<line x1="700" y1="550" x2="700" y2="590" stroke="#000" stroke-width="3"/>
+<line x1="350" y1="590" x2="1050" y2="590" stroke="#000" stroke-width="3"/>
+<line x1="350" y1="590" x2="350" y2="625" stroke="#000" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="1050" y1="590" x2="1050" y2="625" stroke="#000" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="70" y="630" width="560" height="235" fill="#fff" stroke="#000" stroke-width="3"/>
+<text x="350.0" y="722.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#000">Noise analysis</text>
+<text x="350.0" y="760.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#000">Calibration data → EM noise model</text>
+<text x="350.0" y="792.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#000">Validation data → held-out log-density score</text>
+<rect x="770" y="630" width="560" height="235" fill="#fff" stroke="#000" stroke-width="3"/>
+<text x="1050.0" y="706.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#000">Localization</text>
+<text x="1050.0" y="744.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#000">Tune settings with fingerprints and development data</text>
+<text x="1050.0" y="776.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#000">Compare RTI, Fisher RTI, K-NN and room-center baseline</text>
+<text x="1050.0" y="808.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#000">on the held-out test queries</text>
+<line x1="350" y1="865" x2="350" y2="905" stroke="#000" stroke-width="3"/>
+<line x1="1050" y1="865" x2="1050" y2="905" stroke="#000" stroke-width="3"/>
+<line x1="350" y1="905" x2="1050" y2="905" stroke="#000" stroke-width="3"/>
+<line x1="700" y1="905" x2="700" y2="935" stroke="#000" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="450" y="945" width="500" height="105" fill="#fff" stroke="#000" stroke-width="3"/>
+<text x="700.0" y="988.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#000">Compare results</text>
+<text x="700.0" y="1026.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#000">Noise fit | mean error | RMSE | coverage</text>
+<rect x="180" y="1075" width="1040" height="40" fill="#fff" stroke="#000" stroke-width="3"/>
+<text x="700.0" y="1100.1" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="400" fill="#000">Synthetic target only; no rubble/material model or real-person detection.</text>
+</svg>
