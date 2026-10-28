@@ -1,7 +1,7 @@
 # MDPI LaTeX source
 
-main.tex is the editable proposal source. The adjacent Definitions/ directory contains the MDPI class, bibliography styles, and template assets needed to compile it. Keep the directory structure together when compiling.
+This folder contains the LaTeX source package supplied with the current article PDF. Keep `main.tex`, `fig1.png`, and `Definitions/` together.
 
-Compile from this folder with a LaTeX installation that provides the class dependencies; for example, run latexmk -pdf main.tex.
+The workflow figure is the Figma export `fig1.png`; the Yachay Tech logo and MDPI class assets are under `Definitions/`. References are included inline in `main.tex`, so no separate `.bib` file is needed.
 
-The PDF in the parent report/ folder is a reading copy generated from the proposal content. Compile main.tex to produce the proposal directly from the MDPI LaTeX source.
+Compile from this folder with a LaTeX installation that provides the MDPI class dependencies; for example, run `latexmk -pdf main.tex`.

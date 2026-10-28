@@ -799,7 +799,7 @@
 			\fancyfoot[R]{
 			\fontsize{8}{8}\selectfont
 			{%
-			}{\url{https://doi.org/\@doinum}}}%
+			}{}}%
 		}
 	}
 }
@@ -840,8 +840,7 @@
 				\vspace{-2pt}%
 				\ifthenelse{\equal{\@status}{submit}}{%	
 				\vspace{5pt}%
-					\hfill \href{https://www.mdpi.com}{%
-					\includegraphics[height=1cm]{Definitions/logo-mdpi.eps}}%
+					\hfill \includegraphics[height=1.2cm]{Definitions/logo-yachay.png}%
 					}{
 					\href{https://www.mdpi.com/journal/\@journal}{
 					\includegraphics[height=1.2cm]{Definitions/\@journal-logo.eps}}%
@@ -1261,7 +1260,7 @@
 	\AfterEndPreamble{
 		\maketitle
 		\let\maketitle\relax
-		\ifthenelse{\equal{\@status}{submit}}{\linenumbers}{}
+		\ifthenelse{\equal{\@status}{submit}}{}{}
 		}%
 	}{
 	\AfterEndPreamble{
@@ -1269,7 +1268,7 @@
 		\let\maketitle\relax
 		\maketitlen
 		\let\maketitlen\relax
-		\ifthenelse{\equal{\@status}{submit}}{\linenumbers}{}
+		\ifthenelse{\equal{\@status}{submit}}{}{}
 		\abstractkeywords
 	}%
 }
@@ -1708,7 +1707,7 @@
       \isPreprints{}{%
         \rfoot{%
 	   \fontsize{8}{8}\selectfont%
-	  {\url{https://doi.org/\@doinum}}%
+	  {}%
      }
   }
 }
