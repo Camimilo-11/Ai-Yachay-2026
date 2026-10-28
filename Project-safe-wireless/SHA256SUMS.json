@@ -1,11 +1,16 @@
 {
   "algorithm": "sha256",
-  "file_count": 237,
+  "file_count": 173,
   "files": [
     {
       "path": ".gitignore",
-      "sha256": "7e306813874f160b85e80e9a54a530e47b85e640d1130497fdd6a6f2ea6f1782",
-      "bytes": 212
+      "sha256": "c40b9517941080bfd09ead15957fc684cc343d8fd38bfae57ec2582df916c1ac",
+      "bytes": 360
+    },
+    {
+      "path": "ABRIR_DEMO.cmd",
+      "sha256": "0b48c8d42d558ea4085db02683c20adbd40936735fe29cd7bc507c63404481e9",
+      "bytes": 42
     },
     {
       "path": "analizar_resultados.py",
@@ -23,29 +28,44 @@
       "bytes": 946
     },
     {
-      "path": "docs/Arquitectura_dificultades_y_frecuencias_RTI_EM.md",
-      "sha256": "b49e301e480a06f70ab81c73fe09ecf8f5f081e10a127c99ad455a85ccc3598b",
-      "bytes": 12474
+      "path": "demo/app.js",
+      "sha256": "02a1c4d76295d57197afd2022530a3c41fe608b051c32f0df7265d0bca4a8aa9",
+      "bytes": 10504
     },
     {
-      "path": "docs/Arquitectura_dificultades_y_frecuencias_RTI_EM.pdf",
-      "sha256": "1fe1c20eed43012164018816192497d7632e133b3ea07245d4b7f3aaafacdeed",
-      "bytes": 59699
+      "path": "demo/charts.js",
+      "sha256": "6ccb472dd66be115d4689ec6cd202b853e78e81c8759dc338d50d7109aa85ea8",
+      "bytes": 8537
+    },
+    {
+      "path": "demo/datos_preliminares.json",
+      "sha256": "813b7161f00961590e46bde5bed2a8c00ecbab3775903e74403a114b65dd3172",
+      "bytes": 428485
+    },
+    {
+      "path": "demo/index.html",
+      "sha256": "65fd6261f1efd4d953d0b0d1d5ad0ec519a2ad489ec3578d45b2aa4e632369a5",
+      "bytes": 436458
+    },
+    {
+      "path": "demo/LEEME.md",
+      "sha256": "42888ec0c0dd963f541a740bda25510e5f17697671f3d925f12caf8dfddd73a8",
+      "bytes": 4349
+    },
+    {
+      "path": "demo/plantilla.html",
+      "sha256": "873a5ba2930ab84fb80c46384f042fe46d924df96559efa01f8e17c0e64823df",
+      "bytes": 7918
+    },
+    {
+      "path": "demo/styles.css",
+      "sha256": "8e7225de706f04bd4f0d7fed730bf78f26e9c65a2caff86c62748f82a970b3f0",
+      "bytes": 9204
     },
     {
       "path": "docs/ARQUITECTURA_Y_EJECUCION.md",
-      "sha256": "9f1c44180dcf7a61e3903058e33e39109b2bc9bd93692c15585632f0bf9ea312",
-      "bytes": 4577
-    },
-    {
-      "path": "docs/base_snapshot.json",
-      "sha256": "8d6b52e3f04e0a435edc494b8cc8b196bf55f82af5bf316d9400ef32eed26f7a",
-      "bytes": 6507
-    },
-    {
-      "path": "docs/DIAGRAMA_PENDIENTE_DE_DISENO_MANUAL.md",
-      "sha256": "cd4d37380ab930356b40b78301663b6c3af42f0b1deb2bdeb3cc6c0f746befc1",
-      "bytes": 3325
+      "sha256": "83c5e43ca6ab56a6a68a25768fe1df1db52d1434a3e16dd7d284a0959ae6165f",
+      "bytes": 4771
     },
     {
       "path": "docs/MATRIZ_DE_EVIDENCIA.md",
@@ -54,43 +74,18 @@
     },
     {
       "path": "docs/ORIGEN_Y_LICENCIAS.md",
-      "sha256": "84c98225cf99670c91153c7e8e0ff4f55e9e756e4a4541d7ab0f49584ab5cac4",
-      "bytes": 1397
-    },
-    {
-      "path": "docs/PENDIENTES_DE_ENTREGA_IA.md",
-      "sha256": "f2778cb17068ce378018e4c38c246b47a9c5ebef404431ed25103abe37d7a570",
-      "bytes": 874
+      "sha256": "f06f9ce8928d7cdc301fb15c51c099c7e09db38ddd619a68522afbdae91bf68b",
+      "bytes": 1361
     },
     {
       "path": "docs/Propuesta_IA_RTI_EM.md",
-      "sha256": "28e3bd149c9c70733f2335448604159634ce1ecec5e695da87a3714ac756533c",
-      "bytes": 21407
-    },
-    {
-      "path": "docs/README_BASE_ORIGINAL.md",
-      "sha256": "90229351f5fb3003c42d3863fec35945008c4941f023656d809775779fba23bd",
-      "bytes": 4891
+      "sha256": "c123c5c3f44214d396c187b47de7ad8f99e56d01301f9f163033a6c27f0884ed",
+      "bytes": 21162
     },
     {
       "path": "docs/TRACEABILIDAD_RESULTADOS.md",
       "sha256": "6597d8b8d3418a45226b2d779d8207fe0aa6f0f611fe0307d5042c4000fa1d62",
       "bytes": 1468
-    },
-    {
-      "path": "docs/upstream_blob_hashes.json",
-      "sha256": "9d364d0e9b841be180a945c0e46cd166aa9c75a1dfed2a3524ce5ebffefd088f",
-      "bytes": 2163
-    },
-    {
-      "path": "docs/upstream_provenance.json",
-      "sha256": "61da17bd8b8516bb1eb2625758e367b2a2ae93964150772fcbba2f46bb774f21",
-      "bytes": 441
-    },
-    {
-      "path": "docs/VERIFICACION.json",
-      "sha256": "0970576ca6549ab1809855f0ee0be8fb8cff00d11ae896be30c4a50ac873a3c9",
-      "bytes": 1319
     },
     {
       "path": "ejecutar_integracion.py",
@@ -113,109 +108,19 @@
       "bytes": 3669
     },
     {
-      "path": "figures/em_initialization_sensitivity.png",
-      "sha256": "a5787d5880738616198af692d5a30d7f8eb0bba36a092a0fa34719ea6e3270e8",
-      "bytes": 90591
-    },
-    {
-      "path": "figures/em_parameter_recovery.png",
-      "sha256": "f43b467b782ae20f16173a44266b312171aa2d3f71f9f5a3f640e7e660794d12",
-      "bytes": 124038
-    },
-    {
-      "path": "figures/localization_mean_error.png",
-      "sha256": "a9d9765328043c0fb5b6c8876597768b8e4be1ae192956cb35a8474d670ed12d",
-      "bytes": 90985
-    },
-    {
       "path": "INICIAR_SIMULACION.bat",
       "sha256": "9849c1484d6e1394b937c1406a294fbc82848039f6677395e1f4151644b21fda",
       "bytes": 192
     },
     {
       "path": "README.md",
-      "sha256": "8a830768aefe01eb2cd50d94fb4946646cd8f0f9c522dba1bbcadb7d55c0fea0",
-      "bytes": 8794
-    },
-    {
-      "path": "report/.gitignore",
-      "sha256": "8ea9dc183728254cdee4726ea7aac6721691e114cdddeec87811027f006ba337",
-      "bytes": 21
-    },
-    {
-      "path": "report/codigo/em.cpp",
-      "sha256": "f88d31808beae1cd723f942ce404104d552d2b8adc2489ce61e4434d10a19c1f",
-      "bytes": 6211
-    },
-    {
-      "path": "report/codigo/em_core.cpp",
-      "sha256": "698b0458fb70ac54a8fe6f4d8927ae14aa6803b42cbab230f1198b14f7c733b8",
-      "bytes": 3142
-    },
-    {
-      "path": "report/enlaces.tex",
-      "sha256": "f533ff246222ff20e387504223ecbe13baf8f6a7d054608815c4572c09d62574",
-      "bytes": 254
-    },
-    {
-      "path": "report/figures/comparacion_rti_em_knn.png",
-      "sha256": "d43147e94b6063f7215af3469305c1da7491b7239591fff2d473c18488fecaf6",
-      "bytes": 105676
-    },
-    {
-      "path": "report/figures/em_initialization_sensitivity.png",
-      "sha256": "a5787d5880738616198af692d5a30d7f8eb0bba36a092a0fa34719ea6e3270e8",
-      "bytes": 90591
-    },
-    {
-      "path": "report/figures/em_parameter_recovery.png",
-      "sha256": "f43b467b782ae20f16173a44266b312171aa2d3f71f9f5a3f640e7e660794d12",
-      "bytes": 124038
-    },
-    {
-      "path": "report/figures/localization_mean_error.png",
-      "sha256": "a9d9765328043c0fb5b6c8876597768b8e4be1ae192956cb35a8474d670ed12d",
-      "bytes": 90985
-    },
-    {
-      "path": "report/IEEEtran.bst",
-      "sha256": "314f0ece704568faf827011bac498650691b2b5ee06320720830e782416d5a5f",
-      "bytes": 57748
-    },
-    {
-      "path": "report/IEEEtran.cls",
-      "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7",
-      "bytes": 281957
-    },
-    {
-      "path": "report/Informe_IEEE_RTI_EM.pdf",
-      "sha256": "5b2c676a174ef221c191ee52358065e2b720377e0aa51d6f517c7b9fd5a5f5cb",
-      "bytes": 559776
-    },
-    {
-      "path": "report/main.tex",
-      "sha256": "dfae7bbce8959f9b0a951961b23124de3fa1f48cbe2685aa03527295a2d44bff",
-      "bytes": 73570
+      "sha256": "03a675be42cc461ee1ae6fe68c60ee2eef06ae2437e27413b254d12d8b6ffbf6",
+      "bytes": 10386
     },
     {
       "path": "report/Propuesta_IA_RTI_EM.pdf",
-      "sha256": "4e15a8ffc271a9cb5f67227ec75037374282d9c62408156aab9ada3cb6f0627f",
-      "bytes": 79173
-    },
-    {
-      "path": "report/provenance.json",
-      "sha256": "243ae788dfde7731f7fadad7d12ce86bdfa39d0ae93ebff9f9e3c8b30f694011",
-      "bytes": 4629
-    },
-    {
-      "path": "report/README.md",
-      "sha256": "40b4eda871afe5e7815ed172c0dec73d436291a614e2e1a2a1e9610aa55ac086",
-      "bytes": 3997
-    },
-    {
-      "path": "report/refs.bib",
-      "sha256": "f5751f55eac7e414488a4c0e924bb34340f1ff05fc818688b2509b08e74d7ea2",
-      "bytes": 1083
+      "sha256": "cfb98274562f0e9f6d96317c78ff8c0a9cdf9a7832a8dd51c28e818c86f95927",
+      "bytes": 79304
     },
     {
       "path": "requirements.txt",
@@ -316,56 +221,6 @@
       "path": "results/integracion_completa/run_manifest.json",
       "sha256": "20cbe5478610b8f0d25ec53555095fa8ca7f34bdce51bf33f10dfb1e7f55d517",
       "bytes": 1192
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/calibration_residuals.csv",
-      "sha256": "12848f14c1a461d61b3873a76611dc2f5236f7bffb06ffcc1c63ddccc0d7357e",
-      "bytes": 23874
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/config.json",
-      "sha256": "0739b435f670ecd1372968cc9116b1c688f8ec50f7d29a6f20e535b505ab1fe9",
-      "bytes": 942
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/geometry.npz",
-      "sha256": "52e2c406783c722ed626090a2b12902b5cad7f1f219a21c48a285d68d9089a51",
-      "bytes": 1139
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/ground_truth.csv",
-      "sha256": "9b6fff5188441d6235793a804d17f3eaa43ef576ea4eda57c47c3a89db336698",
-      "bytes": 7093
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/calibration.csv",
-      "sha256": "7eb0c1e2a8684479993da46181d53df0c24b9adf27ea8f12dd50b2c546fc6257",
-      "bytes": 114774
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/development.csv",
-      "sha256": "7710567d8d14212f259244bb621105ef898a6d8dc4967912884e7a76274770c1",
-      "bytes": 38552
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/fingerprint.csv",
-      "sha256": "a633c7088c62bb405bbbb9c89b5fd9cd21e9142fad5cf17da8f0ad6385100fe2",
-      "bytes": 208193
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/noise_validation.csv",
-      "sha256": "fc93a0ca93f8d12ca9a4911e9f27424cb34a2902f48f09c84ebf2ad37a38e6dd",
-      "bytes": 61871
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/reference.csv",
-      "sha256": "63f51d19d3fbde7fc90760d0f0f38ca47524202943507d208d5305cb82e01e34",
-      "bytes": 73812
-    },
-    {
-      "path": "results/integracion_nueva/base_r00/raw/test.csv",
-      "sha256": "83a3ac3684757d0285790054166c7f1de33ceefc6a1c5d400e083abed5e12a6c",
-      "bytes": 51505
     },
     {
       "path": "results/integracion_verificada/base_r00/calibration_residuals.csv",
@@ -928,54 +783,9 @@
       "bytes": 1345
     },
     {
-      "path": "results/python_preliminary/comparacion_rti_em_knn.png",
-      "sha256": "d43147e94b6063f7215af3469305c1da7491b7239591fff2d473c18488fecaf6",
-      "bytes": 105676
-    },
-    {
-      "path": "results/python_preliminary/comparaciones_pareadas.csv",
-      "sha256": "a664f9add7ea36b0edfac9e052c0559db2f0432a9bd3a77408f580ce03562f46",
-      "bytes": 636
-    },
-    {
-      "path": "results/python_preliminary/em_initialization.csv",
-      "sha256": "a875fdfa560e6667188fbdd07c0fa34690eb218db3546f4fbed9d3fa42ee16ff",
-      "bytes": 3375
-    },
-    {
-      "path": "results/python_preliminary/em_sample_size.csv",
-      "sha256": "71de7855e361772742fa6a7c610932e11972064d792134512a2353f841f60a09",
-      "bytes": 706
-    },
-    {
-      "path": "results/python_preliminary/metricas.csv",
-      "sha256": "0723e7933bcd4865293759884f87c33f22d83ee66ed6c330cde2da34a7fd668a",
-      "bytes": 657
-    },
-    {
-      "path": "results/python_preliminary/parametros.json",
-      "sha256": "2383d7fcca4dafec6da0cee8d633754fd50f68fb4d93ef5aec22e5666f3c2ec5",
-      "bytes": 3309
-    },
-    {
-      "path": "results/python_preliminary/predicciones.csv",
-      "sha256": "78724d61f0e0d16580bcca09b6a379bc2e4084ed1a670559b4a2888a4ce215bf",
-      "bytes": 123403
-    },
-    {
-      "path": "results/python_preliminary/resumen_resultados.md",
-      "sha256": "934e92bc2a713572bc101393c74158d9db4bfb414ab5716484e3eca283a3da2a",
-      "bytes": 2645
-    },
-    {
       "path": "simulacion_rti_em_knn.py",
       "sha256": "fef98c80d76f4f562dcb18e5b81e72acb1f138620f51f37672207e3e338c3a92",
       "bytes": 33723
-    },
-    {
-      "path": "SPEC_INTEGRACION.md",
-      "sha256": "c45f69c5ada820c1a0b6cb6aded24272f127f75a739e4408abec882e660af0ea",
-      "bytes": 2063
     },
     {
       "path": "test_auditoria.py",
@@ -993,149 +803,19 @@
       "bytes": 8175
     },
     {
+      "path": "tools/crear_demo.py",
+      "sha256": "d66a2c5faec7cdffee2e9bf699538637214df5351691f6730f8bb70f44c0ce6d",
+      "bytes": 9378
+    },
+    {
       "path": "tools/render_proposal_pdf.py",
       "sha256": "c7d618cebfc6639425efa2fa12be9dec8f2751e7856950aa8c9d718a160e103d",
       "bytes": 9633
     },
     {
-      "path": "vendor/wifi_sensing_human_presence/.gitattributes",
-      "sha256": "1a1dbe176bc233b499d35a57db7513f2941c99ab9759f177830c9149be99005b",
-      "bytes": 66
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/.gitignore",
-      "sha256": "d1c050eed62d5216cd500d37683f6cde9cbf53e64cbfacbef5d005052208752c",
-      "bytes": 765
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/collect_data.sh",
-      "sha256": "e47c3d0be97103738ed9de7cd9c3b6c9900b0632f47e2c54bf596abacaaeeaca",
-      "bytes": 1263
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/config/config.yaml",
-      "sha256": "054f4515a7b1ccd673fc898418b092f36e1a21ce7e71d50b3fe860eabf502e7a",
-      "bytes": 2508
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/data/processed/.gitkeep",
-      "sha256": "99cc052d5386ca43f4861b3d876aae0a6e99671762fc77d4df9c5f1f8fc5ebf5",
-      "bytes": 110
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/data/raw/.gitkeep",
-      "sha256": "703274d7ab699af151f9d11b67cabd2bf30dc584eafae0b0f07f370c069fc9d3",
-      "bytes": 106
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/docs/api.md",
-      "sha256": "4c3f9cef76140cb7fdddf635fcc2f421976a73b24d1515dc5dd4a72fac8227f8",
-      "bytes": 13608
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/docs/setup.md",
-      "sha256": "f68647af3a17c765deb3f285d9485439490a9c8a435829545f32857969f132e4",
-      "bytes": 9334
-    },
-    {
       "path": "vendor/wifi_sensing_human_presence/LICENSE",
       "sha256": "689542e4d9e0d3adaaa232a63d7be261df58e55360b457c79b0dd032a0c3ed8e",
       "bytes": 1074
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/main.py",
-      "sha256": "cd4eb4328b7931da42f5bd1c47baa21dd37dd8aeadd3e48e1aa49bbcf65a18e9",
-      "bytes": 21961
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/models/.gitkeep",
-      "sha256": "021b63ad131b20f5f799a33a3603820c4362f425985dc60737f7c9d60de1c70a",
-      "bytes": 91
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/QUICK_START.md",
-      "sha256": "38ab1fa90f196d6e7f80d11682844a47a30c0ce693c0882d4180a04919552d98",
-      "bytes": 989
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/README.md",
-      "sha256": "fca4691f51600c192bd4d05d2e89ebca00005c45257395f50c0eb93945b5cd96",
-      "bytes": 22685
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/requirements.txt",
-      "sha256": "6710b1c00f0d0707259eb00bd2e83f18b7b0e3321405a7feabd1fae4ce05adf5",
-      "bytes": 733
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/run.bat",
-      "sha256": "573fa343be06b81c7469781622b4ea6bedc694c687fddbcb6a5de0d9ce89f486",
-      "bytes": 1148
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/run.sh",
-      "sha256": "f84a62b706abcd25887e179580db99f08021e6c6b99391191bb66818199011d6",
-      "bytes": 745
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/scripts/collect_data.py",
-      "sha256": "4ace6a13abdf20145c5bfc4486eff2dcc2c837e386b875f04f23031eac86f047",
-      "bytes": 23378
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/scripts/train_model.py",
-      "sha256": "4b42833fc12e6052b04fa994f1ca06bf7e0efd70d905a03fbbf651cf28a85fe4",
-      "bytes": 5904
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/src/camera/__init__.py",
-      "sha256": "d911c9c2ddefe3af51fcb0124a94e49dcbe6a343ae45b0db05874269d4056db9",
-      "bytes": 16115
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/src/fusion/__init__.py",
-      "sha256": "fc10cb158d250d126f71957bf1c4ae446a01a57e23aac89b3baa78ab634041de",
-      "bytes": 24007
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/src/ml/__init__.py",
-      "sha256": "7e0f44abc160cd6f63267dc5e17d9c4aa878bb9caa055e92d5c094fcf83853d6",
-      "bytes": 23307
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/src/utils/__init__.py",
-      "sha256": "61365981f835baa16166094ac0f43505c534d65ca010a24d35aece1923fea9a6",
-      "bytes": 498
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/src/utils/config_loader.py",
-      "sha256": "dba9df743e5a868043eae921217a5b2f3d4c301dfd754cc8a85ae61971140a7c",
-      "bytes": 7167
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/src/utils/data_utils.py",
-      "sha256": "4451e0773cde9eb91e828aa04b173decfeedf833813f6941d2bcb08366f8ef66",
-      "bytes": 14174
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/src/utils/logging_utils.py",
-      "sha256": "78c968bb26bda32e712f17255267893827dbd13aa42f6bf72798bfe86fa88a2c",
-      "bytes": 1573
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/src/wifi/__init__.py",
-      "sha256": "044771747b66480cc081f180b657a04423827563619fd04075274950a00be96d",
-      "bytes": 34565
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/wifi_monitor.py",
-      "sha256": "e3c991850e8dbfc25d3ce84d76d3887453bc6cb753376768522121ab8ef705aa",
-      "bytes": 4888
-    },
-    {
-      "path": "vendor/wifi_sensing_human_presence/wifi_radar.py",
-      "sha256": "56d5210e0466a20c5e63c0fb7ad5e57d5b1a71c8fc15378805951715af4ab8a0",
-      "bytes": 79311
     },
     {
       "path": "verificar_paquete.py",

@@ -24,7 +24,7 @@ WiFiFeatureExtractor agrupa por SSID/BSSID; no genera una geometría Tx-Rx con c
 La clase CSI y las opciones del YAML no constituyen una captura CSI implementada.
 
 ## Cómo se ejecuta el ORIGINAL (referencia, no requerido por nuestra simulación)
-Desde vendor/wifi_sensing_human_presence, usando un entorno con las dependencias originales instaladas:
+Para estudiar el original, descarga la [revisión analizada del repositorio de IsukaW](https://github.com/IsukaW/wifi-sensing-human-presence/tree/91aee04ea938274d014a3981d409f83267ea15c0) en otra carpeta y utiliza un entorno con sus dependencias originales instaladas. Desde la raíz de esa copia:
 - python wifi_monitor.py
 - python wifi_radar.py
 - python main.py

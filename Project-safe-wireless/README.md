@@ -6,7 +6,21 @@
 **Estado:** propuesta y resultados preliminares computacionales  
 **Repositorio local:** `Ai-Yachay-2026/Project-safe-wireless`
 
-La carpeta completa también está disponible como [archivo ZIP](entrega_IA.zip). Su hash SHA-256 está en `entrega_IA.zip.sha256`; `SHA256SUMS.json` contiene los hashes de los archivos incluidos.
+Esta carpeta contiene la entrega reproducible de la propuesta. `SHA256SUMS.json` permite verificar la integridad de sus archivos; los paquetes ZIP para distribución se mantienen aparte del código del repositorio.
+
+## Demo visual para la exposición
+
+Abre [demo/index.html](demo/index.html) con doble clic, o ejecuta `ABRIR_DEMO.cmd`. Funciona sin internet, sin servidor y sin instalar dependencias. Mantén los archivos de `demo/` juntos. El recorrido para explicar los resultados en clase está en [demo/LEEME.md](demo/LEEME.md).
+
+Para llevar la demo a otro equipo, copia la carpeta `demo/` completa y abre allí `index.html`.
+
+La demo permite seleccionar frecuencia y escenario guardado, comparar RTI/K-NN, recorrer las consultas y ver la calibración EM y las lecturas RSS. Una capa opcional ilustra la señal del modelo de espacio libre (FSPL) desde el nodo seleccionado. Utiliza las nueve ejecuciones preliminares incluidas; cada consulta contiene un objetivo sintético. Los avisos de no convergencia y calibración insuficiente se conservan. El selector cambia entre datos existentes, no modifica un router ni genera mediciones nuevas.
+
+Para regenerarla después de revisar sus archivos de origen:
+
+```powershell
+.\.venv\Scripts\python.exe tools/crear_demo.py
+```
 
 ## ¿Qué investiga el proyecto?
 
@@ -82,7 +96,7 @@ En este piloto el control del centro obtiene el menor error. K-NN queda por deba
 
 La evaluación final repetirá los escenarios con varias semillas y comparará la densidad predictiva del ruido con el error de localización, además de informar cobertura y convergencia. El control Tikhonov equivalente permite determinar si la escala Fisher cambia algo más que la intensidad de regularización. Los resultados actuales corresponden a una ejecución preliminar por escenario y aún no permiten estimar la variabilidad entre ejecuciones.
 
-La entrega de la materia requiere un diagrama del sistema diseñado por el estudiante. La guía indica expresamente que no debe generarse con IA. Por eso el paquete deja el contenido técnico y una lista de componentes en `docs/DIAGRAMA_PENDIENTE_DE_DISENO_MANUAL.md`; la figura final debe dibujarse manualmente y añadirse al artículo antes de entregar.
+Antes de enviar la propuesta, el autor debe insertar la Figura 1 del sistema y completar el nombre del docente. El diagrama debe cumplir la instrucción de diseño personal establecida por la materia.
 
 ## Archivos principales
 
@@ -90,16 +104,27 @@ La entrega de la materia requiere un diagrama del sistema diseñado por el estud
 - `wifi_rti/`: generador sintético, contrato de mediciones, EM, RTI/K-NN y evaluación.
 - `em.cpp`, `em_cpp.py`, `compilar_cpp.py`: estimador EM original de Wireless Save y su adaptador.
 - `config_integracion/base.json`: configuración del experimento de mayor tamaño.
-- `vendor/wifi_sensing_human_presence/`: referencia upstream fijada a una revisión; incluye su licencia MIT.
+- `vendor/wifi_sensing_human_presence/LICENSE`: licencia MIT del código reutilizado; su origen y revisión se documentan en `docs/ORIGEN_Y_LICENCIAS.md`.
 - `results/integracion_verificada/`: nueve escenarios preliminares de ejecución corta.
 - `results/integracion_completa/`: escenario base con más enlaces, celdas y consultas.
-- `report/Informe_IEEE_RTI_EM.pdf`: informe técnico previo de la base, con un protocolo y resultados distintos; no combinar sus cifras con la tabla de esta propuesta.
-- `docs/`: arquitectura, evidencia, procedencia y pendientes académicos.
+- `report/Propuesta_IA_RTI_EM.pdf`: propuesta de investigación de esta entrega.
+- `docs/`: fuente editable de la propuesta, arquitectura, evidencia, procedencia y trazabilidad de resultados.
+- `tools/`: generación reproducible del PDF y del visor de resultados.
+- `test_*.py`: comprobaciones de serialización, evaluación y paridad del algoritmo EM.
 
 El flujo principal necesita solo `requirements.txt` y C++17. Los paquetes de `requirements_opcionales.txt` habilitan estadísticas de diagnóstico reutilizadas del repositorio de IsukaW; no intervienen en EM ni en RTI.
 
+Para ejecutar todas las comprobaciones automatizadas, instala también las dependencias de esos diagnósticos:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements_opcionales.txt
+.\.venv\Scripts\python.exe -B -m unittest discover -p 'test_*.py' -v
+```
+
+Las cachés, el entorno virtual, `build/`, `tmp/`, las figuras generadas en la raíz y la salida de trabajo predeterminada `results/integracion_nueva/` se crean localmente y están excluidos de Git. La entrega conserva las ejecuciones verificadas y el escenario completo que se describen en este README.
+
 ## Fuente y estado de publicación
 
-La carpeta está dentro del repositorio local `Ai-Yachay-2026`. El enlace previsto es [Project-safe-wireless en GitHub](https://github.com/Camimilo-11/Ai-Yachay-2026/tree/main/Project-safe-wireless); debe verificarse después de sincronizar los cambios con GitHub y antes de enviar el enlace al docente. No se han publicado cambios desde esta tarea.
+El repositorio de la entrega es [Project-safe-wireless en GitHub](https://github.com/Camimilo-11/Ai-Yachay-2026/tree/main/Project-safe-wireless). Cada ejecución registra configuración, semilla y hashes del código en su resumen para identificar la versión que produjo los resultados.
 
 El alcance se limita a datos sintéticos y a la evaluación de RTI y K-NN en el modelo implementado. El simulador no mide canales Wi-Fi, CSI, propagación a través de paredes ni detección de personas.
