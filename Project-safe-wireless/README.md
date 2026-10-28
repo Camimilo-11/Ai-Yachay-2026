@@ -41,7 +41,7 @@ El ZIP incluye los scripts, datos crudos, configuración, requisitos, código fu
 
 El PDF presenta el problema, la pregunta de investigación, la literatura, la metodología, los resultados preliminares, los controles y el alcance. Incluye un cronograma de cuatro semanas con una quinta opcional. La carpeta de resultados conserva las tablas, figuras y resúmenes que respaldan los resultados reportados; el ZIP permite regenerarlos.
 
-Antes de entregar el PDF, quedan por completar el nombre del docente y la Figura 1 del flujo del sistema, que debe preparar el estudiante según las instrucciones de la materia. La demo sirve para mostrar la simulación, pero no reemplaza esa figura del reporte.
+El PDF ya incluye el nombre del docente y la Figura 1: un diagrama del flujo que conecta la generación de datos sintéticos, la calibración EM y la evaluación de localización. La demo complementa esa explicación con una vista interactiva de la simulación.
 
 ## Enlaces
 
