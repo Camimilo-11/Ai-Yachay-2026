@@ -25,7 +25,6 @@ PACKAGE_ITEMS = (
     "docs",
     "report",
     "results",
-    "resultados_preliminares",
     "tools",
     "vendor",
     "requirements.txt",
@@ -33,8 +32,25 @@ PACKAGE_ITEMS = (
     "requirements_opcionales.txt",
 )
 OMIT_DIRS = {".git", ".venv", "__pycache__", ".pytest_cache", ".build", "build"}
+OMIT_FILES = {
+    "report/Propuesta_IA_RTI_EM.pdf",
+    "report/Figura1.png",
+    "report/Figura1.svg",
+    "report/Figura1_flujo_metodologico.png",
+    "report/Figura1_flujo_metodologico.svg",
+    "report/Figura1_mapa_conceptual_bn.png",
+    "report/Figura1_mapa_conceptual_bn.svg",
+    "docs/Propuesta_IA_RTI_EM.md",
+    "tools/render_proposal_pdf.py",
+}
 DOWNLOAD_LINE = "[Descarga el ZIP completo de reproducción](Project-safe-wireless-reproduccion.zip) y extrae la carpeta antes de ejecutar."
 EXTRACTED_LINE = "La carpeta de reproducción ya está extraída; sigue los pasos siguientes."
+PACKAGED_README_REPLACEMENTS = (
+    ("[Resultados preliminares](resultados_preliminares/README.md) · gráficos, métricas y resúmenes.",
+     "[Resultados preliminares](results/integracion_verificada/LEER_RESULTADOS.md) · gráficos, métricas y resúmenes."),
+    ("[Ver resultados y trazabilidad](resultados_preliminares/README.md)",
+     "[Ver resultados y trazabilidad](docs/TRACEABILIDAD_RESULTADOS.md)"),
+)
 
 
 def package_files() -> list[Path]:
@@ -51,6 +67,8 @@ def package_files() -> list[Path]:
             if not path.is_file():
                 continue
             relative = path.relative_to(ROOT)
+            if relative.as_posix() in OMIT_FILES:
+                continue
             if path.is_symlink() or any(part in OMIT_DIRS for part in relative.parts):
                 continue
             resolved = path.resolve()
@@ -86,9 +104,16 @@ def main() -> None:
 
         readme = staging / "README.md"
         content = readme.read_text(encoding="utf-8")
-        if DOWNLOAD_LINE not in content:
+        if DOWNLOAD_LINE in content:
+            content = content.replace(DOWNLOAD_LINE, EXTRACTED_LINE)
+        elif EXTRACTED_LINE not in content:
             raise ValueError("No se encontró el enlace del ZIP esperado en README.md")
-        readme.write_text(content.replace(DOWNLOAD_LINE, EXTRACTED_LINE), encoding="utf-8")
+        for old, new in PACKAGED_README_REPLACEMENTS:
+            if old in content:
+                content = content.replace(old, new)
+            elif new not in content:
+                raise ValueError(f"No se encontró una ruta de resultados para el README del paquete: {old}")
+        readme.write_text(content, encoding="utf-8")
         write_manifest(staging)
 
         temporary_archive = None
@@ -107,6 +132,7 @@ def main() -> None:
                 if corrupt:
                     raise zipfile.BadZipFile(f"Entrada dañada: {corrupt}")
             os.replace(temporary_archive, ARCHIVE)
+            shutil.copy2(staging / "SHA256SUMS.json", ROOT / "SHA256SUMS.json")
             print(f"ZIP creado: {ARCHIVE}")
             print(f"Archivos incluidos (más SHA256SUMS.json): {len(files)}")
             print(f"Tamaño: {ARCHIVE.stat().st_size:,} bytes")
