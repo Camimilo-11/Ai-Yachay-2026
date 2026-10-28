@@ -7,6 +7,7 @@ La entrega analiza una simulación reproducible de localización RTI con RSS sin
 ## Empieza por aquí
 
 - [Reporte de investigación en PDF](report/Propuesta_IA_RTI_EM.pdf)
+- [Fuente editable MDPI LaTeX](report/latex_source/main.tex) · conserva la estructura completa en esa carpeta.
 - [Demo visual para la exposición](demo/index.html) · abre `index.html` en el navegador; funciona sin internet.
 - [Resultados preliminares](resultados_preliminares/README.md) · gráficos, métricas y resúmenes.
 - [Scripts principales](scripts/LEER_SCRIPTS.md)
@@ -41,7 +42,7 @@ El ZIP incluye los scripts, datos crudos, configuración, requisitos, código fu
 
 El PDF presenta el problema, la pregunta de investigación, la literatura, la metodología, los resultados preliminares, los controles y el alcance. Incluye un cronograma de cuatro semanas con una quinta opcional. La carpeta de resultados conserva las tablas, figuras y resúmenes que respaldan los resultados reportados; el ZIP permite regenerarlos.
 
-El PDF ya incluye el nombre del docente y la Figura 1: un diagrama del flujo que conecta la generación de datos sintéticos, la calibración EM y la evaluación de localización. La demo complementa esa explicación con una vista interactiva de la simulación.
+El PDF incluye el nombre del profesor Eugenio Morocho, el correo del estudiante y los resultados preliminares. La Figura 1 debe completarla el estudiante con un diagrama diseñado por él, sin generarlo con IA, como exige la guía. La demo complementa la explicación con una vista interactiva de la simulación.
 
 ## Enlaces
 
