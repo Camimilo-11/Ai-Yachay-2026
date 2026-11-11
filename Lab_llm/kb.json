@@ -1,0 +1,130 @@
+{
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "tau": 0.4,
+  "openai_model": "gpt-6-luna",
+  "fallback": "Todavía no tengo esa respuesta. Pregunta a los miembros de tu junta receptora del voto; ellos pueden orientarte.",
+  "fuente_documento": "Instructivo para Miembros de las Juntas Receptoras del Voto, Elecciones Seccionales y CPCCS 2027 (CNE), págs. 4–7",
+  "kb": [
+    {
+      "id": "horario",
+      "fuente": "págs. 4 y 7",
+      "descripcion": "Horario de votación (de 07:00 a 17:00) y hasta qué hora llegar",
+      "respuesta": "La votación es de 07:00 a 17:00. Te recomendamos llegar antes de las 16:00. A las 17:00 se cierra y quien siga en la fila ya no puede votar; solo recibe un certificado de presentación.",
+      "frases": [
+        "¿A qué hora empieza la votación?",
+        "¿Hasta qué hora se puede votar?",
+        "¿A qué hora abren y cierran las mesas?",
+        "¿Cuál es el horario de votación?",
+        "¿Hasta qué hora puedo llegar a votar?"
+      ]
+    },
+    {
+      "id": "fecha",
+      "fuente": "pág. 4",
+      "descripcion": "Qué día son las elecciones",
+      "respuesta": "Las elecciones son el domingo 29 de noviembre de 2026. Puedes votar de 07:00 a 17:00.",
+      "frases": [
+        "¿Qué día son las elecciones?",
+        "¿Cuándo son las elecciones seccionales?",
+        "¿En qué fecha se vota?",
+        "¿Las elecciones son este domingo?"
+      ]
+    },
+    {
+      "id": "documento",
+      "fuente": "págs. 4 y 5",
+      "descripcion": "Qué documento llevar para votar (cédula o pasaporte)",
+      "respuesta": "Lleva el original de tu cédula. También sirve el pasaporte. En la mesa revisan que estés en el padrón y al final te devuelven el documento junto con tu certificado de votación.",
+      "frases": [
+        "¿Qué documento necesito para votar?",
+        "¿Tengo que llevar la cédula?",
+        "¿Puedo votar con pasaporte?",
+        "¿Qué papeles debo llevar el día de la votación?"
+      ]
+    },
+    {
+      "id": "celular",
+      "fuente": "pág. 5",
+      "descripcion": "Uso del celular, fotos o aparatos electrónicos mientras se vota",
+      "respuesta": "No puedes usar el celular ni otro aparato electrónico mientras votas detrás del biombo. Guárdalo antes de recibir tus papeletas. Si lo usas, la mesa llena una boleta por presunta infracción electoral.",
+      "frases": [
+        "¿Puedo usar el celular mientras voto?",
+        "¿Puedo tomar una foto de mi papeleta?",
+        "¿Puedo entrar con el teléfono al biombo?",
+        "¿Está prohibido usar aparatos electrónicos al votar?"
+      ]
+    },
+    {
+      "id": "firma",
+      "fuente": "pág. 5",
+      "descripcion": "Firmar el padrón o poner la huella si no sabe escribir; entrega del certificado",
+      "respuesta": "Al final firmas en el padrón electoral. Si no puedes firmar, pones tu huella dactilar. Después te entregan tu certificado de votación y tu cédula.",
+      "frases": [
+        "¿Dónde tengo que firmar?",
+        "No sé escribir, ¿cómo firmo el padrón?",
+        "¿Puedo poner mi huella en vez de firmar?",
+        "¿Cuándo me dan el certificado de votación?"
+      ]
+    },
+    {
+      "id": "asistido",
+      "fuente": "pág. 6",
+      "descripcion": "Necesita ayuda de otra persona para marcar o depositar el voto (voto asistido)",
+      "respuesta": "Si necesitas ayuda para marcar o depositar tu voto, puede ayudarte una persona de tu confianza. Esto se llama votación asistida.",
+      "frases": [
+        "Necesito ayuda para votar",
+        "¿Alguien de mi familia puede ayudarme a marcar la papeleta?",
+        "¿Puedo ir acompañado a votar?",
+        "No puedo marcar la papeleta solo"
+      ]
+    },
+    {
+      "id": "preferencial",
+      "fuente": "pág. 6",
+      "descripcion": "Votar sin hacer fila: discapacidad, adultos mayores, embarazadas, niños en brazos",
+      "respuesta": "Las personas con discapacidad, las personas adultas mayores, las mujeres embarazadas y quienes llevan niños en brazos pasan directamente a votar, sin hacer fila.",
+      "frases": [
+        "Estoy embarazada, ¿tengo que hacer fila?",
+        "Soy adulto mayor, ¿tengo prioridad para votar?",
+        "Voy con mi bebé en brazos",
+        "¿Las personas con discapacidad hacen fila?"
+      ]
+    },
+    {
+      "id": "map",
+      "fuente": "págs. 6 y 7",
+      "descripcion": "No puede llegar físicamente a su mesa (silla de ruedas, no camina): Mesa de Atención Preferente",
+      "respuesta": "Si por tu condición física no puedes llegar hasta tu junta, puedes votar en la Mesa de Atención Preferente (MAP) del recinto. El presidente de tu junta lleva hasta ahí el padrón, las papeletas y tu certificado.",
+      "frases": [
+        "Estoy en silla de ruedas y no puedo llegar a mi mesa",
+        "Mi abuela no puede caminar hasta la junta",
+        "¿Qué es la Mesa de Atención Preferente?",
+        "No puedo subir las gradas para llegar a mi mesa"
+      ]
+    },
+    {
+      "id": "braille",
+      "fuente": "págs. 6 y 7",
+      "descripcion": "Discapacidad visual, personas ciegas, plantilla Braille",
+      "respuesta": "Si tienes discapacidad visual, puedes pedir la plantilla Braille en la Mesa de Atención Preferente (MAP). Su personal te acompaña a tu junta hasta que votes. También puede ayudarte una persona de tu confianza.",
+      "frases": [
+        "Soy ciego, ¿cómo voto?",
+        "No veo bien, ¿hay papeletas en braille?",
+        "Tengo discapacidad visual",
+        "¿Existe plantilla braille para votar?"
+      ]
+    },
+    {
+      "id": "politica",
+      "fuente": null,
+      "descripcion": "Preguntas sobre candidatos, partidos o por quién votar (el asistente no opina de política)",
+      "respuesta": "No doy información sobre candidatos ni recomiendo por quién votar. Tu voto es secreto y la decisión es solo tuya.",
+      "frases": [
+        "¿Por quién debo votar?",
+        "¿Cuál es el mejor candidato?",
+        "¿Qué partido me recomiendas?",
+        "¿Quién va a ganar las elecciones?"
+      ]
+    }
+  ]
+}
