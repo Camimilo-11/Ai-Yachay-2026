@@ -25,11 +25,13 @@ def save_json(path, data):
 def source_provenance():
     root=Path(__file__).resolve().parents[3]
     code=Path(__file__).resolve().parents[1]
-    paths=[code/name for name in ['em.cpp','em_cpp.py','compilar_cpp.py','simulacion_rti_em_knn.py',
-                                  'ejecutar_integracion.py']]
+    paths=[code/name for name in ['em.cpp','em_cpp.py','compilar_cpp.py','simulacion_rti_em_knn.py']]
+    paths += [root/'scripts'/'ejecutar_integracion.py']
     paths += [root/name for name in ['requirements.txt','requirements_opcionales.txt']]
     paths+=list((code/'wifi_rti').glob('*.py'))
-    hashes={p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
+    paths=[path for path in paths if path.is_file()]
+    hashes={(p.relative_to(code) if p.is_relative_to(code) else p.relative_to(root)).as_posix():
+            hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
     return {'python':platform.python_version(),'numpy':np.__version__,'source_sha256':hashes,
             'upstream_revision':'91aee04ea938274d014a3981d409f83267ea15c0'}
 

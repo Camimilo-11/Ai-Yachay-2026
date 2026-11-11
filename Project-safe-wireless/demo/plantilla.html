@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="styles.css">
   <script id="demo-data" type="application/json">__DEMO_DATA__</script>
   <script src="charts.js" defer></script>
+  <script src="seguimiento_ejemplo.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -46,7 +47,7 @@
       </aside>
     </div>
     <section class="analysis" aria-label="Análisis de los resultados">
-      <div class="tabs" role="tablist" aria-label="Resultados del experimento"><button id="tab-results" role="tab" aria-selected="true" aria-controls="panel-results" type="button">Comparación de métodos</button><button id="tab-noise" role="tab" aria-selected="false" aria-controls="panel-noise" tabindex="-1" type="button">Calibración con EM</button><button id="tab-rss" role="tab" aria-selected="false" aria-controls="panel-rss" tabindex="-1" type="button">Mediciones RSS</button></div>
+      <div class="tabs" role="tablist" aria-label="Resultados del experimento"><button id="tab-results" role="tab" aria-selected="true" aria-controls="panel-results" type="button">Comparación de métodos</button><button id="tab-noise" role="tab" aria-selected="false" aria-controls="panel-noise" tabindex="-1" type="button">Calibración con EM</button><button id="tab-rss" role="tab" aria-selected="false" aria-controls="panel-rss" tabindex="-1" type="button">Mediciones RSS</button><button id="tab-track" role="tab" aria-selected="false" aria-controls="panel-track" tabindex="-1" type="button">Seguimiento</button></div>
       <div id="panel-results" role="tabpanel" aria-labelledby="tab-results" class="tab-panel">
         <div class="panel-heading"><div><h2>Resultado del escenario completo</h2><p class="muted">Métricas agregadas de sus 30 consultas. Pulsa un método para verlo en el mapa.</p></div><span class="tag secondary">Menor error es mejor</span></div>
         <div class="table-scroll"><table><thead><tr><th scope="col">Método</th><th scope="col">Error medio (m)</th><th scope="col">RMSE (m)</th><th scope="col">Predicciones válidas</th><th scope="col">Error en esta consulta (m)</th></tr></thead><tbody id="results-body"></tbody></table></div>
@@ -61,6 +62,19 @@
         <div class="panel-heading"><div><h2>La señal que recibió cada enlace</h2><p class="muted">Lecturas sintéticas de la consulta seleccionada. Los enlaces ausentes se muestran sin valor.</p></div><span class="tag secondary">RSS en dBm</span></div>
         <div class="chart-scroll"><svg id="rss-chart" viewBox="0 0 1000 280" role="img" aria-label="RSS por enlace para la consulta seleccionada"></svg></div>
         <p class="micro">Los enlaces del mapa muestran mediciones guardadas; no son un mapa físico de alcance Wi-Fi.</p>
+      </div>
+      <div id="panel-track" role="tabpanel" aria-labelledby="tab-track" class="tab-panel" hidden>
+        <div class="panel-heading"><div><h2>Recorrido y ocupación</h2><p class="muted">Explora el ejemplo sintético o carga posiciones de un recorrido propio.</p></div><span id="track-geometry" class="tag secondary"></span></div>
+        <div class="track-import">
+          <div><label for="track-file">Datos del recorrido (CSV)</label><input id="track-file" type="file" accept=".csv,text/csv"><p class="micro">Encabezados requeridos: <code>x_m,y_m</code>, coordenadas en metros. Cada fila es una posición, en orden.</p></div>
+          <div><label for="floorplan-file">Plano de fondo (opcional)</label><input id="floorplan-file" type="file" accept="image/png,image/jpeg"><p class="micro">PNG o JPG; se ajusta al área de la sala del escenario.</p></div>
+          <div class="track-actions"><button id="track-example" class="quiet" type="button">Restaurar ejemplo</button><button id="track-clear" class="quiet" type="button" disabled>Limpiar recorrido</button></div>
+        </div>
+        <p id="track-status" class="track-status" role="status" aria-live="polite">Carga un CSV de posiciones para empezar. El archivo se procesa localmente en este navegador.</p>
+        <div class="chart-scroll track-chart"><svg id="track-chart" viewBox="0 0 620 570" role="img" aria-label="Recorrido de posiciones con mapa de calor"></svg></div>
+        <div class="legend track-legend"><span><i class="track-heat" aria-hidden="true"></i>Ocupación relativa</span><span><i class="track-start" aria-hidden="true"></i>Inicio</span><span><i class="track-current" aria-hidden="true"></i>Posición actual</span></div>
+        <div class="track-playback"><button id="track-play" class="primary" type="button" disabled>Reproducir recorrido</button><div class="scrubber"><label for="track-step">Posición <strong id="track-step-label">—</strong></label><input id="track-step" type="range" min="0" max="0" value="0" step="1" disabled></div><dl class="track-metrics"><div><dt>Puntos</dt><dd id="track-count">—</dd></div><div><dt>Distancia recorrida</dt><dd id="track-distance">—</dd></div><div><dt>Posición actual</dt><dd id="track-position">—</dd></div></dl></div>
+        <p class="micro">El ejemplo precargado contiene 120 posiciones sintéticas. El mapa de calor resume su concentración espacial; las posiciones repetidas representan paradas. Al importar un CSV, sus datos sustituyen al ejemplo. Esta vista no ejecuta una nueva estimación RTI.</p>
       </div>
     </section>
     <footer><span id="source-label"></span><span>Camilo Vásquez · Yachay Tech · Demo local sin conexión</span></footer>
