@@ -1,6 +1,6 @@
 {
   "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-  "tau": 0.4,
+  "tau": 0.6,
   "openai_model": "gpt-6-luna",
   "fallback": "Todavía no tengo esa respuesta. Pregunta a los miembros de tu junta receptora del voto; ellos pueden orientarte.",
   "fuente_documento": "Instructivo para Miembros de las Juntas Receptoras del Voto, Elecciones Seccionales y CPCCS 2027 (CNE), págs. 4–7",
@@ -112,6 +112,20 @@
         "No veo bien, ¿hay papeletas en braille?",
         "Tengo discapacidad visual",
         "¿Existe plantilla braille para votar?"
+      ]
+    },
+    {
+      "id": "lugar",
+      "fuente": "CNE, consulta del lugar de votación",
+      "descripcion": "Dónde le toca votar a la persona (recinto, junta o mesa) y cómo consultarlo con su cédula",
+      "respuesta": "Para saber dónde te toca votar, entra a lugarvotacion.cne.gob.ec y escribe tu número de cédula y tu fecha de nacimiento. También puedes consultarlo en la aplicación CNE APP o en www.cne.gob.ec, en la opción «Consulta tu lugar de votación».",
+      "frases": [
+        "¿Dónde me toca votar?",
+        "¿Dónde voto?",
+        "¿Cuál es mi recinto electoral?",
+        "¿En qué junta me toca votar?",
+        "¿Cómo sé en qué escuela voto?",
+        "¿Dónde queda mi mesa de votación?"
       ]
     },
     {
