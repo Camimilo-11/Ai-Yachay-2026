@@ -1,0 +1,90 @@
+﻿clave;tipo;español;kichwa_borrador;kichwa_revisado;revisado_por;comentario
+QU.h1;titular;Pregunta sin miedo, vota con confianza;Mana manchashpa tapuy, iñishpa akllay;;;Titular principal
+QU.hours;texto;Votación;Akllay;;;
+QU.hint;texto;<b>Llega antes de las 16:00.</b> A las 17:00 se cierra la votación y quien siga en la fila ya no puede votar.;"<b>16:00 ñawpa chayamuy.</b> 17:00 pachapi akllayka wichkarin; chaypi suyakukkunaka manañami akllay ushanchu.";;;
+QU.m0;texto;Hola. Estoy aquí para ayudarte con tus dudas sobre cómo votar.;Alli puncha. Domingo 29 de noviembre punchapi akllankapak imatapash tapuway.;;;
+QU.cap;texto;Aquí tus dudas sobre elecciones;Kaypi akllaymanta tapuykuna;;;
+QU.cxt;texto;Asistente electoral;Akllay yanapak;;;
+QU.cxs;texto;Tus dudas sobre cómo votar;Imashina akllanamanta tapuykuna;;;
+QU.sugt;texto;Puedes empezar con una pregunta;Shuk tapuywan kallariy;;;
+QU.inplabel;texto;Escribe tu pregunta;Tapuyta killkay;;;
+QU.cxhint;texto;Puedes escribir o usar tu voz.;Killkay, mana kashpa rimay.;;;
+QU.mic;texto;Hablar;Rimay;;;
+QU.sendt;texto;Enviar;Kachay;;;
+QU.c0;texto;¿Qué documento llevo?;¿Ima kamutatak apana kani?;;;
+QU.c1;texto;No sé firmar;Shutita killkayta mana yachanichu;;;
+QU.c2;texto;Necesito ayuda para votar;Akllankapak yanapayta mutsurini;;;
+QU.c3;texto;¿Puedo usar el celular?;¿Celularta hapiy ushanichu?;;;
+QU.c4;texto;Voy con mi bebé en brazos;Wawata markashpa rini;;;
+QU.c5;texto;¿Dónde me toca votar?;¿Maypitak akllana kani?;;;
+QU.sp;texto;Cómo votar;Imashina akllana;;;
+QU.sp1t;texto;Llega a tu recinto;Recintoman chayamuy;;;
+QU.sp1;texto;Entre las 07:00 y las 16:00. A las 17:00 se cierra la votación.;07:00 pachamanta 16:00 pachakaman chayamuy. 17:00 pachapi akllayka wichkarin.;;;
+QU.sp2t;texto;Entrega tu cédula;Cédulata kuy;;;
+QU.sp2;texto;El original de tu cédula o tu pasaporte. En la mesa revisan que estés en el padrón.;Kikin cédulata, mana kashpa pasaportata kuy. Mesapi padrónpi kashkata rikunkuna.;;;
+QU.sp3t;texto;Vota en secreto;Pakalla akllay;;;
+QU.sp3;texto;Recibe tus papeletas y vota detrás del biombo.;Papeletakunata chaskishpa, biombo washapi akllay.;;;
+QU.spct;texto;Guarda el celular;Celularta pakay;;;
+QU.spc;texto;No lo uses detrás del biombo, ni otro aparato electrónico. Si lo usas, la mesa llena una boleta por presunta infracción electoral.;Biombo washapi akllakushpaka ama celularta, ama shuk electrónico antatapash hapiychu. Hapishpaka, mesa runakunami shuk boletata killkanka.;;;
+QU.sp4t;texto;Firma o pon tu huella;Shutita killkay, mana kashpa rukata churay;;;
+QU.sp4;texto;Firmas en el padrón y te devuelven tu cédula con el certificado de votación.;Padrónpi shutita killkay. Certificado de votación kamuta, cédulatapash kutichinkuna.;;;
+QU.hp0;texto;<b>Voto asistido</b>Puede ayudarte una persona de tu confianza.;<b>Yanapashka akllay</b>Kikin iñishka runa yanapay ushan.;;;
+QU.hp1;texto;<b>Votación preferencial</b>Personas con discapacidad, adultas mayores, mujeres embarazadas y quienes llevan niños en brazos votan sin hacer fila.;<b>Mana suyashpa akllay</b>Discapacidadwan runakuna, yuyak runakuna, wiksayuk warmikuna, wawata markashka runakunapash mana suyashpa akllankuna.;;;
+QU.hp2;texto;<b>Mesa de Atención Preferente</b>Si no puedes llegar a tu junta, votas en la MAP del recinto.;<b>Mesa de Atención Preferente</b>Kikin juntaman mana chayay ushashpaka, recintopi MAP mesapi akllanki.;;;
+QU.hp3;texto;<b>Plantilla Braille</b>Si tienes discapacidad visual, pídela en la MAP.;<b>Braille plantilla</b>Mana rikuy ushashpaka, MAP mesapi mañay.;;;
+QU.foot;texto;"Proyecto académico independiente; no es un sitio del CNE. La información viene del <i>Instructivo para Miembros de las Juntas Receptoras del Voto, Elecciones Seccionales y CPCCS 2027</i> (CNE), págs. 4–7, y de la consulta del lugar de votación del CNE. Aunque el instructivo dice 2027, el CNE adelantó estas elecciones al domingo 29 de noviembre de 2026. El día de la votación, ante cualquier duda, pregunta a los miembros de tu junta.";"Yachanapak rurashkami; mana CNE-pa web pankachu. Willaykunaka CNE-pa <i>Instructivo para Miembros de las Juntas Receptoras del Voto, Elecciones Seccionales y CPCCS 2027</i> kamumanta, CNE-pa maypi akllana maskaymantapash llukshin (4–7 pankakuna). Kamupi 2027 nishpapash, CNE-mi kay akllaykunata domingo 29 de noviembre de 2026 punchaman ñawpachirka. Akllay punchapi, imatapash mana yachashpaka, junta runakunata tapuy.";;;
+QU.gk;texto;Cómo votar;Imashina akllana;;;
+QU.g0;texto;<b>07:00 – 17:00</b><small>Llega antes de las 16:00</small>;<b>07:00 – 17:00</b><small>16:00 ñawpa chayamuy</small>;;;
+QU.g1;texto;<b>Lleva tu cédula</b><small>original, o tu pasaporte</small>;<b>Cédulata apamuy</b><small>kikin cédula, mana kashpa pasaporte</small>;;;
+QU.g2;texto;<b>Celular guardado</b><small>no se usa al votar</small>;<b>Celularta pakay</b><small>akllakushpa ama hapiychu</small>;;;
+QU.g3;texto;<b>Firma o pon tu huella</b><small>al final, en el padrón</small>;<b>Shutita killkay</b><small>mana kashpa rukata churay</small>;;;
+QU.gopen;texto;Ver el instructivo;Yachachik kamuta rikuy;;;
+QU.st;texto;Instructivo para votar;Imashina akllana;;;
+QU.r0;texto;"<b>Domingo 29 de noviembre de 2026, de 07:00 a 17:00</b>Llega entre las 07:00 y las 16:00. A las 17:00 se cierra la votación; quien siga en la fila ya no vota y recibe un certificado de presentación.";"<b>Domingo 29 de noviembre de 2026, 07:00 – 17:00</b>07:00 pachamanta 16:00 pachakaman chayamuy. 17:00 pachapi akllayka wichkarin; suyakukkunaka manañami akllanchu, certificado de presentación kamullata chaskinkuna.";;;
+QU.r1;texto;<b>Lleva tu cédula</b>El original de tu cédula, o tu pasaporte. Al final te lo devuelven con tu certificado de votación.;<b>Cédulata apamuy</b>Kikin cédulata, mana kashpa pasaportata apamuy. Tukuripi certificado de votación kamuwan kutichinkuna.;;;
+QU.r2;texto;<b>No uses el celular</b>No se puede usar el celular ni otro aparato electrónico mientras votas detrás del biombo. Si lo usas, la mesa llena una boleta por presunta infracción electoral.;<b>Ama celularta hapiychu</b>Biombo washapi akllakushpaka ama celularta, ama shuk electrónico antatapash hapiychu. Hapishpaka, mesa runakunami shuk boletata killkanka.;;;
+QU.r3;texto;<b>Firma al final</b>Después de votar firmas en el padrón electoral. Si no puedes firmar, pones tu huella dactilar.;<b>Tukuripi shutita killkay</b>Akllashka washaka padrónpi shutita killkay. Mana killkay ushashpaka, rukata churay.;;;
+QU.h3;texto;Casos especiales;Yanapaykuna;;;
+QU.s0;texto;<b>Voto asistido</b>Si necesitas ayuda para marcar o depositar tu voto, puede ayudarte una persona de tu confianza.;<b>Yanapashka akllay</b>Akllankapak yanapayta mutsurishpaka, kikin iñishka runa yanapay ushan.;;;
+QU.s1;texto;<b>Votación preferencial</b>Personas con discapacidad, adultas mayores, mujeres embarazadas y quienes llevan niños en brazos pasan a votar sin hacer fila.;<b>Mana suyashpa akllay</b>Discapacidadwan runakuna, yuyak runakuna, wiksayuk warmikuna, wawata markashka runakunapash mana suyashpa akllankuna.;;;
+QU.s2;texto;<b>Mesa de Atención Preferente</b>Si por tu condición física no puedes llegar a tu junta, votas en la Mesa de Atención Preferente (MAP) del recinto.;<b>Mesa de Atención Preferente</b>Kikin juntaman mana chayay ushashpaka, recintopi MAP mesapi akllanki.;;;
+QU.s3;texto;"<b>Plantilla Braille</b>Si tienes discapacidad visual, pídela en la MAP; su personal te acompaña a tu junta hasta que votes.";"<b>Braille plantilla</b>Mana rikuy ushashpaka, MAP mesapi mañay; paykunami juntakaman pushanka.";;;
+QU.srcn;texto;Fuente: Instructivo para Miembros de las Juntas Receptoras del Voto, Elecciones Seccionales y CPCCS 2027 (CNE), págs. 4–7. El CNE adelantó estas elecciones al 29 de noviembre de 2026.;Pukyu: Instructivo para Miembros de las Juntas Receptoras del Voto, Elecciones Seccionales y CPCCS 2027 (CNE), 4–7 pankakuna. CNE-mi kay akllaykunata 29 de noviembre de 2026 punchaman ñawpachirka.;;;
+QU_ATTR.ph;texto;Ej.: ¿qué documento llevo?;Shina: ¿ima kamutatak apana kani?;;;Lo lee el lector de pantalla o aparece dentro del campo de texto
+QU_ATTR.ph2;texto;Escribe tu pregunta;Tapuyta killkay;;;Lo lee el lector de pantalla o aparece dentro del campo de texto
+QU_ATTR.cxclose;texto;Cerrar el asistente;Yanapakta wichkay;;;Lo lee el lector de pantalla o aparece dentro del campo de texto
+QU_ATTR.inp;texto;Escribe tu pregunta sobre las elecciones;Akllaymanta tapuyta killkay;;;Lo lee el lector de pantalla o aparece dentro del campo de texto
+QU_ATTR.send;texto;Enviar pregunta;Tapuyta kachay;;;Lo lee el lector de pantalla o aparece dentro del campo de texto
+QU_ATTR.guide;texto;Abrir el instructivo para votar;Imashina akllana yachachik kamuta paskay;;;Lo lee el lector de pantalla o aparece dentro del campo de texto
+QU_ATTR.close;texto;Cerrar instructivo;Wichkay;;;Lo lee el lector de pantalla o aparece dentro del campo de texto
+QU_ATTR.pgnext;texto;Ver los casos especiales;Yanapaykunata rikuy;;;Lo lee el lector de pantalla o aparece dentro del campo de texto
+QU_ATTR.pgprev;texto;Volver al instructivo;Kutiy;;;Lo lee el lector de pantalla o aparece dentro del campo de texto
+UI.qu.typing;texto;Buscando la respuesta…;Maskakun…;;;Mensaje del asistente o del micrófono
+UI.qu.listen;texto;Escuchar;Uyay;;;Mensaje del asistente o del micrófono
+UI.qu.stop;texto;Detener;Sayachiy;;;Mensaje del asistente o del micrófono
+UI.qu.listening;texto;Te escucho… habla ahora;Uyakuni… rimay;;;Mensaje del asistente o del micrófono
+UI.qu.who_bot;texto;Asistente;Yanapak;;;Mensaje del asistente o del micrófono
+UI.qu.who_user;texto;Tú;Kan;;;Mensaje del asistente o del micrófono
+UI.qu.micErr;texto;No pude usar el micrófono. Por favor, escribe tu pregunta.;Micrófonowan mana ushanichu. Tapuyta killkay.;;;Mensaje del asistente o del micrófono
+UI.qu.micDenied;texto;El navegador no dio permiso al micrófono. Permítelo en el candado de la barra de direcciones o escribe tu pregunta.;Micrófonota mana sakishkachu. Tapuyta killkay.;;;Mensaje del asistente o del micrófono
+UI.qu.micNet;texto;Para entender tu voz se necesita internet. Por ahora, escribe tu pregunta.;Rimayta hamutankapakka internet mutsurin. Tapuyta killkay.;;;Mensaje del asistente o del micrófono
+UI.qu.micNone;texto;No encontré un micrófono conectado. Por favor, escribe tu pregunta.;Micrófonota mana tarinichu. Tapuyta killkay.;;;Mensaje del asistente o del micrófono
+UI.qu.err;texto;No pude conectar con el asistente. Intenta de nuevo en un momento.;Yanapakwan mana tinkiy ushanichu. Kutin tapuy.;;;Mensaje del asistente o del micrófono
+AQ.saludo;texto;Hola. Pregúntame por el horario, el documento que debes llevar, el uso del celular, cómo firmar o los casos especiales: voto asistido, votación sin fila y Mesa de Atención Preferente.;Alli puncha. Akllay pachamanta, cédulamanta, celularmanta, shutita killkaymanta, yanapashka akllaymantapash tapuway.;;;Respuesta del asistente
+AQ.gracias;texto;Con gusto. Que tengas una buena jornada de votación.;Alli akllay puncha kachun.;;;Respuesta del asistente
+AQ.horario;texto;"La votación es de 07:00 a 17:00. Te recomendamos llegar antes de las 16:00. A las 17:00 se cierra y quien siga en la fila ya no puede votar; solo recibe un certificado de presentación.";"Akllayka 07:00 pachamanta 17:00 pachakaman. 16:00 ñawpa chayamuy. 17:00 pachapi wichkarin; suyakukkunaka manañami akllanchu, certificado de presentación kamullata chaskinkuna.";;;Respuesta del asistente
+AQ.fecha;texto;Las elecciones son el domingo 29 de noviembre de 2026. Puedes votar de 07:00 a 17:00.;Akllaykunaka domingo 29 de noviembre de 2026 punchapimi. 07:00 pachamanta 17:00 pachakaman akllay ushanki.;;;Respuesta del asistente
+AQ.documento;texto;Lleva el original de tu cédula. También sirve el pasaporte. En la mesa revisan que estés en el padrón y al final te devuelven el documento junto con tu certificado de votación.;"Kikin cédulata apamuy; pasaportepash ushanmi. Mesapi padrónpi kashkata rikunkuna, tukuripi certificado de votación kamuwan kutichinkuna.";;;Respuesta del asistente
+AQ.celular;texto;No puedes usar el celular ni otro aparato electrónico mientras votas detrás del biombo. Guárdalo antes de recibir tus papeletas. Si lo usas, la mesa llena una boleta por presunta infracción electoral.;Biombo washapi akllakushpaka ama celularta, ama shuk electrónico antatapash hapiychu. Papeletakunata chaskinkapak ñawpa pakay. Hapishpaka, mesa runakunami shuk boletata killkanka.;;;Respuesta del asistente
+AQ.firma;texto;Al final firmas en el padrón electoral. Si no puedes firmar, pones tu huella dactilar. Después te entregan tu certificado de votación y tu cédula.;Tukuripi padrónpi shutita killkay. Mana killkay ushashpaka, rukata churay. Chaymanta certificado de votación kamuta, cédulatapash kunkuna.;;;Respuesta del asistente
+AQ.asistido;texto;Si necesitas ayuda para marcar o depositar tu voto, puede ayudarte una persona de tu confianza. Esto se llama votación asistida.;Akllankapak yanapayta mutsurishpaka, kikin iñishka runa yanapay ushan. Kaytaka voto asistido ninkuna.;;;Respuesta del asistente
+AQ.preferencial;texto;Las personas con discapacidad, las personas adultas mayores, las mujeres embarazadas y quienes llevan niños en brazos pasan directamente a votar, sin hacer fila.;Discapacidadwan runakuna, yuyak runakuna, wiksayuk warmikuna, wawata markashka runakunapash mana suyashpa akllankuna.;;;Respuesta del asistente
+AQ.map;texto;Si por tu condición física no puedes llegar hasta tu junta, puedes votar en la Mesa de Atención Preferente (MAP) del recinto. El presidente de tu junta lleva hasta ahí el padrón, las papeletas y tu certificado.;Kikin juntaman mana chayay ushashpaka, recintopi Mesa de Atención Preferente (MAP) nishkapi akllay ushanki. Junta umami padrónta, papeletakunata, certificadotapash chayman apamunka.;;;Respuesta del asistente
+AQ.braille;texto;Si tienes discapacidad visual, puedes pedir la plantilla Braille en la Mesa de Atención Preferente (MAP). Su personal te acompaña a tu junta hasta que votes. También puede ayudarte una persona de tu confianza.;Mana rikuy ushashpaka, MAP mesapi Braille plantillata mañay. Paykunami juntakaman pushanka. Shuk iñishka runapash yanapay ushan.;;;Respuesta del asistente
+AQ.lugar;texto;Para saber dónde te toca votar, entra a lugarvotacion.cne.gob.ec y escribe tu número de cédula y tu fecha de nacimiento. También puedes consultarlo en la aplicación CNE APP o en www.cne.gob.ec, en la opción «Consulta tu lugar de votación».;"Maypi akllanata yachankapakka, lugarvotacion.cne.gob.ec nishkaman yaykuy; cédula yupayta, wacharishka punchatapash killkay. CNE APP nishkapipash, www.cne.gob.ec nishkapipash maskay ushanki.";;;Respuesta del asistente
+RESP_POLITICA_QU;constante;No doy información sobre candidatos ni recomiendo por quién votar. Tu voto es secreto y la decisión es solo tuya.;"Candidatokunamanta mana willanichu; pita akllanatapash mana nini. Akllayka pakallami, kikinllami akllanki.";;;Respuesta del asistente
+RESP_NO_SE_QU;constante;"Todavía no tengo esa respuesta. Pregunta a los miembros de tu junta receptora del voto; ellos pueden orientarte.";"Kay tapuyta manarak yachanichu. Junta runakunata tapuy; paykunami yanapanka.";;;Respuesta del asistente
+FUENTE.1;fragmento;Fuente: instructivo CNE, ;Pukyu: CNE yachachik kamu, ;;;Inicio de la fuente de cada respuesta
+FUENTE.2;fragmento;Fuente: ;Pukyu: ;;;Fuente cuando no viene del instructivo
+FUENTE.3;fragmento;págs. (páginas); pankakuna;;;Va después de los números de página
+FUENTE.4;fragmento;pág. (página); panka;;;Va después del número de página
