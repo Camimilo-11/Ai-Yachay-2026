@@ -90,5 +90,47 @@ window.DemoCharts = (() => {
     parts.push(text(x0+w/2,273,'Enlaces de la red sintética','text-anchor="middle"'));
     svg.innerHTML=parts.join('');
   }
-  return {scene,noise,rss};
+  function tracking(svg, points, room, currentIndex, floorplan) {
+    if(!Array.isArray(points)||points.length<2){
+      svg.innerHTML=`<rect x="74" y="30" width="470" height="470" fill="#fbfdfc" stroke="${colors.ink}" stroke-width="2"/>${text(309,260,'Carga un CSV con coordenadas x,y','text-anchor="middle"')}${text(309,282,'para ver el recorrido y el mapa de calor.','text-anchor="middle" font-size="11"')}`;
+      return;
+    }
+    const left=74,top=30,size=470,cells=38,sigma=room/17;
+    const xy=point=>[left+point[0]/room*size,top+size-point[1]/room*size];
+    const limit=Math.max(0,Math.min(points.length-1,currentIndex));
+    const shown=points.slice(0,limit+1);
+    const density=[];let peak=0;
+    for(let row=0;row<cells;row++)for(let col=0;col<cells;col++){
+      const x=(col+.5)*room/cells,y=(row+.5)*room/cells;
+      let value=0;
+      for(const point of points){const dx=x-point[0],dy=y-point[1];value+=Math.exp(-(dx*dx+dy*dy)/(2*sigma*sigma));}
+      density.push({row,col,value});peak=Math.max(peak,value);
+    }
+    const parts=[`<rect x="${left}" y="${top}" width="${size}" height="${size}" fill="#f8fbfc"/>`];
+    if(floorplan)parts.push(`<image x="${left}" y="${top}" width="${size}" height="${size}" href="${floorplan}" preserveAspectRatio="none" opacity=".82"/>`);
+    for(const cell of density){
+      const strength=cell.value/Math.max(peak,1e-12);
+      if(strength<.035)continue;
+      const rgb=strength<.5?[35,199,208].map((v,i)=>Math.round(v+(255-v)*strength*1.8)):[255,225,80].map((v,i)=>Math.round(v+([242,91,61][i]-v)*(strength-.5)*2));
+      const x=left+cell.col*size/cells,y=top+size-(cell.row+1)*size/cells;
+      parts.push(`<rect x="${x}" y="${y}" width="${size/cells+.25}" height="${size/cells+.25}" fill="rgb(${rgb.join(',')})" opacity="${Math.min(.72,.18+strength*.56)}"><title>Ocupación relativa ${Math.round(strength*100)}%</title></rect>`);
+    }
+    for(let i=0;i<=4;i++){
+      const value=room*i/4,x=left+size*i/4,y=top+size-size*i/4;
+      parts.push(line(x,top,x,top+size,'stroke="#e2e9e9" opacity=".75"'),line(left,y,left+size,y,'stroke="#e2e9e9" opacity=".75"'));
+      parts.push(text(x,top+size+22,value.toFixed(1),'text-anchor="middle" font-size="10"'),text(left-12,y+4,value.toFixed(1),'text-anchor="end" font-size="10"'));
+    }
+    parts.push(`<rect x="${left}" y="${top}" width="${size}" height="${size}" fill="none" stroke="${colors.ink}" stroke-width="2"/>`);
+    if(shown.length>1){
+      const coords=shown.map(point=>xy(point).join(',')).join(' ');
+      parts.push(`<polyline points="${coords}" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>`);
+      parts.push(`<polyline points="${coords}" fill="none" stroke="${colors.ink}" stroke-width="2.5" stroke-dasharray="8 7" stroke-linecap="round" stroke-linejoin="round"/>`);
+    }
+    const first=xy(points[0]),last=xy(points[limit]);
+    parts.push(`<g><title>Inicio: (${points[0][0].toFixed(2)}, ${points[0][1].toFixed(2)}) m</title><circle cx="${first[0]}" cy="${first[1]}" r="11" fill="${colors.teal}" stroke="white" stroke-width="3"/></g>`);
+    parts.push(`<g><title>Posición actual ${limit+1}: (${points[limit][0].toFixed(2)}, ${points[limit][1].toFixed(2)}) m</title><path d="M${last[0]-9} ${last[1]-9}L${last[0]+9} ${last[1]+9}M${last[0]+9} ${last[1]-9}L${last[0]-9} ${last[1]+9}" fill="none" stroke="white" stroke-width="7" stroke-linecap="round"/><path d="M${last[0]-9} ${last[1]-9}L${last[0]+9} ${last[1]+9}M${last[0]+9} ${last[1]-9}L${last[0]-9} ${last[1]+9}" fill="none" stroke="${colors.orange}" stroke-width="3.5" stroke-linecap="round"/></g>`);
+    parts.push(text(left+size/2,548,'x (m)','text-anchor="middle"'),text(22,top+size/2,'y (m)',`text-anchor="middle" transform="rotate(-90 22 ${top+size/2})"`));
+    svg.innerHTML=parts.join('');
+  }
+  return {scene,noise,rss,tracking};
 })();
