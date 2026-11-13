@@ -807,7 +807,7 @@ body.chat-open .guide { opacity: 0; visibility: hidden; pointer-events: none; tr
    Cuando exista el backend, solo cambia la función responder() más abajo. */
 const KB = [
   { id: "saludo", kw: { hola: 1, ola: 1, buenas: 1, buenos: 1 }, src: null,
-    a: "Hola. Pregúntame por el horario, el documento que debes llevar, el uso del celular, cómo firmar o los casos especiales: voto asistido, votación sin fila y Mesa de Atención Preferente." },
+    a: "Hola. Estoy aquí para ayudarte con tus dudas sobre cómo votar." },
   { id: "gracias", kw: { gracias: 1 }, src: null, a: "Con gusto. Que tengas una buena jornada de votación." },
   { id: "lugar", src: "CNE, consulta del lugar de votación",
     kw: { recinto: 1, lugar: 0.7, donde: 0.5, escuela: 0.6, colegio: 0.6, mesa: 0.4, toca: 0.5, "donde voto": 1.5, "donde votar": 1.5, "donde me toca": 1.5, "lugar de votacion": 1.5, "en que junta": 1.2 },
@@ -868,7 +868,7 @@ function sim(t, k) {
 }
 /* Borrador en kichwa (sin validar con hablantes) */
 const AQ = {
-  saludo: "Alli puncha. Akllay pachamanta, cédulamanta, celularmanta, shutita killkaymanta, yanapashka akllaymantapash tapuway.",
+  saludo: "Alli puncha. Akllanamanta tapuykunapi yanapankapakmi kaypi kani.",
   gracias: "Alli akllay puncha kachun.",
   horario: "Akllayka 07:00 pachamanta 17:00 pachakaman. 16:00 ñawpa chayamuy. 17:00 pachapi wichkarin; suyakukkunaka manañami akllanchu, certificado de presentación kamullata chaskinkuna.",
   fecha: "Akllaykunaka domingo 29 de noviembre de 2026 punchapimi. 07:00 pachamanta 17:00 pachakaman akllay ushanki.",
@@ -938,6 +938,35 @@ function responderLocal(texto) {
   return { texto: qu ? (AQ[best.id] || best.a) : best.a, fuente, intent: best.id };
 }
 
+/* ===== Saludos y agradecimientos =====
+   No son preguntas del instructivo: la página los responde sin preguntar al modelo y, al saludo, ofrece temas.
+   Si el saludo viene con una pregunta («hola, ¿a qué hora voto?»), se quita el saludo y la pregunta sigue su camino. */
+const CORTESIA = [
+  ["saludo", ["hola", "holi", "ola", "buenas", "wenas", "buenos dias", "buen dia", "buenas tardes", "buenas noches",
+              "que tal", "como estas", "alli puncha", "alli chishi", "alli tuta", "imanalla", "rimaykullayki"]],
+  ["gracias", ["gracias", "muchas gracias", "mil gracias", "yupaychani", "pagui", "dios le pague"]]
+];
+const CORTESIA_F = CORTESIA.flatMap(([tipo, fs]) => fs.map(f => ({ tipo, ws: f.split(" ").map(norm) })))
+  .sort((a, b) => b.ws.length - a.ws.length);
+const RELLENO = new Set(["senor", "senora", "senorita", "amigo", "amiga", "asistente", "y", "muy", "todos"].map(norm));
+const SUGERENCIAS = ["horario", "documento", "lugar"];
+const SUGERIR = { es: "Escribe tu pregunta o elige un tema:", qu: "Tapuyta killkay, mana kashpaka shuk yuyayta akllay:" };
+function cortesia(texto) {
+  const orig = texto.split(/\s+/).filter(w => norm(w));
+  const ws = orig.map(norm);
+  let i = 0, fin = 0;
+  const tipos = new Set();
+  while (i < ws.length) {
+    const f = CORTESIA_F.find(f => f.ws.every((w, j) => ws[i + j] === w));
+    if (f) { tipos.add(f.tipo); i += f.ws.length; fin = i; continue; }
+    if (RELLENO.has(ws[i])) { i++; continue; }
+    break;
+  }
+  if (!tipos.size) return null;
+  if (i >= ws.length) return { tipo: tipos.has("gracias") ? "gracias" : "saludo" };
+  return { resto: orig.slice(fin).join(" ") };
+}
+
 /* ===== Conexión con el backend (app.py) =====
    Si la página se abre desde el servidor local (uvicorn app:app), las preguntas van a /api/chat,
    que usa los modelos del notebook. Si no hay servidor (por ejemplo, la página publicada),
@@ -955,6 +984,12 @@ async function checkBackend() {
 }
 async function responder(texto) {
   const qu = window.LANG === "qu";
+  const c = cortesia(texto);
+  if (c && c.tipo === "saludo")
+    return { texto: respuestaDe("saludo").texto + " " + (SUGERIR[window.LANG] || SUGERIR.es), fuente: null,
+             intent: "saludo", sugerencias: SUGERENCIAS };
+  if (c && c.tipo) return respuestaDe(c.tipo);
+  if (c && c.resto) texto = c.resto;
   if (await checkBackend()) {
     try {
       const r = await fetch(API_CHAT, { method: "POST", headers: { "Content-Type": "application/json" },
@@ -1126,14 +1161,15 @@ checkBackend();
       if (res.fuente) { const s = document.createElement("span"); s.className = "src"; s.textContent = res.fuente; wait.appendChild(s); }
       addListen(wait, res.texto);
       if (res.opciones) addOptions(wait, res.opciones);
+      if (res.sugerencias) addOptions(wait, res.sugerencias, false);
       showFromTop(true);
     }, reduce ? 0 : 650);
   }
   /* «¿Tu pregunta es sobre…?»: botones con las situaciones posibles y «Ninguna de estas» */
-  function addOptions(d, ids) {
+  function addOptions(d, ids, ninguna = true) {
     const box = document.createElement("div");
     box.className = "opts"; box.setAttribute("role", "group");
-    [...ids, "__none"].forEach(id => {
+    [...ids, ...(ninguna ? ["__none"] : [])].forEach(id => {
       const b = document.createElement("button");
       b.type = "button"; b.className = "opt" + (id === "__none" ? " none" : ""); b.dataset.opc = id;
       b.setAttribute("aria-pressed", "false");

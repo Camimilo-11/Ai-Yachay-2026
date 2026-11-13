@@ -70,7 +70,7 @@ UI.qu.micDenied;texto;El navegador no dio permiso al micrófono. Permítelo en e
 UI.qu.micNet;texto;Para entender tu voz se necesita internet. Por ahora, escribe tu pregunta.;Rimayta hamutankapakka internet mutsurin. Tapuyta killkay.;;;Mensaje del asistente o del micrófono
 UI.qu.micNone;texto;No encontré un micrófono conectado. Por favor, escribe tu pregunta.;Micrófonota mana tarinichu. Tapuyta killkay.;;;Mensaje del asistente o del micrófono
 UI.qu.err;texto;No pude conectar con el asistente. Intenta de nuevo en un momento.;Yanapakwan mana tinkiy ushanichu. Kutin tapuy.;;;Mensaje del asistente o del micrófono
-AQ.saludo;texto;Hola. Pregúntame por el horario, el documento que debes llevar, el uso del celular, cómo firmar o los casos especiales: voto asistido, votación sin fila y Mesa de Atención Preferente.;Alli puncha. Akllay pachamanta, cédulamanta, celularmanta, shutita killkaymanta, yanapashka akllaymantapash tapuway.;;;Respuesta del asistente
+AQ.saludo;texto;Hola. Estoy aquí para ayudarte con tus dudas sobre cómo votar.;Alli puncha. Akllanamanta tapuykunapi yanapankapakmi kaypi kani.;;;Respuesta del asistente al saludo
 AQ.gracias;texto;Con gusto. Que tengas una buena jornada de votación.;Alli akllay puncha kachun.;;;Respuesta del asistente
 AQ.horario;texto;"La votación es de 07:00 a 17:00. Te recomendamos llegar antes de las 16:00. A las 17:00 se cierra y quien siga en la fila ya no puede votar; solo recibe un certificado de presentación.";"Akllayka 07:00 pachamanta 17:00 pachakaman. 16:00 ñawpa chayamuy. 17:00 pachapi wichkarin; suyakukkunaka manañami akllanchu, certificado de presentación kamullata chaskinkuna.";;;Respuesta del asistente
 AQ.fecha;texto;Las elecciones son el domingo 29 de noviembre de 2026. Puedes votar de 07:00 a 17:00.;Akllaykunaka domingo 29 de noviembre de 2026 punchapimi. 07:00 pachamanta 17:00 pachakaman akllay ushanki.;;;Respuesta del asistente
@@ -101,3 +101,4 @@ OPC.map;fragmento;No puedo llegar hasta mi mesa;Juntaman mana chayay ushani;;;Op
 OPC.braille;fragmento;Personas que no ven (Braille);Mana rikuy ushani (Braille);;;Opción de «¿Tu pregunta es sobre…?»
 OPC.lugar;fragmento;Dónde me toca votar;Maypi akllana;;;Opción de «¿Tu pregunta es sobre…?»
 OPC.politica;fragmento;Candidatos o por quién votar;Candidatokuna;;;Opción de «¿Tu pregunta es sobre…?»
+SUGERIR.qu;fragmento;Escribe tu pregunta o elige un tema:;Tapuyta killkay, mana kashpaka shuk yuyayta akllay:;;;Después del saludo, antes de los botones de temas
