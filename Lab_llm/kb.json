@@ -1,12 +1,15 @@
 {
   "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
   "tau": 0.6,
+  "recuperador": {"peso_lexico": 0.7, "tau": 0.29, "margen": 0.04, "cobertura_min": 0.5,
+                  "preguntar_tau": 0.24, "preguntar_cobertura": 0.34, "frases_extra": "frases_extra.json"},
   "openai_model": "gpt-6-luna",
   "fallback": "Todavía no tengo esa respuesta. Pregunta a los miembros de tu junta receptora del voto; ellos pueden orientarte.",
   "fuente_documento": "Instructivo para Miembros de las Juntas Receptoras del Voto, Elecciones Seccionales y CPCCS 2027 (CNE), págs. 4–7",
   "kb": [
     {
       "id": "horario",
+      "titulo": "El horario de votación",
       "fuente": "págs. 4 y 7",
       "descripcion": "Horario de votación (de 07:00 a 17:00) y hasta qué hora llegar",
       "respuesta": "La votación es de 07:00 a 17:00. Te recomendamos llegar antes de las 16:00. A las 17:00 se cierra y quien siga en la fila ya no puede votar; solo recibe un certificado de presentación.",
@@ -20,6 +23,7 @@
     },
     {
       "id": "fecha",
+      "titulo": "El día de las elecciones",
       "fuente": "pág. 4",
       "descripcion": "Qué día son las elecciones",
       "respuesta": "Las elecciones son el domingo 29 de noviembre de 2026. Puedes votar de 07:00 a 17:00.",
@@ -32,6 +36,7 @@
     },
     {
       "id": "documento",
+      "titulo": "El documento que debo llevar",
       "fuente": "págs. 4 y 5",
       "descripcion": "Qué documento llevar para votar (cédula o pasaporte)",
       "respuesta": "Lleva el original de tu cédula. También sirve el pasaporte. En la mesa revisan que estés en el padrón y al final te devuelven el documento junto con tu certificado de votación.",
@@ -44,6 +49,7 @@
     },
     {
       "id": "celular",
+      "titulo": "Usar el celular al votar",
       "fuente": "pág. 5",
       "descripcion": "Uso del celular, fotos o aparatos electrónicos mientras se vota",
       "respuesta": "No puedes usar el celular ni otro aparato electrónico mientras votas detrás del biombo. Guárdalo antes de recibir tus papeletas. Si lo usas, la mesa llena una boleta por presunta infracción electoral.",
@@ -56,6 +62,7 @@
     },
     {
       "id": "firma",
+      "titulo": "Cómo firmo o pongo la huella",
       "fuente": "pág. 5",
       "descripcion": "Firmar el padrón o poner la huella si no sabe escribir; entrega del certificado",
       "respuesta": "Al final firmas en el padrón electoral. Si no puedes firmar, pones tu huella dactilar. Después te entregan tu certificado de votación y tu cédula.",
@@ -68,6 +75,7 @@
     },
     {
       "id": "asistido",
+      "titulo": "Votar con ayuda de alguien",
       "fuente": "pág. 6",
       "descripcion": "Necesita ayuda de otra persona para marcar o depositar el voto (voto asistido)",
       "respuesta": "Si necesitas ayuda para marcar o depositar tu voto, puede ayudarte una persona de tu confianza. Esto se llama votación asistida.",
@@ -80,6 +88,7 @@
     },
     {
       "id": "preferencial",
+      "titulo": "Votar sin hacer fila",
       "fuente": "pág. 6",
       "descripcion": "Votar sin hacer fila: discapacidad, adultos mayores, embarazadas, niños en brazos",
       "respuesta": "Las personas con discapacidad, las personas adultas mayores, las mujeres embarazadas y quienes llevan niños en brazos pasan directamente a votar, sin hacer fila.",
@@ -92,6 +101,7 @@
     },
     {
       "id": "map",
+      "titulo": "No puedo llegar hasta mi mesa",
       "fuente": "págs. 6 y 7",
       "descripcion": "No puede llegar físicamente a su mesa (silla de ruedas, no camina): Mesa de Atención Preferente",
       "respuesta": "Si por tu condición física no puedes llegar hasta tu junta, puedes votar en la Mesa de Atención Preferente (MAP) del recinto. El presidente de tu junta lleva hasta ahí el padrón, las papeletas y tu certificado.",
@@ -104,6 +114,7 @@
     },
     {
       "id": "braille",
+      "titulo": "Personas que no ven (Braille)",
       "fuente": "págs. 6 y 7",
       "descripcion": "Discapacidad visual, personas ciegas, plantilla Braille",
       "respuesta": "Si tienes discapacidad visual, puedes pedir la plantilla Braille en la Mesa de Atención Preferente (MAP). Su personal te acompaña a tu junta hasta que votes. También puede ayudarte una persona de tu confianza.",
@@ -116,6 +127,7 @@
     },
     {
       "id": "lugar",
+      "titulo": "Dónde me toca votar",
       "fuente": "CNE, consulta del lugar de votación",
       "descripcion": "Dónde le toca votar a la persona (recinto, junta o mesa) y cómo consultarlo con su cédula",
       "respuesta": "Para saber dónde te toca votar, entra a lugarvotacion.cne.gob.ec y escribe tu número de cédula y tu fecha de nacimiento. También puedes consultarlo en la aplicación CNE APP o en www.cne.gob.ec, en la opción «Consulta tu lugar de votación».",
@@ -130,6 +142,7 @@
     },
     {
       "id": "politica",
+      "titulo": "Candidatos o por quién votar",
       "fuente": null,
       "descripcion": "Preguntas sobre candidatos, partidos o por quién votar (el asistente no opina de política)",
       "respuesta": "No doy información sobre candidatos ni recomiendo por quién votar. Tu voto es secreto y la decisión es solo tuya.",

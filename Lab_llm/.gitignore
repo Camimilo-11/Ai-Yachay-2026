@@ -1,6 +1,5 @@
 __pycache__/
 .env
 *.pyc
-resultados_locales.csv
 cache_locales.json
 cache_locales.tmp

@@ -1,0 +1,4 @@
+model,runs on,size,median latency / question,"cost per 1,000 questions"
+A · sentence-transformers + FAISS,"laptop, offline after download",118 M params (~471 MB),32 ms,USD 0.00
+A+ · MiniLM + phonetic letters,"laptop, offline after download",same model as A + a small letter index,45 ms,USD 0.00
+B · gpt-6-luna,"OpenAI servers, needs internet",not disclosed,1656 ms,USD 0.062

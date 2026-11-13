@@ -1,0 +1,205 @@
+﻿texto,nivel,conjunto,esperado,A · MiniLM (actual),emb · bge-m3,llama3.2:3b + ejemplos,qwen3.5:2b + ejemplos
+a que hora puedo ir a votar,clean,test,horario,horario,horario,horario,horario
+a qoe hura puedo ir a botar,light,test,horario,NO_ANSWER,NO_ANSWER,NO_ANSWER,horario
+a que ora pueo ir a botar,heavy,test,horario,NO_ANSWER,NO_ANSWER,horario,horario
+hasta que hora atienden en el recinto,clean,dev,horario,horario,horario,map,horario
+asta que hora atiindin in el recinto,light,dev,horario,NO_ANSWER,NO_ANSWER,map,horario
+hasta qoe hora atenden en il resento,heavy,dev,horario,NO_ANSWER,NO_ANSWER,NO_ANSWER,horario
+si llego a las cinco de la tarde todavia puedo votar,clean,test,horario,horario,horario,horario,horario
+si llegu a las cinko de la tarde todavia puedo votar,light,test,horario,horario,horario,NO_ANSWER,horario
+se llegu a las cincu de la tarde tudaba poido botar,heavy,test,horario,NO_ANSWER,NO_ANSWER,NO_ANSWER,horario
+desde que hora abren para votar,clean,test,horario,horario,horario,horario,horario
+desde que hora abren para botar,light,test,horario,horario,NO_ANSWER,horario,horario
+dide ki ora abren para votar,heavy,test,horario,horario,horario,horario,horario
+a que hora cierran la votacion,clean,dev,horario,horario,horario,horario,horario
+a qoe hora sierran la votaceon,light,dev,horario,horario,horario,horario,horario
+a ke hora siirran la butaeon,heavy,dev,horario,NO_ANSWER,NO_ANSWER,NO_ANSWER,horario
+puedo votar en la tarde,clean,test,horario,horario,horario,horario,horario
+poedu botar en la tarde,light,test,horario,NO_ANSWER,NO_ANSWER,NO_ANSWER,horario
+puedo vutar en la tare,heavy,test,horario,NO_ANSWER,NO_ANSWER,NO_ANSWER,lugar
+que dia hay que votar,clean,dev,fecha,fecha,fecha,NO_ANSWER,fecha
+que dia hay que butar,light,dev,fecha,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+qoe dia ay ke butr,heavy,dev,fecha,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+cuando es la votacion,clean,dev,fecha,fecha,fecha,politica,fecha
+coando es la botacion,light,dev,fecha,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+kuado is la botacion,heavy,dev,fecha,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+en que mes son las elecciones,clean,test,fecha,fecha,fecha,NO_ANSWER,fecha
+en ke mes son las elecciones,light,test,fecha,fecha,fecha,NO_ANSWER,NO_ANSWER
+in qoe mis sun las eleccones,heavy,test,fecha,NO_ANSWER,NO_ANSWER,NO_ANSWER,fecha
+el domingo hay elecciones,clean,test,fecha,fecha,fecha,NO_ANSWER,fecha
+il domingo hay elecsiones,light,test,fecha,fecha,fecha,NO_ANSWER,fecha
+el dmingo ay elecciones,heavy,test,fecha,fecha,NO_ANSWER,NO_ANSWER,fecha
+que fecha toca ir a votar,clean,test,fecha,lugar,fecha,NO_ANSWER,fecha
+ke fecha toca ir a votar,light,test,fecha,lugar,fecha,NO_ANSWER,fecha
+ke fcha toka er a butar,heavy,test,fecha,NO_ANSWER,NO_ANSWER,NO_ANSWER,horario
+ya son las votaciones esta semana,clean,test,fecha,fecha,horario,NO_ANSWER,NO_ANSWER
+ya son las botaciones esta semana,light,test,fecha,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+ya son las butaseuns esta semana,heavy,test,fecha,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+que tengo que llevar para votar,clean,test,documento,asistido,documento,documento,documento
+que tingo que yivar para votar,light,test,documento,asistido,documento,NO_ANSWER,documento
+qoe tigu qoe llevar para votar,heavy,test,documento,asistido,asistido,documento,documento
+me olvide la cedula puedo votar igual,clean,test,documento,asistido,NO_ANSWER,NO_ANSWER,documento
+me olbede la cedula puedo votar igual,light,test,documento,asistido,NO_ANSWER,NO_ANSWER,documento
+me olvidi la cedola pueo vutar egual,heavy,test,documento,NO_ANSWER,NO_ANSWER,NO_ANSWER,documento
+sirve el pasaporte para votar,clean,dev,documento,documento,documento,documento,documento
+sirbe el pasaporte para votar,light,dev,documento,documento,documento,NO_ANSWER,documento
+seri el pasaporte para botar,heavy,dev,documento,documento,NO_ANSWER,NO_ANSWER,NO_ANSWER
+necesito algun papel para votar,clean,test,documento,asistido,documento,documento,documento
+nesisito algun papel para votar,light,test,documento,lugar,documento,documento,documento
+nicesto algon papil para votar,heavy,test,documento,lugar,NO_ANSWER,NO_ANSWER,NO_ANSWER
+con que documento me identifico en la mesa,clean,test,documento,NO_ANSWER,NO_ANSWER,documento,documento
+kon qoe documento me idintefico in la mesa,light,test,documento,NO_ANSWER,NO_ANSWER,NO_ANSWER,documento
+con que docominto me identeico en la misa,heavy,test,documento,NO_ANSWER,NO_ANSWER,documento,documento
+tengo que llevar la cedula original,clean,dev,documento,NO_ANSWER,documento,documento,documento
+tengo ke llevar la cedula original,light,dev,documento,NO_ANSWER,documento,documento,documento
+tenu ke yebar la cidola oreginal,heavy,dev,documento,NO_ANSWER,NO_ANSWER,documento,documento
+puedo llevar mi telefono,clean,test,celular,celular,celular,NO_ANSWER,celular
+puedo llebar me telefono,light,test,celular,celular,celular,NO_ANSWER,celular
+puedu llbar mi telefono,heavy,test,celular,celular,NO_ANSWER,NO_ANSWER,celular
+puedo sacar foto cuando voto,clean,dev,celular,celular,celular,NO_ANSWER,celular
+puidu sacar foto cuando boto,light,dev,celular,celular,NO_ANSWER,NO_ANSWER,celular
+puedu sakar futo kandu buto,heavy,dev,celular,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+se puede usar celular en la mesa,clean,test,celular,NO_ANSWER,NO_ANSWER,NO_ANSWER,celular
+se puede usar selular en la mesa,light,test,celular,NO_ANSWER,NO_ANSWER,NO_ANSWER,celular
+si poee usar silolar in la mesa,heavy,test,celular,NO_ANSWER,NO_ANSWER,NO_ANSWER,celular
+me quitan el celular para votar,clean,test,celular,celular,celular,NO_ANSWER,celular
+me quitan el selular para votar,light,test,celular,asistido,celular,NO_ANSWER,celular
+me qoitan el slolar para vutar,heavy,test,celular,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+puedo grabar mi voto,clean,dev,celular,celular,asistido,NO_ANSWER,NO_ANSWER
+puedo grabar me buto,light,dev,celular,NO_ANSWER,NO_ANSWER,NO_ANSWER,celular
+podo grabar mi voto,heavy,dev,celular,celular,asistido,NO_ANSWER,NO_ANSWER
+puedo contestar el telefono cuando estoy votando,clean,test,celular,celular,celular,NO_ANSWER,celular
+puedo kontistar el telifono cuando estoy votando,light,test,celular,asistido,celular,NO_ANSWER,celular
+poedo kontistar il tiefono kuando istoy botandu,heavy,test,celular,NO_ANSWER,NO_ANSWER,NO_ANSWER,preferencial
+no se firmar,clean,dev,firma,firma,NO_ANSWER,NO_ANSWER,firma
+no se firmar,light,dev,firma,firma,NO_ANSWER,NO_ANSWER,firma
+nu se fermr,heavy,dev,firma,NO_ANSWER,NO_ANSWER,NO_ANSWER,firma
+como firmo si no se escribir,clean,test,firma,firma,firma,firma,firma
+komo firmo si no se escribir,light,test,firma,firma,firma,firma,firma
+kumo fermu se no se isciber,heavy,test,firma,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+donde pongo mi firma,clean,test,firma,firma,firma,firma,firma
+dunde pungu me firma,light,test,firma,NO_ANSWER,NO_ANSWER,NO_ANSWER,firma
+donde punu me firma,heavy,test,firma,firma,firma,firma,firma
+puedo poner el dedo en vez de firmar,clean,test,firma,firma,firma,firma,firma
+puedo poner el dedo en bez de firmar,light,test,firma,firma,firma,firma,firma
+puidu poner el dedo en bis di firmr,heavy,test,firma,firma,NO_ANSWER,NO_ANSWER,firma
+cuando me dan el papel de que vote,clean,dev,firma,lugar,documento,firma,firma
+kuandu me dan el papel de que vote,light,dev,firma,lugar,asistido,NO_ANSWER,firma
+candu mi dan el papil de qoe vote,heavy,dev,firma,lugar,NO_ANSWER,NO_ANSWER,NO_ANSWER
+que hago despues de votar,clean,test,firma,asistido,asistido,NO_ANSWER,NO_ANSWER
+qoe hagu despues de botar,light,test,firma,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+ki hago dspuis di botar,heavy,test,firma,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+mi hijo me puede ayudar a votar,clean,dev,asistido,asistido,asistido,asistido,asistido
+mi ijo me puede ayudar a votar,light,dev,asistido,asistido,asistido,asistido,asistido
+mi hejo me puide audar a vutar,heavy,dev,asistido,NO_ANSWER,NO_ANSWER,NO_ANSWER,asistido
+no se como marcar la papeleta,clean,dev,asistido,asistido,asistido,firma,firma
+no se komo marcar la papeleta,light,dev,asistido,asistido,asistido,NO_ANSWER,firma
+no se como marcar la papeeta,heavy,dev,asistido,asistido,asistido,firma,firma
+puedo ir con alguien que me ayude,clean,test,asistido,NO_ANSWER,asistido,asistido,asistido
+puedo ir cun alguien ke me ayude,light,test,asistido,NO_ANSWER,asistido,asistido,asistido
+puedu er kun agueen ke me ayodi,heavy,test,asistido,NO_ANSWER,NO_ANSWER,NO_ANSWER,asistido
+necesito que me acompanen a votar,clean,test,asistido,asistido,asistido,asistido,asistido
+nesesito que me acompanin a votar,light,test,asistido,lugar,asistido,asistido,asistido
+nesesito ke mi akompanin a botr,heavy,test,asistido,NO_ANSWER,NO_ANSWER,asistido,asistido
+quien me puede ayudar a votar,clean,test,asistido,asistido,asistido,asistido,asistido
+kien me puede ayudar a vutar,light,test,asistido,NO_ANSWER,NO_ANSWER,asistido,asistido
+qoin mi puede ayodar a botar,heavy,test,asistido,NO_ANSWER,NO_ANSWER,asistido,asistido
+no puedo votar solo,clean,test,asistido,asistido,asistido,asistido,asistido
+no puedo botar solo,light,test,asistido,asistido,asistido,asistido,asistido
+no puedu btar solo,heavy,test,asistido,NO_ANSWER,NO_ANSWER,NO_ANSWER,asistido
+estoy esperando bebe tengo que hacer cola,clean,test,preferencial,preferencial,preferencial,preferencial,preferencial
+estoy espirando bibi tengo qui haser cula,light,test,preferencial,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+estuy esperando bibi tengu qoi hasr kola,heavy,test,preferencial,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+mi abuelito tiene que hacer fila,clean,dev,preferencial,NO_ANSWER,NO_ANSWER,preferencial,preferencial
+mi abuelitu tiene que acer fila,light,dev,preferencial,NO_ANSWER,NO_ANSWER,NO_ANSWER,preferencial
+me abuelito tiini que haer fela,heavy,dev,preferencial,NO_ANSWER,NO_ANSWER,NO_ANSWER,preferencial
+voy con mi wawa cargada,clean,test,preferencial,NO_ANSWER,NO_ANSWER,NO_ANSWER,preferencial
+voy kon mi wawa cargada,light,test,preferencial,NO_ANSWER,NO_ANSWER,NO_ANSWER,celular
+vuy con mi wawa cargaa,heavy,test,preferencial,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+las personas mayores pasan primero,clean,dev,preferencial,NO_ANSWER,NO_ANSWER,preferencial,preferencial
+las personas mayores pasan primero,light,dev,preferencial,NO_ANSWER,NO_ANSWER,preferencial,preferencial
+las personas myores pasan primiru,heavy,dev,preferencial,NO_ANSWER,NO_ANSWER,NO_ANSWER,preferencial
+tengo discapacidad tengo que esperar en la fila,clean,test,preferencial,preferencial,preferencial,NO_ANSWER,preferencial
+tengo discapasidad tengo que esperar en la fila,light,test,preferencial,NO_ANSWER,preferencial,preferencial,preferencial
+tengo deskapasdad tingo qoe esperar en la fela,heavy,test,preferencial,NO_ANSWER,NO_ANSWER,NO_ANSWER,preferencial
+hay preferencia para embarazadas,clean,test,preferencial,preferencial,NO_ANSWER,preferencial,preferencial
+hay preferencea para embarasadas,light,test,preferencial,NO_ANSWER,NO_ANSWER,preferencial,preferencial
+hay preferencia para imbaasadas,heavy,test,preferencial,NO_ANSWER,NO_ANSWER,preferencial,preferencial
+mi mama esta en silla de ruedas como vota,clean,dev,map,map,asistido,map,map
+me mama esta en silla de ruedas como bota,light,dev,map,map,NO_ANSWER,map,map
+mi mama esta en seya de ruias kumo bota,heavy,dev,map,NO_ANSWER,NO_ANSWER,map,map
+no puedo caminar hasta la mesa,clean,test,map,map,map,map,map
+no puedu caminar asta la mesa,light,test,map,map,map,map,map
+nu puio kaminar asta la mesa,heavy,test,map,NO_ANSWER,NO_ANSWER,map,map
+mi abuela usa muletas y la mesa queda lejos,clean,test,map,map,map,map,map
+mi abuela usa muletas y la mesa keda lejos,light,test,map,NO_ANSWER,map,map,map
+mi abuea usa mulitas y la mesa kida lijus,heavy,test,map,NO_ANSWER,NO_ANSWER,map,preferencial
+donde votan los que no pueden subir,clean,test,map,lugar,NO_ANSWER,map,map
+donde botan lus que no pueden subir,light,test,map,NO_ANSWER,NO_ANSWER,map,map
+dondi botan los ke nu poedin sbir,heavy,test,map,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+hay una mesa especial para personas que no caminan,clean,dev,map,NO_ANSWER,map,map,map
+hay una misa espeseal para personas que no caminan,light,dev,map,NO_ANSWER,NO_ANSWER,map,map
+ay ona mesa espisial para pirsonas que no cainan,heavy,dev,map,NO_ANSWER,NO_ANSWER,map,map
+mi papa esta enfermo y no puede llegar a su junta,clean,test,map,NO_ANSWER,map,map,preferencial
+mi papa esta enfermo y no puede yegar a su junta,light,test,map,NO_ANSWER,map,map,preferencial
+mi papa esta enfermo y no puee llegar a su junta,heavy,test,map,NO_ANSWER,map,map,preferencial
+soy ciega como voto,clean,test,braille,braille,braille,braille,braille
+soy siega como voto,light,test,braille,lugar,NO_ANSWER,NO_ANSWER,preferencial
+soy cega komo votu,heavy,test,braille,braille,braille,braille,braille
+mi tio no ve nada puede votar,clean,test,braille,braille,braille,braille,asistido
+mi tio no be nada puede votar,light,test,braille,asistido,asistido,NO_ANSWER,asistido
+me tiu nu bi nada pedi botar,heavy,test,braille,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+hay ayuda para personas que no ven,clean,test,braille,NO_ANSWER,braille,braille,braille
+ay ayuda para personas que no ven,light,test,braille,NO_ANSWER,NO_ANSWER,braille,braille
+ay ayuda para pesunas qoi nu ven,heavy,test,braille,NO_ANSWER,NO_ANSWER,braille,asistido
+tienen papeletas para ciegos,clean,dev,braille,braille,braille,braille,braille
+tienen papeletas para siegos,light,dev,braille,NO_ANSWER,NO_ANSWER,NO_ANSWER,preferencial
+tenin papeletas para seegos,heavy,dev,braille,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+no puedo leer la papeleta porque no veo,clean,test,braille,asistido,braille,braille,braille
+no puedo leer la papeleta porke no veo,light,test,braille,NO_ANSWER,NO_ANSWER,braille,braille
+no poeu leer la papeleta porke nu veo,heavy,test,braille,NO_ANSWER,NO_ANSWER,braille,braille
+hay braille en las mesas,clean,dev,braille,braille,braille,NO_ANSWER,braille
+hay braeye en las mesas,light,dev,braille,braille,NO_ANSWER,NO_ANSWER,braille
+ay briye in las mesas,heavy,dev,braille,NO_ANSWER,NO_ANSWER,NO_ANSWER,lugar
+a quien le doy mi voto,clean,test,politica,politica,politica,NO_ANSWER,lugar
+a quiin le doy mi botu,light,test,politica,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+a kien le doy mi voto,heavy,test,politica,politica,politica,NO_ANSWER,NO_ANSWER
+que candidato es mejor para alcalde,clean,test,politica,politica,politica,NO_ANSWER,NO_ANSWER
+ke candidatu es mejor para alcalde,light,test,politica,NO_ANSWER,politica,NO_ANSWER,NO_ANSWER
+ke kandidato es mejor para alkldi,heavy,test,politica,NO_ANSWER,politica,NO_ANSWER,NO_ANSWER
+por cual partido votar,clean,test,politica,lugar,politica,NO_ANSWER,politica
+por kual partidu vutar,light,test,politica,NO_ANSWER,NO_ANSWER,NO_ANSWER,politica
+por kual partidu boar,heavy,test,politica,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+quien me recomiendas para prefecto,clean,dev,politica,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+qoeen me rekomiendas para prefecto,light,dev,politica,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+kiin mi ricomiends para prefecto,heavy,dev,politica,NO_ANSWER,NO_ANSWER,NO_ANSWER,politica
+donde queda mi recinto electoral,clean,dev,lugar,lugar,lugar,map,lugar
+dondi queda mi risinto elictoral,light,dev,lugar,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+dode queda mi resento elictoral,heavy,dev,lugar,NO_ANSWER,lugar,NO_ANSWER,lugar
+cuanto es la multa por no votar,clean,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+koanto is la multa por no votar,light,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+coanto es la mlta pur no butar,heavy,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+como saco la cedula nueva,clean,test,NO_ANSWER,NO_ANSWER,documento,NO_ANSWER,NO_ANSWER
+como saco la sidola nuiva,light,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,firma
+como saco la seula nueba,heavy,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+a que hora pasa el bus a la comunidad,clean,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+a ke hora pasa el bus a la cumunidad,light,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+a ke ora pasa el bus a la comoidad,heavy,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+cuanto gana un miembro de mesa,clean,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+kuanto gana un miembro de mesa,light,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+cunto gana un meembro di mesa,heavy,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+puedo votar si vivo en otro pais,clean,dev,NO_ANSWER,asistido,documento,NO_ANSWER,NO_ANSWER
+puedu botar se vivo en otro pais,light,dev,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+puedu butr se bebu in otru pais,heavy,dev,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+donde consulto mi lugar de votacion,clean,test,lugar,lugar,lugar,map,lugar
+donde konsulto me lugar de votacion,light,test,lugar,lugar,NO_ANSWER,map,lugar
+dnde konsolto me logar de botaciun,heavy,test,lugar,NO_ANSWER,NO_ANSWER,NO_ANSWER,lugar
+que pasa si no voy a votar,clean,test,NO_ANSWER,asistido,NO_ANSWER,NO_ANSWER,NO_ANSWER
+que pasa si no boy a votar,light,test,NO_ANSWER,asistido,NO_ANSWER,NO_ANSWER,NO_ANSWER
+que pasa se no boy a botr,heavy,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+como me inscribo para ser candidato,clean,test,NO_ANSWER,lugar,NO_ANSWER,NO_ANSWER,NO_ANSWER
+komo me inscribo para ser candidato,light,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+cumo mi inscribo para ser canddato,heavy,test,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER
+quien cuenta los votos,clean,dev,NO_ANSWER,lugar,NO_ANSWER,NO_ANSWER,NO_ANSWER
+qoien koenta los votos,light,dev,NO_ANSWER,lugar,NO_ANSWER,NO_ANSWER,NO_ANSWER
+kien kuenta los bots,heavy,dev,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER,NO_ANSWER

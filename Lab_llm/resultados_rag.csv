@@ -1,0 +1,3 @@
+﻿sistema,tau,margen,cobertura_min,preguntar_tau,preguntar_cobertura,prueba_n,prueba_acc,prueba_lo,prueba_hi,prueba_unsafe,prueba_abst,prueba_oos,preguntando_directo,preguntando_toque,preguntando_no_se_bien,preguntando_afirma_mal,preguntando_opciones_mal,preguntando_resuelta,teclado_directo,teclado_toque,teclado_no_se_bien,teclado_afirma_mal,teclado_opciones_mal,teclado_resuelta,recall3,rag_6
+A+ v1 (frases del instructivo),0.27,0.08,0.5,0.24,0.5,138,0.587,0.5035,0.6657,0.087,0.3261,0.1111,0.471,0.1594,0.0652,0.087,0.087,0.6957,0.3935,0.1478,0.0761,0.0739,0.087,0.6174,0.9417,6
+A+ v2 (+ frases extra y anclas),0.29,0.04,0.5,0.24,0.34,138,0.7319,0.6524,0.7988,0.0797,0.1884,0.1667,0.6232,0.1304,0.058,0.0797,0.0797,0.8116,0.5783,0.0891,0.0609,0.087,0.1,0.7283,0.975,6

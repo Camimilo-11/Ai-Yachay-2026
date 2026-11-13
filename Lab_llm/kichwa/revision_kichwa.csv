@@ -88,3 +88,16 @@ FUENTE.1;fragmento;Fuente: instructivo CNE, ;Pukyu: CNE yachachik kamu, ;;;Inici
 FUENTE.2;fragmento;Fuente: ;Pukyu: ;;;Fuente cuando no viene del instructivo
 FUENTE.3;fragmento;págs. (páginas); pankakuna;;;Va después de los números de página
 FUENTE.4;fragmento;pág. (página); panka;;;Va después del número de página
+CLARIFY.qu;fragmento;No estoy seguro de qué necesitas. ¿Tu pregunta es sobre…?;¿Kaymantachu tapunki?;;;Cuando el asistente duda y ofrece opciones
+NINGUNA.qu;fragmento;Ninguna de estas;Mana kaykunachu;;;Botón para decir que ninguna opción sirve
+OPC.horario;fragmento;El horario de votación;Akllay pacha;;;Opción de «¿Tu pregunta es sobre…?»
+OPC.fecha;fragmento;El día de las elecciones;Akllay puncha;;;Opción de «¿Tu pregunta es sobre…?»
+OPC.documento;fragmento;El documento que debo llevar;Cédula, kamu;;;Opción de «¿Tu pregunta es sobre…?»
+OPC.celular;fragmento;Usar el celular al votar;Celularta hapiy;;;Opción de «¿Tu pregunta es sobre…?»
+OPC.firma;fragmento;Cómo firmo o pongo la huella;Shutita killkay, rukata churay;;;Opción de «¿Tu pregunta es sobre…?»
+OPC.asistido;fragmento;Votar con ayuda de alguien;Yanapaywan akllay;;;Opción de «¿Tu pregunta es sobre…?»
+OPC.preferencial;fragmento;Votar sin hacer fila;Mana suyashpa akllay;;;Opción de «¿Tu pregunta es sobre…?»
+OPC.map;fragmento;No puedo llegar hasta mi mesa;Juntaman mana chayay ushani;;;Opción de «¿Tu pregunta es sobre…?»
+OPC.braille;fragmento;Personas que no ven (Braille);Mana rikuy ushani (Braille);;;Opción de «¿Tu pregunta es sobre…?»
+OPC.lugar;fragmento;Dónde me toca votar;Maypi akllana;;;Opción de «¿Tu pregunta es sobre…?»
+OPC.politica;fragmento;Candidatos o por quién votar;Candidatokuna;;;Opción de «¿Tu pregunta es sobre…?»

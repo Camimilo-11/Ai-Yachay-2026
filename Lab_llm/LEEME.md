@@ -12,7 +12,11 @@ Proyecto académico independiente; no es un sitio del CNE. Los modelos y su eval
 |---|---|
 | `index.html` | La página web. Funciona sola o conectada al servidor. Las letras (Andika y Lora) van dentro del archivo, así que se ve igual sin internet |
 | `app.py` | Servidor local (FastAPI) que conecta la página con los modelos |
-| `kb.json` | Base de conocimiento del instructivo y umbral τ = 0,60 (error inseguro ≤ 10 % en desarrollo; ver «Modelo local con Ollama») |
+| `kb.json` | Base de conocimiento del instructivo, umbral τ = 0,60 del Modelo A simple y valores del recuperador híbrido (`"recuperador"`) |
+| `recuperador.py` | Recuperador híbrido del Modelo A: MiniLM + comparación fonética de letras. Lo usan `app.py` y el notebook |
+| `experimentos_rag.py` | Pruebas del recuperador híbrido frente al Modelo A original; guarda el resumen en `resultados_rag.csv` |
+| `frases_extra.json` | Frases de ejemplo extra y preguntas fuera de alcance del recuperador (revisadas y descontaminadas) |
+| `generar_frases.py` | Genera esas frases con GPT u Ollama; su salida cruda queda en `frases_generadas.json` |
 | `requirements.txt` | Librerías necesarias |
 | `iconos/` | Logo de Voto Claro en SVG, PNG (16 a 1024 px) e ICO; `app.py` los sirve y la página los usa como icono |
 | `pasos/` | Ilustraciones de «Cómo votar, paso a paso» (WebP en dos tamaños). Si faltan, la página muestra un icono en su lugar |
@@ -38,9 +42,34 @@ Abre **http://localhost:8000**. La primera vez tarda unos segundos en cargar el 
 ## Qué modelo responde
 
 - **Con API key:** responde el **Modelo B** (GPT, `gpt-6-luna`). Si falla, por ejemplo sin internet, responde el **Modelo C** (Ollama, si está activado) y, si tampoco está, el **Modelo A** local.
-- **Sin API key:** responde el **Modelo C** si está activado; si no, el **Modelo A** (Sentence Transformers + FAISS).
+- **Sin API key:** responde el **Modelo C** si está activado; si no, el **Modelo A** (MiniLM con el recuperador híbrido).
 - Cada respuesta muestra su fuente y qué modelo la dio.
 - Para forzar uno: `set VOTO_MODE=A`, `B` o `C` antes de `uvicorn` (en PowerShell: `$env:VOTO_MODE = "A"`).
+
+## Modelo A mejorado: recuperador híbrido
+
+Sin internet y sin Ollama responde el Modelo A, que ahora usa `recuperador.py`:
+
+1. Corrige la pregunta con una clave fonética pensada para cómo escriben el español los hablantes de kichwa (e/i, o/u, b/v, c/s/z, k/qu, ll/y, h muda): `a qoe hura puedo ir a botar` → `a que hora puedo ir a votar`.
+2. Compara el significado (MiniLM) y la forma escrita (n-gramas de letras) con las frases de ejemplo, la descripción de cada situación y 183 frases más de `frases_extra.json`.
+3. Dice «no sé» si la pregunta se parece más a una de las 36 preguntas fuera de alcance de `frases_extra.json` o si usa palabras que el instructivo no tiene.
+4. Si duda entre dos situaciones, pregunta «¿Tu pregunta es sobre…?» con dos botones y «Ninguna de estas». No afirma nada que la persona no haya elegido.
+
+Resultados en las 138 preguntas de prueba:
+
+| Modelo A | Aciertos sin preguntar [IC 95 %] | Error inseguro | Fuera de alcance respondidas | Resueltas preguntando | Situación correcta entre las 3 primeras |
+|---|---|---|---|---|---|
+| Original (τ 0,60) | 42 % [34–50] | 16 % | 17 % | — | 77 % |
+| A+ v1 (frases del instructivo) | 59 % [50–67] | 9 % | 11 % | 70 % | 94 % |
+| **A+ v2 (+ frases extra y anclas)** | **73 % [65–80]** | **8 %** | 17 % | **81 %** | 98 % |
+
+- «Resueltas preguntando» = respuesta directa correcta, la correcta entre las dos opciones, o «no sé» a una pregunta fuera de alcance. En 8 % de las preguntas las opciones no traían la correcta (incluye preguntas fuera de alcance, donde la persona puede tocar «Ninguna de estas»).
+- A+ v2 acierta más que el original (McNemar: 51 frente a 8 preguntas, p < 0,001) y que A+ v1 (24 frente a 4, p < 0,001), con menos error inseguro. Sin preguntar ya iguala a qwen3.5:2b (75 %; diferencia no significativa, p = 0,87) y responde en milisegundos.
+- Con errores de teclado, que la clave fonética no corrige, A+ v2 resuelve 73 % preguntando, con 9 % de error inseguro (el original: 47 % de aciertos y 23 % de error).
+- `frases_extra.json` sale de `generar_frases.py`: GPT escribió 20 preguntas por situación y 40 fuera de alcance a partir de la descripción y la respuesta, sin ver nunca las preguntas de prueba (el resultado crudo está en `frases_generadas.json`). Revisé las etiquetas a mano y quité las que se parecían a cualquier pregunta de desarrollo o prueba.
+- Los valores de `"recuperador"` en `kb.json` se eligieron solo con preguntas de desarrollo (error inseguro ≤ 5 % y opciones sin la correcta ≤ 5 %). Para repetir la comparación (menos de un minuto, sin internet): `python experimentos_rag.py`.
+- Para volver al Modelo A original: `set VOTO_A=simple` antes de `uvicorn`.
+- Cuidado: la clave fonética se parece al ruido sintético de las preguntas de prueba, y la prueba se miró varias veces mientras se desarrollaba A+; con frases reales la mejora puede ser menor.
 
 ## Modelo local con Ollama (opcional)
 
@@ -70,6 +99,7 @@ Resultados en las 138 preguntas de prueba del notebook (11 situaciones, con erro
 | Motor local de la página (sin servidor) | 69 % [61–76] | 67 % | 12 % | — |
 
 - qwen3.5:2b acierta más que MiniLM, bge-m3 y llama3.2 (McNemar exacto, p < 0,001). Frente al motor local de la página la diferencia no es significativa (p = 0,23).
+- La fila del motor local de la página se midió aparte, ejecutando su JavaScript con las mismas 138 preguntas; ese script no está en el repositorio.
 - Su latencia fue estable (máximo 9,8 s), por debajo del límite de 20 s de `OLLAMA_TIMEOUT`.
 - La mayoría de sus errores inseguros confunden situaciones vecinas: movilidad reducida con atención preferente y persona ciega con voto asistido.
 - El umbral del Modelo A en `kb.json` pasó de 0,40 a 0,60: es el τ con más aciertos y error inseguro ≤ 10 % en las preguntas de desarrollo (en las de prueba, el error inseguro fue 16 %).

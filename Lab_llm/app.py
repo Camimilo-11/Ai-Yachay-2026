@@ -11,7 +11,8 @@ Luego abre http://localhost:8000
 Variables opcionales:
     VOTO_MODE       auto (por defecto: B, luego C, luego A) | A | B | C
     OPENAI_MODEL    modelo de OpenAI para el Modelo B (por defecto, el de kb.json)
-    VOTO_TAU        umbral de similitud del Modelo A (por defecto, el de kb.json)
+    VOTO_TAU        umbral de similitud del Modelo A simple (por defecto, el de kb.json)
+    VOTO_A          simple: Modelo A solo con MiniLM, sin el recuperador híbrido de recuperador.py
     OLLAMA_MODEL    modelo local de Ollama para el Modelo C, recomendado qwen3.5:2b (sin esta variable no se usa)
     OLLAMA_URL      dirección de Ollama (por defecto http://127.0.0.1:11434)
     OLLAMA_TIMEOUT  segundos máximos de espera del Modelo C (por defecto 20)
@@ -48,7 +49,7 @@ TAU = float(os.environ.get("VOTO_TAU", CFG["tau"]))
 MODE = os.environ.get("VOTO_MODE", "auto").upper()
 OPENAI_MODEL = os.environ.get("OPENAI_MODEL", CFG.get("openai_model", "gpt-6-luna"))
 
-# ---------- Modelo A: Sentence Transformers + FAISS (local) ----------
+# ---------- Modelo A: Sentence Transformers + FAISS (local), con recuperador híbrido ----------
 from sentence_transformers import SentenceTransformer
 
 model_a = SentenceTransformer(CFG["embedding_model"], device="cpu")
@@ -80,7 +81,25 @@ except ImportError:
         return np.take_along_axis(sims, idx, axis=1), idx
 
 
+# Recuperador híbrido: MiniLM + coincidencia fonética de letras (recuperador.py). Con preguntas mal escritas
+# acierta más y se equivoca menos que MiniLM solo. Sus valores están en "recuperador" de kb.json.
+REC_A = None
+if CFG.get("recuperador") and os.environ.get("VOTO_A", "").lower() != "simple":
+    import sys
+    sys.path.insert(0, str(HERE))
+    from recuperador import RecuperadorHibrido, cargar_extra
+
+    # frases de ejemplo extra y preguntas fuera de alcance («anclas»), ver experimentos_rag.py
+    _extra, _anclas = cargar_extra(HERE / CFG["recuperador"].get("frases_extra", "frases_extra.json"))
+    REC_A = RecuperadorHibrido(KB, embed, CFG["recuperador"], _extra, _anclas)
+
+
+PREGUNTA = "No estoy seguro de qué necesitas. ¿Tu pregunta es sobre…?"
+
+
 def predict_a(text):
+    if REC_A is not None:
+        return REC_A.predecir(text)
     D, I = search(embed([text]), 1)
     score = float(D[0, 0])
     return (kb_ids[I[0, 0]] if score >= TAU else NO_ANSWER), score
@@ -204,9 +223,18 @@ def favicon():
 
 @app.get("/api/health")
 def health():
-    return {"ok": True, "modelo_a": CFG["embedding_model"], "tau": TAU,
+    return {"ok": True, "modelo_a": CFG["embedding_model"] + (" + letras (recuperador híbrido)" if REC_A else ""),
+            "tau": REC_A.cfg["tau"] if REC_A else TAU,
             "modelo_b": OPENAI_MODEL if client else None,
             "modelo_c": OLLAMA_MODEL if OLLAMA_MODEL and MODE in ("AUTO", "C") else None, "modo": MODE}
+
+
+@app.get("/api/respuesta/{intent}")
+def respuesta(intent: str):
+    """Respuesta verificada de la situación que la persona eligió entre las opciones."""
+    item = KB_BY_ID.get(intent)
+    return {"texto": item["respuesta"] if item else FALLBACK, "fuente": item["fuente"] if item else None,
+            "intent": intent if item else NO_ANSWER}
 
 
 @app.post("/api/chat")
@@ -225,8 +253,16 @@ def chat(p: Pregunta):
         except Exception as e:   # Ollama cerrado o demasiado lento: responde el Modelo A
             print(f"Modelo C no disponible ({type(e).__name__}); respondo con el Modelo A")
     if intent is None:
-        intent, _ = predict_a(question)
         modelo = "Modelo A (local)"
+        if REC_A is not None:
+            kind, ids, _ = REC_A.decidir(question)
+            if kind == "preguntar":   # duda entre dos situaciones: la persona elige; no se afirma nada
+                return {"texto": PREGUNTA, "fuente": None, "intent": "PREGUNTAR", "modelo": modelo,
+                        "opciones": [{"intent": i, "titulo": KB_BY_ID[i].get("titulo", i)} for i in ids],
+                        "ms": round((time.perf_counter() - t0) * 1000)}
+            intent = ids[0] if kind == "responder" else NO_ANSWER
+        else:
+            intent, _ = predict_a(question)
     item = KB_BY_ID.get(intent)
     return {"texto": item["respuesta"] if item else FALLBACK,
             "fuente": item["fuente"] if item else None,

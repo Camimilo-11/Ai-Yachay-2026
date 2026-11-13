@@ -1,0 +1,13 @@
+question,condition,answer,check
+¿Qué día son las elecciones seccionales y del CPCCS en Ecuador?,closed-book,Las elecciones seccionales y del CPCCS en Ecuador serán el domingo 14 de febrero de 2027.,wrong
+¿Qué día son las elecciones seccionales y del CPCCS en Ecuador?,RAG,Las elecciones son el domingo 29 de noviembre de 2026.,correct
+¿En qué horario se puede votar en las elecciones seccionales de Ecuador?,closed-book,"Se puede votar de 07:00 a 17:00, según la hora local del lugar de votación.",correct
+¿En qué horario se puede votar en las elecciones seccionales de Ecuador?,RAG,Se puede votar de 07:00 a 17:00. Se recomienda llegar antes de las 16:00.,correct
+¿Hasta qué hora puedo votar el día de las elecciones seccionales en Ecuador?,closed-book,"En Ecuador, puedes votar hasta las 17:00 (5:00 p. m.), hora local.",correct
+¿Hasta qué hora puedo votar el día de las elecciones seccionales en Ecuador?,RAG,Puedes votar hasta las 17:00; te recomendamos llegar antes de las 16:00.,correct
+"En las elecciones seccionales de Ecuador, ¿puedo usar el celular mientras voto?",closed-book,"Puedes llevar el celular, pero no usarlo mientras marcas tu papeleta ni tomarle fotos. Sigue las indicaciones de la Junta Receptora del Voto y del CNE para esa elección.",wrong
+"En las elecciones seccionales de Ecuador, ¿puedo usar el celular mientras voto?",RAG,No. Debes guardar el celular antes de recibir tus papeletas y no usarlo detrás del biombo.,correct
+"Si no sé escribir, ¿cómo firmo el padrón en las elecciones de Ecuador?",closed-book,"Avísale a un integrante de la Junta Receptora del Voto: si no sabes escribir, puedes dejar tu huella dactilar en el padrón en lugar de firmar. ellos te indicarán cómo hacerlo.",correct
+"Si no sé escribir, ¿cómo firmo el padrón en las elecciones de Ecuador?",RAG,"Si no puedes firmar, pones tu huella dactilar.",correct
+¿Quiénes pueden votar sin hacer fila en las elecciones de Ecuador?,closed-book,"En Ecuador reciben atención preferente y pueden votar sin hacer fila las personas adultas mayores, las personas con discapacidad, las mujeres embarazadas y quienes llevan niños en brazos.",correct
+¿Quiénes pueden votar sin hacer fila en las elecciones de Ecuador?,RAG,"Las personas con discapacidad, las personas adultas mayores, las mujeres embarazadas y quienes llevan niños en brazos pueden votar sin hacer fila.",correct

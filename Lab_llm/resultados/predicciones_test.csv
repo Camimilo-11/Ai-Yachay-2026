@@ -1,0 +1,139 @@
+base_id,texto,intent,level,split,origin,qid,pred_A,score_A,pred_A+,pred_B,tokens_in_B,tokens_out_B,latency_B,outcome_A,outcome_A+,outcome_B
+horario-0,a que hora puedo ir a votar,horario,clean,test,synthetic,0,horario,0.96351975,horario,horario,367,26,5.071859500000073,correct,correct,correct
+horario-0,a qoe hura puedo ir a botar,horario,light,test,synthetic,1,NO_ANSWER,0.41294512,horario,horario,370,46,1.9896642999999585,safe_fail,correct,correct
+horario-0,a que ora pueo ir a botar,horario,heavy,test,synthetic,2,NO_ANSWER,0.5376996,horario,horario,370,27,1.5607047000000875,safe_fail,correct,correct
+horario-2,si llego a las cinco de la tarde todavia puedo votar,horario,clean,test,synthetic,6,horario,0.78959835,horario,horario,373,38,1.6374409000000014,correct,correct,correct
+horario-2,si llegu a las cinko de la tarde todavia puedo votar,horario,light,test,synthetic,7,horario,0.7486023,horario,horario,374,34,1.713216999999986,correct,correct,correct
+horario-2,se llegu a las cincu de la tarde tudaba poido botar,horario,heavy,test,synthetic,8,NO_ANSWER,0.4392528,horario,horario,376,42,1.6439186000000063,safe_fail,correct,correct
+horario-3,desde que hora abren para votar,horario,clean,test,synthetic,9,horario,0.8661756,horario,horario,367,27,1.9577656999999817,correct,correct,correct
+horario-3,desde que hora abren para botar,horario,light,test,synthetic,10,horario,0.7420026,horario,horario,368,31,1.5226189999998496,correct,correct,correct
+horario-3,dide ki ora abren para votar,horario,heavy,test,synthetic,11,horario,0.7411412,horario,horario,368,47,1.44869830000016,correct,correct,correct
+horario-5,puedo votar en la tarde,horario,clean,test,synthetic,15,horario,0.7273387,horario,horario,366,26,1.3326457000000573,correct,correct,correct
+horario-5,poedu botar en la tarde,horario,light,test,synthetic,16,NO_ANSWER,0.427773,horario,horario,367,33,1.6109899999999016,safe_fail,correct,correct
+horario-5,puedo vutar en la tare,horario,heavy,test,synthetic,17,NO_ANSWER,0.44309226,map,horario,367,44,1.7700030999999399,safe_fail,unsafe,correct
+fecha-2,en que mes son las elecciones,fecha,clean,test,synthetic,24,fecha,0.8341865,fecha,fecha,366,30,1.8090617000000293,correct,correct,correct
+fecha-2,en ke mes son las elecciones,fecha,light,test,synthetic,25,fecha,0.7140513,fecha,fecha,366,32,1.7291055999999116,correct,correct,correct
+fecha-2,in qoe mis sun las eleccones,fecha,heavy,test,synthetic,26,NO_ANSWER,0.25461358,NO_ANSWER,fecha,369,36,1.9196297000000868,safe_fail,safe_fail,correct
+fecha-3,el domingo hay elecciones,fecha,clean,test,synthetic,27,fecha,0.9227884,fecha,fecha,364,36,1.3971831000001202,correct,correct,correct
+fecha-3,il domingo hay elecsiones,fecha,light,test,synthetic,28,fecha,0.6917422,fecha,fecha,366,50,1.4924250999999913,correct,correct,correct
+fecha-3,el dmingo ay elecciones,fecha,heavy,test,synthetic,29,fecha,0.7893502,fecha,fecha,366,34,1.521669700000075,correct,correct,correct
+fecha-4,que fecha toca ir a votar,fecha,clean,test,synthetic,30,lugar,0.78672945,fecha,fecha,366,26,1.358799500000032,unsafe,correct,correct
+fecha-4,ke fecha toca ir a votar,fecha,light,test,synthetic,31,lugar,0.7788869,fecha,fecha,366,25,1.3310222000000067,unsafe,correct,correct
+fecha-4,ke fcha toka er a butar,fecha,heavy,test,synthetic,32,NO_ANSWER,0.30951142,lugar,fecha,368,35,1.516883499999949,safe_fail,unsafe,correct
+fecha-5,ya son las votaciones esta semana,fecha,clean,test,synthetic,33,fecha,0.6969685,NO_ANSWER,fecha,367,45,1.7663747999999941,correct,safe_fail,correct
+fecha-5,ya son las botaciones esta semana,fecha,light,test,synthetic,34,NO_ANSWER,0.4717115,NO_ANSWER,fecha,367,58,1.6229465000001255,safe_fail,safe_fail,correct
+fecha-5,ya son las butaseuns esta semana,fecha,heavy,test,synthetic,35,NO_ANSWER,0.5254906,fecha,fecha,368,61,1.728289200000063,safe_fail,correct,correct
+documento-0,que tengo que llevar para votar,documento,clean,test,synthetic,36,asistido,0.83080673,documento,documento,366,32,1.5486085000000003,unsafe,correct,correct
+documento-0,que tingo que yivar para votar,documento,light,test,synthetic,37,asistido,0.74740016,documento,NO_ANSWER,368,31,1.6537539999999353,unsafe,correct,safe_fail
+documento-0,qoe tigu qoe llevar para votar,documento,heavy,test,synthetic,38,asistido,0.6791955,documento,NO_ANSWER,369,32,1.3880860000001576,unsafe,correct,safe_fail
+documento-1,me olvide la cedula puedo votar igual,documento,clean,test,synthetic,39,asistido,0.70885694,NO_ANSWER,NO_ANSWER,369,32,1.640103500000123,unsafe,safe_fail,safe_fail
+documento-1,me olbede la cedula puedo votar igual,documento,light,test,synthetic,40,asistido,0.73507917,NO_ANSWER,NO_ANSWER,370,34,1.638497599999937,unsafe,safe_fail,safe_fail
+documento-1,me olvidi la cedola pueo vutar egual,documento,heavy,test,synthetic,41,NO_ANSWER,0.40230456,NO_ANSWER,NO_ANSWER,373,34,1.5026677999999265,safe_fail,safe_fail,safe_fail
+documento-3,necesito algun papel para votar,documento,clean,test,synthetic,45,asistido,0.8455836,asistido,NO_ANSWER,367,35,1.4549587000001338,unsafe,unsafe,safe_fail
+documento-3,nesisito algun papel para votar,documento,light,test,synthetic,46,lugar,0.8169595,asistido,NO_ANSWER,367,31,1.417057800000066,unsafe,unsafe,safe_fail
+documento-3,nicesto algon papil para votar,documento,heavy,test,synthetic,47,lugar,0.6980982,asistido,NO_ANSWER,368,36,1.4462846999999783,unsafe,unsafe,safe_fail
+documento-4,con que documento me identifico en la mesa,documento,clean,test,synthetic,48,NO_ANSWER,0.5534183,documento,NO_ANSWER,369,25,1.3196605999999065,safe_fail,correct,safe_fail
+documento-4,kon qoe documento me idintefico in la mesa,documento,light,test,synthetic,49,NO_ANSWER,0.44519788,documento,NO_ANSWER,371,38,1.22264569999993,safe_fail,correct,safe_fail
+documento-4,con que docominto me identeico en la misa,documento,heavy,test,synthetic,50,NO_ANSWER,0.42610794,documento,documento,372,58,1.659149499999785,safe_fail,correct,correct
+celular-0,puedo llevar mi telefono,celular,clean,test,synthetic,54,celular,0.80336004,celular,celular,365,25,1.4413417999999183,correct,correct,correct
+celular-0,puedo llebar me telefono,celular,light,test,synthetic,55,celular,0.84248614,celular,celular,366,45,1.5051564000000326,correct,correct,correct
+celular-0,puedu llbar mi telefono,celular,heavy,test,synthetic,56,celular,0.7943095,celular,celular,366,42,1.9466055000000324,correct,correct,correct
+celular-2,se puede usar celular en la mesa,celular,clean,test,synthetic,60,NO_ANSWER,0.57742584,celular,celular,367,26,1.5367048999999042,safe_fail,correct,correct
+celular-2,se puede usar selular en la mesa,celular,light,test,synthetic,61,NO_ANSWER,0.41845208,celular,celular,368,29,1.4613864000000376,safe_fail,correct,correct
+celular-2,si poee usar silolar in la mesa,celular,heavy,test,synthetic,62,NO_ANSWER,0.48796543,celular,celular,369,49,1.7398598999998285,safe_fail,correct,correct
+celular-3,me quitan el celular para votar,celular,clean,test,synthetic,63,celular,0.8059884,celular,celular,367,36,1.6044904000000315,correct,correct,correct
+celular-3,me quitan el selular para votar,celular,light,test,synthetic,64,asistido,0.724397,celular,celular,368,26,1.5406487000000197,unsafe,correct,correct
+celular-3,me qoitan el slolar para vutar,celular,heavy,test,synthetic,65,NO_ANSWER,0.42001277,NO_ANSWER,celular,369,36,1.5466778999998496,safe_fail,safe_fail,correct
+celular-5,puedo contestar el telefono cuando estoy votando,celular,clean,test,synthetic,69,celular,0.85085034,celular,celular,370,34,1.7231385999998565,correct,correct,correct
+celular-5,puedo kontistar el telifono cuando estoy votando,celular,light,test,synthetic,70,asistido,0.75397956,celular,celular,372,42,1.4690625000000637,unsafe,correct,correct
+celular-5,poedo kontistar il tiefono kuando istoy botandu,celular,heavy,test,synthetic,71,NO_ANSWER,0.27563083,NO_ANSWER,celular,373,39,1.4640351999998984,safe_fail,safe_fail,correct
+firma-1,como firmo si no se escribir,firma,clean,test,synthetic,75,firma,0.80082536,firma,firma,367,24,1.4819603999999345,correct,correct,correct
+firma-1,komo firmo si no se escribir,firma,light,test,synthetic,76,firma,0.7772796,firma,firma,368,29,1.9181667000000289,correct,correct,correct
+firma-1,kumo fermu se no se isciber,firma,heavy,test,synthetic,77,NO_ANSWER,0.3832006,firma,firma,369,53,1.5895225000001574,safe_fail,correct,correct
+firma-2,donde pongo mi firma,firma,clean,test,synthetic,78,firma,0.837463,firma,firma,365,35,1.598234199999979,correct,correct,correct
+firma-2,dunde pungu me firma,firma,light,test,synthetic,79,NO_ANSWER,0.58397907,firma,firma,366,60,1.5459233000001404,safe_fail,correct,correct
+firma-2,donde punu me firma,firma,heavy,test,synthetic,80,firma,0.7327219,firma,firma,366,64,1.7196408999998312,correct,correct,correct
+firma-3,puedo poner el dedo en vez de firmar,firma,clean,test,synthetic,81,firma,0.7719401,firma,firma,370,26,1.442689800000153,correct,correct,correct
+firma-3,puedo poner el dedo en bez de firmar,firma,light,test,synthetic,82,firma,0.7409973,firma,firma,370,39,1.8604391000001215,correct,correct,correct
+firma-3,puidu poner el dedo en bis di firmr,firma,heavy,test,synthetic,83,firma,0.6399885,firma,firma,371,49,1.634136699999999,correct,correct,correct
+firma-5,que hago despues de votar,firma,clean,test,synthetic,87,asistido,0.7428555,NO_ANSWER,NO_ANSWER,365,54,1.9456492000001617,unsafe,safe_fail,safe_fail
+firma-5,qoe hagu despues de botar,firma,light,test,synthetic,88,NO_ANSWER,0.4080932,NO_ANSWER,NO_ANSWER,367,179,2.533703800000012,safe_fail,safe_fail,safe_fail
+firma-5,ki hago dspuis di botar,firma,heavy,test,synthetic,89,NO_ANSWER,0.46340257,NO_ANSWER,NO_ANSWER,367,67,1.7024988999999096,safe_fail,safe_fail,safe_fail
+asistido-2,puedo ir con alguien que me ayude,asistido,clean,test,synthetic,96,NO_ANSWER,0.4197321,asistido,asistido,369,54,1.9996201999999812,safe_fail,correct,correct
+asistido-2,puedo ir cun alguien ke me ayude,asistido,light,test,synthetic,97,NO_ANSWER,0.42254996,asistido,asistido,369,41,1.3912683999999444,safe_fail,correct,correct
+asistido-2,puedu er kun agueen ke me ayodi,asistido,heavy,test,synthetic,98,NO_ANSWER,0.5272502,asistido,asistido,371,95,2.846700300000066,safe_fail,correct,correct
+asistido-3,necesito que me acompanen a votar,asistido,clean,test,synthetic,99,asistido,0.8663464,asistido,NO_ANSWER,369,153,2.9811712000000625,correct,correct,safe_fail
+asistido-3,nesesito que me acompanin a votar,asistido,light,test,synthetic,100,lugar,0.80655676,asistido,NO_ANSWER,369,103,2.392230100000006,unsafe,correct,safe_fail
+asistido-3,nesesito ke mi akompanin a botr,asistido,heavy,test,synthetic,101,NO_ANSWER,0.49625087,NO_ANSWER,asistido,372,277,3.357903399999941,safe_fail,safe_fail,correct
+asistido-4,quien me puede ayudar a votar,asistido,clean,test,synthetic,102,asistido,0.8867961,asistido,asistido,367,43,1.5420596999999816,correct,correct,correct
+asistido-4,kien me puede ayudar a vutar,asistido,light,test,synthetic,103,NO_ANSWER,0.4099285,asistido,asistido,367,35,2.03525999999988,safe_fail,correct,correct
+asistido-4,qoin mi puede ayodar a botar,asistido,heavy,test,synthetic,104,NO_ANSWER,0.34525818,asistido,asistido,369,39,1.331771099999969,safe_fail,correct,correct
+asistido-5,no puedo votar solo,asistido,clean,test,synthetic,105,asistido,0.7180019,NO_ANSWER,asistido,364,64,1.9100697000001219,correct,safe_fail,correct
+asistido-5,no puedo botar solo,asistido,light,test,synthetic,106,asistido,0.6370331,NO_ANSWER,asistido,365,57,2.7027630000000045,correct,safe_fail,correct
+asistido-5,no puedu btar solo,asistido,heavy,test,synthetic,107,NO_ANSWER,0.5761593,NO_ANSWER,asistido,366,54,1.876940500000046,safe_fail,safe_fail,correct
+preferencial-0,estoy esperando bebe tengo que hacer cola,preferencial,clean,test,synthetic,108,preferencial,0.6558282,preferencial,preferencial,368,32,1.3302886999999828,correct,correct,correct
+preferencial-0,estoy espirando bibi tengo qui haser cula,preferencial,light,test,synthetic,109,NO_ANSWER,0.5259846,preferencial,preferencial,373,76,1.628489499999887,safe_fail,correct,correct
+preferencial-0,estuy esperando bibi tengu qoi hasr kola,preferencial,heavy,test,synthetic,110,NO_ANSWER,0.38620213,preferencial,preferencial,372,97,1.9093478999998297,safe_fail,correct,correct
+preferencial-2,voy con mi wawa cargada,preferencial,clean,test,synthetic,114,NO_ANSWER,0.57282233,preferencial,preferencial,367,64,1.6124649000000773,safe_fail,correct,correct
+preferencial-2,voy kon mi wawa cargada,preferencial,light,test,synthetic,115,NO_ANSWER,0.50293124,preferencial,preferencial,367,52,1.5525906000000305,safe_fail,correct,correct
+preferencial-2,vuy con mi wawa cargaa,preferencial,heavy,test,synthetic,116,NO_ANSWER,0.37882257,preferencial,preferencial,368,52,1.7746654999998555,safe_fail,correct,correct
+preferencial-4,tengo discapacidad tengo que esperar en la fila,preferencial,clean,test,synthetic,120,preferencial,0.67174447,preferencial,preferencial,369,28,1.2807010999999875,correct,correct,correct
+preferencial-4,tengo discapasidad tengo que esperar en la fila,preferencial,light,test,synthetic,121,NO_ANSWER,0.58405143,preferencial,preferencial,371,52,1.590804799999887,safe_fail,correct,correct
+preferencial-4,tengo deskapasdad tingo qoe esperar en la fela,preferencial,heavy,test,synthetic,122,NO_ANSWER,0.46348554,preferencial,preferencial,373,59,1.7204121999998279,safe_fail,correct,correct
+preferencial-5,hay preferencia para embarazadas,preferencial,clean,test,synthetic,123,preferencial,0.62579465,preferencial,preferencial,367,33,1.3520614999999907,correct,correct,correct
+preferencial-5,hay preferencea para embarasadas,preferencial,light,test,synthetic,124,NO_ANSWER,0.34085858,preferencial,preferencial,367,37,1.9942602000000988,safe_fail,correct,correct
+preferencial-5,hay preferencia para imbaasadas,preferencial,heavy,test,synthetic,125,NO_ANSWER,0.33622676,preferencial,preferencial,368,34,1.422943499999974,safe_fail,correct,correct
+map-1,no puedo caminar hasta la mesa,map,clean,test,synthetic,129,map,0.9096405,map,map,366,32,1.6983236999999463,correct,correct,correct
+map-1,no puedu caminar asta la mesa,map,light,test,synthetic,130,map,0.88784295,map,map,367,37,1.663170700000137,correct,correct,correct
+map-1,nu puio kaminar asta la mesa,map,heavy,test,synthetic,131,NO_ANSWER,0.49278498,map,map,368,35,1.4463439999999537,safe_fail,correct,correct
+map-2,mi abuela usa muletas y la mesa queda lejos,map,clean,test,synthetic,132,map,0.60217667,map,map,371,116,2.11235889999989,correct,correct,correct
+map-2,mi abuela usa muletas y la mesa keda lejos,map,light,test,synthetic,133,NO_ANSWER,0.55961406,map,map,372,63,1.752502899999854,safe_fail,correct,correct
+map-2,mi abuea usa mulitas y la mesa kida lijus,map,heavy,test,synthetic,134,NO_ANSWER,0.44381055,map,map,374,65,1.8458998999999494,safe_fail,correct,correct
+map-3,donde votan los que no pueden subir,map,clean,test,synthetic,135,lugar,0.76721036,NO_ANSWER,map,369,52,1.627900899999986,unsafe,safe_fail,correct
+map-3,donde botan lus que no pueden subir,map,light,test,synthetic,136,NO_ANSWER,0.5378281,map,map,368,82,1.9394715999999335,safe_fail,correct,correct
+map-3,dondi botan los ke nu poedin sbir,map,heavy,test,synthetic,137,NO_ANSWER,0.43091866,NO_ANSWER,map,370,62,1.524107800000138,safe_fail,safe_fail,correct
+map-5,mi papa esta enfermo y no puede llegar a su junta,map,clean,test,synthetic,141,NO_ANSWER,0.589035,map,map,372,71,1.8237715000000208,safe_fail,correct,correct
+map-5,mi papa esta enfermo y no puede yegar a su junta,map,light,test,synthetic,142,NO_ANSWER,0.5458402,map,map,373,67,1.7448847999999089,safe_fail,correct,correct
+map-5,mi papa esta enfermo y no puee llegar a su junta,map,heavy,test,synthetic,143,NO_ANSWER,0.5764791,map,map,374,94,2.060598900000059,safe_fail,correct,correct
+braille-0,soy ciega como voto,braille,clean,test,synthetic,144,braille,0.9271437,braille,braille,365,24,1.5088298999999097,correct,correct,correct
+braille-0,soy siega como voto,braille,light,test,synthetic,145,lugar,0.77539253,braille,braille,365,57,1.4687039999998888,unsafe,correct,correct
+braille-0,soy cega komo votu,braille,heavy,test,synthetic,146,braille,0.8563909,braille,braille,366,62,1.550380099999984,correct,correct,correct
+braille-1,mi tio no ve nada puede votar,braille,clean,test,synthetic,147,braille,0.62269664,NO_ANSWER,braille,367,35,2.0167644999999084,correct,safe_fail,correct
+braille-1,mi tio no be nada puede votar,braille,light,test,synthetic,148,asistido,0.6099422,NO_ANSWER,braille,367,51,2.283562700000175,unsafe,safe_fail,correct
+braille-1,me tiu nu bi nada pedi botar,braille,heavy,test,synthetic,149,NO_ANSWER,0.51247895,NO_ANSWER,NO_ANSWER,368,349,4.5855403999999,safe_fail,safe_fail,safe_fail
+braille-2,hay ayuda para personas que no ven,braille,clean,test,synthetic,150,NO_ANSWER,0.44561714,NO_ANSWER,braille,367,32,1.6445143999999345,safe_fail,safe_fail,correct
+braille-2,ay ayuda para personas que no ven,braille,light,test,synthetic,151,NO_ANSWER,0.4556935,asistido,braille,367,49,1.610984099999996,safe_fail,unsafe,correct
+braille-2,ay ayuda para pesunas qoi nu ven,braille,heavy,test,synthetic,152,NO_ANSWER,0.3825233,asistido,braille,369,70,1.8643228000000818,safe_fail,unsafe,correct
+braille-4,no puedo leer la papeleta porque no veo,braille,clean,test,synthetic,156,asistido,0.679212,asistido,braille,369,32,1.2012437000000773,unsafe,unsafe,correct
+braille-4,no puedo leer la papeleta porke no veo,braille,light,test,synthetic,157,NO_ANSWER,0.59472686,NO_ANSWER,braille,370,41,1.4173503000001801,safe_fail,safe_fail,correct
+braille-4,no poeu leer la papeleta porke nu veo,braille,heavy,test,synthetic,158,NO_ANSWER,0.59420323,NO_ANSWER,braille,371,41,1.5200403999999708,safe_fail,safe_fail,correct
+politica-0,a quien le doy mi voto,politica,clean,test,synthetic,162,politica,0.7749853,NO_ANSWER,politica,366,40,1.7608680000000732,correct,safe_fail,correct
+politica-0,a quiin le doy mi botu,politica,light,test,synthetic,163,NO_ANSWER,0.3642199,NO_ANSWER,politica,368,49,1.5517561999999998,safe_fail,safe_fail,correct
+politica-0,a kien le doy mi voto,politica,heavy,test,synthetic,164,politica,0.8038275,NO_ANSWER,politica,366,38,2.1239560999999867,correct,safe_fail,correct
+politica-1,que candidato es mejor para alcalde,politica,clean,test,synthetic,165,politica,0.61594504,politica,politica,366,32,1.6940288000000692,correct,correct,correct
+politica-1,ke candidatu es mejor para alcalde,politica,light,test,synthetic,166,NO_ANSWER,0.47696728,politica,politica,367,41,1.7804647000000386,safe_fail,correct,correct
+politica-1,ke kandidato es mejor para alkldi,politica,heavy,test,synthetic,167,NO_ANSWER,0.5435184,politica,politica,368,30,1.530413499999895,safe_fail,correct,correct
+politica-2,por cual partido votar,politica,clean,test,synthetic,168,lugar,0.7940762,politica,politica,364,26,2.1147111000000223,unsafe,correct,correct
+politica-2,por kual partidu vutar,politica,light,test,synthetic,169,NO_ANSWER,0.36258537,politica,politica,367,29,1.8133267000000615,safe_fail,correct,correct
+politica-2,por kual partidu boar,politica,heavy,test,synthetic,170,NO_ANSWER,0.37976998,politica,politica,367,42,1.8076187000001482,safe_fail,correct,correct
+NO_ANSWER-1,cuanto es la multa por no votar,NO_ANSWER,clean,test,synthetic,177,NO_ANSWER,0.59745884,NO_ANSWER,NO_ANSWER,368,34,8.050258400000075,correct,correct,correct
+NO_ANSWER-1,koanto is la multa por no votar,NO_ANSWER,light,test,synthetic,178,NO_ANSWER,0.5067369,NO_ANSWER,NO_ANSWER,368,39,4.237841900000149,correct,correct,correct
+NO_ANSWER-1,coanto es la mlta pur no butar,NO_ANSWER,heavy,test,synthetic,179,NO_ANSWER,0.3393916,NO_ANSWER,NO_ANSWER,370,44,2.320851100000027,correct,correct,correct
+NO_ANSWER-2,como saco la cedula nueva,NO_ANSWER,clean,test,synthetic,180,NO_ANSWER,0.38568944,NO_ANSWER,NO_ANSWER,366,42,1.6339536000000408,correct,correct,correct
+NO_ANSWER-2,como saco la sidola nuiva,NO_ANSWER,light,test,synthetic,181,NO_ANSWER,0.35594624,NO_ANSWER,NO_ANSWER,367,81,2.595660200000111,correct,correct,correct
+NO_ANSWER-2,como saco la seula nueba,NO_ANSWER,heavy,test,synthetic,182,NO_ANSWER,0.46138942,NO_ANSWER,NO_ANSWER,367,92,2.5167635999998765,correct,correct,correct
+NO_ANSWER-3,a que hora pasa el bus a la comunidad,NO_ANSWER,clean,test,synthetic,183,NO_ANSWER,0.43217257,NO_ANSWER,NO_ANSWER,369,38,1.7214372999999341,correct,correct,correct
+NO_ANSWER-3,a ke hora pasa el bus a la cumunidad,NO_ANSWER,light,test,synthetic,184,NO_ANSWER,0.48168272,NO_ANSWER,NO_ANSWER,370,38,1.7519677000000229,correct,correct,correct
+NO_ANSWER-3,a ke ora pasa el bus a la comoidad,NO_ANSWER,heavy,test,synthetic,185,NO_ANSWER,0.2420876,NO_ANSWER,NO_ANSWER,370,37,1.7759118999999828,correct,correct,correct
+NO_ANSWER-4,cuanto gana un miembro de mesa,NO_ANSWER,clean,test,synthetic,186,NO_ANSWER,0.39134872,NO_ANSWER,NO_ANSWER,367,37,3.972890799999959,correct,correct,correct
+NO_ANSWER-4,kuanto gana un miembro de mesa,NO_ANSWER,light,test,synthetic,187,NO_ANSWER,0.33908597,NO_ANSWER,NO_ANSWER,367,53,1.7171461000000363,correct,correct,correct
+NO_ANSWER-4,cunto gana un meembro di mesa,NO_ANSWER,heavy,test,synthetic,188,NO_ANSWER,0.27551007,NO_ANSWER,NO_ANSWER,368,38,2.052601999999979,correct,correct,correct
+NO_ANSWER-6,donde consulto mi lugar de votacion,lugar,clean,test,synthetic,192,lugar,0.8576429,lugar,lugar,369,27,2.0560186999998677,correct,correct,correct
+NO_ANSWER-6,donde konsulto me lugar de votacion,lugar,light,test,synthetic,193,lugar,0.8188189,lugar,lugar,369,26,2.2422999999998865,correct,correct,correct
+NO_ANSWER-6,dnde konsolto me logar de botaciun,lugar,heavy,test,synthetic,194,NO_ANSWER,0.44326237,lugar,lugar,372,37,1.4423170999998547,safe_fail,correct,correct
+NO_ANSWER-7,que pasa si no voy a votar,NO_ANSWER,clean,test,synthetic,195,asistido,0.7581223,NO_ANSWER,NO_ANSWER,367,36,1.8272684999999456,unsafe,correct,correct
+NO_ANSWER-7,que pasa si no boy a votar,NO_ANSWER,light,test,synthetic,196,asistido,0.7600228,NO_ANSWER,NO_ANSWER,367,48,1.6433850999999322,unsafe,correct,correct
+NO_ANSWER-7,que pasa se no boy a botr,NO_ANSWER,heavy,test,synthetic,197,NO_ANSWER,0.3458695,firma,NO_ANSWER,368,42,1.6492071000000124,correct,unsafe,correct
+NO_ANSWER-8,como me inscribo para ser candidato,NO_ANSWER,clean,test,synthetic,198,lugar,0.6613098,politica,NO_ANSWER,368,102,1.9382531999999628,unsafe,unsafe,correct
+NO_ANSWER-8,komo me inscribo para ser candidato,NO_ANSWER,light,test,synthetic,199,NO_ANSWER,0.5787691,politica,politica,369,39,1.5237801000000673,correct,unsafe,unsafe
+NO_ANSWER-8,cumo mi inscribo para ser canddato,NO_ANSWER,heavy,test,synthetic,200,NO_ANSWER,0.5697911,NO_ANSWER,politica,370,104,2.1363390999999865,correct,correct,unsafe

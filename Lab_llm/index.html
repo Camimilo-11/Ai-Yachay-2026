@@ -191,6 +191,17 @@ h1 .w { display: inline-block; animation: rise 0.7s cubic-bezier(.2,.8,.2,1) bot
 .chip:nth-child(5n+3):hover { background: var(--tint-yellow); border-color: var(--yellow); }
 .chip:nth-child(5n+4):hover { background: var(--tint-blue); border-color: var(--royal); }
 .chip:nth-child(5n+5):hover { background: var(--tint-turq); border-color: var(--green); }
+/* «¿Tu pregunta es sobre…?»: opciones cuando el asistente duda entre dos situaciones */
+.opts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.opt {
+  font: inherit; font-size: 1rem; font-weight: 700; color: var(--navy); background: var(--bg); cursor: pointer; text-align: left;
+  border: 1.5px solid var(--royal); border-radius: 999px; padding: 8px 14px; min-height: 44px; transition: background 0.2s, border-color 0.2s;
+}
+.opt:hover, .opt:focus-visible { background: var(--tint-blue); }
+.opt.none { color: var(--ink-soft); border-color: var(--line); font-weight: 400; }
+.opt[aria-pressed="true"] { background: var(--tint-blue); border-color: var(--navy); }
+.opt:disabled { cursor: default; opacity: 0.55; }
+.opt[aria-pressed="true"]:disabled { opacity: 1; }
 
 /* Cómo votar, paso a paso: carrusel que aparece con el asistente abierto (escritorio).
    Una imagen a la vez en un marco cosido, flechas de faja y puntos; sin desplazamiento de la página. */
@@ -872,6 +883,20 @@ const AQ = {
 };
 const RESP_POLITICA_QU = "Candidatokunamanta mana willanichu; pita akllanatapash mana nini. Akllayka pakallami, kikinllami akllanki.";
 const RESP_NO_SE_QU = "Kay tapuyta manarak yachanichu. Junta runakunata tapuy; paykunami yanapanka.";
+/* «¿Tu pregunta es sobre…?»: cuando el servidor duda entre dos situaciones, la persona elige (kichwa: borrador sin validar) */
+const CLARIFY = { es: "No estoy seguro de qué necesitas. ¿Tu pregunta es sobre…?", qu: "¿Kaymantachu tapunki?" };
+const NINGUNA = { es: "Ninguna de estas", qu: "Mana kaykunachu" };
+const OPC = {
+  es: { horario: "El horario de votación", fecha: "El día de las elecciones", documento: "El documento que debo llevar",
+        celular: "Usar el celular al votar", firma: "Cómo firmo o pongo la huella", asistido: "Votar con ayuda de alguien",
+        preferencial: "Votar sin hacer fila", map: "No puedo llegar hasta mi mesa", braille: "Personas que no ven (Braille)",
+        lugar: "Dónde me toca votar", politica: "Candidatos o por quién votar" },
+  qu: { horario: "Akllay pacha", fecha: "Akllay puncha", documento: "Cédula, kamu", celular: "Celularta hapiy",
+        firma: "Shutita killkay, rukata churay", asistido: "Yanapaywan akllay", preferencial: "Mana suyashpa akllay",
+        map: "Juntaman mana chayay ushani", braille: "Mana rikuy ushani (Braille)", lugar: "Maypi akllana", politica: "Candidatokuna" }
+};
+const opcLabel = (id, l) => id === "__none" ? (NINGUNA[l || window.LANG] || NINGUNA.es)
+  : ((OPC[l || window.LANG] || OPC.es)[id] || OPC.es[id] || id);
 const KW_QU = {
   horario: { pacha: 0.8 }, documento: { kamu: 0.8 }, firma: { killkay: 1, killkana: 1, ruka: 0.9 },
   asistido: { yanapay: 1, yanapana: 1 }, preferencial: { wiksayuk: 1, yuyak: 1, suyay: 0.6 },
@@ -884,6 +909,14 @@ const fmtFuente = (src, qu) => !src ? null : /^págs?\. /.test(src)
   ? (qu ? "Pukyu: CNE yachachik kamu, " + srcQu(src) : "Fuente: instructivo CNE, " + src)
   : (qu ? "Pukyu: " : "Fuente: ") + src;
 const INDEX = KB.map(it => ({ ...it, nk: Object.entries(it.kw).map(([k, w]) => [norm(k), w]) }));
+// Respuesta verificada de la situación que la persona eligió entre las opciones
+function respuestaDe(id) {
+  const qu = window.LANG === "qu";
+  if (id === "politica") return { texto: qu ? RESP_POLITICA_QU : RESP_POLITICA, fuente: null, intent: id };
+  const it = KB.find(k => k.id === id);
+  if (!it) return { texto: qu ? RESP_NO_SE_QU : RESP_NO_SE, fuente: null, intent: null };
+  return { texto: qu ? (AQ[id] || it.a) : it.a, fuente: fmtFuente(it.src, qu), intent: id };
+}
 
 function responderLocal(texto) {
   const qu = window.LANG === "qu";
@@ -927,7 +960,10 @@ async function responder(texto) {
       const r = await fetch(API_CHAT, { method: "POST", headers: { "Content-Type": "application/json" },
                                         body: JSON.stringify({ pregunta: texto, idioma: window.LANG }) });
       if (r.ok) {
-        const d = await r.json();   // { texto, fuente, intent, modelo, ms }
+        const d = await r.json();   // { texto, fuente, intent, modelo, ms } u { intent: "PREGUNTAR", opciones }
+        if (d.intent === "PREGUNTAR" && Array.isArray(d.opciones) && d.opciones.length)
+          return { texto: CLARIFY[window.LANG] || CLARIFY.es, fuente: d.modelo || null,
+                   opciones: d.opciones.map(o => o.intent), intent: d.intent };
         let t = d.texto;
         if (qu) t = d.intent === "NO_ANSWER" ? RESP_NO_SE_QU : d.intent === "politica" ? RESP_POLITICA_QU : (AQ[d.intent] || d.texto);
         let f = fmtFuente(d.fuente, qu);
@@ -1089,8 +1125,35 @@ checkBackend();
       setBotText(wait, res.texto);
       if (res.fuente) { const s = document.createElement("span"); s.className = "src"; s.textContent = res.fuente; wait.appendChild(s); }
       addListen(wait, res.texto);
+      if (res.opciones) addOptions(wait, res.opciones);
       showFromTop(true);
     }, reduce ? 0 : 650);
+  }
+  /* «¿Tu pregunta es sobre…?»: botones con las situaciones posibles y «Ninguna de estas» */
+  function addOptions(d, ids) {
+    const box = document.createElement("div");
+    box.className = "opts"; box.setAttribute("role", "group");
+    [...ids, "__none"].forEach(id => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "opt" + (id === "__none" ? " none" : ""); b.dataset.opc = id;
+      b.setAttribute("aria-pressed", "false");
+      b.textContent = opcLabel(id);
+      b.addEventListener("click", () => choose(box, b, id));
+      box.appendChild(b);
+    });
+    d.appendChild(box);
+  }
+  function choose(box, btn, id) {
+    box.querySelectorAll(".opt").forEach(b => { b.disabled = true; });
+    btn.setAttribute("aria-pressed", "true");
+    stopSpeaking();
+    bubble("user", btn.textContent);
+    const res = id === "__none" ? { texto: window.LANG === "qu" ? RESP_NO_SE_QU : RESP_NO_SE, fuente: null } : respuestaDe(id);
+    const d = bubble("bot", "");
+    setBotText(d, res.texto);
+    if (res.fuente) { const s = document.createElement("span"); s.className = "src"; s.textContent = res.fuente; d.appendChild(s); }
+    addListen(d, res.texto);
+    showFromTop(true);
   }
 
   /* --- escuchar la respuesta en voz alta --- */
@@ -1213,6 +1276,7 @@ checkBackend();
     document.querySelectorAll("[data-i18n-aria]").forEach(el => { const v = A[el.dataset.i18nAria]; if (v != null) el.setAttribute("aria-label", v); });
     document.documentElement.lang = l === "qu" ? "qu" : "es";
     document.querySelectorAll("[data-ui]").forEach(el => { el.textContent = (UI[l] || UI.es)[el.dataset.ui]; });
+    document.querySelectorAll("[data-opc]").forEach(el => { el.textContent = opcLabel(el.dataset.opc, l); });
     langBtns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === l)));
     try { localStorage.setItem("voto-claro-lang", l); } catch (e) {}
   }
