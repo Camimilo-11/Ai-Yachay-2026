@@ -1,0 +1,36 @@
+{
+  "kb": "rag_r_v1",
+  "collection": "rag_r_v1",
+  "built_at_utc": "2026-11-26T21:42:43Z",
+  "embed_model": "jinaai/jina-embeddings-v2-base-code",
+  "dim": 768,
+  "versions": {
+    "qdrant_client": null,
+    "fastembed": "0.9.1",
+    "onnxruntime": "1.32.0"
+  },
+  "n_chunks": 913,
+  "n_points": 913,
+  "n_cases": 100,
+  "skipped": {},
+  "chunks_sha256": "36d6169a4f4c3da07e716c98787a5c542a412fc46f9cd374425474e4dd216503",
+  "vectors_sha256": "2fe073b00e9c269445a41c556bd7d95870f7f1da483cf29677a64821002e0ea8",
+  "model_files_sha256": "7040aa9382b186544afeafe779ad386c23b1ed4281df8cabbd6ab8c773a74bf3",
+  "cwe_map_sha256": "162eaee584a00fedec795d2bacb2a3beffe35d5e1537943078cd94db6cae7806",
+  "cwe_guides_sha256": "a49baec4202ef91e4f5ebd3d4f51eca8ff6a8423931129ec413f832d413ce18f",
+  "params": {
+    "pre_context": 10,
+    "query_context": 20,
+    "line_max_chars": 240,
+    "embed_max_chars": 2400,
+    "query_max_chars": 4000,
+    "embed_batch": 2,
+    "top_k": 3,
+    "candidates": 40,
+    "max_cwe": 2,
+    "budget_tokens": 3000,
+    "chars_per_token": 4,
+    "guide_chars": 1600,
+    "filter": "repo != case repo"
+  }
+}

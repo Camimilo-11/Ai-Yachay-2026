@@ -1,0 +1,85 @@
+# Decisiones v5: RAG para que un modelo más barato por token repare, evaluado con el arnés corregido; fijadas ANTES de correr cualquiera de los 95 casos.
+estado=fijado
+objetivo=medir si un RAG sube la tasa de reparaciones verificadas (VRR) de un modelo barato, y cuánto cuesta cada reparación verificada frente al C0 (gpt-6.2-sol). Sigue la recomendación del profesor del 26 nov: RAG sí o sí, con Qdrant o Pinecone, para poder usar un modelo de menor costo por token
+
+# De dónde salen los cambios
+costo_c0=el C0 costó 3,32 USD con 30 casos y 6,12 USD con 65 (precio de lista): 38 reparaciones verificadas en 92 casos completos, unos 0,25 USD por reparación verificada. El saldo de OpenAI está casi agotado
+incompletos_v4=los 2 casos que perdió la confirmación fallaron por el entorno, no por el modelo. tornado CVE-2024-52804: test_connection_refused del cliente HTTP esperó 5 s un rechazo de conexión local que, en la misma sesión y sin parche, llegó en 0,002 s; el fix solo cambia tornado/httputil.py, así que es una prueba intermitente. smolagents CVE-2025-5120: dos pruebas que esperan correr sin clave encontraron OPENAI_API_KEY en el entorno y la enviaron a Cerebras y Mistral
+arnes=eval_harness.py con dos opciones nuevas, apagadas por defecto para que v1-v4 se reproduzcan igual. VUL4PY_CLEAN_ENV=1: las pruebas corren sin las variables con claves (al log solo llegan los nombres). VUL4PY_FLAKE_RERUN=2: si fallan entre 1 y 3 pruebas funcionales, la suite se repite hasta 2 veces y solo cuenta como falla la prueba que falla en todas las corridas; las pruebas de exploit nunca se repiten. Probado con simulaciones: apagadas, dan los mismos veredictos que la versión anterior en todos los escenarios
+arnes_red=correr las pruebas sin red queda fuera de la v5 (necesita la lista de casos que sí usan red, como pypdf)
+
+# Condiciones: tres brazos sobre los mismos casos y la misma sesión del control del oráculo ("v5")
+c0=los registros congelados del C0 (runs/final/c0 y runs/confirm/c0) copiados sin su veredicto (v5_prep.py copy-c0, que revisa el hash de cada archivo congelado) y re-evaluados con el arnés v5, sin llamar a ningún modelo
+m=agente c0m: claudecode:claude-haiku-5-5 en el lugar de gpt-6.2-sol, con todo lo demás del C0: preset c0, el mismo prompt (sin --rag el prompt queda byte a byte igual al de la v4, comprobado), la misma pista (hint lines), reasoning_effort high, un intento por caso, max_active_cases 3. Por el plan, Claude Code pone su propio límite de salida y no acepta temperature
+m_rag=agente c0mr: lo mismo con --rag; la única diferencia del prompt es la sección de referencias antes de "Source files" (comprobado)
+modelo_barato=Claude Haiku 5.5 con esfuerzo high, por el plan de Claude (claudecode:), como el jurado de la v3. El costo se cuenta a precio de lista de models.json: 0,10 / 0,50 USD por millón de tokens de entrada / salida hasta 100k tokens de prompt y 0,50 / 2,50 por encima; gpt-6.2-sol cuesta 2 / 10
+via=si el plan llega a su límite, multiagent.py espera y sigue; si la corrida se corta, se relanza el mismo comando. No se cambia de vía (plan o API) a mitad de la corrida
+puerta_factibilidad=antes de fijar, c0m corre en los 5 casos del piloto (runs/v5_dev): si en 3 o más rechaza o no da un parche que aplique (v5_prep.py gate), se cambia a deepseek:deepseek-flash. La puerta solo mira si el modelo produce parches, no cuántos repara. En los mismos 5 casos corre c0mr para comprobar que el RAG funciona; nada se ajusta con eso
+
+# RAG de reparación (RAG-R v1, scripts/rag_repair.py)
+base_vectorial=Qdrant en modo local en la instancia (qdrant-client 1.20.0, colección rag_r_v1, distancia coseno, archivos en runs/v5/kb_rag_r_v1/qdrant). Razones: el código y los fixes no salen de la instancia, no hay otra cuenta ni clave que cuidar y la base queda con sus hashes. Pinecone queda descartado por eso: es un servicio administrado que pide cuenta y clave y recibe el corpus
+embeddings=FastEmbed 0.9.1 con jinaai/jina-embeddings-v2-base-code (768 dimensiones, 0,64 GB), en CPU y sin costo de API; el mismo modelo arma la base y la consulta. Antes de entrar al modelo, cada línea se recorta a 240 caracteres, cada pedazo a 2400 y la consulta a 4000, en lotes de 2: en el primer intento de la base, un pedazo con líneas larguísimas llenó un lote hasta el máximo del modelo (8192 tokens) y pidió 24 GB de memoria
+corpus=los fixes oficiales de los 100 casos de Vul4Py, solo los archivos de código que usa el control del oráculo (sin pruebas ni documentación): un pedazo por hunk, con el código vulnerable de alrededor (10 líneas de contexto, hasta 80 líneas), el hunk del fix, el caso, el repositorio y sus CWE
+cwe=por caso, de OSV (database_specific.cwe_ids, o el de su alias GHSA) y, si no hay, de la API de avisos de GitHub (rag_repair.py fetch-cwe); nombres y mitigaciones de la lista CWE de MITRE, cwec_latest.xml.zip (fetch-guides; la versión queda en cwe_guides.json), primero las de la fase Implementation, hasta 1600 caracteres por CWE; las entradas obsoletas (DEPRECATED, como CWE-613) no ocupan lugar en la guía
+consulta=las mismas zonas de la pista que el modelo ya ve, con 20 líneas de contexto, leídas del commit vulnerable (git show). El RAG no agrega información sobre el fix del propio caso
+recuperacion=los 40 pedazos más cercanos de OTROS repositorios (filtro: repositorio distinto y caso distinto; deja fuera el propio fix y los de su proyecto, por ejemplo los otros 3 de tornado), el mejor por caso de origen y los 3 primeros casos; más la guía de hasta 2 CWE de esos casos (los más frecuentes)
+prompt=una sección en inglés antes de "Source files": son fixes de otros proyectos, pueden no aplicar y no son evidencia sobre estos archivos. Hasta 3000 tokens (estimados a 4 caracteres por token); los diffs se recortan si no caben. Las reglas de evidencia y la autoevaluación no cambian
+registro=los casos recuperados, sus puntajes, la sección (rag_section.md, dentro de los hashes del congelado) y su sha256 quedan con cada caso
+auditoria_fuga=por caso, similitud (difflib, líneas cambiadas) entre cada ejemplo recuperado y el fix oficial del caso; con 0,5 o más el caso se marca y se reporta además H1 sin los casos marcados
+probado=en local con 7 casos reales de 3 repositorios (MLAlchemy, sqlparse, picklescan) y un embedder de prueba: el filtro nunca devolvió el repositorio del caso, el presupuesto se respeta y multiagent.py sin --rag da el mismo prompt que la v4. En la instancia, con el modelo real
+cambios_antes_de_fijar=dos, ambos antes de evaluar cualquier caso: (1) el primer intento de armar la base se quedó sin memoria (un lote de 8 rellenado hasta 8192 tokens pidió 24 GB), así que se recortan líneas y textos y los lotes son de 2; (2) la consulta de prueba de tornado mostró como guía la CWE-613, que MITRE marcó DEPRECATED y no trae mitigaciones, así que las entradas obsoletas se saltan. Ningún parámetro se cambió por un resultado
+
+# Desarrollo: los 5 casos del piloto (runs/v5_dev, sesión v5dev); NO cuenta como evidencia
+puerta=pasa: Haiku no rechazó ninguno y solo 1 de 5 no aplicó o rompió la funcionalidad (el umbral para cambiar de modelo era 3)
+desarrollo_resultado=c0m 2 de 5 reparaciones verificadas, FAR 2 de 4; c0mr 2 de 5, FAR 2 de 4. Con 5 casos una diferencia de un caso son 20 puntos: no se interpreta
+desarrollo_rag=las 5 secciones midieron entre 585 y 1269 tokens, ninguna con marca de fuga ni error
+desarrollo_costo=a precio de lista, c0m 0,059 USD (65 897 tokens de entrada y 104 208 de salida; unos 0,03 USD por reparación verificada) y c0mr 0,065 USD
+
+# Muestras
+desarrollo=los 5 casos del piloto (pilot_ids.txt, sha256 72304de27d61bf64303a6b300a9d222c213c760ad7b9b9fd84d0d046b4283d4b): puerta de factibilidad y prueba del RAG; no entran al análisis
+evaluacion=los 95 casos de la muestra principal y de la confirmación (v5_ids.txt, sha256 24106120b73c51db48b8b5e1b1c7ec9bcd00703cc7b89c1ec669ee95990ff31f). Cuentan los casos con veredicto en los brazos que se comparan; CVE-2024-27454 sale como antes si el exploit vuelve a matar el proceso
+reuso=los 95 ya se usaron con el C0, pero ninguno se usó para diseñar el RAG; los parámetros de arriba quedan fijos antes de correr M en ellos
+
+# Hipótesis y análisis (scripts/confirm_v5.py)
+primario=H1: VRR(c0mr) > VRR(c0m) en los casos completos en ambos. McNemar exacto unilateral sobre los pares discordantes, alfa = 0,05. Se confirma si p < 0,05 y VRR(c0mr) > VRR(c0m)
+potencia=exacta con 94 casos: 0,65 si el RAG gana en el 15 % de los casos y pierde en el 5 % (+10 puntos netos); 0,89 si gana en el 20 % y pierde en el 5 % (+15); 0,50 con +7 (10 % y 3 %); 0,20 con +4 (8 % y 4 %). Un resultado negativo no demuestra que el RAG no sirva
+secundarios=estimaciones con IC, sin prueba confirmatoria: (1) costo por reparación verificada de c0mr frente al c0, como razón con IC bootstrap pareado del 95 % (10 000 remuestreos de casos, semilla 2026, precios de lista con el tramo de Haiku); (2) diferencia de VRR c0mr - c0 con el IC de Newcombe para datos pareados (método 10; cobertura comprobada por simulación: 0,95-0,96); (3) FAR y rendimiento seguro de cada brazo con IC de Wilson; (4) la regla de cobertura de la v4 en c0m y c0mr (Fisher unilateral, como en la v4: ¿se replica con otra familia de modelos?); (5) qué veredictos del C0 cambian con el arnés v5 y por qué
+una_sola_vez=el análisis se corre una sola vez, cuando terminen los tres brazos; no se miran métricas parciales
+no_se_hace=no se cambian los parámetros del RAG, el corpus ni el prompt después de ver resultados de los 95; los 5 de desarrollo no entran al análisis
+
+# Comandos (en ~/vul4py, con el entorno del proyecto)
+entorno=export VUL4PY_CLEAN_ENV=1 VUL4PY_FLAKE_RERUN=2
+c0=python scripts/v5_prep.py copy-c0 --from runs/final/c0 runs/confirm/c0 --to runs/v5/c0 --ids-file runs/preflight/v5_ids.txt; luego OPENAI_API_KEY=sin-uso python scripts/multiagent.py --preset c0 --ids-file runs/preflight/v5_ids.txt --runs runs/v5 --agent c0 --repairers openai:gpt-6.2-sol --session v5 --models-file models.json (todos los casos están congelados: solo evalúa y no llama a la API, por eso basta una clave falsa)
+m=python scripts/multiagent.py --preset c0 --ids-file runs/preflight/v5_ids.txt --runs runs/v5 --agent c0m --repairers claudecode:claude-haiku-5-5 --session v5 --models-file models.json
+m_rag=el mismo comando con --agent c0mr --rag runs/v5/kb_rag_r_v1
+orden=c0, luego c0m, luego c0mr; nunca dos multiagent.py a la vez
+analisis=python scripts/fa_metrics.py --runs runs/v5 --workspaces workspaces; después python scripts/confirm_v5.py --results runs/v5/results.csv --ids-file runs/preflight/v5_ids.txt --runs runs/v5 --c0-before runs/final/results.csv runs/confirm/results.csv --json runs/v5/confirm_v5.json
+costo_estimado=Haiku: 1-2 USD a precio de lista por los dos brazos (por el plan no se factura aparte). La re-evaluación del C0 no cuesta nada
+tiempo_estimado=unas 15-17 horas de instancia en total (el C0 solo evalúa; c0m y c0mr generan y evalúan)
+interrupciones=como en la v4: se relanza el mismo comando, ningún caso congelado se repite y se anota aquí
+
+# Después de la v5 (regla fijada ahora, antes de ver resultados)
+alcance_v5=la v5 llega hasta el RAG de reparación; n8n no entra en la v5
+regla_v6=si H1 se confirma (p < 0,05 y VRR(c0mr) > VRR(c0m)), la v6 pasa a n8n; si no, se sigue afinando el RAG y n8n espera
+v6_n8n=el mismo RAG como flujo visual y la automatización del entorno: con el log del control del oráculo que falla, recupera casos parecidos de los 91 meta_overrides (con su _note), los 14 test_overrides y las dos fallas nuevas, el modelo barato propone el override y solo se acepta si el control queda sano al ejecutarlo. Éxito por caso = control sano con un override que no excluye más del 10 % de las pruebas funcionales ni ninguna de exploit. Lleva sus propias decisiones (v6)
+si_no_se_confirma=con la potencia de arriba, un no puede ser un falso negativo: se mira el efecto estimado y su IC antes de descartar el RAG. Lo que se afine (corpus, consulta, k, prompt) se prueba primero en los 5 casos de desarrollo. En Vul4Py no quedan casos sin usar, así que volver a medir sobre los mismos 95 es exploratorio y se reporta así en el paper
+
+# Calendario
+jue_26=implementación, pruebas, base y desarrollo en la instancia (hecho); fijar y subir este archivo; empezar la corrida
+vie_27=presentación; la corrida sigue
+al_terminar=análisis, una sola vez
+mar_1_y_mie_2=paper
+jue_3=entrega a las 13:00
+v6=solo si se cumple regla_v6; si no cabe antes del 3 de diciembre, entra al paper como trabajo futuro
+
+# Versiones
+eval_harness_sha256=af97432b765da580f3d358b26d1bb28fc6a93ee644391ca83d04313f1a2f0a9b (md5 96ca69a2d5a70e4fc27660ed0af47817)
+multiagent_md5=e8124b7a7ad18c97c81a1dcafde81c31 (agrega --rag; sin --rag, igual a la v4 2d3dc539)
+rag_repair_md5=c127fce6e778464af0dbb26f5a512df5 (nuevo)
+confirm_v5_md5=456198157ca0f37d6b9ce384cf022f2b (nuevo; usa las funciones de confirm_v4)
+v5_prep_md5=ae1e8790747ae369fa0cd750d239cfa5 (nuevo)
+models_json_md5=ec5758bbe5dc7f5ba53e0b70907a4501 (sin cambios)
+librerias=qdrant-client==1.20.0, fastembed==0.9.1
+kb_manifest_sha256=ff64187843d2918d7f7642ad6ff4f5c6764cb9e5dee95e72987660d67ddde5f1 (913 pedazos de los 100 casos, ninguno omitido; jina-embeddings-v2-base-code, 768 dimensiones)
+kb_cwe_list_version=5.0 (59 CWE con guía, ninguna faltante; 98 de 100 casos con al menos un CWE)
+redactado_utc=2026-11-26T22:16:00Z

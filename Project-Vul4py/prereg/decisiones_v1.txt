@@ -1,0 +1,16 @@
+# Decisiones fijadas antes de la corrida principal (Fase 4), tras el piloto v1 y la calibración de jueces
+analista=openai:gpt-6-luna
+reparadores=openai:gpt-6.2-sol,openai:gpt-5.4-mini
+# orden por el torneo del piloto v1 (C0, 5 casos): gpt-6.2-sol reparó 3 y gpt-5.4-mini 1
+jurado=openai:gpt-6.1-sol,openai:gpt-6.1-terra,openai:gpt-6.2-astra
+# regla prefijada: los 3 de mayor AUROC que no son reparadores (0,80; 0,71; 0,70); queda fuera gpt-6-luna (0,67)
+allow_same_family=si (todos los modelos son GPT; se reporta como limitación)
+regla_primaria=unanimous tau=0.8 debate_rounds=1 max_revisions=1 gate_retries=2
+condiciones=C1 (pipeline completo), C0 (gpt-6.2-sol solo), C0g (gpt-6.2-sol con la revisión mecánica)
+muestra_principal=runs/preflight/main_ids.txt (30 casos, semilla 42); piloto=runs/preflight/pilot_ids.txt (5 casos, semilla 7)
+sesion_oraculo=final (un solo control del oráculo por caso, compartido por C1, C0 y C0g)
+flex=no (precio Standard en todos los modelos)
+analisis_secundario=veredicto del jurado antes de la revisión (rondas previas a R1), calculado desde llm_response.json sin cambiar el protocolo
+models_json_md5=07cc4171856b5fb3e91317c9dd5d0c79
+multiagent_md5=e15ecb3ef446332518c12c9235d9e59d
+fijado_utc=2026-11-25T11:24:00Z

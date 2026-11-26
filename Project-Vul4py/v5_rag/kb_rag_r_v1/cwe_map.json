@@ -1,0 +1,613 @@
+{
+ "CVE-2017-16615": {
+  "cwe": [],
+  "source": "none"
+ },
+ "CVE-2017-16618": {
+  "cwe": [
+   "CWE-502"
+  ],
+  "source": "osv:GHSA-ccmq-qvcp-5mrm"
+ },
+ "CVE-2018-7753": {
+  "cwe": [
+   "CWE-20"
+  ],
+  "source": "osv:GHSA-m9mq-p2f9-cfqv"
+ },
+ "CVE-2019-1010017": {
+  "cwe": [
+   "CWE-91"
+  ],
+  "source": "osv:GHSA-9ccv-p7fg-m73x"
+ },
+ "CVE-2019-10800": {
+  "cwe": [
+   "CWE-88"
+  ],
+  "source": "osv:GHSA-h3qr-fjhm-jphw"
+ },
+ "CVE-2020-6802": {
+  "cwe": [
+   "CWE-79"
+  ],
+  "source": "osv:GHSA-q65m-pv3f-wr5r"
+ },
+ "CVE-2021-23980": {
+  "cwe": [
+   "CWE-79"
+  ],
+  "source": "osv:GHSA-vv2x-vrpj-qqpq"
+ },
+ "CVE-2021-28363": {
+  "cwe": [
+   "CWE-295"
+  ],
+  "source": "osv:GHSA-5phf-pp7p-vc2r"
+ },
+ "CVE-2021-32839": {
+  "cwe": [
+   "CWE-400"
+  ],
+  "source": "osv:GHSA-p5w8-wqhj-9hhf"
+ },
+ "CVE-2022-24065": {
+  "cwe": [
+   "CWE-78"
+  ],
+  "source": "osv:GHSA-f4q6-9qm4-h8j4"
+ },
+ "CVE-2022-24439": {
+  "cwe": [
+   "CWE-20",
+   "CWE-94"
+  ],
+  "source": "osv:GHSA-hcpj-qp55-gfph"
+ },
+ "CVE-2022-2888": {
+  "cwe": [
+   "CWE-613"
+  ],
+  "source": "osv"
+ },
+ "CVE-2022-29217": {
+  "cwe": [
+   "CWE-327"
+  ],
+  "source": "osv"
+ },
+ "CVE-2022-3102": {
+  "cwe": [],
+  "source": "none"
+ },
+ "CVE-2023-23934": {
+  "cwe": [
+   "CWE-20"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-25577": {
+  "cwe": [
+   "CWE-770"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-26145": {
+  "cwe": [
+   "CWE-78"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-26302": {
+  "cwe": [
+   "CWE-173"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-29483": {
+  "cwe": [
+   "CWE-696"
+  ],
+  "source": "osv:GHSA-3rq5-2g8h-59hc"
+ },
+ "CVE-2023-30608": {
+  "cwe": [
+   "CWE-1333"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-32303": {
+  "cwe": [
+   "CWE-732"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-32309": {
+  "cwe": [
+   "CWE-22"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-32681": {
+  "cwe": [
+   "CWE-200"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-34457": {
+  "cwe": [
+   "CWE-20"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-36830": {
+  "cwe": [
+   "CWE-74"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-37271": {
+  "cwe": [
+   "CWE-913"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-41039": {
+  "cwe": [
+   "CWE-74"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-41040": {
+  "cwe": [
+   "CWE-22"
+  ],
+  "source": "osv"
+ },
+ "CVE-2023-46446": {
+  "cwe": [
+   "CWE-345",
+   "CWE-349",
+   "CWE-354",
+   "CWE-359",
+   "CWE-639"
+  ],
+  "source": "osv:GHSA-c35q-ffpf-5qpm"
+ },
+ "CVE-2023-47163": {
+  "cwe": [
+   "CWE-400",
+   "CWE-674"
+  ],
+  "source": "osv:GHSA-gw7g-qr8w-3448"
+ },
+ "CVE-2023-6681": {
+  "cwe": [
+   "CWE-400"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-22190": {
+  "cwe": [
+   "CWE-426"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-22195": {
+  "cwe": [
+   "CWE-79"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-27454": {
+  "cwe": [
+   "CWE-674"
+  ],
+  "source": "osv:GHSA-pwr2-4v36-6qpr"
+ },
+ "CVE-2024-28102": {
+  "cwe": [
+   "CWE-770"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-29033": {
+  "cwe": [
+   "CWE-285"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-32977": {
+  "cwe": [
+   "CWE-290"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-34061": {
+  "cwe": [
+   "CWE-79"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-34064": {
+  "cwe": [
+   "CWE-79"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-34078": {
+  "cwe": [
+   "CWE-79"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-35195": {
+  "cwe": [
+   "CWE-670"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-37891": {
+  "cwe": [
+   "CWE-669"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-42353": {
+  "cwe": [
+   "CWE-601"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-4340": {
+  "cwe": [
+   "CWE-674"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-47164": {
+  "cwe": [
+   "CWE-22"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-47532": {
+  "cwe": [
+   "CWE-200"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-47874": {
+  "cwe": [
+   "CWE-770"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-4941": {
+  "cwe": [
+   "CWE-22"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-49768": {
+  "cwe": [
+   "CWE-367",
+   "CWE-444"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-51998": {
+  "cwe": [
+   "CWE-22"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-52303": {
+  "cwe": [
+   "CWE-772"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-52804": {
+  "cwe": [
+   "CWE-400",
+   "CWE-770"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-53848": {
+  "cwe": [
+   "CWE-349"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-53861": {
+  "cwe": [
+   "CWE-697"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-53865": {
+  "cwe": [
+   "CWE-312"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-53981": {
+  "cwe": [
+   "CWE-770"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-55655": {
+  "cwe": [
+   "CWE-20",
+   "CWE-325"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-56201": {
+  "cwe": [
+   "CWE-150"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-56326": {
+  "cwe": [
+   "CWE-1336",
+   "CWE-693"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-6844": {
+  "cwe": [
+   "CWE-346"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-6866": {
+  "cwe": [
+   "CWE-178"
+  ],
+  "source": "osv"
+ },
+ "CVE-2024-9701": {
+  "cwe": [
+   "CWE-502"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-10157": {
+  "cwe": [
+   "CWE-693"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-1716": {
+  "cwe": [
+   "CWE-184"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-1944": {
+  "cwe": [
+   "CWE-345"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-22153": {
+  "cwe": [
+   "CWE-843"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-24359": {
+  "cwe": [
+   "CWE-134",
+   "CWE-749"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-27516": {
+  "cwe": [
+   "CWE-1336"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-43859": {
+  "cwe": [
+   "CWE-444"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-46656": {
+  "cwe": [
+   "CWE-1284"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-47287": {
+  "cwe": [
+   "CWE-770"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-48383": {
+  "cwe": [
+   "CWE-402",
+   "CWE-918"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-48994": {
+  "cwe": [
+   "CWE-303"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-50181": {
+  "cwe": [
+   "CWE-601"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-5120": {
+  "cwe": [
+   "CWE-94"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-53365": {
+  "cwe": [
+   "CWE-248"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-53366": {
+  "cwe": [
+   "CWE-248"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-54121": {
+  "cwe": [
+   "CWE-770"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-54413": {
+  "cwe": [
+   "CWE-351"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-54886": {
+  "cwe": [
+   "CWE-502"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-57804": {
+  "cwe": [
+   "CWE-93"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-58180": {
+  "cwe": [
+   "CWE-78"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-58367": {
+  "cwe": [
+   "CWE-915"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-58438": {
+  "cwe": [
+   "CWE-22"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-59420": {
+  "cwe": [
+   "CWE-345",
+   "CWE-863"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-59940": {
+  "cwe": [
+   "CWE-20"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-6176": {
+  "cwe": [
+   "CWE-400"
+  ],
+  "source": "github"
+ },
+ "CVE-2025-61765": {
+  "cwe": [
+   "CWE-502"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-61920": {
+  "cwe": [
+   "CWE-20",
+   "CWE-400",
+   "CWE-770"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-62708": {
+  "cwe": [
+   "CWE-409"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-62727": {
+  "cwe": [
+   "CWE-407"
+  ],
+  "source": "osv"
+ },
+ "CVE-2025-62800": {
+  "cwe": [
+   "CWE-79"
+  ],
+  "source": "osv"
+ },
+ "GHSA-3gf5-cxq9-w223": {
+  "cwe": [
+   "CWE-502"
+  ],
+  "source": "osv"
+ },
+ "GHSA-3vg9-h568-4w9m": {
+  "cwe": [
+   "CWE-502"
+  ],
+  "source": "osv"
+ },
+ "GHSA-4r9r-ch6f-vxmx": {
+  "cwe": [
+   "CWE-345"
+  ],
+  "source": "osv"
+ },
+ "GHSA-753j-mpmx-qq6g": {
+  "cwe": [
+   "CWE-444"
+  ],
+  "source": "osv"
+ },
+ "GHSA-9gvj-pp9x-gcfr": {
+  "cwe": [
+   "CWE-502"
+  ],
+  "source": "osv"
+ },
+ "GHSA-hfmc-7525-mj55": {
+  "cwe": [
+   "CWE-345"
+  ],
+  "source": "osv"
+ },
+ "GHSA-vhmj-5q9r-mm9g": {
+  "cwe": [
+   "CWE-924"
+  ],
+  "source": "osv"
+ },
+ "GHSA-w235-7p84-xx57": {
+  "cwe": [
+   "CWE-93"
+  ],
+  "source": "osv"
+ }
+}

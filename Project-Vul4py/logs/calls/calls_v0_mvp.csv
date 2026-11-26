@@ -1,0 +1,6 @@
+version,run,agent,case,stage,role,model,status,input_tokens,output_tokens,thinking_tokens,latency_s,http_attempts,finish_reason,list_cost_usd,api_equivalent_usd,price_note
+v0,runs_nvidia/official,gpt,CVE-2017-16615,generation,repairer,nvidia:poolside/laguna-xs-2.1,ok,1083,139,,15.5,,,0.0,,NVIDIA API catalog (free); only the saved response per case is recorded
+v0,runs_nvidia/official,gpt,CVE-2017-16618,generation,repairer,nvidia:poolside/laguna-xs-2.1,ok,1697,203,,49.7,,,0.0,,NVIDIA API catalog (free); only the saved response per case is recorded
+v0,runs_nvidia/official,gpt,CVE-2018-7753,generation,repairer,nvidia:poolside/laguna-xs-2.1,ok,5240,214,,307.98,,,0.0,,NVIDIA API catalog (free); only the saved response per case is recorded
+v0,runs_nvidia/official,gpt,CVE-2019-1010017,generation,repairer,nvidia:poolside/laguna-xs-2.1,ok,2394,106,,40,,,0.0,,NVIDIA API catalog (free); only the saved response per case is recorded
+v0,runs_nvidia/official,gpt,CVE-2019-10800,generation,repairer,nvidia:poolside/laguna-xs-2.1,ok,8575,183,,409.3,,,0.0,,NVIDIA API catalog (free); only the saved response per case is recorded

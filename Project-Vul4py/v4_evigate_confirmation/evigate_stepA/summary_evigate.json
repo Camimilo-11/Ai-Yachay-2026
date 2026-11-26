@@ -1,0 +1,401 @@
+{
+  "summary": {
+    "n": 29,
+    "rules": {
+      "D_repairer": {
+        "accepted": 27,
+        "false_assurance": 13,
+        "FAR": 0.481,
+        "FAR_ci95": [
+          0.307,
+          0.66
+        ],
+        "safe_yield": 0.483
+      },
+      "D_unanimous": {
+        "accepted": 26,
+        "false_assurance": 12,
+        "FAR": 0.462,
+        "FAR_ci95": [
+          0.288,
+          0.645
+        ],
+        "safe_yield": 0.483
+      },
+      "D_gate": {
+        "accepted": 19,
+        "false_assurance": 7,
+        "FAR": 0.368,
+        "FAR_ci95": [
+          0.191,
+          0.59
+        ],
+        "safe_yield": 0.414
+      },
+      "D_independent": {
+        "accepted": 21,
+        "false_assurance": 9,
+        "FAR": 0.429,
+        "FAR_ci95": [
+          0.245,
+          0.635
+        ],
+        "safe_yield": 0.414
+      },
+      "claim_evidence": {
+        "accepted": 11,
+        "false_assurance": 6,
+        "FAR": 0.545,
+        "FAR_ci95": [
+          0.28,
+          0.787
+        ],
+        "safe_yield": 0.172
+      }
+    },
+    "vs_D_unanimous": {
+      "false_assurances_removed": 6,
+      "false_assurances_added": 0,
+      "mcnemar_p_false_assurance": 0.0312,
+      "correct_claims_lost": 9,
+      "correct_claims_gained": 0
+    },
+    "vs_D_gate": {
+      "false_assurances_removed": 4,
+      "false_assurances_added": 3,
+      "mcnemar_p_false_assurance": 1.0,
+      "correct_claims_lost": 8,
+      "correct_claims_gained": 1
+    },
+    "status_counts": {
+      "env_failed": 2,
+      "bypass": 4,
+      "verified": 11,
+      "not_blocked": 4,
+      "not_reproduced": 3,
+      "no_functional_evidence": 4,
+      "regression": 1
+    }
+  },
+  "cases": [
+    {
+      "vuln_id": "CVE-2017-16615",
+      "V": 1,
+      "claim_evidence": 0,
+      "status": "env_failed",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 0.4
+    },
+    {
+      "vuln_id": "CVE-2019-1010017",
+      "V": 0,
+      "claim_evidence": 0,
+      "status": "env_failed",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 0.4
+    },
+    {
+      "vuln_id": "CVE-2019-10800",
+      "V": 0,
+      "claim_evidence": 0,
+      "status": "bypass",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 0,
+      "D_independent": 0,
+      "seconds": 316.2
+    },
+    {
+      "vuln_id": "CVE-2022-29217",
+      "V": 0,
+      "claim_evidence": 1,
+      "status": "verified",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 853.6
+    },
+    {
+      "vuln_id": "CVE-2023-23934",
+      "V": 1,
+      "claim_evidence": 0,
+      "status": "bypass",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 0,
+      "seconds": 691.2
+    },
+    {
+      "vuln_id": "CVE-2023-25577",
+      "V": 1,
+      "claim_evidence": 0,
+      "status": "not_blocked",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 362.7
+    },
+    {
+      "vuln_id": "CVE-2023-29483",
+      "V": 1,
+      "claim_evidence": 0,
+      "status": "bypass",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 0,
+      "seconds": 939.6
+    },
+    {
+      "vuln_id": "CVE-2023-32681",
+      "V": 1,
+      "claim_evidence": 1,
+      "status": "verified",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 942.6
+    },
+    {
+      "vuln_id": "CVE-2023-41040",
+      "V": 1,
+      "claim_evidence": 1,
+      "status": "verified",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 0,
+      "D_independent": 1,
+      "seconds": 595.7
+    },
+    {
+      "vuln_id": "CVE-2023-47163",
+      "V": 0,
+      "claim_evidence": 1,
+      "status": "verified",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 0,
+      "D_independent": 1,
+      "seconds": 1190.3
+    },
+    {
+      "vuln_id": "CVE-2023-6681",
+      "V": 1,
+      "claim_evidence": 0,
+      "status": "bypass",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 710.5
+    },
+    {
+      "vuln_id": "CVE-2024-22190",
+      "V": 0,
+      "claim_evidence": 0,
+      "status": "not_reproduced",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 604.6
+    },
+    {
+      "vuln_id": "CVE-2024-34061",
+      "V": 0,
+      "claim_evidence": 1,
+      "status": "verified",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 0,
+      "D_independent": 1,
+      "seconds": 2151.9
+    },
+    {
+      "vuln_id": "CVE-2024-56201",
+      "V": 1,
+      "claim_evidence": 1,
+      "status": "verified",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 704.0
+    },
+    {
+      "vuln_id": "CVE-2024-56326",
+      "V": 1,
+      "claim_evidence": 0,
+      "status": "not_reproduced",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 503.1
+    },
+    {
+      "vuln_id": "CVE-2024-9701",
+      "V": 0,
+      "claim_evidence": 0,
+      "status": "no_functional_evidence",
+      "D_repairer": 0,
+      "D_unanimous": 0,
+      "D_gate": 0,
+      "D_independent": 0,
+      "seconds": 242.0
+    },
+    {
+      "vuln_id": "CVE-2025-43859",
+      "V": 1,
+      "claim_evidence": 1,
+      "status": "verified",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 418.8
+    },
+    {
+      "vuln_id": "CVE-2025-50181",
+      "V": 1,
+      "claim_evidence": 0,
+      "status": "no_functional_evidence",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 722.5
+    },
+    {
+      "vuln_id": "CVE-2025-53365",
+      "V": 1,
+      "claim_evidence": 0,
+      "status": "no_functional_evidence",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 0,
+      "D_independent": 1,
+      "seconds": 1336.6
+    },
+    {
+      "vuln_id": "CVE-2025-54886",
+      "V": 0,
+      "claim_evidence": 1,
+      "status": "verified",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 0,
+      "D_independent": 0,
+      "seconds": 487.3
+    },
+    {
+      "vuln_id": "CVE-2025-59940",
+      "V": 1,
+      "claim_evidence": 0,
+      "status": "not_blocked",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 514.4
+    },
+    {
+      "vuln_id": "CVE-2025-6176",
+      "V": 0,
+      "claim_evidence": 0,
+      "status": "no_functional_evidence",
+      "D_repairer": 0,
+      "D_unanimous": 0,
+      "D_gate": 0,
+      "D_independent": 0,
+      "seconds": 843.5
+    },
+    {
+      "vuln_id": "CVE-2025-61765",
+      "V": 1,
+      "claim_evidence": 1,
+      "status": "verified",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 1093.2
+    },
+    {
+      "vuln_id": "CVE-2025-62708",
+      "V": 0,
+      "claim_evidence": 0,
+      "status": "not_reproduced",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 655.5
+    },
+    {
+      "vuln_id": "CVE-2025-62727",
+      "V": 0,
+      "claim_evidence": 1,
+      "status": "verified",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 1000.7
+    },
+    {
+      "vuln_id": "CVE-2025-62800",
+      "V": 0,
+      "claim_evidence": 0,
+      "status": "not_blocked",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 1,
+      "seconds": 149.3
+    },
+    {
+      "vuln_id": "GHSA-4r9r-ch6f-vxmx",
+      "V": 0,
+      "claim_evidence": 0,
+      "status": "not_blocked",
+      "D_repairer": 1,
+      "D_unanimous": 0,
+      "D_gate": 0,
+      "D_independent": 0,
+      "seconds": 314.1
+    },
+    {
+      "vuln_id": "GHSA-9gvj-pp9x-gcfr",
+      "V": 0,
+      "claim_evidence": 0,
+      "status": "regression",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 0,
+      "D_independent": 1,
+      "seconds": 456.3
+    },
+    {
+      "vuln_id": "GHSA-hfmc-7525-mj55",
+      "V": 0,
+      "claim_evidence": 1,
+      "status": "verified",
+      "D_repairer": 1,
+      "D_unanimous": 1,
+      "D_gate": 1,
+      "D_independent": 0,
+      "seconds": 1899.0
+    }
+  ]
+}

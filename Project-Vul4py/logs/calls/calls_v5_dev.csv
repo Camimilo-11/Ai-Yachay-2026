@@ -1,0 +1,11 @@
+version,run,agent,case,stage,role,model,status,input_tokens,output_tokens,thinking_tokens,latency_s,http_attempts,finish_reason,list_cost_usd,api_equivalent_usd,price_note
+v5dev,v5_dev,c0m,CVE-2021-23980,cand0_r0_t0,repairer,claudecode:claude-haiku-5-5,ok,17068,23929,22839,96.7,1,end_turn,0.013671,0.0153779,"Claude plan, not billed per call; list-price equivalent"
+v5dev,v5_dev,c0m,CVE-2023-30608,cand0_r0_t0,repairer,claudecode:claude-haiku-5-5,ok,18777,30892,29518,134.9,1,end_turn,0.017324,0.0192012,"Claude plan, not billed per call; list-price equivalent"
+v5dev,v5_dev,c0m,CVE-2024-37891,cand0_r0_t0,repairer,claudecode:claude-haiku-5-5,ok,8865,15276,13842,53.4,1,end_turn,0.008524,0.0094108,"Claude plan, not billed per call; list-price equivalent"
+v5dev,v5_dev,c0m,CVE-2024-52303,cand0_r0_t0,repairer,claudecode:claude-haiku-5-5,ok,8245,18946,17419,69.9,1,end_turn,0.010298,0.011121800000000001,"Claude plan, not billed per call; list-price equivalent"
+v5dev,v5_dev,c0m,CVE-2025-58438,cand0_r0_t0,repairer,claudecode:claude-haiku-5-5,ok,12942,15165,13733,55.5,1,end_turn,0.008877,0.0101707,"Claude plan, not billed per call; list-price equivalent"
+v5dev,v5_dev,c0mr,CVE-2021-23980,cand0_r0_t0,repairer,claudecode:claude-haiku-5-5,ok,18660,35928,35179,147.7,1,end_turn,0.01983,0.0216958,"Claude plan, not billed per call; list-price equivalent"
+v5dev,v5_dev,c0mr,CVE-2023-30608,cand0_r0_t0,repairer,claudecode:claude-haiku-5-5,ok,19847,27979,26533,115.1,1,end_turn,0.015974,0.0179587,"Claude plan, not billed per call; list-price equivalent"
+v5dev,v5_dev,c0mr,CVE-2024-37891,cand0_r0_t0,repairer,claudecode:claude-haiku-5-5,ok,9835,8725,7406,30.9,1,end_turn,0.005346,0.0063292999999999995,"Claude plan, not billed per call; list-price equivalent"
+v5dev,v5_dev,c0mr,CVE-2024-52303,cand0_r0_t0,repairer,claudecode:claude-haiku-5-5,ok,9924,16771,15520,58.0,1,end_turn,0.009378,0.010370100000000002,"Claude plan, not billed per call; list-price equivalent"
+v5dev,v5_dev,c0mr,CVE-2025-58438,cand0_r0_t0,repairer,claudecode:claude-haiku-5-5,ok,14812,26554,25389,100.4,1,end_turn,0.014758,0.016239200000000002,"Claude plan, not billed per call; list-price equivalent"

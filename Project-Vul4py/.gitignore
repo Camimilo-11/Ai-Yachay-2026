@@ -1,0 +1,8 @@
+/workspaces/
+/runs/
+*.venv/
+.venv/
+__pycache__/
+kb_rag_r_v1/models/
+*.pem
+.env

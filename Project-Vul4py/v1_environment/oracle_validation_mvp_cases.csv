@@ -1,0 +1,16 @@
+case,variant,status,A,F,S,func,expl,env,seconds,note
+CVE-2017-16615,reference,incomplete,,,,,,15/0/0,1.4,verification error: environment check failed: oracle invalid here: not exploit_discriminat
+CVE-2017-16615,cosmetic,incomplete,,,,,,15/0/0,0.0,verification error: environment check failed: oracle invalid here: not exploit_discriminat
+CVE-2017-16615,broken,incomplete,,,,,,15/0/0,0.0,verification error: environment check failed: oracle invalid here: not exploit_discriminat
+CVE-2017-16618,reference,incomplete,,,,,,118/11/0,1.6,"verification error: environment check failed: oracle invalid here: not functional_ok, not "
+CVE-2017-16618,cosmetic,incomplete,,,,,,118/11/0,0.0,"verification error: environment check failed: oracle invalid here: not functional_ok, not "
+CVE-2017-16618,broken,incomplete,,,,,,118/11/0,0.0,"verification error: environment check failed: oracle invalid here: not functional_ok, not "
+CVE-2018-7753,reference,incomplete,,,,,,234/0/0,2.0,verification error: environment check failed: oracle invalid here: not reference_verified 
+CVE-2018-7753,cosmetic,incomplete,,,,,,234/0/0,0.0,verification error: environment check failed: oracle invalid here: not reference_verified 
+CVE-2018-7753,broken,incomplete,,,,,,234/0/0,0.0,verification error: environment check failed: oracle invalid here: not reference_verified 
+CVE-2019-1010017,reference,incomplete,,,,,,40/0/0,23.9,verification error: environment check failed: oracle invalid here: not reference_verified 
+CVE-2019-1010017,cosmetic,incomplete,,,,,,40/0/0,0.0,verification error: environment check failed: oracle invalid here: not reference_verified 
+CVE-2019-1010017,broken,incomplete,,,,,,40/0/0,0.0,verification error: environment check failed: oracle invalid here: not reference_verified 
+CVE-2019-10800,reference,complete,1,1,1,50/0/0/18,51/0/0/18,50/0/0,5.1,
+CVE-2019-10800,cosmetic,complete,1,1,0,50/0/0/18,50/1/0/18,50/0/0,1.8,
+CVE-2019-10800,broken,complete,1,1,1,50/0/0/18,51/0/0/18,50/0/0,2.2,

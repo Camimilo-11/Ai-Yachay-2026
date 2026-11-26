@@ -1,0 +1,48 @@
+# Decisiones v3: verificación por evidencia ejecutable (evigate), fijadas ANTES de correr el paso A sobre la muestra principal.
+estado=fijado
+objetivo=medir si una herramienta general que solo afirma "arreglado" con evidencia ejecutable reduce la falsa seguridad frente al jurado de opinión del C1, sobre los MISMOS parches (paso A: sin volver a reparar)
+
+# Herramienta (general: no conoce Vul4Py ni ningún dataset)
+herramienta=evigate 0.1.3
+herramienta_paquete_sha256=53838340d08f7ec77a278d1a03dcdfab393b5de7818a7f591b4a58d2f6b2d6fa
+herramienta_fuente_sha256=b091c2edb4550ea3b45bc4f8ab7df43bf485bec3531a2e49d4660fe34f255cad (evidence.tool_digest: archivos .py y .md del paquete; queda en cada verdict.json)
+prompt_attacker_system_sha256=23574b5b8ccd436734e1b94c7d80e3f7cca6fc497feaeabf081cff7b9bf7663b
+prompt_attacker_blind_sha256=b6c1853ce97df2ce25f14228c2bcc3b50be5cb4ab953d7aa32105acdc3f73fd2
+prompt_attacker_whitebox_sha256=38ab3fcca95d1ea0226e3287f717f2957d7cd2c4427fb9fba99381fb363eae3e
+adaptador=scripts/evigate_vul4py.py sha256 5ea780e545154fd7c25bd0afe9658b528f3548f8b055ef79e141f9c82be7a921 (solo medición: es lo único que conoce el oráculo)
+
+# Atacante
+atacante=claude:claude-opus-5-5, esfuerzo high, Claude Code 2.1.332 con el plan de Camilo (sin costo por llamada), máximo 120 turnos y 30 min por sesión
+atacante_familia=Claude, distinta del reparador del C1 (GPT, gpt-6.2-sol)
+atacante_ciego=ve el reporte y el código vulnerable, nunca el parche; escribe pruebas de ataque que deben fallar (ATTACK) en el código vulnerable en las 2 repeticiones
+atacante_caja_blanca=sesión nueva que ve el parche y busca un bypass; solo se corre si todo lo anterior se cumplió
+reglas_de_alcance=adoptadas tras el piloto de desarrollo v1 y antes de tocar la muestra principal: (1) las pruebas atacan la debilidad del reporte en la ubicación indicada; otras debilidades se mencionan pero no se prueban; (2) un bypass no cuenta si quien llama desactiva o reemplaza la protección, usa configuraciones inseguras que no son las habituales, o exige más de lo que pide la debilidad original
+base_cwe_capec=no se usa en v3 (el catálogo no se construyó); el comando evigate-kb responde que no está disponible
+
+# Regla de afirmación (determinista, sin modelos)
+regla=verified solo si: el parche aplica; el entorno se construye; al menos 1 prueba del proyecto pasa en el código original; al menos 1 prueba de ataque reproduce (ATTACK en 2 de 2); todas las reproducidas pasan con el parche (PASS en 2 de 2); ninguna prueba del proyecto que pasaba falla con el parche (tras re-chequear en el original para descartar inestables); y el atacante de caja blanca no logra un ATTACK. En cualquier otro caso claim=0 con su estado (patch_does_not_apply, env_failed, no_functional_evidence, not_reproduced, not_blocked, inconclusive, regression, bypass, introduced_weakness)
+tiempos=entorno 2400 s; suite del proyecto 1800 s por corrida y 180 s por prueba; pruebas de ataque 600 s por corrida y 120 s por prueba
+aislamiento=Docker: contenedor por paso, raíz de solo lectura, sin capacidades, 3 GB de memoria, 1,5 CPU, 512 procesos; el agente solo sale a la API de su modelo por un proxy con lista blanca (api.anthropic.com; la lista también admite los dominios de OpenAI que usaría Codex, que aquí no corre); las pruebas corren sin red; el reporte y el código del atacante ciego no incluyen el parche
+
+# Entrada por caso (la misma información que tuvieron C0 y C1, más el entorno de la versión vulnerable)
+codigo=git archive HEAD de workspaces/<vid>/vulnerable (sin historia de git, sin backported_support/backported_tests, sin entorno)
+reporte="This Python project contains a security vulnerability." + la misma pista de ubicación del C1 (hint_text de runs/final/c1/<vid>/llm_response.json)
+entorno=receta install_cmds del caso (versión vulnerable) + una línea final que fija cada dependencia a la versión de uv pip freeze del entorno vulnerable (sin el proyecto); comando de pruebas del proyecto = functional_test_cmd_base + baseline_test_files existentes
+parche=runs/final/c1/<vid>/patch.diff (parche final del C1)
+
+# Muestra y resultados que se comparan
+muestra=runs/preflight/main_ids.txt (30 casos); se analizan los 29 con V conocido; CVE-2024-27454 queda fuera igual que en C0, C0g y C1 (la prueba de exploit del oráculo muere con segfault)
+oraculo=V de runs/final/results.csv (condición c1), ya calculado; el paso A no corre el oráculo de nuevo
+comparacion_principal=emparejada sobre los mismos 29 parches: claim de evigate contra D_unanimous (regla principal del C1), D_gate, D_independent y D_repairer
+metricas=FAR con IC de Wilson, rendimiento seguro, cobertura (afirmaciones / casos), falsas seguridades quitadas y agregadas (McNemar exacto) y parches correctos perdidos y ganados; además, como el McNemar sobre falsas seguridades solo mira un lado, se reporta la discriminación (Fisher) entre parches correctos e incorrectos
+validez_del_rechazo=medición aparte (crosscheck): las pruebas de ataque y los bypass se corren contra el fix oficial; un rechazo es válido si el fix oficial pasa esas pruebas; si el fix oficial también las falla, la prueba pidió más que el oráculo
+costo=cuota semanal del plan de Claude antes y después (lo anota Camilo) y costo equivalente a precio de API que reporta Claude Code (no se cobra)
+
+# Historia de desarrollo (fuera de la muestra principal; casos del piloto: runs/preflight/pilot_ids.txt)
+piloto_dev_v1=evigate 0.1.2, 5 parches del C1 v2 del piloto (3 correctos, 2 falsos): 1 correcto verificado, 2 correctos rechazados (bleach: pruebas sobre otra debilidad; urllib3: bypass que exige desactivar la protección), 2 falsos rechazados; el contraste mostró que el rechazo de aiohttp también fallaba con el fix oficial (no válido)
+piloto_dev_v2=evigate 0.1.3 (con las reglas de alcance): 3 de 3 correctos verificados y 2 de 2 falsos rechazados; en el contraste, todas las pruebas de ataque pasan con el fix oficial y los 2 bypass de internetarchive también (rechazos válidos)
+observacion=Claude Code reporta en modelUsage, además de claude-opus-5-5, un modelo auxiliar (claude-opus-4-8) que usa internamente; se reporta como está
+
+# Qué no se cambia durante la corrida
+sin_cambios=si una sesión llega al límite del plan, la herramienta espera en tramos de 10 min hasta 5,5 h; no se repite ningún caso salvo por una falla de infraestructura documentada (por ejemplo, la instancia se cae), y en ese caso se repite completo con --redo y se anota aquí
+redactado_utc=2026-11-26T07:10:00Z

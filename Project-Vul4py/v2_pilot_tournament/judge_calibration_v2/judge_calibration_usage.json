@@ -1,0 +1,32 @@
+{
+  "claudecode:claude-opus-5-5": {
+    "calls": 5,
+    "input_tokens": 82256,
+    "output_tokens": 17335,
+    "api_equivalent_usd": 1.0047
+  },
+  "claudecode:claude-sonnet-5-5": {
+    "calls": 5,
+    "input_tokens": 82276,
+    "output_tokens": 13452,
+    "api_equivalent_usd": 0.4638
+  },
+  "claudecode:claude-haiku-5-5": {
+    "calls": 5,
+    "input_tokens": 82381,
+    "output_tokens": 136170,
+    "api_equivalent_usd": 0.0845
+  },
+  "deepseek:deepseek-flash": {
+    "calls": 5,
+    "input_tokens": 50938,
+    "output_tokens": 218724,
+    "usd": 0.2778
+  },
+  "deepseek:deepseek-v4-pro": {
+    "calls": 5,
+    "input_tokens": 51203,
+    "output_tokens": 187191,
+    "usd": 0.8089
+  }
+}

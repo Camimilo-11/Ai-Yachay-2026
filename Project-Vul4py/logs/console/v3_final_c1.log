@@ -1,0 +1,265 @@
+[23:42:05] [+] c1: 30 cases; analyst+repair1+gate+jury3+debate1+revise1; repairers=['openai:gpt-6.2-sol'] jurors=['claudecode:claude-opus-5-5', 'claudecode:claude-sonnet-5-5', 'deepseek:deepseek-v4-pro'] analyst=openai:gpt-6-luna
+[23:42:05]   A  c1/CVE-2017-16615 -> openai:gpt-6-luna
+[23:42:05]   A  c1/CVE-2019-1010017 -> openai:gpt-6-luna
+[23:42:05]   A  c1/CVE-2019-10800 -> openai:gpt-6-luna
+[23:42:28]   B  c1/CVE-2017-16615 -> openai:gpt-6.2-sol
+[23:42:39]   J0 c1/CVE-2017-16615: 3 reviewers x 1 distinct candidates
+[23:43:00]   B  c1/CVE-2019-1010017 -> openai:gpt-6.2-sol
+[23:43:31] [frozen] c1/CVE-2017-16615: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[23:43:31]   A  c1/CVE-2022-29217 -> openai:gpt-6-luna
+[23:43:32]   B  c1/CVE-2019-10800 -> openai:gpt-6.2-sol
+[23:43:32] [eval] c1/CVE-2017-16615: apply=True func=27/0/0/0 expl=1/0/0/0 
+[23:44:22]   B  c1/CVE-2022-29217 -> openai:gpt-6.2-sol
+[23:44:46]   J0 c1/CVE-2019-1010017: 3 reviewers x 1 distinct candidates
+[23:45:03]   J0 c1/CVE-2019-10800: 3 reviewers x 1 distinct candidates
+[23:46:15]   J0 c1/CVE-2022-29217: 3 reviewers x 1 distinct candidates
+[23:46:38] [frozen] c1/CVE-2019-1010017: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[23:46:38]   A  c1/CVE-2023-23934 -> openai:gpt-6-luna
+[23:46:54] [eval] c1/CVE-2019-1010017: apply=True func=40/0/0/0 expl=0/2/0/0 
+[23:47:43]   B  c1/CVE-2023-23934 -> openai:gpt-6.2-sol
+[23:48:22]   J1 c1/CVE-2019-10800: 3 reviewers x 1 distinct candidates
+[23:49:02]   J0 c1/CVE-2023-23934: 3 reviewers x 1 distinct candidates
+[23:51:04] [frozen] c1/CVE-2022-29217: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[23:51:04]   A  c1/CVE-2023-25577 -> openai:gpt-6-luna
+[23:51:07] [eval] c1/CVE-2022-29217: apply=True func=278/0/0/2 expl=64/1/0/0 
+[23:51:13]   R1 c1/CVE-2019-10800: candidate 0 (openai:gpt-6.2-sol) revises
+[23:52:18]   B  c1/CVE-2023-25577 -> openai:gpt-6.2-sol
+[23:53:02]   J2 c1/CVE-2019-10800: 3 reviewers x 1 distinct candidates
+[23:54:22]   J0 c1/CVE-2023-25577: 3 reviewers x 1 distinct candidates
+[23:55:57]   J1 c1/CVE-2023-23934: 3 reviewers x 1 distinct candidates
+[23:58:34] [frozen] c1/CVE-2023-25577: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[23:58:34]   A  c1/CVE-2023-29483 -> openai:gpt-6-luna
+[23:58:44] [eval] c1/CVE-2023-25577: apply=True func=842/0/0/0 expl=24/0/0/0 
+[23:59:14]   B  c1/CVE-2023-29483 -> openai:gpt-6.2-sol
+[23:59:26]   J3 c1/CVE-2019-10800: 3 reviewers x 1 distinct candidates
+[00:00:58]   J0 c1/CVE-2023-29483: 3 reviewers x 1 distinct candidates
+[00:02:28] [frozen] c1/CVE-2019-10800: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=4 calls=15
+[00:02:28]   A  c1/CVE-2023-32681 -> openai:gpt-6-luna
+[00:02:30] [eval] c1/CVE-2019-10800: apply=True func=50/0/0/18 expl=50/1/0/18 
+[00:02:31] [eval] c1__initial/CVE-2019-10800: apply=True func=50/0/0/18 expl=50/1/0/18 
+[00:02:58] [frozen] c1/CVE-2023-23934: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=2 calls=8
+[00:02:58]   A  c1/CVE-2023-41040 -> openai:gpt-6-luna
+[00:03:09] [eval] c1/CVE-2023-23934: apply=True func=842/0/0/0 expl=66/0/0/0 
+[00:03:29]   B  c1/CVE-2023-32681 -> openai:gpt-6.2-sol
+[00:04:04]   B  c1/CVE-2023-41040 -> openai:gpt-6.2-sol
+[00:04:09]   J0 c1/CVE-2023-32681: 3 reviewers x 1 distinct candidates
+[00:04:35]   J1 c1/CVE-2023-29483: 3 reviewers x 1 distinct candidates
+[00:05:32]   J0 c1/CVE-2023-41040: 3 reviewers x 1 distinct candidates
+[00:05:35] [frozen] c1/CVE-2023-32681: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:05:35]   A  c1/CVE-2023-47163 -> openai:gpt-6-luna
+[00:06:41]   B  c1/CVE-2023-47163 -> openai:gpt-6.2-sol
+[00:07:16] [frozen] c1/CVE-2023-29483: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=2 calls=8
+[00:07:16]   A  c1/CVE-2023-6681 -> openai:gpt-6-luna
+[00:07:17] [eval] c1/CVE-2023-32681: apply=True func=557/0/0/15 expl=313/0/0/2 
+[00:07:28] [eval] c1/CVE-2023-29483: apply=True func=1328/0/0/17 expl=98/0/0/8 
+[00:08:12]   B  c1/CVE-2023-6681 -> openai:gpt-6.2-sol
+[00:08:54]   J0 c1/CVE-2023-6681: 3 reviewers x 1 distinct candidates
+[00:08:57] [frozen] c1/CVE-2023-41040: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:08:57]   A  c1/CVE-2024-22190 -> openai:gpt-6-luna
+[00:09:17]   J0 c1/CVE-2023-47163: 3 reviewers x 1 distinct candidates
+[00:10:22]   B  c1/CVE-2024-22190 -> openai:gpt-6.2-sol
+[00:10:40] [frozen] c1/CVE-2023-6681: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:10:40]   A  c1/CVE-2024-27454 -> openai:gpt-6-luna
+[00:10:44] [eval] c1/CVE-2023-41040: apply=True func=400/0/0/42 expl=15/0/0/0 
+[00:10:49] [eval] c1/CVE-2023-6681: apply=True func=122/0/0/0 expl=103/0/0/0 
+[00:11:26]   B  c1/CVE-2024-27454 -> openai:gpt-6.2-sol
+[00:13:45]   J0 c1/CVE-2024-22190: 3 reviewers x 1 distinct candidates
+[00:14:18]   J0 c1/CVE-2024-27454: 3 reviewers x 1 distinct candidates
+[00:15:32] [frozen] c1/CVE-2023-47163: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:15:32]   A  c1/CVE-2024-34061 -> openai:gpt-6-luna
+[00:15:33] [eval] c1/CVE-2023-47163: apply=True func=65/0/0/0 expl=65/1/0/0 
+[00:16:14]   B  c1/CVE-2024-34061 -> openai:gpt-6.2-sol
+[00:17:35]   J0 c1/CVE-2024-34061: 3 reviewers x 1 distinct candidates
+[00:17:48]   J1 c1/CVE-2024-27454: 3 reviewers x 1 distinct candidates
+[00:18:11] [frozen] c1/CVE-2024-22190: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:18:11]   A  c1/CVE-2024-56201 -> openai:gpt-6-luna
+[00:19:07]   B  c1/CVE-2024-56201 -> openai:gpt-6.2-sol
+[00:19:13]   R1 c1/CVE-2024-27454: candidate 0 (openai:gpt-6.2-sol) revises
+[00:19:53] [eval] c1/CVE-2024-22190: apply=True func=379/0/0/73 expl=46/13/0/1 
+[00:20:20] [frozen] c1/CVE-2024-34061: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:20:20]   A  c1/CVE-2024-56326 -> openai:gpt-6-luna
+[00:20:28] [eval] c1/CVE-2024-34061: apply=True func=121/1/0/0 expl=3/0/0/0 
+[00:21:14]   B  c1/CVE-2024-56326 -> openai:gpt-6.2-sol
+[00:21:16]   J0 c1/CVE-2024-56201: 3 reviewers x 1 distinct candidates
+[00:22:43]   J0 c1/CVE-2024-56326: 3 reviewers x 1 distinct candidates
+[00:23:29] [frozen] c1/CVE-2024-56201: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:23:29]   A  c1/CVE-2024-9701 -> openai:gpt-6-luna
+[00:23:32] [eval] c1/CVE-2024-56201: apply=True func=900/0/0/0 expl=6/0/0/0 
+[00:23:47]   B  c1/CVE-2024-9701 -> openai:gpt-6.2-sol
+[00:24:02]   J2 c1/CVE-2024-27454: 3 reviewers x 1 distinct candidates
+[00:25:36]   J0 c1/CVE-2024-9701: 3 reviewers x 1 distinct candidates
+[00:26:54] [frozen] c1/CVE-2024-56326: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:26:54]   A  c1/CVE-2025-43859 -> openai:gpt-6-luna
+[00:26:56] [eval] c1/CVE-2024-56326: apply=True func=899/0/0/0 expl=16/0/0/0 
+[00:28:02] [frozen] c1/CVE-2024-27454: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=3 calls=14
+[00:28:02]   A  c1/CVE-2025-50181 -> openai:gpt-6-luna
+[00:28:18] [eval] c1/CVE-2024-27454: apply=True func=1119/0/0/102 expl=None exploit crashed the test process (rc=139)
+[00:28:35] [eval] c1__initial/CVE-2024-27454: apply=True func=1119/0/0/102 expl=None exploit crashed the test process (rc=139)
+[00:28:35]   B  c1/CVE-2025-43859 -> openai:gpt-6.2-sol
+[00:29:04]   B  c1/CVE-2025-50181 -> openai:gpt-6.2-sol
+[00:29:42]   J1 c1/CVE-2024-9701: 3 reviewers x 1 distinct candidates
+[00:29:48]   J0 c1/CVE-2025-43859: 3 reviewers x 1 distinct candidates
+[00:30:20]   J0 c1/CVE-2025-50181: 3 reviewers x 1 distinct candidates
+[00:31:34]   R1 c1/CVE-2024-9701: candidate 0 (openai:gpt-6.2-sol) revises
+[00:33:10]   J2 c1/CVE-2024-9701: 3 reviewers x 1 distinct candidates
+[00:34:01] [frozen] c1/CVE-2025-43859: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=7
+[00:34:01]   A  c1/CVE-2025-53365 -> openai:gpt-6-luna
+[00:34:02] [eval] c1/CVE-2025-43859: apply=True func=78/0/0/0 expl=17/0/0/0 
+[00:34:41]   B  c1/CVE-2025-53365 -> openai:gpt-6.2-sol
+[00:35:11] [frozen] c1/CVE-2025-50181: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:35:11]   A  c1/CVE-2025-54886 -> openai:gpt-6-luna
+[00:36:09]   B  c1/CVE-2025-54886 -> openai:gpt-6.2-sol
+[00:36:27]   J0 c1/CVE-2025-53365: 3 reviewers x 1 distinct candidates
+[00:36:28] [eval] c1/CVE-2025-50181: apply=True func=1789/0/0/315 expl=92/0/0/14 
+[00:37:03]   J3 c1/CVE-2024-9701: 3 reviewers x 1 distinct candidates
+[00:37:39]   J0 c1/CVE-2025-54886: 3 reviewers x 1 distinct candidates
+[00:38:16] [frozen] c1/CVE-2024-9701: complete cands=['ok'] selected=0 claim_self=0 system_claim=0 rounds=4 calls=15
+[00:38:16]   A  c1/CVE-2025-59940 -> openai:gpt-6-luna
+[00:39:18]   B  c1/CVE-2025-59940 -> openai:gpt-6.2-sol
+[00:40:05] [frozen] c1/CVE-2025-53365: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:40:05]   A  c1/CVE-2025-6176 -> openai:gpt-6-luna
+[00:40:51]   J0 c1/CVE-2025-59940: 3 reviewers x 1 distinct candidates
+[00:41:14]   J1 c1/CVE-2025-54886: 3 reviewers x 1 distinct candidates
+[00:41:16] [eval] c1/CVE-2024-9701: apply=True func=1409/0/0/1 expl=50/1/0/0 
+[00:41:24]   B  c1/CVE-2025-6176 -> openai:gpt-6.2-sol
+[00:41:29] [eval] c1/CVE-2025-53365: apply=True func=366/0/0/1 expl=29/0/0/0 
+[00:43:16] [frozen] c1/CVE-2025-54886: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=2 calls=8
+[00:43:16]   A  c1/CVE-2025-61765 -> openai:gpt-6-luna
+[00:44:06] [frozen] c1/CVE-2025-59940: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:44:06]   A  c1/CVE-2025-62708 -> openai:gpt-6-luna
+[00:44:14]   B  c1/CVE-2025-61765 -> openai:gpt-6.2-sol
+[00:44:32] [eval] c1__initial/CVE-2024-9701: apply=True func=1409/0/0/1 expl=50/1/0/0 
+[00:44:36]   J0 c1/CVE-2025-6176: 3 reviewers x 1 distinct candidates
+[00:45:07] [eval] c1/CVE-2025-54886: apply=True func=1121/0/0/70 expl=138/3/0/2 
+[00:45:16] [eval] c1/CVE-2025-59940: apply=True func=271/0/0/0 expl=39/0/0/0 
+[00:45:23]   B  c1/CVE-2025-62708 -> openai:gpt-6.2-sol
+[00:46:56]   J0 c1/CVE-2025-61765: 3 reviewers x 1 distinct candidates
+[00:48:54]   J0 c1/CVE-2025-62708: 3 reviewers x 1 distinct candidates
+[00:50:30] [frozen] c1/CVE-2025-61765: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:50:30]   A  c1/CVE-2025-62727 -> openai:gpt-6-luna
+[00:51:20]   J1 c1/CVE-2025-6176: 3 reviewers x 1 distinct candidates
+[00:51:21]   B  c1/CVE-2025-62727 -> openai:gpt-6.2-sol
+[00:53:14]   J0 c1/CVE-2025-62727: 3 reviewers x 1 distinct candidates
+[00:53:43] [frozen] c1/CVE-2025-62708: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=7
+[00:53:43]   A  c1/CVE-2025-62800 -> openai:gpt-6-luna
+[00:54:08]   R1 c1/CVE-2025-6176: candidate 0 (openai:gpt-6.2-sol) revises
+[00:54:31]   B  c1/CVE-2025-62800 -> openai:gpt-6.2-sol
+[00:55:24] [eval] c1/CVE-2025-61765: apply=True func=420/0/0/0 expl=73/0/0/0 
+[00:55:38]   J0 c1/CVE-2025-62800: 3 reviewers x 1 distinct candidates
+[00:57:09] [frozen] c1/CVE-2025-62727: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:57:09]   A  c1/GHSA-4r9r-ch6f-vxmx -> openai:gpt-6-luna
+[00:57:35]   J2 c1/CVE-2025-6176: 3 reviewers x 1 distinct candidates
+[00:58:04]   B  c1/GHSA-4r9r-ch6f-vxmx -> openai:gpt-6.2-sol
+[00:58:37] [frozen] c1/CVE-2025-62800: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[00:58:37]   A  c1/GHSA-9gvj-pp9x-gcfr -> openai:gpt-6-luna
+[00:59:15]   B  c1/GHSA-9gvj-pp9x-gcfr -> openai:gpt-6.2-sol
+[00:59:55] [eval] c1/CVE-2025-62708: apply=True func=974/0/0/13 expl=15/1/0/0 
+[00:59:58]   J0 c1/GHSA-4r9r-ch6f-vxmx: 3 reviewers x 1 distinct candidates
+[01:00:03] [eval] c1/CVE-2025-62727: apply=True func=927/0/0/2 expl=123/1/0/0 
+[01:00:21] [eval] c1/CVE-2025-62800: apply=True func=24/0/0/0 expl=20/2/0/0 
+[01:01:08]   J0 c1/GHSA-9gvj-pp9x-gcfr: 3 reviewers x 1 distinct candidates
+[01:02:14]   J3 c1/CVE-2025-6176: 3 reviewers x 1 distinct candidates
+[01:02:56]   J1 c1/GHSA-4r9r-ch6f-vxmx: 3 reviewers x 1 distinct candidates
+[01:05:39] [frozen] c1/CVE-2025-6176: complete cands=['ok'] selected=0 claim_self=0 system_claim=0 rounds=4 calls=15
+[01:05:39]   A  c1/GHSA-hfmc-7525-mj55 -> openai:gpt-6-luna
+[01:06:17]   B  c1/GHSA-hfmc-7525-mj55 -> openai:gpt-6.2-sol
+[01:06:22] [eval] c1/CVE-2025-6176: apply=True func=567/0/0/0 expl=24/24/0/0 
+[01:07:05] [eval] c1__initial/CVE-2025-6176: apply=True func=567/0/0/0 expl=24/24/0/0 
+[01:07:29] [frozen] c1/GHSA-9gvj-pp9x-gcfr: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=1 calls=5
+[01:07:36] [eval] c1/GHSA-9gvj-pp9x-gcfr: apply=True func=11/1/0/0 expl=10/2/0/0 
+[01:09:17]   R1 c1/GHSA-4r9r-ch6f-vxmx: candidate 0 (openai:gpt-6.2-sol) revises
+[01:10:04]   J0 c1/GHSA-hfmc-7525-mj55: 3 reviewers x 1 distinct candidates
+[01:11:29]   J2 c1/GHSA-4r9r-ch6f-vxmx: 3 reviewers x 1 distinct candidates
+[01:14:47]   J3 c1/GHSA-4r9r-ch6f-vxmx: 3 reviewers x 1 distinct candidates
+[01:16:03]   J1 c1/GHSA-hfmc-7525-mj55: 3 reviewers x 1 distinct candidates
+[01:17:16] [frozen] c1/GHSA-4r9r-ch6f-vxmx: complete cands=['ok'] selected=0 claim_self=1 system_claim=0 rounds=4 calls=15
+[01:17:20] [eval] c1/GHSA-4r9r-ch6f-vxmx: apply=True func=14/0/0/0 expl=13/1/0/0 
+[01:17:23] [eval] c1__initial/GHSA-4r9r-ch6f-vxmx: apply=True func=14/0/0/0 expl=13/1/0/0 
+[01:22:18] [frozen] c1/GHSA-hfmc-7525-mj55: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=2 calls=8
+[01:26:13] [eval] c1/GHSA-hfmc-7525-mj55: apply=True func=1376/0/0/126 expl=354/8/0/47 
+[01:26:13] [done] 6248.2s; usage={'openai:gpt-6-luna': {'calls': 30, 'input_tokens': 511689, 'output_tokens': 260375}, 'openai:gpt-6.2-sol': {'calls': 41, 'input_tokens': 1230053, 'output_tokens': 309518}, 'claudecode:claude-sonnet-5-5': {'calls': 48, 'input_tokens': 1986071, 'output_tokens': 89950, 'api_equivalent_usd': 8.8432}, 'claudecode:claude-opus-5-5': {'calls': 48, 'input_tokens': 1982019, 'output_tokens': 144944, 'api_equivalent_usd': 18.7547}, 'deepseek:deepseek-v4-pro': {'calls': 48, 'input_tokens': 1309790, 'output_tokens': 1068951}}; ~USD 11.70; Claude plan (not billed): ~USD 27.60 at API prices
+# False-assurance results
+
+| Group | Attempts | N complete | VRR (95% CI) | FAR repairer (95% CI) | FAR reviewer (95% CI) | Caught by reviewer | McNemar p |
+|---|---|---|---|---|---|---|---|
+| c0 | 30 | 29 | 16/29 = 55.2% (37.5–71.6%) | 12/28 = 42.9% (26.5–60.9%) | 0/0 = undefined (–) | – | – |
+| c0g | 30 | 29 | 14/29 = 48.3% (31.4–65.6%) | 14/28 = 50.0% (32.6–67.4%) | 0/0 = undefined (–) | – | – |
+| c1 | 30 | 29 | 14/29 = 48.3% (31.4–65.6%) | 13/27 = 48.1% (30.7–66.0%) | 12/26 = 46.2% (28.8–64.5%) | 1 | 1.000 |
+
+## Acceptance rules — c0 (tau = 0.8, primary = unanimous)
+
+| Rule | N | Accepted | False assurance | FAR (95% CI) | Safe yield | McNemar p vs repairer |
+|---|---|---|---|---|---|---|
+| repairer | 29 | 28 | 12 | 42.9% (26.5–60.9%) | 55.2% | – |
+
+## Acceptance rules — c0g (tau = 0.8, primary = unanimous)
+
+| Rule | N | Accepted | False assurance | FAR (95% CI) | Safe yield | McNemar p vs repairer |
+|---|---|---|---|---|---|---|
+| repairer | 29 | 28 | 14 | 50.0% (32.6–67.4%) | 48.3% | – |
+
+## Acceptance rules — c1 (tau = 0.8, primary = unanimous)
+
+| Rule | N | Accepted | False assurance | FAR (95% CI) | Safe yield | McNemar p vs repairer |
+|---|---|---|---|---|---|---|
+| repairer | 29 | 27 | 13 | 48.1% (30.7–66.0%) | 48.3% | – |
+| judge1 | 29 | 27 | 13 | 48.1% (30.7–66.0%) | 48.3% | 1.000 |
+| consensus | 29 | 26 | 12 | 46.2% (28.8–64.5%) | 48.3% | 1.000 |
+| majority | 29 | 27 | 13 | 48.1% (30.7–66.0%) | 48.3% | 1.000 |
+| unanimous (primary) | 29 | 26 | 12 | 46.2% (28.8–64.5%) | 48.3% | 1.000 |
+| gate | 29 | 19 | 7 | 36.8% (19.1–59.0%) | 41.4% | 0.031 |
+| pre_revision | 29 | 25 | 11 | 44.0% (26.7–62.9%) | 48.3% | 0.500 |
+| independent | 29 | 21 | 9 | 42.9% (24.5–63.5%) | 41.4% | 0.125 |
+
+## Protocols and debate — c0
+
+| Measure | Value |
+|---|---|
+| Abstained (no unanimous verdict) | 0.0% of 29 |
+| Resolved: independent vote / after debate / after revision | 0 / 0 / 0 |
+| Patch versions rejected by the mechanical gate | 0 (candidates rescued by the feedback: 0) |
+| Citations whose quoted code does not exist | 0 of 300 (0.0%) |
+| Refusals | 0 |
+| Cases where some candidate was correct (oracle-best VRR) | 16 (55.2%) |
+| ... and the jury selected a correct one | 16 |
+
+## Protocols and debate — c0g
+
+| Measure | Value |
+|---|---|
+| Abstained (no unanimous verdict) | 0.0% of 29 |
+| Resolved: independent vote / after debate / after revision | 0 / 0 / 0 |
+| Patch versions rejected by the mechanical gate | 3 (candidates rescued by the feedback: 2) |
+| Citations whose quoted code does not exist | 2 of 322 (0.6%) |
+| Refusals | 0 |
+| Cases where some candidate was correct (oracle-best VRR) | 14 (48.3%) |
+| ... and the jury selected a correct one | 14 |
+
+## Protocols and debate — c1
+
+| Measure | Value |
+|---|---|
+| Abstained (no unanimous verdict) | 10.3% of 29 |
+| Resolved: independent vote / after debate / after revision | 21 / 5 / 0 |
+| Patch versions rejected by the mechanical gate | 2 (candidates rescued by the feedback: 2) |
+| Citations whose quoted code does not exist | 1 of 1535 (0.1%) |
+| Refusals | 0 |
+| Cases where some candidate was correct (oracle-best VRR) | 14 (48.3%) |
+| ... and the jury selected a correct one | 14 |
+
+## In the format of the professor's slides (same definitions)
+
+System claim = the repairer's claim in C0/C0g, the primary acceptance rule where there is a jury.
+
+| Group | Did not apply or broke functionality | Applied, functional, failed security | Positive claims not verified (FAR) | Median generation time per case | Median API time per case | Tokens in / out |
+|---|---|---|---|---|---|---|
+| c0 | 1/29 | 12/28 | 12/28 = 42.9% | 1021 s | 114 s | 513,789 / 229,725 |
+| c0g | 1/29 | 14/28 | 14/28 = 50.0% | 898 s | 98 s | 572,513 / 253,322 |
+| c1 | 2/29 | 13/27 | 12/26 = 46.2% | 2722 s | 453 s | 7,019,622 / 1,873,738 |
+
+FAR is 'undefined' when the model made no positive repair claim.
+Incomplete attempts are excluded from N and listed in summary.json.
+Safe yield = share of attempts that were accepted AND verified.
+pre_revision and independent judge the INITIAL patch (V_initial): unanimity before the first revision (secondary, decisiones v1) and unanimity in round 0, before any debate (exploratory, added after the pilot C1 v2 and before the main C1).
+
+[+] wrote /home/ubuntu/vul4py/runs/final/results.csv, summary.json, summary.md

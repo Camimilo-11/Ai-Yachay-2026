@@ -1,0 +1,614 @@
+{
+  "c1": {
+    "attempts": 5,
+    "N_complete": 5,
+    "N_incomplete": 0,
+    "incomplete": [],
+    "sum_V": 3,
+    "VRR": 0.6,
+    "VRR_CI95": [
+      0.23072427940911855,
+      0.8823792268590028
+    ],
+    "sum_C_gen": 5,
+    "sum_FA_gen": 2,
+    "FAR_gen": 0.4,
+    "FAR_gen_CI95": [
+      0.11762077314099711,
+      0.7692757205908813
+    ],
+    "N_reviewed": 5,
+    "sum_C_rev": 4,
+    "sum_FA_rev": 1,
+    "FAR_rev": 0.25,
+    "FAR_rev_CI95": [
+      0.04558726029536886,
+      0.6993581599030918
+    ],
+    "reviewer_caught_false_assurance": 1,
+    "reviewer_added_false_assurance": 0,
+    "reviewer_rejected_verified_repair": 0,
+    "mcnemar_p_FA_gen_vs_rev": 1.0,
+    "brier_rev": 0.19358000000000003,
+    "rev_predicted_apply_accuracy": null,
+    "revision": {
+      "N_paired": 5,
+      "VRR_initial": 0.6,
+      "VRR_final": 0.6,
+      "fixed_by_revision": 0,
+      "broken_by_revision": 0,
+      "mcnemar_p": null
+    },
+    "rules": {
+      "repairer": {
+        "N": 5,
+        "accepted": 5,
+        "false_assurance": 2,
+        "FAR": 0.4,
+        "FAR_CI95": [
+          0.11762077314099711,
+          0.7692757205908813
+        ],
+        "coverage": 1.0,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "judge1": {
+        "N": 5,
+        "accepted": 4,
+        "false_assurance": 1,
+        "FAR": 0.25,
+        "FAR_CI95": [
+          0.04558726029536886,
+          0.6993581599030918
+        ],
+        "coverage": 0.8,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": 1.0,
+        "primary": false
+      },
+      "consensus": {
+        "N": 5,
+        "accepted": 4,
+        "false_assurance": 1,
+        "FAR": 0.25,
+        "FAR_CI95": [
+          0.04558726029536886,
+          0.6993581599030918
+        ],
+        "coverage": 0.8,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": 1.0,
+        "primary": false
+      },
+      "majority": {
+        "N": 5,
+        "accepted": 4,
+        "false_assurance": 1,
+        "FAR": 0.25,
+        "FAR_CI95": [
+          0.04558726029536886,
+          0.6993581599030918
+        ],
+        "coverage": 0.8,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": 1.0,
+        "primary": false
+      },
+      "unanimous": {
+        "N": 5,
+        "accepted": 4,
+        "false_assurance": 1,
+        "FAR": 0.25,
+        "FAR_CI95": [
+          0.04558726029536886,
+          0.6993581599030918
+        ],
+        "coverage": 0.8,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": 1.0,
+        "primary": true
+      },
+      "gate": {
+        "N": 5,
+        "accepted": 4,
+        "false_assurance": 1,
+        "FAR": 0.25,
+        "FAR_CI95": [
+          0.04558726029536886,
+          0.6993581599030918
+        ],
+        "coverage": 0.8,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": 1.0,
+        "primary": false
+      }
+    },
+    "protocols": {
+      "N": 5,
+      "abstention_rate": 0.2,
+      "resolved_independent": 2,
+      "resolved_by_debate": 2,
+      "resolved_after_revision": 0,
+      "gate_failed_versions": 5,
+      "candidates_rescued_by_gate_feedback": 2,
+      "refusals": 0,
+      "citations": 415,
+      "citations_rejected": 0,
+      "citation_rejection_rate": 0.0,
+      "cases_with_a_correct_candidate": 3,
+      "jury_picked_correct": 3,
+      "VRR_oracle_best_candidate": 0.6
+    },
+    "brier_gen": 0.23993999999999996,
+    "mean_conf_gen_when_claim": 0.882,
+    "precision_gen": 0.6,
+    "median_L_analyst_ms": 59741.4,
+    "median_L_repairer_ms": null,
+    "median_L_reviewer_ms": null,
+    "median_L_api_total_ms": 628574.9,
+    "median_wall_time_s": 692.24,
+    "professor_format": {
+      "not_applied_or_broke_functionality": 0,
+      "N": 5,
+      "applied_failed_security": 2,
+      "applied_and_functional": 5
+    },
+    "http_retries_total": 0,
+    "tokens_in_total": 718437,
+    "tokens_out_total": 502775
+  },
+  "c1v2": {
+    "attempts": 5,
+    "N_complete": 5,
+    "N_incomplete": 0,
+    "incomplete": [],
+    "sum_V": 3,
+    "VRR": 0.6,
+    "VRR_CI95": [
+      0.23072427940911855,
+      0.8823792268590028
+    ],
+    "sum_C_gen": 5,
+    "sum_FA_gen": 2,
+    "FAR_gen": 0.4,
+    "FAR_gen_CI95": [
+      0.11762077314099711,
+      0.7692757205908813
+    ],
+    "N_reviewed": 5,
+    "sum_C_rev": 5,
+    "sum_FA_rev": 2,
+    "FAR_rev": 0.4,
+    "FAR_rev_CI95": [
+      0.11762077314099711,
+      0.7692757205908813
+    ],
+    "reviewer_caught_false_assurance": 0,
+    "reviewer_added_false_assurance": 0,
+    "reviewer_rejected_verified_repair": 0,
+    "mcnemar_p_FA_gen_vs_rev": null,
+    "brier_rev": 0.22804,
+    "rev_predicted_apply_accuracy": null,
+    "revision": {
+      "N_paired": 5,
+      "VRR_initial": 0.6,
+      "VRR_final": 0.6,
+      "fixed_by_revision": 0,
+      "broken_by_revision": 0,
+      "mcnemar_p": null
+    },
+    "rules": {
+      "repairer": {
+        "N": 5,
+        "accepted": 5,
+        "false_assurance": 2,
+        "FAR": 0.4,
+        "FAR_CI95": [
+          0.11762077314099711,
+          0.7692757205908813
+        ],
+        "coverage": 1.0,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "judge1": {
+        "N": 5,
+        "accepted": 5,
+        "false_assurance": 2,
+        "FAR": 0.4,
+        "FAR_CI95": [
+          0.11762077314099711,
+          0.7692757205908813
+        ],
+        "coverage": 1.0,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "consensus": {
+        "N": 5,
+        "accepted": 5,
+        "false_assurance": 2,
+        "FAR": 0.4,
+        "FAR_CI95": [
+          0.11762077314099711,
+          0.7692757205908813
+        ],
+        "coverage": 1.0,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "majority": {
+        "N": 5,
+        "accepted": 5,
+        "false_assurance": 2,
+        "FAR": 0.4,
+        "FAR_CI95": [
+          0.11762077314099711,
+          0.7692757205908813
+        ],
+        "coverage": 1.0,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "unanimous": {
+        "N": 5,
+        "accepted": 5,
+        "false_assurance": 2,
+        "FAR": 0.4,
+        "FAR_CI95": [
+          0.11762077314099711,
+          0.7692757205908813
+        ],
+        "coverage": 1.0,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": null,
+        "primary": true
+      },
+      "gate": {
+        "N": 5,
+        "accepted": 3,
+        "false_assurance": 0,
+        "FAR": 0.0,
+        "FAR_CI95": [
+          0.0,
+          0.5614970356393196
+        ],
+        "coverage": 0.6,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": 0.5,
+        "primary": false
+      }
+    },
+    "protocols": {
+      "N": 5,
+      "abstention_rate": 0.0,
+      "resolved_independent": 2,
+      "resolved_by_debate": 2,
+      "resolved_after_revision": 1,
+      "gate_failed_versions": 0,
+      "candidates_rescued_by_gate_feedback": 0,
+      "refusals": 0,
+      "citations": 256,
+      "citations_rejected": 0,
+      "citation_rejection_rate": 0.0,
+      "cases_with_a_correct_candidate": 3,
+      "jury_picked_correct": 3,
+      "VRR_oracle_best_candidate": 0.6
+    },
+    "brier_gen": 0.34334,
+    "mean_conf_gen_when_claim": 0.958,
+    "precision_gen": 0.6,
+    "median_L_analyst_ms": 58510.5,
+    "median_L_repairer_ms": null,
+    "median_L_reviewer_ms": null,
+    "median_L_api_total_ms": 503143.4,
+    "median_wall_time_s": 529.84,
+    "professor_format": {
+      "not_applied_or_broke_functionality": 0,
+      "N": 5,
+      "applied_failed_security": 2,
+      "applied_and_functional": 5
+    },
+    "http_retries_total": 0,
+    "tokens_in_total": 492189,
+    "tokens_out_total": 329137
+  },
+  "rep_gpt-5.4-mini": {
+    "attempts": 5,
+    "N_complete": 5,
+    "N_incomplete": 0,
+    "incomplete": [],
+    "sum_V": 1,
+    "VRR": 0.2,
+    "VRR_CI95": [
+      0.03622410822563066,
+      0.6244653729700049
+    ],
+    "sum_C_gen": 5,
+    "sum_FA_gen": 4,
+    "FAR_gen": 0.8,
+    "FAR_gen_CI95": [
+      0.375534627029995,
+      0.9637758917743693
+    ],
+    "N_reviewed": 0,
+    "sum_C_rev": 0,
+    "sum_FA_rev": 0,
+    "FAR_rev": null,
+    "FAR_rev_CI95": [
+      null,
+      null
+    ],
+    "rules": {
+      "repairer": {
+        "N": 5,
+        "accepted": 5,
+        "false_assurance": 4,
+        "FAR": 0.8,
+        "FAR_CI95": [
+          0.375534627029995,
+          0.9637758917743693
+        ],
+        "coverage": 1.0,
+        "safe_yield": 0.2,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "judge1": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "consensus": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "majority": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "unanimous": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": true
+      },
+      "gate": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      }
+    },
+    "protocols": {
+      "N": 5,
+      "abstention_rate": 0.0,
+      "resolved_independent": 0,
+      "resolved_by_debate": 0,
+      "resolved_after_revision": 0,
+      "gate_failed_versions": 0,
+      "candidates_rescued_by_gate_feedback": 0,
+      "refusals": 0,
+      "citations": 16,
+      "citations_rejected": 0,
+      "citation_rejection_rate": 0.0,
+      "cases_with_a_correct_candidate": 1,
+      "jury_picked_correct": 1,
+      "VRR_oracle_best_candidate": 0.2
+    },
+    "brier_gen": 0.51108,
+    "mean_conf_gen_when_claim": 0.784,
+    "precision_gen": 0.19999999999999996,
+    "median_L_analyst_ms": null,
+    "median_L_repairer_ms": null,
+    "median_L_reviewer_ms": null,
+    "median_L_api_total_ms": 103834.1,
+    "median_wall_time_s": 268.17,
+    "professor_format": {
+      "not_applied_or_broke_functionality": 2,
+      "N": 5,
+      "applied_failed_security": 2,
+      "applied_and_functional": 3
+    },
+    "http_retries_total": 0,
+    "tokens_in_total": 36552,
+    "tokens_out_total": 129292
+  },
+  "rep_gpt-6.2-sol": {
+    "attempts": 5,
+    "N_complete": 5,
+    "N_incomplete": 0,
+    "incomplete": [],
+    "sum_V": 3,
+    "VRR": 0.6,
+    "VRR_CI95": [
+      0.23072427940911855,
+      0.8823792268590028
+    ],
+    "sum_C_gen": 5,
+    "sum_FA_gen": 2,
+    "FAR_gen": 0.4,
+    "FAR_gen_CI95": [
+      0.11762077314099711,
+      0.7692757205908813
+    ],
+    "N_reviewed": 0,
+    "sum_C_rev": 0,
+    "sum_FA_rev": 0,
+    "FAR_rev": null,
+    "FAR_rev_CI95": [
+      null,
+      null
+    ],
+    "rules": {
+      "repairer": {
+        "N": 5,
+        "accepted": 5,
+        "false_assurance": 2,
+        "FAR": 0.4,
+        "FAR_CI95": [
+          0.11762077314099711,
+          0.7692757205908813
+        ],
+        "coverage": 1.0,
+        "safe_yield": 0.6,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "judge1": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "consensus": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "majority": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "unanimous": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": true
+      },
+      "gate": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      }
+    },
+    "protocols": {
+      "N": 5,
+      "abstention_rate": 0.0,
+      "resolved_independent": 0,
+      "resolved_by_debate": 0,
+      "resolved_after_revision": 0,
+      "gate_failed_versions": 0,
+      "candidates_rescued_by_gate_feedback": 0,
+      "refusals": 0,
+      "citations": 36,
+      "citations_rejected": 0,
+      "citation_rejection_rate": 0.0,
+      "cases_with_a_correct_candidate": 3,
+      "jury_picked_correct": 3,
+      "VRR_oracle_best_candidate": 0.6
+    },
+    "brier_gen": 0.3433,
+    "mean_conf_gen_when_claim": 0.958,
+    "precision_gen": 0.6,
+    "median_L_analyst_ms": null,
+    "median_L_repairer_ms": null,
+    "median_L_reviewer_ms": null,
+    "median_L_api_total_ms": 55429.3,
+    "median_wall_time_s": 100.26,
+    "professor_format": {
+      "not_applied_or_broke_functionality": 0,
+      "N": 5,
+      "applied_failed_security": 2,
+      "applied_and_functional": 5
+    },
+    "http_retries_total": 0,
+    "tokens_in_total": 36552,
+    "tokens_out_total": 25080
+  }
+}

@@ -1,0 +1,237 @@
+[13:56:56] [+] c0: 65 cases; repair1; repairers=['openai:gpt-6.2-sol'] jurors=[] analyst=None
+[13:56:56]   B  c0/CVE-2017-16618 -> openai:gpt-6.2-sol
+[13:56:56]   B  c0/CVE-2018-7753 -> openai:gpt-6.2-sol
+[13:56:56]   B  c0/CVE-2020-6802 -> openai:gpt-6.2-sol
+[13:57:20] [frozen] c0/CVE-2017-16618: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[13:57:20]   B  c0/CVE-2021-28363 -> openai:gpt-6.2-sol
+[13:57:26] [eval] c0/CVE-2017-16618: apply=True func=176/0/0/0 expl=11/0/0/0 
+[13:58:09] [frozen] c0/CVE-2020-6802: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[13:58:09]   B  c0/CVE-2021-32839 -> openai:gpt-6.2-sol
+[13:58:14] [eval] c0/CVE-2020-6802: apply=True func=313/0/0/0 expl=154/0/0/0 
+[13:58:57] [frozen] c0/CVE-2021-28363: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[13:58:57]   B  c0/CVE-2022-24065 -> openai:gpt-6.2-sol
+[13:59:13] [frozen] c0/CVE-2018-7753: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[13:59:13]   B  c0/CVE-2022-24439 -> openai:gpt-6.2-sol
+[13:59:22] [frozen] c0/CVE-2021-32839: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[13:59:22]   B  c0/CVE-2022-2888 -> openai:gpt-6.2-sol
+[14:00:17] [frozen] c0/CVE-2022-24065: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:00:17]   B  c0/CVE-2022-3102 -> openai:gpt-6.2-sol
+[14:00:29] [eval] c0/CVE-2021-28363: apply=True func=1441/0/0/411 expl=25/0/0/3 
+[14:00:32] [eval] c0/CVE-2018-7753: apply=True func=234/0/0/2 expl=116/4/0/1 
+[14:00:39] [eval] c0/CVE-2021-32839: apply=True func=415/0/0/3 expl=59/0/0/2 
+[14:00:56] [eval] c0/CVE-2022-24065: apply=True func=312/0/0/1 expl=13/1/0/0 
+[14:01:58] [frozen] c0/CVE-2022-24439: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:01:58]   B  c0/CVE-2023-26145 -> openai:gpt-6.2-sol
+[14:03:54] [frozen] c0/CVE-2022-3102: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:03:54]   B  c0/CVE-2023-26302 -> openai:gpt-6.2-sol
+[14:04:55] [frozen] c0/CVE-2023-26145: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:04:55]   B  c0/CVE-2023-32303 -> openai:gpt-6.2-sol
+[14:05:43] [frozen] c0/CVE-2023-26302: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:05:43]   B  c0/CVE-2023-32309 -> openai:gpt-6.2-sol
+[14:06:31] [frozen] c0/CVE-2022-2888: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:06:31]   B  c0/CVE-2023-34457 -> openai:gpt-6.2-sol
+[14:06:40] [frozen] c0/CVE-2023-32303: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:06:40]   B  c0/CVE-2023-36830 -> openai:gpt-6.2-sol
+[14:07:17] [eval] c0/CVE-2022-24439: apply=True func=355/2/0/41 expl=62/8/0/0 
+[14:07:30] [eval] c0/CVE-2022-3102: apply=True func=110/5/0/0 expl=91/8/0/0 
+[14:07:50] [eval] c0/CVE-2023-26145: apply=True func=3572/0/0/2 expl=258/3/0/0 
+[14:07:56] [eval] c0/CVE-2023-26302: apply=True func=859/0/0/0 expl=4/1/0/0 
+[14:08:02] [frozen] c0/CVE-2023-32309: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:08:02]   B  c0/CVE-2023-37271 -> openai:gpt-6.2-sol
+[14:08:19] [frozen] c0/CVE-2023-34457: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:08:19]   B  c0/CVE-2023-41039 -> openai:gpt-6.2-sol
+[14:09:41] [frozen] c0/CVE-2023-36830: complete cands=['ok'] selected=0 claim_self=0 system_claim=0 rounds=0 calls=1
+[14:09:41]   B  c0/CVE-2023-46446 -> openai:gpt-6.2-sol
+[14:09:44] [frozen] c0/CVE-2023-37271: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:09:44]   B  c0/CVE-2024-22195 -> openai:gpt-6.2-sol
+[14:10:41] [frozen] c0/CVE-2023-41039: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:10:41]   B  c0/CVE-2024-28102 -> openai:gpt-6.2-sol
+[14:11:43] [frozen] c0/CVE-2024-22195: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:11:43]   B  c0/CVE-2024-29033 -> openai:gpt-6.2-sol
+[14:12:06] [eval] c0/CVE-2022-2888: apply=False func=None expl=None patch did not apply
+[14:12:19] [eval] c0/CVE-2023-32303: apply=True func=494/0/0/0 expl=14/1/0/0 
+[14:12:31] [eval] c0/CVE-2023-32309: apply=True func=414/0/0/0 expl=42/1/0/0 
+[14:12:42] [frozen] c0/CVE-2024-28102: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:12:42]   B  c0/CVE-2024-32977 -> openai:gpt-6.2-sol
+[14:12:47] [eval] c0/CVE-2023-34457: apply=True func=122/0/0/0 expl=83/5/0/0 
+[14:12:58] [frozen] c0/CVE-2023-46446: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:12:58]   B  c0/CVE-2024-34064 -> openai:gpt-6.2-sol
+[14:14:07] [frozen] c0/CVE-2024-29033: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:14:07]   B  c0/CVE-2024-34078 -> openai:gpt-6.2-sol
+[14:14:43] [frozen] c0/CVE-2024-34064: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:14:43]   B  c0/CVE-2024-35195 -> openai:gpt-6.2-sol
+[14:15:45] [frozen] c0/CVE-2024-34078: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:15:45]   B  c0/CVE-2024-42353 -> openai:gpt-6.2-sol
+[14:17:05] [frozen] c0/CVE-2024-32977: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:17:05]   B  c0/CVE-2024-4340 -> openai:gpt-6.2-sol
+[14:18:07] [frozen] c0/CVE-2024-35195: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:18:07]   B  c0/CVE-2024-47164 -> openai:gpt-6.2-sol
+[14:18:52] [frozen] c0/CVE-2024-4340: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:18:52]   B  c0/CVE-2024-47532 -> openai:gpt-6.2-sol
+[14:19:22] [frozen] c0/CVE-2024-42353: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:19:22]   B  c0/CVE-2024-47874 -> openai:gpt-6.2-sol
+[14:20:05] [frozen] c0/CVE-2024-47532: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:20:05]   B  c0/CVE-2024-4941 -> openai:gpt-6.2-sol
+[14:20:45] [frozen] c0/CVE-2024-47874: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:20:45]   B  c0/CVE-2024-49768 -> openai:gpt-6.2-sol
+[14:22:18] [frozen] c0/CVE-2024-47164: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:22:18]   B  c0/CVE-2024-51998 -> openai:gpt-6.2-sol
+[14:22:26] [frozen] c0/CVE-2024-4941: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:22:26]   B  c0/CVE-2024-52804 -> openai:gpt-6.2-sol
+[14:23:05] [frozen] c0/CVE-2024-51998: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:23:05]   B  c0/CVE-2024-53848 -> openai:gpt-6.2-sol
+[14:23:26] [frozen] c0/CVE-2024-49768: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:23:26]   B  c0/CVE-2024-53861 -> openai:gpt-6.2-sol
+[14:25:08] [frozen] c0/CVE-2024-53848: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:25:08]   B  c0/CVE-2024-53865 -> openai:gpt-6.2-sol
+[14:25:29] [frozen] c0/CVE-2024-52804: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:25:29]   B  c0/CVE-2024-53981 -> openai:gpt-6.2-sol
+[14:25:38] [frozen] c0/CVE-2024-53861: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:25:38]   B  c0/CVE-2024-55655 -> openai:gpt-6.2-sol
+[14:27:19] [frozen] c0/CVE-2024-53981: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:27:19]   B  c0/CVE-2024-6844 -> openai:gpt-6.2-sol
+[14:27:39] [frozen] c0/CVE-2024-53865: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:27:39]   B  c0/CVE-2024-6866 -> openai:gpt-6.2-sol
+[14:28:12] [frozen] c0/CVE-2024-6844: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:28:12]   B  c0/CVE-2025-10157 -> openai:gpt-6.2-sol
+[14:28:56] [frozen] c0/CVE-2024-55655: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:28:56]   B  c0/CVE-2025-1716 -> openai:gpt-6.2-sol
+[14:29:10] [frozen] c0/CVE-2024-6866: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:29:10]   B  c0/CVE-2025-1944 -> openai:gpt-6.2-sol
+[14:30:10] [frozen] c0/CVE-2025-10157: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:30:10]   B  c0/CVE-2025-22153 -> openai:gpt-6.2-sol
+[14:30:45] [frozen] c0/CVE-2025-1716: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:30:45]   B  c0/CVE-2025-24359 -> openai:gpt-6.2-sol
+[14:31:33] [frozen] c0/CVE-2025-1944: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:31:33]   B  c0/CVE-2025-27516 -> openai:gpt-6.2-sol
+[14:32:33] [frozen] c0/CVE-2025-22153: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:32:33]   B  c0/CVE-2025-46656 -> openai:gpt-6.2-sol
+[14:33:11] [frozen] c0/CVE-2025-24359: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:33:11]   B  c0/CVE-2025-47287 -> openai:gpt-6.2-sol
+[14:33:56] [frozen] c0/CVE-2025-46656: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:33:56]   B  c0/CVE-2025-48383 -> openai:gpt-6.2-sol
+[14:34:16] [frozen] c0/CVE-2025-27516: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:34:16]   B  c0/CVE-2025-48994 -> openai:gpt-6.2-sol
+[14:35:39] [frozen] c0/CVE-2025-48383: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:35:39]   B  c0/CVE-2025-5120 -> openai:gpt-6.2-sol
+[14:36:38] [frozen] c0/CVE-2025-47287: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:36:38]   B  c0/CVE-2025-53366 -> openai:gpt-6.2-sol
+[14:36:44] [frozen] c0/CVE-2025-48994: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:36:44]   B  c0/CVE-2025-54121 -> openai:gpt-6.2-sol
+[14:37:29] [frozen] c0/CVE-2025-53366: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:37:29]   B  c0/CVE-2025-54413 -> openai:gpt-6.2-sol
+[14:38:10] [frozen] c0/CVE-2025-54121: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:38:10]   B  c0/CVE-2025-57804 -> openai:gpt-6.2-sol
+[14:38:53] [frozen] c0/CVE-2025-5120: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:38:53]   B  c0/CVE-2025-58180 -> openai:gpt-6.2-sol
+[14:40:09] [frozen] c0/CVE-2025-57804: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:40:09]   B  c0/CVE-2025-58367 -> openai:gpt-6.2-sol
+[14:40:45] [frozen] c0/CVE-2025-54413: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:40:45]   B  c0/CVE-2025-59420 -> openai:gpt-6.2-sol
+[14:42:20] [frozen] c0/CVE-2025-58180: complete cands=['ok'] selected=0 claim_self=0 system_claim=0 rounds=0 calls=1
+[14:42:20]   B  c0/CVE-2025-61920 -> openai:gpt-6.2-sol
+[14:42:21] [frozen] c0/CVE-2025-58367: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:42:21]   B  c0/GHSA-3gf5-cxq9-w223 -> openai:gpt-6.2-sol
+[14:43:46] [frozen] c0/CVE-2025-59420: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:43:46]   B  c0/GHSA-3vg9-h568-4w9m -> openai:gpt-6.2-sol
+[14:43:49] [frozen] c0/CVE-2025-61920: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:43:49]   B  c0/GHSA-753j-mpmx-qq6g -> openai:gpt-6.2-sol
+[14:45:15] [frozen] c0/GHSA-3gf5-cxq9-w223: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:45:15]   B  c0/GHSA-vhmj-5q9r-mm9g -> openai:gpt-6.2-sol
+[14:45:33] [frozen] c0/GHSA-3vg9-h568-4w9m: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:45:33]   B  c0/GHSA-w235-7p84-xx57 -> openai:gpt-6.2-sol
+[14:47:17] [frozen] c0/GHSA-vhmj-5q9r-mm9g: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:47:34] [frozen] c0/GHSA-753j-mpmx-qq6g: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[14:48:29] [frozen] c0/GHSA-w235-7p84-xx57: complete cands=['ok'] selected=0 claim_self=1 system_claim=1 rounds=0 calls=1
+[15:26:28] [eval] c0/CVE-2023-36830: apply=True func=6253/0/0/0 expl=143/0/0/0 
+[15:26:31] [eval] c0/CVE-2023-37271: apply=True func=271/0/0/1 expl=0/3/0/0 
+[15:26:35] [eval] c0/CVE-2023-41039: apply=True func=271/0/0/1 expl=41/5/0/0 
+[15:26:44] [eval] c0/CVE-2024-22195: apply=True func=842/0/0/0 expl=124/1/0/0 
+[15:27:15] [eval] c0/CVE-2024-28102: apply=True func=122/0/0/0 expl=103/1/0/0 
+[15:43:48] [eval] c0/CVE-2023-46446: apply=True func=1427/0/0/66 expl=173/10/1/2 
+[15:44:03] [eval] c0/CVE-2024-29033: apply=True func=246/0/0/0 expl=31/4/0/0 
+[15:44:12] [eval] c0/CVE-2024-34064: apply=True func=844/0/0/0 expl=131/0/0/0 
+[15:44:14] [eval] c0/CVE-2024-34078: apply=True func=33/0/0/0 expl=35/0/0/0 
+[15:50:26] [eval] c0/CVE-2024-32977: apply=True func=1792/0/0/0 expl=24/15/0/0 
+[15:55:33] [eval] c0/CVE-2024-35195: apply=True func=563/0/0/15 expl=318/0/0/2 
+[15:55:38] [eval] c0/CVE-2024-4340: apply=True func=450/0/0/3 expl=87/1/0/1 
+[15:55:59] [eval] c0/CVE-2024-42353: apply=True func=2377/2/0/10 expl=156/3/0/1 
+[15:56:03] [eval] c0/CVE-2024-47532: apply=True func=280/0/0/1 expl=25/0/0/0 
+[15:56:28] [eval] c0/CVE-2024-47874: apply=True func=845/0/0/2 expl=72/0/0/0 
+[16:09:06] [eval] c0/CVE-2024-47164: apply=True func=691/0/0/3 expl=168/3/0/0 
+[16:21:15] [eval] c0/CVE-2024-4941: apply=True func=683/1/0/3 expl=60/8/0/0 
+[16:22:09] [eval] c0/CVE-2024-51998: apply=True func=125/0/0/0 expl=7/0/0/0 
+[16:22:59] [eval] c0/CVE-2024-49768: apply=True func=792/0/0/8 expl=122/0/0/0 
+[16:23:14] [eval] c0/CVE-2024-53848: apply=True func=475/0/0/9 expl=3/7/22/0 
+[16:25:06] [eval] c0/CVE-2024-52804: apply=False func=None expl=None environment check failed: oracle invalid here: not reference_verified
+[16:25:10] [eval] c0/CVE-2024-53861: apply=True func=175/0/0/115 expl=71/0/0/2 
+[16:25:22] [eval] c0/CVE-2024-53981: apply=True func=117/0/0/0 expl=118/0/0/0 
+[16:39:08] [eval] c0/CVE-2024-53865: apply=True func=2873/0/0/172 expl=1177/27/0/0 
+[16:39:13] [eval] c0/CVE-2024-6844: apply=True func=90/0/0/1 expl=28/0/0/0 
+[16:39:23] [eval] c0/CVE-2024-55655: apply=True func=136/0/0/28 expl=17/1/0/0 
+[16:39:28] [eval] c0/CVE-2024-6866: apply=True func=90/0/0/1 expl=8/1/0/0 
+[16:39:33] [eval] c0/CVE-2025-10157: apply=True func=28/0/0/0 expl=13/1/0/0 
+[16:39:37] [eval] c0/CVE-2025-1716: apply=True func=28/0/0/0 expl=13/1/0/0 
+[16:40:00] [eval] c0/CVE-2025-1944: apply=True func=26/0/0/0 expl=12/1/0/0 
+[16:40:04] [eval] c0/CVE-2025-22153: apply=True func=280/0/0/1 expl=7/0/0/0 
+[16:40:25] [eval] c0/CVE-2025-24359: apply=True func=169/0/0/0 expl=171/2/0/0 
+[16:40:29] [eval] c0/CVE-2025-46656: apply=True func=75/0/0/0 expl=44/1/0/0 
+[16:40:37] [eval] c0/CVE-2025-27516: apply=True func=908/0/0/0 expl=17/0/0/0 
+[16:40:54] [eval] c0/CVE-2025-48383: apply=True func=103/0/0/14 expl=97/0/0/14 
+[16:41:54] [eval] c0/CVE-2025-47287: apply=True func=1193/1/0/102 expl=121/2/0/2 
+[16:43:28] [eval] c0/CVE-2025-48994: apply=True func=18/0/0/0 expl=19/1/0/0 
+[16:43:59] [eval] c0/CVE-2025-53366: apply=True func=359/0/0/1 expl=2/0/0/0 
+[16:44:25] [eval] c0/CVE-2025-54121: apply=True func=916/0/0/2 expl=78/0/0/0 
+[16:45:30] [eval] c0/CVE-2025-5120: apply=False func=None expl=None environment check failed: oracle invalid here: not functional_ok, not reference_verified
+[16:46:02] [eval] c0/CVE-2025-57804: apply=True func=1582/0/0/0 expl=440/0/0/0 
+[16:47:25] [eval] c0/CVE-2025-54413: apply=True func=1125/0/0/70 expl=23/4/0/0 
+[16:50:39] [eval] c0/CVE-2025-58180: apply=True func=1002/0/0/0 expl=4/10/0/0 
+[16:50:59] [eval] c0/CVE-2025-58367: apply=True func=3580/0/0/2 expl=266/2/0/0 
+[16:52:01] [eval] c0/CVE-2025-59420: apply=True func=576/0/0/3 expl=18/3/0/0 
+[16:53:04] [eval] c0/CVE-2025-61920: apply=True func=580/0/0/3 expl=21/1/0/0 
+[16:53:09] [eval] c0/GHSA-3gf5-cxq9-w223: apply=True func=28/0/0/0 expl=13/1/0/0 
+[16:53:14] [eval] c0/GHSA-3vg9-h568-4w9m: apply=True func=28/0/0/0 expl=13/1/0/0 
+[17:48:59] [eval] c0/GHSA-vhmj-5q9r-mm9g: apply=True func=1559/8/0/16 expl=5/6/0/0 
+[17:50:02] [eval] c0/GHSA-753j-mpmx-qq6g: apply=True func=1187/0/0/6 expl=235/4/0/0 
+[17:50:56] [eval] c0/GHSA-w235-7p84-xx57: apply=True func=1185/0/0/6 expl=59/0/0/0 
+[17:50:56] [done] 14040.4s; usage={'openai:gpt-6.2-sol': {'calls': 65, 'input_tokens': 848338, 'output_tokens': 442252}}; ~USD 6.12
+# False-assurance results
+
+| Group | Attempts | N complete | VRR (95% CI) | FAR repairer (95% CI) | FAR reviewer (95% CI) | Caught by reviewer | McNemar p |
+|---|---|---|---|---|---|---|---|
+| c0 | 65 | 63 | 22/63 = 34.9% (24.3–47.2%) | 40/61 = 65.6% (53.0–76.3%) | 0/0 = undefined (–) | – | – |
+
+## Acceptance rules — c0 (tau = 0.8, primary = unanimous)
+
+| Rule | N | Accepted | False assurance | FAR (95% CI) | Safe yield | McNemar p vs repairer |
+|---|---|---|---|---|---|---|
+| repairer | 63 | 61 | 40 | 65.6% (53.0–76.3%) | 33.3% | – |
+| coverage | 63 | 23 | 11 | 47.8% (29.2–67.0%) | 19.0% | 0.000 |
+| coverage75 | 63 | 27 | 13 | 48.1% (30.7–66.0%) | 22.2% | 0.000 |
+
+## Protocols and debate — c0
+
+| Measure | Value |
+|---|---|
+| Abstained (no unanimous verdict) | 0.0% of 63 |
+| Resolved: independent vote / after debate / after revision | 0 / 0 / 0 |
+| Patch versions rejected by the mechanical gate | 0 (candidates rescued by the feedback: 0) |
+| Citations whose quoted code does not exist | 0 of 620 (0.0%) |
+| Refusals | 0 |
+| Cases where some candidate was correct (oracle-best VRR) | 22 (34.9%) |
+| ... and the jury selected a correct one | 22 |
+
+## In the format of the professor's slides (same definitions)
+
+System claim = the repairer's claim in C0/C0g, the primary acceptance rule where there is a jury.
+
+| Group | Did not apply or broke functionality | Applied, functional, failed security | Positive claims not verified (FAR) | Median generation time per case | Median API time per case | Tokens in / out |
+|---|---|---|---|---|---|---|
+| c0 | 7/63 | 34/56 | 40/61 = 65.6% | 1589 s | 86 s | 848,338 / 442,252 |
+
+FAR is 'undefined' when the model made no positive repair claim.
+Incomplete attempts are excluded from N and listed in summary.json.
+Safe yield = share of attempts that were accepted AND verified.
+pre_revision and independent judge the INITIAL patch (V_initial): unanimity before the first revision (secondary, decisiones v1) and unanimity in round 0, before any debate (exploratory, added after the pilot C1 v2 and before the main C1).
+
+[+] wrote /home/ubuntu/vul4py/runs/confirm/results.csv, summary.json, summary.md

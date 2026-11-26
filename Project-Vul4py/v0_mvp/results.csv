@@ -1,0 +1,6 @@
+"provider","model","vuln_id","claim","confidence_percent","assessment_complete","diff_extracted","patch_bytes","apply_ok","functional_ok","exploit_ok","verified_repair","false_assurance","func_pfes","exploit_pfes","input_tokens","output_tokens","generation_latency_s","generated_at_utc","evaluation_notes"
+"nvidia","poolside/laguna-xs-2.1","CVE-2017-16615","True","95","True","True","419","True","True","True","True","False","15/0/0/0","1/0/0/0","1083","139","15.5","",""
+"nvidia","poolside/laguna-xs-2.1","CVE-2017-16618","True","95","True","True","547","False","False","False","False","True",,,"1697","203","49.7","","patch did not apply"
+"nvidia","poolside/laguna-xs-2.1","CVE-2018-7753","True","95","True","True","745","True","True","False","False","True","234/0/0/2","114/8/0/1","5240","214","307.98","",""
+"nvidia","poolside/laguna-xs-2.1","CVE-2019-1010017","False","30","True","False","0","False","False","False","False","False",,,"2394","106","40","","empty patch"
+"nvidia","poolside/laguna-xs-2.1","CVE-2019-10800","True","95","True","True","425","True","True","False","False","True","50/0/0/18","50/1/0/18","8575","183","409.3","",""

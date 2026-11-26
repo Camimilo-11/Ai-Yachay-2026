@@ -1,0 +1,36 @@
+# Decisiones v2: fijadas después de la calibración v2 y ANTES de correr el C1 v2 (piloto y principal).
+estado=fijado
+motivo=la clave del profesor se agotó en la corrida principal (25 nov, 11:41 UTC); esas salidas quedan archivadas en runs/final_v0 y excluidas
+presupuesto=OpenAI USD 20 y DeepSeek USD 20 (del profesor); Claude con el plan propio de Camilo (Claude Code, sin costo por llamada)
+claude_via=opción B (decidida 2026-11-25 ~21:40 UTC): proveedor claudecode:* = claude -p en una sesión nueva por llamada, sin herramientas ni MCP, con el prompt de sistema del rol en lugar del de Claude Code, --effort de models.json, desde una carpeta vacía y sin ANTHROPIC_API_KEY; se guarda el modelo que respondió y el costo equivalente a precio de API
+analista=openai:gpt-6-luna
+reparador=openai:gpt-6.2-sol (high), el único (sin contra-examen); gpt-5.4-mini sale de C1
+condiciones=C0 y C0g (solo GPT, terminadas 2026-11-25 ~21:35 UTC); C1 v2 con el jurado de abajo
+candidatos_jurado=claudecode:claude-opus-5-5 (medium), claudecode:claude-sonnet-5-5 (medium, confirmado por Camilo: en el piloto local juzgó igual que high con la mitad de tokens y tiempo), claudecode:claude-haiku-5-5 (high), deepseek:deepseek-v4-pro (high), deepseek:deepseek-flash (high)
+regla_jurado=los 3 de mayor AUROC, al menos uno por proveedor (Claude y DeepSeek); el tope de USD 14 para Opus ya no aplica (plan); la regla de presupuesto por proveedor queda para DeepSeek y OpenAI
+negativa_de_un_jurado=cuenta como voto completo con claim 0: no hay unanimidad, el sistema se abstiene y no hay más rondas
+exclusion_por_negativas=si (confirmada por Camilo): se excluye a un candidato que se niegue en más del 20 % de los casos de la calibración (2 o más de 5); aplicada: 0 negativas en los 5 candidatos, nadie excluido
+calibracion_v2=scripts/judge_calibration.py --with-right, semilla 42, los 5 casos piloto (runs/preflight/pilot_ids.txt), parches de todas las carpetas runs/pilot/*; corrida 2026-11-25 22:30-22:51 UTC en la instancia
+calibracion_v2_candidatos=fix oficial (V=1), señuelo (V=0), parches del piloto que Vul4Py no verificó (V=0) y los que sí verificó (V=1, --with-right, decidido 2026-11-25 20:46 UTC); se excluyen los parches que no aplicaron (apply_ok=false); 28 candidatos por modelo (13 correctos, 15 incorrectos)
+calibracion_v2_metrica=AUROC de la confianza sobre todos los candidatos; el AUROC solo con parches reales se reporta como secundario
+calibracion_v2_resultado=AUROC (real; especificidad con parches reales incorrectos; negativas): opus 0.91 (0.81; 0.50; 0), sonnet 0.91 (0.84; 0.60; 0), haiku 0.90 (0.91; 0.60; 0), deepseek-v4-pro 0.84 (0.87; 0.90; 0), deepseek-flash 0.74 (0.83; 0.80; 0)
+jurado=claudecode:claude-opus-5-5,claudecode:claude-sonnet-5-5,deepseek:deepseek-v4-pro
+jurado_por_que=los dos de mayor AUROC son Claude (Opus y Sonnet, 0.91); el tercer lugar debe ser de DeepSeek por la regla de proveedores: V4-Pro (0.84) sobre Flash (0.74); Haiku (0.90) queda fuera por esa regla
+presupuesto_deepseek=V4-Pro gastó ~37.000 tokens de salida por voto en la calibración; proyección del piloto C1 ~USD 2 y del C1 de 30 casos USD 13-16 en hora pico (6,5-8 fuera de pico); cabe en el saldo de USD 20 (la calibración costó ~USD 1,1 a precio de pico)
+observacion=la calibración en la instancia y el piloto local en Claude Code (mismo contenido; el orden de los candidatos cambia porque su semilla incluye el nombre del proveedor) difieren en especificidad, p. ej. Sonnet 1.00 local contra 0.73 aquí: los veredictos de un jurado varían entre corridas; la unanimidad de 3 jurados es la mitigación y se reporta como limitación
+regla_primaria=unanimous tau=0.8 debate_rounds=1 max_revisions=1 gate_retries=2 (igual que v1)
+timeout=1800 s por llamada en el C1 v2 (DeepSeek V4-Pro piensa unos 37.000 tokens por voto); max_output sin cambios (models.json)
+muestra_principal=runs/preflight/main_ids.txt (30 casos, semilla 42); piloto=runs/preflight/pilot_ids.txt (5 casos, semilla 7)
+sesion_oraculo=final (un solo control del oráculo por caso, compartido por C1, C0 y C0g); el piloto C1 v2 usa la sesión piloto
+judge_calibration_md5=69651e19558da62d0bf91331cf1bef4c
+multiagent_md5=2d3dc5390e6520d01d3c54337ae596bd
+models_json_md5=ec5758bbe5dc7f5ba53e0b70907a4501
+fa_metrics_md5=a6373c55d5e68b54e723454f17fa401b (agrega latencia y la tabla con el formato del profesor; no cambia VRR ni FAR)
+redactado_utc=2026-11-25T20:46:00Z; actualizado 2026-11-25T21:50:00Z (opción B); fijado_utc=2026-11-25T22:58:00Z
+
+# Adenda (2026-11-25 ~23:55 UTC), después del piloto C1 v2 y ANTES del C1 principal; el protocolo no cambia
+piloto_c1v2=5 casos, 0 negativas, 0 casos incompletos: la regla principal (unanimidad final) aceptó 5 con 2 de falsa seguridad (FAR 40 %, igual que el reparador solo); en la ronda 0 el jurado no había aceptado ninguno de los 2 parches incorrectos: CVE-2024-52303 pasó en el debate (Sonnet rechazó con confianza 0,10 y cambió a aceptar) y CVE-2025-58438 pasó en la votación posterior a la revisión del parche (ronda 2); el debate también corrigió un rechazo equivocado de Sonnet en CVE-2021-23980 (parche correcto)
+regla_pre_revision=implementa el análisis secundario de decisiones v1: unanimidad en una ronda anterior a la primera revisión, juzgada sobre el parche inicial (V_initial); en el piloto: 4 aceptados, 1 de falsa seguridad
+regla_independent=nueva y exploratoria: unanimidad en la ronda 0, antes de cualquier debate o revisión, juzgada sobre el parche inicial; se calcula con los votos guardados, sin cambiar el protocolo; en el piloto: 2 aceptados, 0 de falsa seguridad
+protocolo_c1_principal=sin cambios: regla principal = unanimidad final con debate (1 ronda) y revisión (1); las reglas pre_revision e independent se reportan junto a ella
+fa_metrics_md5_adenda=2f1bd5b6dae516d6d2201b8adb78b432

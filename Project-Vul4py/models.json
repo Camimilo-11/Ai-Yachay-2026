@@ -1,0 +1,158 @@
+{
+  "_note": "Per-model settings for scripts/multiagent.py --models-file (and scripts/cost_estimate.py). context = tokens used to size the code budget (the smallest in a run decides; 40% of it goes to code: 156k tokens when gpt-5.4-mini is in the run, which leaves orjson CVE-2024-27454 (about 181k with its C library) in excerpts; about 396k with the v2 models, every case whole; every request stays under the 272K input tokens above which OpenAI doubles the price); max_output = output budget (reasoning models think inside it); price_* = USD per 1M tokens, OpenAI Standard list prices (Nov 2026), used only for the printed cost estimate (no discount for cached input or Flex); flex = the model offers OpenAI's Flex tier at half price (OpenAI: unavailable on GPT-6.2 Astra and GPT-6.2 Sol, not added to future models; not stated for gpt-5.4-mini). With --openai-extra '{\"service_tier\": \"flex\"}', a model that rejects it, or a Flex request that keeps getting 429 (no capacity), goes on at the Standard tier and the drop is recorded. NVIDIA-hosted models (optional; free, about 40 requests/min): context set conservatively to 128k. v2 (Nov 25, 2026): anthropic:* = Claude through the official Anthropic SDK (anthropic==2.14.0), reasoning_effort -> output_config.effort, thinking adaptive (the default on Claude 5.5), no temperature; list prices from platform.claude.com/docs/en/about-claude/pricing (Haiku 5.5: 0.10/0.50 up to 100k prompt tokens, 0.50/2.50 above). deepseek:* = DeepSeek's own OpenAI-compatible API (api.deepseek.com), thinking on, reasoning_effort none|low|high|max (high = its default), max_tokens up to 384K (64K = its thinking-mode default); prices are the cache-miss peak prices (01-04 and 06-10 UTC on weekdays), half off-peak (api-docs.deepseek.com/quick_start/pricing). claudecode:* (Nov 25, 2026, plan v2 option B) = the same Claude models through the Claude Code CLI (claude -p) with the Claude plan instead of the API: one fresh session per call, no tools, no MCP, the role's system prompt replacing Claude Code's, reasoning_effort -> --effort; max_output is not used (Claude Code's own output limit); not billed: the prices only give the API-equivalent cost, which Claude Code itself reports per call. Sonnet at medium: in the Claude Code juror pilot (5 cases, 28 patches) it judged as well as high (AUROC 0.97 both) with half the tokens and time.",
+  "openai:gpt-6.2-astra": {
+    "context": 1050000,
+    "max_output": 65536,
+    "reasoning_effort": "high",
+    "price_in": 8.0,
+    "price_out": 40.0,
+    "flex": false
+  },
+  "openai:gpt-6.2-sol": {
+    "context": 1050000,
+    "max_output": 65536,
+    "reasoning_effort": "high",
+    "price_in": 2.0,
+    "price_out": 10.0,
+    "flex": false
+  },
+  "openai:gpt-6.1-sol": {
+    "context": 1050000,
+    "max_output": 65536,
+    "reasoning_effort": "high",
+    "price_in": 2.0,
+    "price_out": 10.0,
+    "flex": true
+  },
+  "openai:gpt-6.1-terra": {
+    "context": 1050000,
+    "max_output": 32768,
+    "reasoning_effort": "medium",
+    "price_in": 1.0,
+    "price_out": 5.0,
+    "flex": true
+  },
+  "openai:gpt-5.4-mini": {
+    "context": 400000,
+    "max_output": 65536,
+    "reasoning_effort": "high",
+    "price_in": 0.75,
+    "price_out": 4.5
+  },
+  "openai:gpt-6-luna": {
+    "context": 1050000,
+    "max_output": 32768,
+    "reasoning_effort": "medium",
+    "price_in": 0.1,
+    "price_out": 0.5,
+    "flex": true
+  },
+  "anthropic:claude-opus-5-5": {
+    "context": 1000000,
+    "max_output": 16384,
+    "reasoning_effort": "medium",
+    "price_in": 4.0,
+    "price_out": 20.0
+  },
+  "anthropic:claude-sonnet-5-5": {
+    "context": 1000000,
+    "max_output": 16384,
+    "reasoning_effort": "high",
+    "price_in": 2.0,
+    "price_out": 10.0
+  },
+  "anthropic:claude-haiku-5-5": {
+    "context": 1000000,
+    "max_output": 16384,
+    "reasoning_effort": "high",
+    "price_in": 0.1,
+    "price_out": 0.5
+  },
+  "claudecode:claude-opus-5-5": {
+    "context": 1000000,
+    "max_output": 16384,
+    "reasoning_effort": "medium",
+    "price_in": 4.0,
+    "price_out": 20.0
+  },
+  "claudecode:claude-sonnet-5-5": {
+    "context": 1000000,
+    "max_output": 16384,
+    "reasoning_effort": "medium",
+    "price_in": 2.0,
+    "price_out": 10.0
+  },
+  "claudecode:claude-haiku-5-5": {
+    "context": 1000000,
+    "max_output": 16384,
+    "reasoning_effort": "high",
+    "price_in": 0.1,
+    "price_out": 0.5
+  },
+  "deepseek:deepseek-v4-pro": {
+    "context": 1000000,
+    "max_output": 65536,
+    "reasoning_effort": "high",
+    "price_in": 1.32,
+    "price_out": 3.96
+  },
+  "deepseek:deepseek-flash": {
+    "context": 1000000,
+    "max_output": 65536,
+    "reasoning_effort": "high",
+    "price_in": 0.3,
+    "price_out": 1.2
+  },
+  "nvidia:deepseek-ai/deepseek-v4-pro": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:deepseek-ai/deepseek-v4-flash": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:z-ai/glm-5.2": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:z-ai/glm-5.3": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:minimaxai/minimax-m2.5": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:minimaxai/minimax-m2.7": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:qwen/qwen3-next-80b-a3b-thinking": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:qwen/qwen3-next-80b-a3b-instruct": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:moonshotai/kimi-k2-thinking": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:openai/gpt-oss-120b": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:nvidia/nemotron-3-ultra-550b-a55b": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:nvidia/nemotron-3-super-120b-a12b": {
+    "context": 128000,
+    "max_output": 16384
+  },
+  "nvidia:meta/llama-3.3-70b-instruct": {
+    "context": 128000,
+    "max_output": 8192
+  }
+}

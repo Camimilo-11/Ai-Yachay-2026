@@ -1,0 +1,93 @@
+{
+  "schema": "fa-multiagent/2",
+  "started_at_utc": "2026-11-26T21:53:56.163+00:00",
+  "condition": "c0",
+  "pipeline": "repair1",
+  "models": {
+    "analyst": null,
+    "repairers": [
+      "claudecode:claude-haiku-5-5"
+    ],
+    "jurors": []
+  },
+  "families": {
+    "repairers": [
+      "claude"
+    ],
+    "jurors": []
+  },
+  "settings": {
+    "vuln_ids": null,
+    "ids_file": "runs/preflight/pilot_ids.txt",
+    "sample": null,
+    "seed": 42,
+    "preset": "c0",
+    "analyst": "none",
+    "repairers": "claudecode:claude-haiku-5-5",
+    "jurors": "none",
+    "allow_same_family": false,
+    "models_file": "models.json",
+    "gate": false,
+    "gate_retries": 2,
+    "cross_exam": false,
+    "debate_rounds": 0,
+    "max_revisions": 0,
+    "hint": "lines",
+    "compiled_context": true,
+    "code_share": 0.4,
+    "temperature": 0.0,
+    "max_tokens": 16384,
+    "timeout": 900.0,
+    "max_http_retries": 6,
+    "per_model_concurrency": 2,
+    "max_active_cases": 3,
+    "nvidia_rpm": null,
+    "openai_rpm": null,
+    "openai_extra": null,
+    "nvidia_base_url": null,
+    "openai_base_url": null,
+    "anthropic_rpm": null,
+    "deepseek_rpm": null,
+    "anthropic_base_url": null,
+    "deepseek_base_url": null,
+    "claudecode_bin": null,
+    "claudecode_rpm": null,
+    "claudecode_concurrency": 3,
+    "claudecode_limit_wait": 330,
+    "eval_jobs": 1,
+    "session": "v5dev",
+    "no_eval": false,
+    "eval_candidates": true,
+    "runs": "/home/ubuntu/vul4py/runs/v5_dev",
+    "agent": "c0m",
+    "condition": "c0",
+    "workspaces": "/home/ubuntu/vul4py/workspaces",
+    "tools_root": "/home/ubuntu/vul4py/workspaces/.vul4py_tools",
+    "rag": null,
+    "ping": ""
+  },
+  "prompt_sha256": "eb3d749d7d6cd98984f4c6a8f595d6568408622f437a38d1bbb5aa34ed9bce76",
+  "vul4py_commit": "f80f861012cb7b7cfeca7323be51d33e72eaf8f3",
+  "vuln_ids": [
+    "CVE-2021-23980",
+    "CVE-2023-30608",
+    "CVE-2024-37891",
+    "CVE-2024-52303",
+    "CVE-2025-58438"
+  ],
+  "python": "3.12.3",
+  "oracle_session": "v5dev",
+  "openai_client": "3.58.0",
+  "finished_at_utc": "2026-11-26T22:09:04.165+00:00",
+  "wall_time_s": 907.4,
+  "usage": {
+    "claudecode:claude-haiku-5-5": {
+      "calls": 5,
+      "input_tokens": 65897,
+      "output_tokens": 104208,
+      "api_equivalent_usd": 0.0653
+    }
+  },
+  "estimated_cost_usd": null,
+  "claude_plan_api_equivalent_usd": 0.07
+}

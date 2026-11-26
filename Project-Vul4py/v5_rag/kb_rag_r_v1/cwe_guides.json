@@ -1,0 +1,508 @@
+{
+ "cwe": {
+  "CWE-1284": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright."
+   ],
+   "name": "Improper Validation of Specified Quantity in Input",
+   "summary": "The product receives input that is expected to specify a quantity (such as size or length), but it does not validate or incorrectly validates that the quantity has the required properties."
+  },
+  "CWE-1333": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Do not use regular expressions with untrusted input. If regular expressions must be used, avoid using backtracking in the expression.",
+    "Limit the length of the input that the regular expression will process.",
+    "Use regular expressions that do not support backtracking, e.g. by removing nested quantifiers."
+   ],
+   "name": "Inefficient Regular Expression Complexity",
+   "summary": "The product uses a regular expression with a worst-case computational complexity that is inefficient and possibly exponential."
+  },
+  "CWE-1336": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Use the template engine's sandbox or restricted mode, if available.",
+    "Choose a template engine that offers a sandbox or restricted mode, or at least limits the power of any available expressions, function calls, or commands."
+   ],
+   "name": "Improper Neutralization of Special Elements Used in a Template Engine",
+   "summary": "The product uses a template engine to insert or process externally-influenced input, but it does not neutralize or incorrectly neutralizes special elements or syntax that can be interpreted as template expressions or other code directives when processed by the engine."
+  },
+  "CWE-134": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Ensure that all format string functions are passed a static string which cannot be controlled by the user, and that the proper number of arguments are always sent to that function as well. If at all possible, use functions that do not support the %n operator in format strings. [REF-116] [REF-117]",
+    "Choose a language that is not subject to this flaw.",
+    "Run compilers and linkers with high warning levels, since they may detect incorrect usage."
+   ],
+   "name": "Use of Externally-Controlled Format String",
+   "summary": "The product uses a function that accepts a format string as an argument, but the format string originates from an external source."
+  },
+  "CWE-150": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright.",
+    "While it is risky to use dynamically-generated query strings, code, or commands that mix control and data together, sometimes it may be unavoidable. Properly quote arguments and escape any special characters within those arguments. The most conservative approach is to escape or filter all characters that do not pass an extremely strict allowlist (such as everything that is not alphanumeric or white space). If some special characters are still needed, such as white space, wrap each argument in quotes after the escaping/filtering step. Be careful of argument injection (CWE-88).",
+    "Inputs should be decoded and canonicalized to the application's current internal representation before being validated (CWE-180). Make sure that the application does not decode the same input twice (CWE-174). Such errors could be used to bypass allowlist validation schemes by introducing dangerous inputs after they have been checked."
+   ],
+   "name": "Improper Neutralization of Escape, Meta, or Control Sequences",
+   "summary": "The product receives input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could be interpreted as escape, meta, or control character sequences when they are sent to a downstream component."
+  },
+  "CWE-173": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright.",
+    "Use and specify an output encoding that can be handled by the downstream component that is reading the output. Common encodings include ISO-8859-1, UTF-7, and UTF-8. When an encoding is not specified, a downstream component may choose a different encoding, either by assuming a default encoding or automatically inferring which encoding is being used, which can be erroneous. When the encodings are inconsistent, the downstream component might treat some character or byte sequences as special, even if they are not special in the original encoding. Attackers might then be able to exploit this discrepancy and conduct injection attacks; they even might be able to bypass protection mechanisms that assume the original encoding is also being used by the downstream component.",
+    "Inputs should be decoded and canonicalized to the application's current internal representation before being validated (CWE-180). Make sure that the application does not decode the same input twice (CWE-174). Such errors could be used to bypass allowlist validation schemes by introducing dangerous inputs after they have been checked."
+   ],
+   "name": "Improper Handling of Alternate Encoding",
+   "summary": "The product does not properly handle when an input uses an alternate encoding that is valid for the control sphere to which the input is being sent."
+  },
+  "CWE-178": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright.",
+    "Inputs should be decoded and canonicalized to the application's current internal representation before being validated (CWE-180). Make sure that the application does not decode the same input twice (CWE-174). Such errors could be used to bypass allowlist validation schemes by introducing dangerous inputs after they have been checked.",
+    "Avoid making decisions based on names of resources (e.g. files) if those resources can have alternate names."
+   ],
+   "name": "Improper Handling of Case Sensitivity",
+   "summary": "The product does not properly account for differences in case sensitivity when accessing or determining the properties of a resource, leading to inconsistent results."
+  },
+  "CWE-184": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Do not rely exclusively on detecting disallowed inputs. There are too many variants to encode a character, especially when different environments are used, so there is a high likelihood of missing some variants. Only use detection of disallowed inputs as a mechanism for detecting suspicious activity. Ensure that you are using other protection mechanisms that only identify \"good\" input - such as lists of allowed inputs - and ensure that you are properly encoding your outputs."
+   ],
+   "name": "Incomplete List of Disallowed Inputs",
+   "summary": "The product implements a protection mechanism that relies on a list of inputs (or properties of inputs) that are not allowed by policy or otherwise require other action to neutralize before additional processing takes place, but the list is incomplete."
+  },
+  "CWE-20": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Understand all the potential areas where untrusted inputs can enter the product, including but not limited to: parameters or arguments, cookies, anything read from the network, environment variables, reverse DNS lookups, query results, request headers, URL components, e-mail, files, filenames, databases, and any external systems that provide data to the application. Remember that such inputs may be obtained indirectly through API calls.",
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright.",
+    "When your application combines data from multiple sources, perform the validation after the sources have been combined. The individual data elements may pass the validation step but violate the intended restrictions after they have been combined."
+   ],
+   "name": "Improper Input Validation",
+   "summary": "The product receives input or data, but it does not validate or incorrectly validates that the input has the properties that are required to process the data safely and correctly."
+  },
+  "CWE-200": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Compartmentalize the system to have \"safe\" areas where trust boundaries can be unambiguously drawn. Do not allow sensitive data to go outside of the trust boundary and always be careful when interfacing with a compartment outside of the safe area. Ensure that appropriate compartmentalization is built into the system design, and the compartmentalization allows for and reinforces privilege separation functionality. Architects and designers should rely on the principle of least privilege to decide the appropriate time to use privileges and the time to drop privileges."
+   ],
+   "name": "Exposure of Sensitive Information to an Unauthorized Actor",
+   "summary": "The product exposes sensitive information to an actor that is not explicitly authorized to have access to that information."
+  },
+  "CWE-22": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright. When validating filenames, use stringent allowlists that limit the character set to be used. If feasible, only allow a single \".\" character in the filename to avoid weaknesses such as CWE-23, and exclude directory separators such as \"/\" to avoid CWE-36. Use a list of allowable file extensions, which will help to avoid CWE-434. Do not rely exclusively on a filtering mechanism that removes potentially dangerous characters. This is equivalent to a denylist, which may be incomplete (CWE-184). For example, filtering \"/\" is insufficient protection if the filesystem also supports the use of \"\\\" as a directory separator. Another possible error could occur when the filtering is applied in a way that still produces dangerous data (CWE-182). For example, if \"../\" sequences are removed from the \".../...//\" string in a sequential fashion, two instances of \"../\" would be removed from the original string, but the remaining characters would still form the \"../\" string.",
+    "Inputs should be decoded and canonicalized to the application's current internal representation before being validated (CWE-180). Make sure that the application does not decode the same input twice (CWE-174). Such errors could be used to bypass allowlist validation schemes by introducing dangerous inputs after they have been checked. Use a built-in path canonicalization function (such as realpath() in C) that produces the canonical version of the pathname, which effectively removes \"..\" sequences and symbolic links (CWE-23, CWE-59). This includes: realpath() in C getCanonicalPath() in Java GetFullPath() in ASP.NET realpath() or abs_path() in Perl realpath() in PHP",
+    "Ensure that error messages only contain minimal details that are useful to the intended audience and no one else. The messages need to strike the balance between being too cryptic (which can confuse users) or being too detailed (which may reveal more than intended). The messages should not reveal the methods that were used to determine the error. Attackers can use detailed information to refine or optimize their original attack, thereby increasing their chances of success. If errors must be captured in some detail, record them in log messages, but consider what could occur if the log messages can be viewed by attackers. Highly sensitive information such as passwords should never be saved to log files. Avoid inconsistent messaging that might accidentally tip off an attacker about internal state, such as whether a user account exists or not. In the context of path traversal, error messages which disclose path information can help attackers craft the appropriate attack strings to move through the file system hierarchy."
+   ],
+   "name": "Improper Limitation of a Pathname to a Restricted Directory",
+   "summary": "The product uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the product does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory."
+  },
+  "CWE-248": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Catch all relevant exceptions. This is the recommended solution. Ensure that all exceptions are handled in such a way that you can be sure of the state of your system at any given moment.",
+    "The choice between a language which has named or unnamed exceptions needs to be done. While unnamed exceptions exacerbate the chance of not properly dealing with an exception, named exceptions suffer from the up call version of the weak base class problem.",
+    "A language can be used which requires, at compile time, to catch all serious exceptions. However, one must make sure to use the most current version of the API as new exceptions could be added."
+   ],
+   "name": "Uncaught Exception",
+   "summary": "An exception is thrown from a function, but it is not caught."
+  },
+  "CWE-285": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Divide the product into anonymous, normal, privileged, and administrative areas. Reduce the attack surface by carefully mapping roles with data and functionality. Use role-based access control (RBAC) to enforce the roles at the appropriate boundaries. Note that this approach may not protect against horizontal authorization, i.e., it will not protect a user from attacking others with the same role.",
+    "Ensure that you perform access control checks related to your business logic. These checks may be different than the access control checks that you apply to more generic resources such as files, connections, processes, memory, and database records. For example, a database may restrict access for medical records to a specific database user, but each record might only be intended to be accessible to the patient and the patient's doctor.",
+    "Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid. For example, consider using authorization frameworks such as the JAAS Authorization Framework [REF-233] and the OWASP ESAPI Access Control feature [REF-45]."
+   ],
+   "name": "Improper Authorization",
+   "summary": "The product does not perform or incorrectly performs an authorization check when an actor attempts to access a resource or perform an action."
+  },
+  "CWE-290": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Authentication Bypass by Spoofing",
+   "summary": "This attack-focused weakness is caused by incorrectly implemented authentication schemes that are subject to spoofing attacks."
+  },
+  "CWE-295": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Certificates should be carefully managed and checked to assure that data are encrypted with the intended owner's public key.",
+    "If certificate pinning is being used, ensure that all relevant properties of the certificate are fully validated before the certificate is pinned, including the hostname."
+   ],
+   "name": "Improper Certificate Validation",
+   "summary": "The product does not validate, or incorrectly validates, a certificate."
+  },
+  "CWE-303": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Incorrect Implementation of Authentication Algorithm",
+   "summary": "The requirements for the product dictate the use of an established authentication algorithm, but the implementation of the algorithm is incorrect."
+  },
+  "CWE-312": {
+   "kind": "Weakness",
+   "mitigations": [
+    "When storing data in the cloud (e.g., S3 buckets, Azure blobs, Google Cloud Storage, etc.), use the provider's controls to encrypt the data at rest. [REF-1297] [REF-1299] [REF-1301]",
+    "In some systems/environments such as cloud, the use of \"double encryption\" (at both the software and hardware layer) might be required, and the developer might be solely responsible for both layers, instead of shared responsibility with the administrator of the broader system/environment."
+   ],
+   "name": "Cleartext Storage of Sensitive Information",
+   "summary": "The product stores sensitive information in cleartext within a resource that might be accessible to another control sphere."
+  },
+  "CWE-325": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Missing Cryptographic Step",
+   "summary": "The product does not implement a required step in a cryptographic algorithm, resulting in weaker encryption than advertised by the algorithm."
+  },
+  "CWE-327": {
+   "kind": "Weakness",
+   "mitigations": [
+    "When using industry-approved techniques, use them correctly. Don't cut corners by skipping resource-intensive steps (CWE-325). These steps are often essential for preventing common attacks.",
+    "When there is a need to store or transmit sensitive data, use strong, up-to-date cryptographic algorithms to encrypt that data. Select a well-vetted algorithm that is currently considered to be strong by experts in the field, and use well-tested implementations. As with all cryptographic mechanisms, the source code should be available for analysis. For example, US government systems require FIPS 140-2 certification [REF-1192]. Do not develop custom or private cryptographic algorithms. They will likely be exposed to attacks that are well-understood by cryptographers. Reverse engineering techniques are mature. If the algorithm can be compromised if attackers find out how it works, then it is especially weak. Periodically ensure that the cryptography has not become obsolete. Some older algorithms, once thought to require a billion years of computing time, can now be broken in days or hours. This includes MD4, MD5, SHA1, DES, and other algorithms that were once regarded as strong. [REF-267]",
+    "Ensure that the design allows one cryptographic algorithm to be replaced with another in the next generation or version. Where possible, use wrappers to make the interfaces uniform. This will make it easier to upgrade to stronger algorithms. With hardware, design the product at the Intellectual Property (IP) level so that one cryptographic algorithm can be replaced with another in the next generation of the hardware product."
+   ],
+   "name": "Use of a Broken or Risky Cryptographic Algorithm",
+   "summary": "The product uses a broken or risky cryptographic algorithm or protocol."
+  },
+  "CWE-345": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Insufficient Verification of Data Authenticity",
+   "summary": "The product does not sufficiently verify the origin or authenticity of data, in a way that causes it to accept invalid data."
+  },
+  "CWE-346": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Origin Validation Error",
+   "summary": "The product does not properly verify that the source of data or communication is valid."
+  },
+  "CWE-349": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Acceptance of Extraneous Untrusted Data With Trusted Data",
+   "summary": "The product, when processing trusted data, accepts any untrusted data that is also included with the trusted data, treating the untrusted data as if it were trusted."
+  },
+  "CWE-351": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Insufficient Type Distinction",
+   "summary": "The product does not properly distinguish between different types of elements in a way that leads to insecure behavior."
+  },
+  "CWE-354": {
+   "kind": "Weakness",
+   "mitigations": [
+    "The protocol specification describes the algorithm used for calculating the checksum. It is then a matter of implementing the calculation and verifying that the calculated checksum and the received checksum match."
+   ],
+   "name": "Improper Validation of Integrity Check Value",
+   "summary": "The product does not validate or incorrectly validates the integrity check values or \"checksums\" of a message."
+  },
+  "CWE-359": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Some tools can automatically analyze documents to redact, strip, or \"sanitize\" private information, although some human review might be necessary. Tools may vary in terms of which document formats can be processed. When calling an external program to automatically generate or convert documents, invoke the program with any available options that avoid generating sensitive metadata. Some formats have well-defined fields that could contain private data, such as Exchangeable image file format (Exif), which can contain potentially sensitive metadata such as geolocation, date, and time [REF-1515] [REF-1516].",
+    "Carefully evaluate how secure design may interfere with privacy, and vice versa. Security and privacy concerns often seem to compete with each other. From a security perspective, all important operations should be recorded so that any anomalous activity can later be identified. However, when private data is involved, this practice can in fact create risk. Although there are many ways in which private data can be handled unsafely, a common risk stems from misplaced trust. Programmers often trust the operating environment in which a program runs, and therefore believe that it is acceptable store private information on the file system, in the registry, or in other locally-controlled resources. However, even if access to certain resources is restricted, this does not guarantee that the individuals who do have access can be trusted.",
+    "Identify and consult all relevant regulations for personal privacy. An organization may be required to comply with certain federal and state regulations, depending on its location, the type of business it conducts, and the nature of any private data it handles. Regulations may include Safe Harbor Privacy Framework [REF-340], Gramm-Leach Bliley Act (GLBA) [REF-341], Health Insurance Portability and Accountability Act (HIPAA) [REF-342], General Data Protection Regulation (GDPR) [REF-1047], California Consumer Privacy Act (CCPA) [REF-1048], and others."
+   ],
+   "name": "Exposure of Private Personal Information to an Unauthorized Actor",
+   "summary": "The product does not properly prevent a person's private, personal information from being accessed by actors who either (1) are not explicitly authorized to access the information or (2) do not have the implicit consent of the person about whom the information is collected."
+  },
+  "CWE-367": {
+   "kind": "Weakness",
+   "mitigations": [
+    "The most basic advice for TOCTOU vulnerabilities is to not perform a check before the use. This does not resolve the underlying issue of the execution of a function on a resource whose state and identity cannot be assured, but it does help to limit the false sense of security given by the check.",
+    "When the file being altered is owned by the current user and group, set the effective gid and uid to that of the current user and group when executing this statement.",
+    "If you cannot perform operations atomically and you must share access to the resource between multiple processes or threads, then try to limit the amount of time (CPU cycles) between the check and use of the resource. This will not fix the problem, but it could make it more difficult for an attack to succeed."
+   ],
+   "name": "Time-of-check Time-of-use (TOCTOU) Race Condition",
+   "summary": "The product checks the state of a resource before using that resource, but the resource's state can change between the check and the use in a way that invalidates the results of the check."
+  },
+  "CWE-400": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Ensure that all failures in resource allocation place the system into a safe posture.",
+    "Design throttling mechanisms into the system architecture. The best protection is to limit the amount of resources that an unauthorized user can cause to be expended. A strong authentication and access control model will help prevent such attacks from occurring in the first place. The login application should be protected against DoS attacks as much as possible. Limiting the database access, perhaps by caching result sets, can help minimize the resources expended. To further limit the potential for a DoS attack, consider tracking the rate of requests received from users and blocking requests that exceed a defined rate threshold.",
+    "Mitigation of resource exhaustion attacks requires that the target system either: recognizes the attack and denies that user further access for a given amount of time, or uniformly throttles all requests in order to make it more difficult to consume resources more quickly than they can again be freed. The first of these solutions is an issue in itself though, since it may allow attackers to prevent the use of the system by a particular valid user. If the attacker impersonates the valid user, they may be able to prevent the user from accessing the server in question. The second solution is simply difficult to effectively institute -- and even when properly done, it does not provide a full solution. It simply makes the attack require more resources on the part of the attacker."
+   ],
+   "name": "Uncontrolled Resource Consumption",
+   "summary": "The product does not properly control the allocation and maintenance of a limited resource."
+  },
+  "CWE-402": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Transmission of Private Resources into a New Sphere",
+   "summary": "The product makes resources available to untrusted parties when those resources are only intended to be accessed by the product."
+  },
+  "CWE-407": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Inefficient Algorithmic Complexity",
+   "summary": "An algorithm in a product has an inefficient worst-case computational complexity that may be detrimental to system performance and can be triggered by an attacker, typically using crafted manipulations that ensure that the worst case is being reached."
+  },
+  "CWE-409": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Improper Handling of Highly Compressed Data (Data Amplification)",
+   "summary": "The product does not handle or incorrectly handles a compressed input with a very high compression ratio that produces a large output."
+  },
+  "CWE-426": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Hard-code the search path to a set of known-safe values (such as system directories), or only allow them to be specified by the administrator in a configuration file. Do not allow these settings to be modified by an external party. Be careful to avoid related weaknesses such as CWE-426 and CWE-428.",
+    "When invoking other programs, specify those programs using fully-qualified pathnames. While this is an effective approach, code that uses fully-qualified pathnames might not be portable to other systems that do not use the same pathnames. The portability can be improved by locating the full-qualified paths in a centralized, easily-modifiable location within the source code, and having the code refer to these paths.",
+    "Remove or restrict all environment settings before invoking other programs. This includes the PATH environment variable, LD_LIBRARY_PATH, and other settings that identify the location of code libraries, and any application-specific search paths."
+   ],
+   "name": "Untrusted Search Path",
+   "summary": "The product searches for critical resources using an externally-supplied search path that can point to resources that are not under the product's direct control."
+  },
+  "CWE-444": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Use a web server that employs a strict HTTP parsing procedure, such as Apache [REF-433].",
+    "Use only SSL communication.",
+    "Terminate the client session after each request."
+   ],
+   "name": "Inconsistent Interpretation of HTTP Requests",
+   "summary": "The product acts as an intermediary HTTP agent (such as a proxy or firewall) in the data flow between two entities such as a client and server, but it does not interpret malformed HTTP requests or responses in ways that are consistent with how the messages will be processed by those entities that are at the ultimate destination."
+  },
+  "CWE-502": {
+   "kind": "Weakness",
+   "mitigations": [
+    "If available, use the signing/sealing features of the programming language to assure that deserialized data has not been tainted. For example, a hash-based message authentication code (HMAC) could be used to ensure that data has not been modified.",
+    "When deserializing data, populate a new object rather than just deserializing. The result is that the data flows through safe input validation and that the functions are safe.",
+    "Explicitly define a final object() to prevent deserialization."
+   ],
+   "name": "Deserialization of Untrusted Data",
+   "summary": "The product deserializes untrusted data without sufficiently ensuring that the resulting data will be valid."
+  },
+  "CWE-601": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright. Use a list of approved URLs or domains to be used for redirection.",
+    "Understand all the potential areas where untrusted inputs can enter your software: parameters or arguments, cookies, anything read from the network, environment variables, reverse DNS lookups, query results, request headers, URL components, e-mail, files, filenames, databases, and any external systems that provide data to the application. Remember that such inputs may be obtained indirectly through API calls. Many open redirect problems occur because the programmer assumed that certain inputs could not be modified, such as cookies and hidden form fields.",
+    "Use an intermediate disclaimer page that provides the user with a clear warning that they are leaving the current site. Implement a long timeout before the redirect occurs, or force the user to click on the link. Be careful to avoid XSS problems (CWE-79) when generating the disclaimer page."
+   ],
+   "name": "URL Redirection to Untrusted Site",
+   "summary": "The web application accepts a user-controlled input that specifies a link to an external site, and uses that link in a redirect."
+  },
+  "CWE-613": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "DEPRECATED: Insufficient Session Expiration",
+   "summary": "This entry has been deprecated because it was insufficiently clear. Consider CWE-1462 and its descendants."
+  },
+  "CWE-639": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Make sure that the key that is used in the lookup of a specific user's record is not controllable externally by the user or that any tampering can be detected.",
+    "For each and every data access, ensure that the user has sufficient privilege to access the record that is being requested.",
+    "Use encryption in order to make it more difficult to guess other legitimate values of the key or associate a digital signature with the key so that the server can verify that there has been no tampering."
+   ],
+   "name": "Authorization Bypass Through User-Controlled Key",
+   "summary": "The system's authorization functionality does not prevent one user from gaining access to another user's data or record by modifying the key value identifying the data."
+  },
+  "CWE-669": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Incorrect Resource Transfer Between Spheres",
+   "summary": "The product does not properly transfer a resource/behavior to another sphere, or improperly imports a resource/behavior from another sphere, in a manner that provides unintended control over that resource."
+  },
+  "CWE-670": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Always-Incorrect Control Flow Implementation",
+   "summary": "The code contains a control flow path that does not reflect the algorithm that the path is intended to implement, leading to incorrect behavior any time this path is navigated."
+  },
+  "CWE-674": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Ensure that an end condition will be reached under all logic conditions. The end condition may include checking against the depth of recursion and exiting with an error if the recursion goes too deep. The complexity of the end condition contributes to the effectiveness of this action.",
+    "Increase the stack size."
+   ],
+   "name": "Uncontrolled Recursion",
+   "summary": "The product does not properly control the amount of recursion that takes place, consuming excessive resources, such as allocated memory or the program stack."
+  },
+  "CWE-693": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Protection Mechanism Failure",
+   "summary": "The product does not use or incorrectly uses a protection mechanism that provides sufficient defense against directed attacks against the product."
+  },
+  "CWE-696": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Incorrect Behavior Order",
+   "summary": "The product performs multiple related behaviors, but the behaviors are performed in the wrong order in ways that may produce resultant weaknesses."
+  },
+  "CWE-697": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Incorrect Comparison",
+   "summary": "The product compares two entities in a security-relevant context, but the comparison is incorrect."
+  },
+  "CWE-732": {
+   "kind": "Weakness",
+   "mitigations": [
+    "When using a critical resource such as a configuration file, check to see if the resource has insecure permissions (such as being modifiable by any regular user) [REF-62], and generate an error or even exit the software if there is a possibility that the resource could have been modified by an unauthorized party.",
+    "During program startup, explicitly set the default permissions or umask to the most restrictive setting possible. Also set the appropriate permissions during program installation. This will prevent you from inheriting insecure permissions from any user who installs or runs the program.",
+    "When storing data in the cloud (e.g., S3 buckets, Azure blobs, Google Cloud Storage, etc.), use the provider's controls to disable public access."
+   ],
+   "name": "Incorrect Permission Assignment for Critical Resource",
+   "summary": "The product specifies permissions for a security-critical resource in a way that allows that resource to be read or modified by unintended actors."
+  },
+  "CWE-74": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Utilize an appropriate mix of allowlist and denylist parsing to filter control-plane syntax from all input.",
+    "Programming languages and supporting technologies might be chosen which are not subject to these issues."
+   ],
+   "name": "Improper Neutralization of Special Elements in Output Used by a Downstream Component",
+   "summary": "The product constructs all or part of a command, data structure, or record using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify how it is parsed or interpreted when it is sent to a downstream component."
+  },
+  "CWE-749": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Identify all exposed functionality. Explicitly list all functionality that must be exposed to some user or set of users. Identify which functionality may be: accessible to all users restricted to a small set of privileged users prevented from being directly accessible at all Ensure that the implemented code follows these expectations. This includes setting the appropriate access modifiers where applicable (public, private, protected, etc.) or not marking ActiveX controls safe-for-scripting.",
+    "If you must expose a method, make sure to perform input validation on all arguments, limit access to authorized parties, and protect against all possible vulnerabilities."
+   ],
+   "name": "Exposed Dangerous Method or Function",
+   "summary": "The product provides an Applications Programming Interface (API) or similar interface for interaction with external actors, but the interface includes a dangerous method or function that is not properly restricted."
+  },
+  "CWE-770": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright.",
+    "If the program must fail, ensure that it fails gracefully (fails closed). There may be a temptation to simply let the program fail poorly in cases such as low memory conditions, but an attacker may be able to assert control before the software has fully exited. Alternately, an uncontrolled failure could cause cascading problems with other downstream components; for example, the program could send a signal to a downstream process so the process immediately knows that a problem has occurred and has a better chance of recovery. Ensure that all failures in resource allocation place the system into a safe posture.",
+    "Limit the amount of resources that are accessible to unprivileged users. Set per-user limits for resources. Allow the system administrator to define these limits. Be careful to avoid CWE-410."
+   ],
+   "name": "Allocation of Resources Without Limits or Throttling",
+   "summary": "The product allocates a reusable resource or group of resources on behalf of an actor without imposing any intended restrictions on the size or number of resources that can be allocated."
+  },
+  "CWE-772": {
+   "kind": "Weakness",
+   "mitigations": [
+    "It is good practice to be responsible for freeing all resources you allocate and to be consistent with how and where you free resources in a function. If you allocate resources that you intend to free upon completion of the function, you must be sure to free the resources at all exit points for that function including error conditions.",
+    "Use resource-limiting settings provided by the operating system or environment. For example, when managing system resources in POSIX, setrlimit() can be used to set limits for certain types of resources, and getrlimit() can determine how many resources are available. However, these functions are not available on all operating systems. When the current levels get close to the maximum that is defined for the application (see CWE-770), then limit the allocation of further resources to privileged users; alternately, begin releasing resources for less-privileged users. While this mitigation may protect the system from attack, it will not necessarily stop attackers from adversely impacting other users. Ensure that the application performs the appropriate error checks and error handling in case resources become unavailable (CWE-703).",
+    "Use a language that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid. For example, languages such as Java, Ruby, and Lisp perform automatic garbage collection that releases memory for objects that have been deallocated."
+   ],
+   "name": "Missing Release of Resource after Effective Lifetime",
+   "summary": "The product does not release a resource after its effective lifetime has ended, i.e., after the resource is no longer needed."
+  },
+  "CWE-78": {
+   "kind": "Weakness",
+   "mitigations": [
+    "While it is risky to use dynamically-generated query strings, code, or commands that mix control and data together, sometimes it may be unavoidable. Properly quote arguments and escape any special characters within those arguments. The most conservative approach is to escape or filter all characters that do not pass an extremely strict allowlist (such as everything that is not alphanumeric or white space). If some special characters are still needed, such as white space, wrap each argument in quotes after the escaping/filtering step. Be careful of argument injection (CWE-88).",
+    "If the program to be executed allows arguments to be specified within an input file or from standard input, then consider using that mode to pass arguments instead of the command line.",
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright. When constructing OS command strings, use stringent allowlists that limit the character set based on the expected value of the parameter in the request. This will indirectly limit the scope of an attack, but this technique is less important than proper output encoding and escaping. Note that proper output encoding, escaping, and quoting is the most effective solution for preventing OS command injection, although input validation may provide some defense-in-depth. This is because it effectively limits what will appear in output. Input validation will not always prevent OS command injection, especially if you are required to support free-form text fields that could contain arbitrary characters. For example, when invoking a mail program, you might need to allow the subject field to contain otherwise-dangerous inputs like \";\" and \">\" characters, which would need to be escaped or otherwise handled. In this case, stripping the character might reduce the risk of OS command injection, but it would produce incorrect behavior because the subject field would not be recorded as the user intended. This might seem to be a minor inconvenience, but it could be more important when the program relies on well-structured subject lines in order to pass messages to other components. Even if you make a mistake in your validation (such as forgetting one out of 100 input fields), appropriate encoding is still likely to protect you from injection-based attacks. As long as it is not done in isolation, input validation is still a useful technique, since it may significantly reduce your attack surface, allow you to detect some attacks, and provide other security benefits that proper encoding does not address."
+   ],
+   "name": "Improper Neutralization of Special Elements used in an OS Command",
+   "summary": "The product constructs all or part of an OS command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended OS command before it is sent to a downstream component."
+  },
+  "CWE-79": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Understand the context in which your data will be used and the encoding that will be expected. This is especially important when transmitting data between different components, or when generating outputs that can contain multiple encodings at the same time, such as web pages or multi-part mail messages. Study all expected communication protocols and data representations to determine the required encoding strategies. For any data that will be output to another web page, especially any data that was received from external inputs, use the appropriate encoding on all non-alphanumeric characters. Parts of the same output document may require different encodings, which will vary depending on whether the output is in the: HTML body Element attributes (such as src=\"XYZ\") URIs JavaScript sections Cascading Style Sheets and style property etc. Note that HTML Entity Encoding is only appropriate for the HTML body. Consult the XSS Prevention Cheat Sheet [REF-724] for more details on the types of encoding and escaping that are needed.",
+    "Understand all the potential areas where untrusted inputs can enter your software: parameters or arguments, cookies, anything read from the network, environment variables, reverse DNS lookups, query results, request headers, URL components, e-mail, files, filenames, databases, and any external systems that provide data to the application. Remember that such inputs may be obtained indirectly through API calls.",
+    "Use and specify an output encoding that can be handled by the downstream component that is reading the output. Common encodings include ISO-8859-1, UTF-7, and UTF-8. When an encoding is not specified, a downstream component may choose a different encoding, either by assuming a default encoding or automatically inferring which encoding is being used, which can be erroneous. When the encodings are inconsistent, the downstream component might treat some character or byte sequences as special, even if they are not special in the original encoding. Attackers might then be able to exploit this discrepancy and conduct injection attacks; they even might be able to bypass protection mechanisms that assume the original encoding is also being used by the downstream component. The problem of inconsistent output encodings often arises in web pages. If an encoding is not specified in an HTTP header, web browsers often guess about which encoding is being used. This can open up the browser to subtle XSS attacks."
+   ],
+   "name": "Improper Neutralization of Input During Web Page Generation",
+   "summary": "The product does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users."
+  },
+  "CWE-843": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Access of Resource Using Incompatible Type",
+   "summary": "The product allocates or initializes a resource such as a pointer, object, or variable using one type, but it later accesses that resource using a type that is incompatible with the original type."
+  },
+  "CWE-863": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Divide the product into anonymous, normal, privileged, and administrative areas. Reduce the attack surface by carefully mapping roles with data and functionality. Use role-based access control (RBAC) [REF-229] to enforce the roles at the appropriate boundaries. Note that this approach may not protect against horizontal authorization, i.e., it will not protect a user from attacking others with the same role.",
+    "Ensure that access control checks are performed related to the business logic. These checks may be different than the access control checks that are applied to more generic resources such as files, connections, processes, memory, and database records. For example, a database may restrict access for medical records to a specific database user, but each record might only be intended to be accessible to the patient and the patient's doctor [REF-7].",
+    "Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid. For example, consider using authorization frameworks such as the JAAS Authorization Framework [REF-233] and the OWASP ESAPI Access Control feature [REF-45]."
+   ],
+   "name": "Incorrect Authorization",
+   "summary": "The product performs an authorization check when an actor attempts to access a resource or perform an action, but it does not correctly perform the check."
+  },
+  "CWE-88": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Where possible, avoid building a single string that contains the command and its arguments. Some languages or frameworks have functions that support specifying independent arguments, e.g. as an array, which is used to automatically perform the appropriate quoting or escaping while building the command. For example, in PHP, escapeshellarg() can be used to escape a single argument to system(), or exec() can be called with an array of arguments. In C, code can often be refactored from using system() - which accepts a single string - to using exec(), which requires separate function arguments for each parameter.",
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright.",
+    "Directly convert your input type into the expected data type, such as using a conversion function that translates a string into a number. After converting to the expected data type, ensure that the input's values fall within the expected range of allowable values and that multi-field consistencies are maintained."
+   ],
+   "name": "Improper Neutralization of Argument Delimiters in a Command",
+   "summary": "The product constructs a string for a command to be executed by a separate component in another control sphere, but it does not properly delimit the intended arguments, options, or switches within that command string."
+  },
+  "CWE-91": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright."
+   ],
+   "name": "XML Injection",
+   "summary": "The product does not properly neutralize special elements that are used in XML, allowing attackers to modify the syntax, content, or commands of the XML before it is processed by an end system."
+  },
+  "CWE-913": {
+   "kind": "Weakness",
+   "mitigations": [
+    "For any externally-influenced input, check the input against an allowlist of acceptable values.",
+    "Refactor the code so that it does not need to be dynamically managed."
+   ],
+   "name": "Improper Control of Dynamically-Managed Code Resources",
+   "summary": "The product does not properly restrict reading from or writing to dynamically-managed code resources such as variables, objects, classes, attributes, functions, or executable instructions or statements."
+  },
+  "CWE-915": {
+   "kind": "Weakness",
+   "mitigations": [
+    "If available, use features of the language or framework that allow specification of allowlists of attributes or fields that are allowed to be modified. If possible, prefer allowlists over denylists. For applications written with Ruby on Rails, use the attr_accessible (allowlist) or attr_protected (denylist) macros in each class that may be used in mass assignment.",
+    "If available, use the signing/sealing features of the programming language to assure that deserialized data has not been tainted. For example, a hash-based message authentication code (HMAC) could be used to ensure that data has not been modified.",
+    "For any externally-influenced input, check the input against an allowlist of internal object attributes or fields that are allowed to be modified."
+   ],
+   "name": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+   "summary": "The product receives input from an upstream component that specifies multiple attributes, properties, or fields that are to be initialized or updated in an object, but it does not properly control which attributes can be modified."
+  },
+  "CWE-918": {
+   "kind": "Weakness",
+   "mitigations": [
+    "If there is a known list of applications, IP, hostname, and/or domains to which the product is allowed to communicate, then use allowlists to ensure that outgoing requests are restricted to these known entities. The allowlists could be in the application code or possibly enforced by firewalls or network segmentation [REF-1511].",
+    "If the product is expected to be able to connect to arbitrary IP addresses or domains, consider using a denylist that includes private network addresses, internal domain names, etc. The denylist could be in the application code or possibly enforced by firewalls or network segmentation [REF-1511].",
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright. When constructing outgoing requests from input strings, use stringent allowlists that limit the character set based on the expected value of the parameter in the request. This will indirectly limit the scope of an attack, but this technique is less important than proper output encoding and escaping."
+   ],
+   "name": "Server-Side Request Forgery",
+   "summary": "The web server receives a URL or similar request from an upstream component and retrieves the contents of this URL, but it does not sufficiently ensure that the request is being sent to the expected destination."
+  },
+  "CWE-924": {
+   "kind": "Weakness",
+   "mitigations": [],
+   "name": "Improper Enforcement of Message Integrity During Transmission in a Communication Channel",
+   "summary": "The product establishes a communication channel with an endpoint and receives a message from that endpoint, but it does not sufficiently ensure that the message was not modified during transmission."
+  },
+  "CWE-93": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Avoid using CRLF as a special sequence.",
+    "Appropriately filter or quote CRLF sequences in user-controlled input."
+   ],
+   "name": "Improper Neutralization of CRLF Sequences",
+   "summary": "The product uses CRLF (carriage return line feeds) as a special element, e.g. to separate lines or records, but it does not neutralize or incorrectly neutralizes CRLF sequences from inputs."
+  },
+  "CWE-94": {
+   "kind": "Weakness",
+   "mitigations": [
+    "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a list of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, \"boat\" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if the input is only expected to contain colors such as \"red\" or \"blue.\" Do not rely exclusively on looking for malicious or malformed inputs. This is likely to miss at least one undesirable input, especially if the code's environment changes. This can give attackers enough room to bypass the intended validation. However, denylists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright. To reduce the likelihood of code injection, use stringent allowlists that limit which constructs are allowed. If you are dynamically constructing code that invokes a function, then verifying that the input is alphanumeric might be insufficient. An attacker might still be able to reference a dangerous function that you did not intend to allow, such as system(), exec(), or exit().",
+    "For Python programs, it is frequently encouraged to use the ast.literal_eval() function instead of eval, since it is intentionally designed to avoid executing code. However, an adversary could still cause excessive memory or stack consumption via deeply nested structures [REF-1372], so the python documentation discourages use of ast.literal_eval() on untrusted data [REF-1373].",
+    "Refactor your program so that you do not have to dynamically generate code."
+   ],
+   "name": "Improper Control of Generation of Code",
+   "summary": "The product constructs all or part of a code segment using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the syntax or behavior of the intended code segment."
+  }
+ },
+ "cwe_list_version": "5.0",
+ "missing": [],
+ "source": "cwec_v5.0.xml",
+ "zip_sha256": "bcda44c9abf61ff977f50c3c6649eea5a97a7b0626b0396c2c3ec4bfb973a3dc"
+}

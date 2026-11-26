@@ -1,0 +1,6 @@
+run,caso,cve,status,A,F,S,V,claim,confidence,FA,func,exploit,notes,api_v1_V,api_v1_claim
+gpt-6-luna,caso_1,CVE-2021-23980,complete,0,0,0,0,0,0.99,0,,,empty patch,1,1
+gpt-6-luna,caso_2,CVE-2023-30608,complete,0,0,0,0,0,0.99,0,,,empty patch,1,1
+gpt-6-luna,caso_3,CVE-2024-37891,complete,0,0,0,0,0,0.4,0,,,patch did not apply,1,1
+gpt-6-luna,caso_4,CVE-2024-52303,complete,0,0,0,0,0,0.99,0,,,empty patch,0,1
+gpt-6-luna,caso_5,CVE-2025-58438,complete,0,0,0,0,0,0.99,0,,,empty patch,0,1

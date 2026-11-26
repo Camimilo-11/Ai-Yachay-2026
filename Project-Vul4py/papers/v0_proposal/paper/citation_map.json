@@ -1,0 +1,191 @@
+{
+ "Pearce2022AsleepAtThe": {
+  "title": "Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions",
+  "venue": "IEEE S&P 2022",
+  "source": "https://arxiv.org/abs/2108.09293",
+  "abstract_summary": "Tests how often GitHub Copilot suggests insecure code in 89 scenarios tied to high-risk CWEs; of 1,689 generated programs about 40% were vulnerable.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Perry2023DoUsersWrite": {
+  "title": "Do Users Write More Insecure Code with AI Assistants?",
+  "venue": "ACM CCS 2023",
+  "source": "https://arxiv.org/abs/2211.03622",
+  "abstract_summary": "User study: participants with an AI code assistant wrote significantly less secure code and were more likely to believe their code was secure.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Pearce2023ExaminingZeroShot": {
+  "title": "Examining Zero-Shot Vulnerability Repair with Large Language Models",
+  "venue": "IEEE S&P 2023",
+  "source": "https://arxiv.org/abs/2112.02125",
+  "abstract_summary": "Zero-shot repair of security bugs with several LLMs; the models collectively repaired all synthetic and hand-crafted scenarios but struggled with functional correctness on real-world examples.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Wu2023HowEffectiveAre": {
+  "title": "How Effective Are Neural Networks for Fixing Security Vulnerabilities",
+  "venue": "ISSTA 2023",
+  "source": "https://arxiv.org/abs/2305.18607",
+  "abstract_summary": "Compares LLMs and deep-learning APR models on Java vulnerabilities (Vul4J and the new VJBench); existing models fix very few vulnerabilities, Codex fixes the most.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Bui2022Vul4jDatasetOf": {
+  "title": "Vul4J: A Dataset of Reproducible Java Vulnerabilities Geared Towards the Study of Program Repair Techniques",
+  "venue": "MSR 2022 Data and Tool Showcase",
+  "source": "https://conf.researchr.org/details/msr-2022/msr-2022-data-showcase/10/Vul4J-A-Dataset-of-Reproducible-Java-Vulnerabilities-Geared-Towards-the-Study-of-Pro",
+  "abstract_summary": "Java dataset with a proof-of-vulnerability test per entry: 79 reproducible vulnerabilities from 51 projects across 25 CWE types, mined from 1,803 fix commits.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Fu2022VulrepairT5Based": {
+  "title": "VulRepair: A T5-Based Automated Software Vulnerability Repair",
+  "venue": "ESEC/FSE 2022",
+  "source": "https://2022.esec-fse.org/details/fse-2022-research-papers/20/VulRepair-A-T5-Based-Automated-Software-Vulnerability-Repair",
+  "abstract_summary": "T5-based vulnerability repair trained on 8,482 fixes; 44% perfect predictions against the reference fix, 13-21% above baselines.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Qi2015AnalysisOfPatch": {
+  "title": "An Analysis of Patch Plausibility and Correctness for Generate-and-Validate Patch Generation Systems",
+  "venue": "ISSTA 2015 (TR MIT-CSAIL-TR-2015-021 read)",
+  "source": "https://dspace.mit.edu/handle/1721.1/97130",
+  "abstract_summary": "Most patches reported by GenProg, RSRepair and AE are not correct and amount to deleting functionality; presents Kali, a deletion-only system.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Smith2015IsTheCure": {
+  "title": "Is the Cure Worse Than the Disease? Overfitting in Automated Program Repair",
+  "venue": "ESEC/FSE 2015",
+  "source": "https://www.cs.washington.edu/homes/brun/pubs/pubs/Smith15fse.pdf",
+  "abstract_summary": "GenProg and TrpAutoRepair on 998 IntroClass bugs judged with independent tests: patches often overfit the repair tests.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Xiong2018IdentifyingPatchCorrectness": {
+  "title": "Identifying Patch Correctness in Test-Based Program Repair",
+  "venue": "ICSE 2018",
+  "source": "https://arxiv.org/abs/1706.09120",
+  "abstract_summary": "Heuristic that generates new tests and compares execution behaviour; on 139 patches it filtered 56.3% of incorrect patches without blocking correct ones.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Ahmed2026InvestigatingTestOverfitting": {
+  "title": "Investigating Test Overfitting on SWE-bench",
+  "venue": "FSE Companion 2026",
+  "source": "https://arxiv.org/html/2511.16858v3",
+  "abstract_summary": "First empirical study of test overfitting in LLM-based issue resolution: code refined against imperfect generated tests can pass them while breaking other functionality.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Bui2026Vul4pyBenchmarkingAutomated": {
+  "title": "Vul4Py: Benchmarking Automated Vulnerability Repair in Python with Paired Exploit and Functional Oracles",
+  "venue": "arXiv 2026",
+  "source": "https://arxiv.org/abs/2608.00692",
+  "abstract_summary": "100 real Python vulnerabilities from 60 projects, each with an exploit oracle and a pytest functional oracle; OpenHands repairs 41 of 100, the strongest directly prompted LLM 4, a specialized tool 2.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Wei2025PatchevalNewBenchmark": {
+  "title": "PatchEval: A New Benchmark for Evaluating LLMs on Patching Real-World Vulnerabilities",
+  "venue": "arXiv 2025",
+  "source": "https://arxiv.org/abs/2511.11019v1",
+  "abstract_summary": "1,000 CVEs (2015-2025, 65 CWEs) in Go, JavaScript and Python; 230 have sandboxes with security and functionality tests; evaluates LLMs and agents.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Jimenez2024SwebenchCanLanguage": {
+  "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+  "venue": "ICLR 2024",
+  "source": "https://arxiv.org/abs/2310.06770",
+  "abstract_summary": "2,294 issues from 12 Python repositories checked by tests; the best model at the time resolved 1.96%.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Huang2024LargeLanguageModels": {
+  "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
+  "venue": "ICLR 2024",
+  "source": "https://arxiv.org/abs/2310.01798",
+  "abstract_summary": "Without external feedback LLMs largely cannot correct their own reasoning, and performance sometimes drops after self-correction.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Olausson2024IsSelfRepair": {
+  "title": "Is Self-Repair a Silver Bullet for Code Generation?",
+  "venue": "ICLR 2024",
+  "source": "https://arxiv.org/abs/2306.09896",
+  "abstract_summary": "Self-repair of generated code gives small or inconsistent gains once its cost is counted; gains are limited by the quality of self-generated feedback.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Zheng2023JudgingLlmAs": {
+  "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+  "venue": "NeurIPS 2023 D&B",
+  "source": "https://arxiv.org/abs/2306.05685",
+  "abstract_summary": "Strong LLMs as judges; documents position, verbosity and self-enhancement biases; GPT-4 agrees with human preferences above 80%.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Panickssery2024LlmEvaluatorsRecognize": {
+  "title": "LLM Evaluators Recognize and Favor Their Own Generations",
+  "venue": "NeurIPS 2024",
+  "source": "https://www.arxiv.org/abs/2404.13076",
+  "abstract_summary": "LLM evaluators can recognise their own outputs, and self-recognition correlates linearly with self-preference.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Kim2025CorrelatedErrorsIn": {
+  "title": "Correlated Errors in Large Language Models",
+  "venue": "ICML 2025, PMLR 267",
+  "source": "https://proceedings.mlr.press/v267/kim25e.html",
+  "abstract_summary": "Across 350+ LLMs errors are strongly correlated (models agree 60% of the time when both are wrong on one leaderboard), driven by shared architectures and providers; affects LLM-as-judge.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Jiang2026CodejudgebenchBenchmarkingLlm": {
+  "title": "CodeJudgeBench: Benchmarking LLM-as-a-Judge for Coding Tasks",
+  "venue": "ACL 2026",
+  "source": "https://aclanthology.org/2026.acl-long.888/",
+  "abstract_summary": "Benchmarks 26 LLM judges on code generation, repair and unit-test generation; judges are unstable under response order, variable renaming and misleading comments.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Xiong2024CanLlmsExpress": {
+  "title": "Can LLMs Express Their Uncertainty? An Empirical Evaluation of Confidence Elicitation in LLMs",
+  "venue": "ICLR 2024",
+  "source": "https://arxiv.org/abs/2306.13063",
+  "abstract_summary": "Black-box confidence elicitation across five datasets and five LLMs; verbalized confidence tends to be overconfident.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Kadavath2022LanguageModelsMostly": {
+  "title": "Language Models (Mostly) Know What They Know",
+  "venue": "arXiv 2022",
+  "source": "https://arxiv.org/abs/2207.05221",
+  "abstract_summary": "Larger models are well calibrated on multiple-choice questions and can self-evaluate P(True); predicting P(IK) generalises only partly and is poorly calibrated on new tasks.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Xia2023AutomatedProgramRepair": {
+  "title": "Automated Program Repair in the Era of Large Pre-trained Language Models",
+  "venue": "ICSE 2023",
+  "source": "https://conf.researchr.org/details/icse-2023/icse-2023-technical-track/68/Automated-Program-Repair-in-the-Era-of-Large-Pre-trained-Language-Models",
+  "abstract_summary": "Nine pre-trained language models applied directly to APR on five datasets in three languages outperform earlier APR techniques; larger models do better.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Monperrus2018AutomaticSoftwareRepair": {
+  "title": "Automatic Software Repair: A Bibliography",
+  "venue": "ACM Computing Surveys 2018",
+  "source": "https://arxiv.org/abs/1807.00515",
+  "abstract_summary": "Survey of behavioural repair (oracles: tests, contracts, models, crashing inputs) and state repair across software engineering, dependability and security.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Zhang2024SystematicLiteratureReview": {
+  "title": "A Systematic Literature Review on Large Language Models for Automated Program Repair",
+  "venue": "arXiv 2024",
+  "source": "https://arxiv.org/abs/2405.01466",
+  "abstract_summary": "Systematic review of LLM-based APR (189 papers): models used, utilisation strategies and repair scenarios, including security vulnerabilities.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Parasuraman2010ComplacencyAndBias": {
+  "title": "Complacency and Bias in Human Use of Automation: An Attentional Integration",
+  "venue": "Human Factors 52(3)",
+  "source": "https://trid.trb.org/View/1085175",
+  "abstract_summary": "Review and model of automation complacency and automation bias: imperfect decision aids cause omission and commission errors, in naive and expert users alike.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Brown2001IntervalEstimationFor": {
+  "title": "Interval Estimation for a Binomial Proportion",
+  "venue": "Statistical Science 2001",
+  "source": "https://repository.upenn.edu/handle/20.500.14332/47517",
+  "abstract_summary": "The Wald interval's coverage is erratic; for small n the Wilson or Jeffreys interval is recommended.",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ },
+ "Wilson1927ProbableInferenceLaw": {
+  "title": "Probable Inference, the Law of Succession, and Statistical Inference",
+  "venue": "JASA 22(158):209-212, 1927",
+  "source": "https://portal.mardi4nfdi.de/wiki/Publication:72060",
+  "abstract_summary": "Introduces the score interval for a binomial proportion (no abstract needed).",
+  "verified": "2026-11-26 (web page read; title, authors, year and venue matched)"
+ }
+}

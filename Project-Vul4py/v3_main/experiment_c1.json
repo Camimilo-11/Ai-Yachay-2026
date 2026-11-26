@@ -1,0 +1,145 @@
+{
+  "schema": "fa-multiagent/2",
+  "started_at_utc": "2026-11-25T23:42:05.339+00:00",
+  "condition": "c1",
+  "pipeline": "analyst+repair1+gate+jury3+debate1+revise1",
+  "models": {
+    "analyst": "openai:gpt-6-luna",
+    "repairers": [
+      "openai:gpt-6.2-sol"
+    ],
+    "jurors": [
+      "claudecode:claude-opus-5-5",
+      "claudecode:claude-sonnet-5-5",
+      "deepseek:deepseek-v4-pro"
+    ]
+  },
+  "families": {
+    "repairers": [
+      "gpt"
+    ],
+    "jurors": [
+      "claude",
+      "deepseek"
+    ]
+  },
+  "settings": {
+    "vuln_ids": null,
+    "ids_file": "runs/preflight/main_ids.txt",
+    "sample": null,
+    "seed": 42,
+    "preset": "c1",
+    "analyst": "openai:gpt-6-luna",
+    "repairers": "openai:gpt-6.2-sol",
+    "jurors": "claudecode:claude-opus-5-5,claudecode:claude-sonnet-5-5,deepseek:deepseek-v4-pro",
+    "allow_same_family": false,
+    "models_file": "models.json",
+    "gate": true,
+    "gate_retries": 2,
+    "cross_exam": true,
+    "debate_rounds": 1,
+    "max_revisions": 1,
+    "hint": "lines",
+    "compiled_context": true,
+    "code_share": 0.4,
+    "temperature": 0.0,
+    "max_tokens": 16384,
+    "timeout": 1800.0,
+    "max_http_retries": 6,
+    "per_model_concurrency": 2,
+    "max_active_cases": 3,
+    "nvidia_rpm": null,
+    "openai_rpm": null,
+    "openai_extra": null,
+    "nvidia_base_url": null,
+    "openai_base_url": null,
+    "anthropic_rpm": null,
+    "deepseek_rpm": null,
+    "anthropic_base_url": null,
+    "deepseek_base_url": null,
+    "claudecode_bin": null,
+    "claudecode_rpm": null,
+    "claudecode_concurrency": 3,
+    "claudecode_limit_wait": 330,
+    "eval_jobs": 1,
+    "session": "final",
+    "no_eval": false,
+    "eval_candidates": true,
+    "runs": "/home/ubuntu/vul4py/runs/final",
+    "agent": "c1",
+    "condition": "c1",
+    "workspaces": "/home/ubuntu/vul4py/workspaces",
+    "tools_root": "/home/ubuntu/vul4py/workspaces/.vul4py_tools",
+    "ping": ""
+  },
+  "prompt_sha256": "eb3d749d7d6cd98984f4c6a8f595d6568408622f437a38d1bbb5aa34ed9bce76",
+  "vul4py_commit": "f80f861012cb7b7cfeca7323be51d33e72eaf8f3",
+  "vuln_ids": [
+    "CVE-2017-16615",
+    "CVE-2019-1010017",
+    "CVE-2019-10800",
+    "CVE-2022-29217",
+    "CVE-2023-23934",
+    "CVE-2023-25577",
+    "CVE-2023-29483",
+    "CVE-2023-32681",
+    "CVE-2023-41040",
+    "CVE-2023-47163",
+    "CVE-2023-6681",
+    "CVE-2024-22190",
+    "CVE-2024-27454",
+    "CVE-2024-34061",
+    "CVE-2024-56201",
+    "CVE-2024-56326",
+    "CVE-2024-9701",
+    "CVE-2025-43859",
+    "CVE-2025-50181",
+    "CVE-2025-53365",
+    "CVE-2025-54886",
+    "CVE-2025-59940",
+    "CVE-2025-6176",
+    "CVE-2025-61765",
+    "CVE-2025-62708",
+    "CVE-2025-62727",
+    "CVE-2025-62800",
+    "GHSA-4r9r-ch6f-vxmx",
+    "GHSA-9gvj-pp9x-gcfr",
+    "GHSA-hfmc-7525-mj55"
+  ],
+  "python": "3.12.3",
+  "oracle_session": "final",
+  "openai_client": "3.58.0",
+  "finished_at_utc": "2026-11-26T01:26:13.580+00:00",
+  "wall_time_s": 6248.2,
+  "usage": {
+    "openai:gpt-6-luna": {
+      "calls": 30,
+      "input_tokens": 511689,
+      "output_tokens": 260375
+    },
+    "openai:gpt-6.2-sol": {
+      "calls": 41,
+      "input_tokens": 1230053,
+      "output_tokens": 309518
+    },
+    "claudecode:claude-sonnet-5-5": {
+      "calls": 48,
+      "input_tokens": 1986071,
+      "output_tokens": 89950,
+      "api_equivalent_usd": 8.8432
+    },
+    "claudecode:claude-opus-5-5": {
+      "calls": 48,
+      "input_tokens": 1982019,
+      "output_tokens": 144944,
+      "api_equivalent_usd": 18.7547
+    },
+    "deepseek:deepseek-v4-pro": {
+      "calls": 48,
+      "input_tokens": 1309790,
+      "output_tokens": 1068951
+    }
+  },
+  "estimated_cost_usd": 11.7,
+  "claude_plan_api_equivalent_usd": 27.6
+}

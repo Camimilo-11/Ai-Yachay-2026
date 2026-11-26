@@ -1,0 +1,7 @@
+model                                               n   sens   spec  specW  AUROC  Brier   best
+openai:gpt-6.1-sol                                 23   0.60   0.78   0.69   0.80   0.24   0.60
+openai:gpt-6.1-terra                               23   0.60   0.83   0.77   0.71   0.20   0.40
+openai:gpt-6.2-astra                               23   0.60   0.83   0.77   0.70   0.21   0.60
+openai:gpt-6-luna                                  23   0.80   0.78   0.69   0.67   0.42   0.60
+
+Pick the jury from DIFFERENT families than the repairers, best AUROC and specificity on real wrong patches first.

@@ -1,0 +1,6 @@
+# Python 3.12 on the instance (Ubuntu 24.04). Vul4Py builds one virtual environment per case itself.
+openai==3.58.0            # OpenAI and OpenAI-compatible APIs (DeepSeek, NVIDIA)
+anthropic==2.14.0         # Claude through the Anthropic API (the Claude plan uses the Claude Code CLI instead)
+qdrant-client==1.20.0     # v5 RAG, local mode
+fastembed==0.9.1          # v5 RAG embeddings (downloads jinaai/jina-embeddings-v2-base-code, 0.64 GB)
+matplotlib>=3.8           # figures/make_figures.py

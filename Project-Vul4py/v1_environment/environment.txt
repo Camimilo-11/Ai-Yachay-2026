@@ -1,0 +1,8 @@
+built_at_utc: 2026-11-25T02:03:01Z
+vul4py_commit: f80f861012cb7b7cfeca7323be51d33e72eaf8f3
+os: Ubuntu 24.04.5 LTS
+kernel: Linux 7.0.0-1018-aws  arch: x86_64  cpus: 2  mem: 7 GiB
+python: Python 3.12.3
+pip_constraint: pytest<9
+auto_skip_rounds: 5
+scan: OK=100 

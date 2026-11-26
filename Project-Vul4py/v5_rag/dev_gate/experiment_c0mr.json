@@ -1,0 +1,116 @@
+{
+  "schema": "fa-multiagent/2",
+  "started_at_utc": "2026-11-26T22:09:04.418+00:00",
+  "condition": "c0",
+  "pipeline": "repair1",
+  "models": {
+    "analyst": null,
+    "repairers": [
+      "claudecode:claude-haiku-5-5"
+    ],
+    "jurors": []
+  },
+  "families": {
+    "repairers": [
+      "claude"
+    ],
+    "jurors": []
+  },
+  "settings": {
+    "vuln_ids": null,
+    "ids_file": "runs/preflight/pilot_ids.txt",
+    "sample": null,
+    "seed": 42,
+    "preset": "c0",
+    "analyst": "none",
+    "repairers": "claudecode:claude-haiku-5-5",
+    "jurors": "none",
+    "allow_same_family": false,
+    "models_file": "models.json",
+    "gate": false,
+    "gate_retries": 2,
+    "cross_exam": false,
+    "debate_rounds": 0,
+    "max_revisions": 0,
+    "hint": "lines",
+    "compiled_context": true,
+    "code_share": 0.4,
+    "temperature": 0.0,
+    "max_tokens": 16384,
+    "timeout": 900.0,
+    "max_http_retries": 6,
+    "per_model_concurrency": 2,
+    "max_active_cases": 3,
+    "nvidia_rpm": null,
+    "openai_rpm": null,
+    "openai_extra": null,
+    "nvidia_base_url": null,
+    "openai_base_url": null,
+    "anthropic_rpm": null,
+    "deepseek_rpm": null,
+    "anthropic_base_url": null,
+    "deepseek_base_url": null,
+    "claudecode_bin": null,
+    "claudecode_rpm": null,
+    "claudecode_concurrency": 3,
+    "claudecode_limit_wait": 330,
+    "eval_jobs": 1,
+    "session": "v5dev",
+    "no_eval": false,
+    "eval_candidates": true,
+    "runs": "/home/ubuntu/vul4py/runs/v5_dev",
+    "agent": "c0mr",
+    "condition": "c0",
+    "workspaces": "/home/ubuntu/vul4py/workspaces",
+    "tools_root": "/home/ubuntu/vul4py/workspaces/.vul4py_tools",
+    "rag": "/home/ubuntu/vul4py/runs/v5/kb_rag_r_v1",
+    "ping": ""
+  },
+  "prompt_sha256": "eb3d749d7d6cd98984f4c6a8f595d6568408622f437a38d1bbb5aa34ed9bce76",
+  "vul4py_commit": "f80f861012cb7b7cfeca7323be51d33e72eaf8f3",
+  "vuln_ids": [
+    "CVE-2021-23980",
+    "CVE-2023-30608",
+    "CVE-2024-37891",
+    "CVE-2024-52303",
+    "CVE-2025-58438"
+  ],
+  "python": "3.12.3",
+  "oracle_session": "v5dev",
+  "openai_client": "3.58.0",
+  "rag": {
+    "kb": "rag_r_v1",
+    "dir": "/home/ubuntu/vul4py/runs/v5/kb_rag_r_v1",
+    "manifest_sha256": "ff64187843d2918d7f7642ad6ff4f5c6764cb9e5dee95e72987660d67ddde5f1",
+    "embed_model": "jinaai/jina-embeddings-v2-base-code",
+    "n_chunks": 913,
+    "chunks_sha256": "36d6169a4f4c3da07e716c98787a5c542a412fc46f9cd374425474e4dd216503",
+    "params": {
+      "pre_context": 10,
+      "query_context": 20,
+      "line_max_chars": 240,
+      "embed_max_chars": 2400,
+      "query_max_chars": 4000,
+      "embed_batch": 2,
+      "top_k": 3,
+      "candidates": 40,
+      "max_cwe": 2,
+      "budget_tokens": 3000,
+      "chars_per_token": 4,
+      "guide_chars": 1600,
+      "filter": "repo != case repo"
+    }
+  },
+  "finished_at_utc": "2026-11-26T22:14:49.459+00:00",
+  "wall_time_s": 338.0,
+  "usage": {
+    "claudecode:claude-haiku-5-5": {
+      "calls": 5,
+      "input_tokens": 73078,
+      "output_tokens": 115957,
+      "api_equivalent_usd": 0.0726
+    }
+  },
+  "estimated_cost_usd": null,
+  "claude_plan_api_equivalent_usd": 0.07
+}

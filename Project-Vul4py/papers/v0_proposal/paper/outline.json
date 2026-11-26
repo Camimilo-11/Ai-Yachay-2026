@@ -1,0 +1,204 @@
+{
+ "plotting_plan": [
+  {
+   "figure_id": "fig_system_overview",
+   "title": "System overview of the proposed measurement",
+   "plot_type": "diagram",
+   "data_source": "idea.md",
+   "objective": "Input -> AI repair -> frozen answer -> executable oracle (applies, functional tests, exploit tests) -> VRR and FAR. Drawn by the author from inputs/system_diagram_spec.md; the course rubric forbids an AI-generated diagram, so no ChatGPT prompt is produced for it.",
+   "aspect_ratio": "21:9"
+  },
+  {
+   "figure_id": "fig_v0_pilot",
+   "title": "Pilot outcomes and metrics",
+   "plot_type": "plot",
+   "data_source": "experimental_log.md",
+   "objective": "Two panels drawn with code from v0_mvp/results.csv. (a) Oracle stage reached by each of the five cases (claimed success and confidence, patch applies, functional tests pass, exploit tests pass), as a dot matrix. (b) VRR and FAR with 95% Wilson intervals for the pilot (n = 5 attempts, 4 positive claims) and the laboratory reference run (n = 23), as point-and-interval chart on a 0-100% axis.",
+   "aspect_ratio": "16:9"
+  }
+ ],
+ "intro_related_work_plan": {
+  "introduction_strategy": {
+   "hook_hypothesis": "LLM coding assistants and repair tools are used on security-relevant code, and their outputs come with statements of success that users tend to trust.",
+   "problem_gap_hypothesis": "A repair tool's claim that it fixed a vulnerability is not evidence that it did; on real Python vulnerabilities with paired exploit and functional tests (Vul4Py), the rate of unverified positive claims (false assurance) and its relation to the verified repair rate have not been measured for the models and pipelines this project studies. The pilot covers 5 cases and one model only.",
+   "search_directions": [
+    "security of code produced with AI assistants and users' trust in it (Copilot security, users with AI assistants writing less secure code and believing it secure)",
+    "automation bias and complacency in human use of automated aids",
+    "verbalized confidence and calibration of large language models",
+    "surveys of automated program repair and of LLM-based program repair"
+   ]
+  },
+  "related_work_strategy": {
+   "overview": "Three clusters: (1) LLM-based vulnerability repair and benchmarks with executable checks; (2) plausible versus correct patches in test-based repair; (3) self-verification by LLMs and LLMs as judges. The project's measurement (claim recorded before an executable oracle) sits between them.",
+   "subsections": [
+    {
+     "subsection_title": "2.1 LLM-based vulnerability repair and its benchmarks",
+     "methodology_cluster": "Zero-shot and learned vulnerability repair evaluated on datasets of real vulnerabilities with tests or exploits (Vul4J, Vul4Py, PatchEval, VulRepair).",
+     "sota_investigation_mission": "Find the benchmarks and empirical studies that evaluate LLM vulnerability repair with executable checks, up to the cutoff.",
+     "limitation_hypothesis": "Studies report repair rates but rarely compare the model's own claim of success with the executable verdict.",
+     "limitation_search_queries": [
+      "zero-shot vulnerability repair large language models",
+      "how effective are neural networks for fixing security vulnerabilities",
+      "reproducible vulnerabilities dataset program repair exploit tests",
+      "benchmark LLM patching real-world vulnerabilities"
+     ],
+     "bridge_to_our_method": "Record the claim and confidence before running the oracle and report FAR next to VRR."
+    },
+    {
+     "subsection_title": "2.2 Plausible versus correct patches",
+     "methodology_cluster": "Test-based (generate-and-validate) program repair and the overfitting of plausible patches.",
+     "sota_investigation_mission": "Find the canonical studies showing that passing tests is not the same as being correct, and patch-correctness assessment work.",
+     "limitation_hypothesis": "Functional tests alone accept patches that do not fix the defect; security needs exploit tests as part of the oracle.",
+     "limitation_search_queries": [
+      "patch plausibility and correctness generate-and-validate",
+      "overfitting in automated program repair",
+      "identifying patch correctness test-based program repair"
+     ],
+     "bridge_to_our_method": "A repair counts only when the patch applies, the functional tests still pass and the exploit tests pass."
+    },
+    {
+     "subsection_title": "2.3 Self-verification and LLM judges",
+     "methodology_cluster": "LLMs that check their own or other models' outputs: self-repair, self-correction, LLM-as-a-judge, judge biases.",
+     "sota_investigation_mission": "Find evidence on how reliable LLM self-assessment and LLM judges are, especially for code.",
+     "limitation_hypothesis": "Self-assessment and same-family judges share errors and favor their own outputs, so they can inflate assurance.",
+     "limitation_search_queries": [
+      "large language models cannot self-correct reasoning",
+      "is self-repair a silver bullet for code generation",
+      "judging LLM-as-a-judge",
+      "LLM evaluators recognize and favor their own generations",
+      "correlated errors in large language models",
+      "LLM-as-a-judge benchmark coding tasks"
+     ],
+     "bridge_to_our_method": "Planned work: a pipeline of three models (analysis, repair, evaluator) whose claims are judged by the same oracle."
+    }
+   ]
+  }
+ },
+ "section_plan": [
+  {
+   "section_title": "Abstract",
+   "subsections": [
+    {
+     "subsection_title": "Abstract",
+     "content_bullets": [
+      "One paragraph, about 200 words (MDPI): background (claims of repair are not evidence), methods (Vul4Py oracle, VRR and FAR with Wilson intervals, pilot with poolside/laguna-xs-2.1 on 5 cases), results (VRR 1/5, FAR 3/4 with intervals), conclusions (pilot too small for comparisons; planned study)."
+     ],
+     "citation_hints": []
+    }
+   ]
+  },
+  {
+   "section_title": "3. Materials and Methods",
+   "subsections": [
+    {
+     "subsection_title": "3.1 Benchmark and executable oracle",
+     "content_bullets": [
+      "Vul4Py: 100 vulnerabilities (92 CVEs, 8 GitHub advisories) in 61 Python projects; vulnerable and fixed commits, functional and exploit tests; commit f80f861.",
+      "Verified repair: patch applies, functional tests pass, exploit tests pass; skipped tests never count as passes."
+     ],
+     "citation_hints": [
+      "Bui et al. (Vul4Py: Benchmarking automated vulnerability repair in Python with paired exploit and functional oracles)"
+     ]
+    },
+    {
+     "subsection_title": "3.2 System design",
+     "content_bullets": [
+      "Figure fig_system_overview (drawn by the author): input, repair agent, frozen answer, oracle, metrics."
+     ],
+     "citation_hints": []
+    },
+    {
+     "subsection_title": "3.3 Repair agent of the pilot",
+     "content_bullets": [
+      "poolside/laguna-xs-2.1 through NVIDIA's OpenAI-compatible endpoint (NVIDIA API catalog), approved by the instructor.",
+      "System prompt: security engineer; CLAIM YES/NO, CONFIDENCE 0-100, PATCH as unified diff; files changed by the reference fix, at most 4 files and 60 kB; answer saved before tests."
+     ],
+     "citation_hints": [
+      "NVIDIA API catalog documentation (models)"
+     ]
+    },
+    {
+     "subsection_title": "3.4 Metrics",
+     "content_bullets": [
+      "VRR and FAR definitions (equations); Wilson score interval (equation)."
+     ],
+     "citation_hints": [
+      "Wilson (Probable Inference, the Law of Succession, and Statistical Inference)",
+      "Brown, Cai and DasGupta (Interval Estimation for a Binomial Proportion)"
+     ]
+    },
+    {
+     "subsection_title": "3.5 Baselines",
+     "content_bullets": [
+      "Laboratory reference run (23 attempts; VRR 1/23, FAR 22/23) [PENDIENTE: how to cite]; the pilot itself as the baseline of later versions."
+     ],
+     "citation_hints": []
+    },
+    {
+     "subsection_title": "3.6 Planned study",
+     "content_bullets": [
+      "Environment validation of the 100 cases; three-model pipeline from the NVIDIA API catalog (code-structure analysis, vulnerability and fix, evaluator; least reliable model on the lightest task) compared with the single model on the same cases; claims frozen before the oracle; every call recorded with tokens, time and cost."
+     ],
+     "citation_hints": []
+    },
+    {
+     "subsection_title": "3.7 Schedule and resources",
+     "content_bullets": [
+      "Table of phases: pilot 12-14 Oct (done), environments, pipeline, final report 3 Dec; resources: free NVIDIA API catalog, author computer."
+     ],
+     "citation_hints": []
+    }
+   ]
+  },
+  {
+   "section_title": "4. Preliminary Results",
+   "subsections": [
+    {
+     "subsection_title": "4.1 Per-case outcomes",
+     "content_bullets": [
+      "Table from experimental_log.md: claim and confidence, patch status and size, functional and exploit counts (passed/failed/errors/skipped), verified, tokens, seconds."
+     ],
+     "citation_hints": []
+    },
+    {
+     "subsection_title": "4.2 Aggregate metrics",
+     "content_bullets": [
+      "VRR 1/5 (20%; 3.6-62.4%), FAR 3/4 (75%; 30.1-95.4%); reference run VRR 4.3% (0.8-21.0%), FAR 95.7% (79.0-99.2%); intervals overlap; tokens 18,989 in, 845 out; cost 0 USD; figure fig_v0_pilot."
+     ],
+     "citation_hints": []
+    }
+   ]
+  },
+  {
+   "section_title": "5. Discussion",
+   "subsections": [
+    {
+     "subsection_title": "5.1 What the pilot shows",
+     "content_bullets": [
+      "95% confidence on four claims, one verified; one patch did not apply; two kept functional tests green but left exploit tests failing; the one low-confidence answer had an empty patch."
+     ],
+     "citation_hints": []
+    },
+    {
+     "subsection_title": "5.2 Limitations and threats to validity",
+     "content_bullets": [
+      "n = 5, one model, resubmissions after API errors, incomplete record of failed requests, no generation timestamps, setup differences between environments; numbers describe this run only."
+     ],
+     "citation_hints": []
+    }
+   ]
+  },
+  {
+   "section_title": "6. Conclusions",
+   "subsections": [
+    {
+     "subsection_title": "Conclusions",
+     "content_bullets": [
+      "Protocol works end to end; false assurance appears even in a 5-case pilot; next steps of the planned study."
+     ],
+     "citation_hints": []
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "pipeline": "paper-orchestra (outline -> verified literature -> sections -> review -> format)",
+ "date": "2026-11-26",
+ "stage1_outline": "outline.json: 2 figures (system diagram drawn by the author; pilot results drawn with code), 3 related-work clusters, MDPI sections",
+ "stage2_literature": {
+  "verified": 27,
+  "dropped": [],
+  "how": "title, authors, year and venue read on the source page (arXiv, ACL Anthology, PMLR, conference and repository pages); the scholarly APIs were not reachable from the build machine",
+  "map": "citation_map.json"
+ },
+ "stage4_sections": "all sections written from inputs/idea.md and inputs/experimental_log.md; numbers checked against v0_mvp/results.csv",
+ "stage5_review_round1": {
+  "reviewer": "inline review with the AgentReview rubric (internal estimate, not a prediction of acceptance)",
+  "scores_before": {
+   "Originality": 2,
+   "Quality": 2,
+   "Clarity": 3,
+   "Significance": 2,
+   "Soundness": 3,
+   "Presentation": 3,
+   "Contribution": 2,
+   "Overall": 4
+  },
+  "addressed_weaknesses": [
+   "FAR related to the precision of positive claims, and why it is always reported next to VRR (Section 3.4)",
+   "abstract cut to 199 words (MDPI limit about 200)",
+   "VulRepair, IntroClass and oracle-script sentences corrected to match the sources"
+  ],
+  "integrated_answers": [
+   "how the five cases were chosen (first five of the benchmark list)",
+   "what the model received in CVE-2019-1010017"
+  ],
+  "deferred_to_authors": [
+   "a sample-size and hypothesis plan for the main study is not in the inputs",
+   "temperature of the pilot run",
+   "how to cite the laboratory reference run"
+  ],
+  "scores_after": {
+   "Originality": 2,
+   "Quality": 3,
+   "Clarity": 3,
+   "Significance": 2,
+   "Soundness": 3,
+   "Presentation": 3,
+   "Contribution": 2,
+   "Overall": 5
+  }
+ },
+ "stage5_format": "compiled with the official MDPI class (Definitions/ from the MDPI Article Template provided by the author), journal option 'ai', 10 pages, no undefined citations or references and no overfull lines; the local build replaced the bbm font package, which this paper does not use, with a stand-in"
+}

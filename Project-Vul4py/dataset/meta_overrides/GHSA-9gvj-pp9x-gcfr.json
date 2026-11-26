@@ -1,0 +1,17 @@
+{
+  "set": {
+    "install_cmds": [
+      "python -m pip install -U pip wheel",
+      "pip install -e .",
+      "python -m pip install aiohttp || echo 'doctor: could not install aiohttp'",
+      "python -m pip install numpy || echo 'doctor: could not install numpy'",
+      "python -m pip install py7zr || echo 'doctor: could not install py7zr'",
+      "python -m pip install requests || echo 'doctor: could not install requests'",
+      "python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch==2.15.0'",
+      "pip install -e . --no-deps"
+    ],
+    "functional_test_cmd_base": "pytest -q --deselect tests/test_scanner.py::test_scan_numpy --deselect tests/test_scanner.py::test_scan_file_path_npz",
+    "exploit_test_cmd_base": "pytest -q --deselect tests/test_scanner.py::test_scan_numpy --deselect tests/test_scanner.py::test_scan_file_path_npz"
+  },
+  "_note": "[doctor:deps] test deps: extras=['7z'] req=[] plugins=[] imports=['aiohttp', 'numpy', 'py7zr', 'requests', 'torch'] [auto_skip:functional_test_cmd_base=2] [auto_skip:exploit_test_cmd_base=2] [torch_cpu] torch 2.15.0 (the version validated here) from PyTorch's CPU index, as the benchmark does for GHSA-3gf5/GHSA-4r9r: the PyPI wheels are CUDA builds of 6+ GB per venv."
+}

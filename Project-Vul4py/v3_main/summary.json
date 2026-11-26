@@ -1,0 +1,556 @@
+{
+  "c0": {
+    "attempts": 30,
+    "N_complete": 29,
+    "N_incomplete": 1,
+    "incomplete": [
+      {
+        "agent": "c0",
+        "vuln_id": "CVE-2024-27454",
+        "reason": "verification error: exploit crashed the test process (rc=139)"
+      }
+    ],
+    "sum_V": 16,
+    "VRR": 0.5517241379310345,
+    "VRR_CI95": [
+      0.3754796308384869,
+      0.7158683208722871
+    ],
+    "sum_C_gen": 28,
+    "sum_FA_gen": 12,
+    "FAR_gen": 0.42857142857142855,
+    "FAR_gen_CI95": [
+      0.2650854701640365,
+      0.6092921450416022
+    ],
+    "N_reviewed": 0,
+    "sum_C_rev": 0,
+    "sum_FA_rev": 0,
+    "FAR_rev": null,
+    "FAR_rev_CI95": [
+      null,
+      null
+    ],
+    "rules": {
+      "repairer": {
+        "N": 29,
+        "accepted": 28,
+        "false_assurance": 12,
+        "FAR": 0.42857142857142855,
+        "FAR_CI95": [
+          0.2650854701640365,
+          0.6092921450416022
+        ],
+        "coverage": 0.9655172413793104,
+        "safe_yield": 0.5517241379310345,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "judge1": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "consensus": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "majority": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "unanimous": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": true
+      },
+      "gate": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "pre_revision": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "independent": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      }
+    },
+    "protocols": {
+      "N": 29,
+      "abstention_rate": 0.0,
+      "resolved_independent": 0,
+      "resolved_by_debate": 0,
+      "resolved_after_revision": 0,
+      "gate_failed_versions": 0,
+      "candidates_rescued_by_gate_feedback": 0,
+      "refusals": 0,
+      "citations": 300,
+      "citations_rejected": 0,
+      "citation_rejection_rate": 0.0,
+      "cases_with_a_correct_candidate": 16,
+      "jury_picked_correct": 16,
+      "VRR_oracle_best_candidate": 0.5517241379310345
+    },
+    "brier_gen": 0.35810344827586205,
+    "mean_conf_gen_when_claim": 0.9428571428571428,
+    "precision_gen": 0.5714285714285714,
+    "median_L_analyst_ms": null,
+    "median_L_repairer_ms": null,
+    "median_L_reviewer_ms": null,
+    "median_L_api_total_ms": 113578.20000000001,
+    "median_wall_time_s": 1021.215,
+    "professor_format": {
+      "not_applied_or_broke_functionality": 1,
+      "N": 29,
+      "applied_failed_security": 12,
+      "applied_and_functional": 28
+    },
+    "http_retries_total": 0,
+    "tokens_in_total": 513789,
+    "tokens_out_total": 229725
+  },
+  "c0g": {
+    "attempts": 30,
+    "N_complete": 29,
+    "N_incomplete": 1,
+    "incomplete": [
+      {
+        "agent": "c0g",
+        "vuln_id": "CVE-2024-27454",
+        "reason": "verification error: exploit crashed the test process (rc=139)"
+      }
+    ],
+    "sum_V": 14,
+    "VRR": 0.4827586206896552,
+    "VRR_CI95": [
+      0.3138609003643046,
+      0.6556897823987706
+    ],
+    "sum_C_gen": 28,
+    "sum_FA_gen": 14,
+    "FAR_gen": 0.5,
+    "FAR_gen_CI95": [
+      0.32633127336832435,
+      0.6736687266316757
+    ],
+    "N_reviewed": 0,
+    "sum_C_rev": 0,
+    "sum_FA_rev": 0,
+    "FAR_rev": null,
+    "FAR_rev_CI95": [
+      null,
+      null
+    ],
+    "rules": {
+      "repairer": {
+        "N": 29,
+        "accepted": 28,
+        "false_assurance": 14,
+        "FAR": 0.5,
+        "FAR_CI95": [
+          0.32633127336832435,
+          0.6736687266316757
+        ],
+        "coverage": 0.9655172413793104,
+        "safe_yield": 0.4827586206896552,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "judge1": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "consensus": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "majority": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "unanimous": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": true
+      },
+      "gate": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "pre_revision": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "independent": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      }
+    },
+    "protocols": {
+      "N": 29,
+      "abstention_rate": 0.0,
+      "resolved_independent": 0,
+      "resolved_by_debate": 0,
+      "resolved_after_revision": 0,
+      "gate_failed_versions": 3,
+      "candidates_rescued_by_gate_feedback": 2,
+      "refusals": 0,
+      "citations": 322,
+      "citations_rejected": 2,
+      "citation_rejection_rate": 0.006211180124223602,
+      "cases_with_a_correct_candidate": 14,
+      "jury_picked_correct": 14,
+      "VRR_oracle_best_candidate": 0.4827586206896552
+    },
+    "brier_gen": 0.4119965517241379,
+    "mean_conf_gen_when_claim": 0.9464285714285714,
+    "precision_gen": 0.5,
+    "median_L_analyst_ms": null,
+    "median_L_repairer_ms": null,
+    "median_L_reviewer_ms": null,
+    "median_L_api_total_ms": 97587.95,
+    "median_wall_time_s": 898.06,
+    "professor_format": {
+      "not_applied_or_broke_functionality": 1,
+      "N": 29,
+      "applied_failed_security": 14,
+      "applied_and_functional": 28
+    },
+    "http_retries_total": 0,
+    "tokens_in_total": 572513,
+    "tokens_out_total": 253322
+  },
+  "c1": {
+    "attempts": 30,
+    "N_complete": 29,
+    "N_incomplete": 1,
+    "incomplete": [
+      {
+        "agent": "c1",
+        "vuln_id": "CVE-2024-27454",
+        "reason": "verification error: exploit crashed the test process (rc=139)"
+      }
+    ],
+    "sum_V": 14,
+    "VRR": 0.4827586206896552,
+    "VRR_CI95": [
+      0.3138609003643046,
+      0.6556897823987706
+    ],
+    "sum_C_gen": 27,
+    "sum_FA_gen": 13,
+    "FAR_gen": 0.48148148148148145,
+    "FAR_gen_CI95": [
+      0.307432268576025,
+      0.6601438437003481
+    ],
+    "N_reviewed": 29,
+    "sum_C_rev": 26,
+    "sum_FA_rev": 12,
+    "FAR_rev": 0.46153846153846156,
+    "FAR_rev_CI95": [
+      0.2875585341413244,
+      0.6454206138301055
+    ],
+    "reviewer_caught_false_assurance": 1,
+    "reviewer_added_false_assurance": 0,
+    "reviewer_rejected_verified_repair": 0,
+    "mcnemar_p_FA_gen_vs_rev": 1.0,
+    "brier_rev": 0.2929494252873563,
+    "rev_predicted_apply_accuracy": null,
+    "revision": {
+      "N_paired": 29,
+      "VRR_initial": 0.4827586206896552,
+      "VRR_final": 0.4827586206896552,
+      "fixed_by_revision": 0,
+      "broken_by_revision": 0,
+      "mcnemar_p": null
+    },
+    "rules": {
+      "repairer": {
+        "N": 29,
+        "accepted": 27,
+        "false_assurance": 13,
+        "FAR": 0.48148148148148145,
+        "FAR_CI95": [
+          0.307432268576025,
+          0.6601438437003481
+        ],
+        "coverage": 0.9310344827586207,
+        "safe_yield": 0.4827586206896552,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "judge1": {
+        "N": 29,
+        "accepted": 27,
+        "false_assurance": 13,
+        "FAR": 0.48148148148148145,
+        "FAR_CI95": [
+          0.307432268576025,
+          0.6601438437003481
+        ],
+        "coverage": 0.9310344827586207,
+        "safe_yield": 0.4827586206896552,
+        "mcnemar_p_vs_repairer": 1.0,
+        "primary": false
+      },
+      "consensus": {
+        "N": 29,
+        "accepted": 26,
+        "false_assurance": 12,
+        "FAR": 0.46153846153846156,
+        "FAR_CI95": [
+          0.2875585341413244,
+          0.6454206138301055
+        ],
+        "coverage": 0.896551724137931,
+        "safe_yield": 0.4827586206896552,
+        "mcnemar_p_vs_repairer": 1.0,
+        "primary": false
+      },
+      "majority": {
+        "N": 29,
+        "accepted": 27,
+        "false_assurance": 13,
+        "FAR": 0.48148148148148145,
+        "FAR_CI95": [
+          0.307432268576025,
+          0.6601438437003481
+        ],
+        "coverage": 0.9310344827586207,
+        "safe_yield": 0.4827586206896552,
+        "mcnemar_p_vs_repairer": 1.0,
+        "primary": false
+      },
+      "unanimous": {
+        "N": 29,
+        "accepted": 26,
+        "false_assurance": 12,
+        "FAR": 0.46153846153846156,
+        "FAR_CI95": [
+          0.2875585341413244,
+          0.6454206138301055
+        ],
+        "coverage": 0.896551724137931,
+        "safe_yield": 0.4827586206896552,
+        "mcnemar_p_vs_repairer": 1.0,
+        "primary": true
+      },
+      "gate": {
+        "N": 29,
+        "accepted": 19,
+        "false_assurance": 7,
+        "FAR": 0.3684210526315789,
+        "FAR_CI95": [
+          0.19149512641954003,
+          0.5896046699645555
+        ],
+        "coverage": 0.6551724137931034,
+        "safe_yield": 0.41379310344827586,
+        "mcnemar_p_vs_repairer": 0.03125,
+        "primary": false
+      },
+      "pre_revision": {
+        "N": 29,
+        "accepted": 25,
+        "false_assurance": 11,
+        "FAR": 0.44,
+        "FAR_CI95": [
+          0.26665638767770883,
+          0.629326682653538
+        ],
+        "coverage": 0.8620689655172413,
+        "safe_yield": 0.4827586206896552,
+        "mcnemar_p_vs_repairer": 0.5,
+        "primary": false
+      },
+      "independent": {
+        "N": 29,
+        "accepted": 21,
+        "false_assurance": 9,
+        "FAR": 0.42857142857142855,
+        "FAR_CI95": [
+          0.2446996880971642,
+          0.6345344577581422
+        ],
+        "coverage": 0.7241379310344828,
+        "safe_yield": 0.41379310344827586,
+        "mcnemar_p_vs_repairer": 0.125,
+        "primary": false
+      }
+    },
+    "protocols": {
+      "N": 29,
+      "abstention_rate": 0.10344827586206896,
+      "resolved_independent": 21,
+      "resolved_by_debate": 5,
+      "resolved_after_revision": 0,
+      "gate_failed_versions": 2,
+      "candidates_rescued_by_gate_feedback": 2,
+      "refusals": 0,
+      "citations": 1535,
+      "citations_rejected": 1,
+      "citation_rejection_rate": 0.0006514657980456026,
+      "cases_with_a_correct_candidate": 14,
+      "jury_picked_correct": 14,
+      "VRR_oracle_best_candidate": 0.4827586206896552
+    },
+    "brier_gen": 0.3904206896551724,
+    "mean_conf_gen_when_claim": 0.9444444444444444,
+    "precision_gen": 0.5185185185185186,
+    "median_L_analyst_ms": 56245.8,
+    "median_L_repairer_ms": null,
+    "median_L_reviewer_ms": null,
+    "median_L_api_total_ms": 453070.5,
+    "median_wall_time_s": 2722.495,
+    "professor_format": {
+      "not_applied_or_broke_functionality": 2,
+      "N": 29,
+      "applied_failed_security": 13,
+      "applied_and_functional": 27
+    },
+    "http_retries_total": 0,
+    "tokens_in_total": 7019622,
+    "tokens_out_total": 1873738
+  }
+}

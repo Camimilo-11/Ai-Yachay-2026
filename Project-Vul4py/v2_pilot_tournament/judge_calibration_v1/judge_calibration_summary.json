@@ -1,0 +1,46 @@
+{
+  "openai:gpt-6.1-sol": {
+    "n": 23,
+    "unparsed": 0,
+    "sensitivity": 0.6,
+    "specificity": 0.7777777777777778,
+    "specificity_real_wrong": 0.6923076923076923,
+    "n_real_wrong": 13,
+    "auroc_confidence": 0.8,
+    "brier": 0.2448391304347826,
+    "best_is_reference": 0.6
+  },
+  "openai:gpt-6.1-terra": {
+    "n": 23,
+    "unparsed": 0,
+    "sensitivity": 0.6,
+    "specificity": 0.8333333333333334,
+    "specificity_real_wrong": 0.7692307692307693,
+    "n_real_wrong": 13,
+    "auroc_confidence": 0.7111111111111111,
+    "brier": 0.20098708695652173,
+    "best_is_reference": 0.4
+  },
+  "openai:gpt-6-luna": {
+    "n": 23,
+    "unparsed": 0,
+    "sensitivity": 0.8,
+    "specificity": 0.7777777777777778,
+    "specificity_real_wrong": 0.6923076923076923,
+    "n_real_wrong": 13,
+    "auroc_confidence": 0.6722222222222223,
+    "brier": 0.4207521739130435,
+    "best_is_reference": 0.6
+  },
+  "openai:gpt-6.2-astra": {
+    "n": 23,
+    "unparsed": 0,
+    "sensitivity": 0.6,
+    "specificity": 0.8333333333333334,
+    "specificity_real_wrong": 0.7692307692307693,
+    "n_real_wrong": 13,
+    "auroc_confidence": 0.7,
+    "brier": 0.21484347826086955,
+    "best_is_reference": 0.6
+  }
+}

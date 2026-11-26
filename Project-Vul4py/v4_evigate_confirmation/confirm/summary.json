@@ -1,0 +1,229 @@
+{
+  "c0": {
+    "attempts": 65,
+    "N_complete": 63,
+    "N_incomplete": 2,
+    "incomplete": [
+      {
+        "agent": "c0",
+        "vuln_id": "CVE-2024-52804",
+        "reason": "verification error: environment check failed: oracle invalid here: not reference_verified"
+      },
+      {
+        "agent": "c0",
+        "vuln_id": "CVE-2025-5120",
+        "reason": "verification error: environment check failed: oracle invalid here: not functional_ok, not reference_verified"
+      }
+    ],
+    "sum_V": 22,
+    "VRR": 0.3492063492063492,
+    "VRR_CI95": [
+      0.24325988942419746,
+      0.47248539324920774
+    ],
+    "sum_C_gen": 61,
+    "sum_FA_gen": 40,
+    "FAR_gen": 0.6557377049180327,
+    "FAR_gen_CI95": [
+      0.5304974904024178,
+      0.7625249111259458
+    ],
+    "N_reviewed": 0,
+    "sum_C_rev": 0,
+    "sum_FA_rev": 0,
+    "FAR_rev": null,
+    "FAR_rev_CI95": [
+      null,
+      null
+    ],
+    "rules": {
+      "repairer": {
+        "N": 63,
+        "accepted": 61,
+        "false_assurance": 40,
+        "FAR": 0.6557377049180327,
+        "FAR_CI95": [
+          0.5304974904024178,
+          0.7625249111259458
+        ],
+        "coverage": 0.9682539682539683,
+        "safe_yield": 0.3333333333333333,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "judge1": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "consensus": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "majority": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "unanimous": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": true
+      },
+      "gate": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "pre_revision": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "independent": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "coverage": {
+        "N": 63,
+        "accepted": 23,
+        "false_assurance": 11,
+        "FAR": 0.4782608695652174,
+        "FAR_CI95": [
+          0.2923715729307258,
+          0.6703726279555817
+        ],
+        "coverage": 0.36507936507936506,
+        "safe_yield": 0.19047619047619047,
+        "mcnemar_p_vs_repairer": 3.725290298461914e-09,
+        "primary": false
+      },
+      "coverage75": {
+        "N": 63,
+        "accepted": 27,
+        "false_assurance": 13,
+        "FAR": 0.48148148148148145,
+        "FAR_CI95": [
+          0.307432268576025,
+          0.6601438437003481
+        ],
+        "coverage": 0.42857142857142855,
+        "safe_yield": 0.2222222222222222,
+        "mcnemar_p_vs_repairer": 1.4901161193847656e-08,
+        "primary": false
+      },
+      "gate_coverage": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      }
+    },
+    "protocols": {
+      "N": 63,
+      "abstention_rate": 0.0,
+      "resolved_independent": 0,
+      "resolved_by_debate": 0,
+      "resolved_after_revision": 0,
+      "gate_failed_versions": 0,
+      "candidates_rescued_by_gate_feedback": 0,
+      "refusals": 0,
+      "citations": 620,
+      "citations_rejected": 0,
+      "citation_rejection_rate": 0.0,
+      "cases_with_a_correct_candidate": 22,
+      "jury_picked_correct": 22,
+      "VRR_oracle_best_candidate": 0.3492063492063492
+    },
+    "brier_gen": 0.5497936507936508,
+    "mean_conf_gen_when_claim": 0.9347540983606557,
+    "precision_gen": 0.34426229508196726,
+    "median_L_analyst_ms": null,
+    "median_L_repairer_ms": null,
+    "median_L_reviewer_ms": null,
+    "median_L_api_total_ms": 85840.9,
+    "median_wall_time_s": 1588.74,
+    "professor_format": {
+      "not_applied_or_broke_functionality": 7,
+      "N": 63,
+      "applied_failed_security": 34,
+      "applied_and_functional": 56
+    },
+    "http_retries_total": 0,
+    "tokens_in_total": 848338,
+    "tokens_out_total": 442252
+  }
+}

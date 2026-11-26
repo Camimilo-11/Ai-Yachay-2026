@@ -1,0 +1,1378 @@
+[2026-11-24T13:36:58Z] 1/6 prepare (100 cases, two clones each)
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2018-7753/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2017-16615/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2019-1010017/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2017-16618/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2017-16615/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2019-1010017/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2019-10800/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2018-7753/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2017-16618/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2020-6802/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2019-10800/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2021-23980/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2021-28363/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2020-6802/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2021-32839/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2021-23980/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2022-24065/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2021-32839/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2022-24439/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2022-2888/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2021-28363/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2022-24065/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2022-29217/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2022-3102/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2022-29217/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2022-3102/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2022-24439/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-23934/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-25577/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-26145/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-23934/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-25577/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-26145/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-26302/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-29483/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-30608/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-26302/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2022-2888/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-30608/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-32303/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-29483/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-32309/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-32303/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-32681/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-34457/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-34457/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-36830/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-32681/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-37271/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-37271/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-41039/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-41039/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-41040/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-46446/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-32309/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-41040/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-46446/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-47163/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-6681/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-47163/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-6681/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-22190/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-22195/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2023-36830/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-22195/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-27454/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-27454/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-22190/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-28102/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-28102/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-29033/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-32977/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-29033/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-34061/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-34064/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-34064/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-34078/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-34078/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-35195/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-35195/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-37891/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-42353/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-37891/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-32977/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-42353/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-4340/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-47164/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-4340/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-47532/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-34061/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-47532/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-47874/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-47874/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-4941/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-49768/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-49768/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-51998/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-52303/fixed'...
+Updating files:  55% (1724/3115)Updating files:  56% (1745/3115)Updating files:  57% (1776/3115)Updating files:  58% (1807/3115)Updating files:  59% (1838/3115)Updating files:  60% (1869/3115)Updating files:  61% (1901/3115)Updating files:  62% (1932/3115)Updating files:  63% (1963/3115)Updating files:  64% (1994/3115)Updating files:  65% (2025/3115)Updating files:  66% (2056/3115)Updating files:  67% (2088/3115)Updating files:  68% (2119/3115)Updating files:  69% (2150/3115)Updating files:  70% (2181/3115)Updating files:  71% (2212/3115)Updating files:  72% (2243/3115)Updating files:  73% (2274/3115)Updating files:  74% (2306/3115)Updating files:  75% (2337/3115)Updating files:  76% (2368/3115)Updating files:  77% (2399/3115)Updating files:  78% (2430/3115)Updating files:  79% (2461/3115)Updating files:  80% (2492/3115)Updating files:  81% (2524/3115)Updating files:  82% (2555/3115)Updating files:  83% (2586/3115)Updating files:  84% (2617/3115)Updating files:  85% (2648/3115)Updating files:  86% (2679/3115)Updating files:  87% (2711/3115)Updating files:  88% (2742/3115)Updating files:  89% (2773/3115)Updating files:  90% (2804/3115)Updating files:  91% (2835/3115)Updating files:  92% (2866/3115)Updating files:  93% (2897/3115)Updating files:  94% (2929/3115)Updating files:  95% (2960/3115)Updating files:  96% (2991/3115)Updating files:  97% (3022/3115)Updating files:  98% (3053/3115)Updating files:  99% (3084/3115)Updating files: 100% (3115/3115)Updating files: 100% (3115/3115), done.
+[prepare_robust] 08b51590163b not on any branch or tag of https://github.com/gradio-app/gradio; fetching it by SHA
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-51998/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-52303/vulnerable'...
+[prepare_robust] ee1e2942e0a1 not on any branch or tag of https://github.com/gradio-app/gradio; fetching it by SHA
+From https://github.com/gradio-app/gradio
+ * branch                08b51590163b306fd874f543f6fcaf23ac7d2646 -> FETCH_HEAD
+Note: switching to '08b51590163b306fd874f543f6fcaf23ac7d2646'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 08b515901 Some tweaks to is_in_or_equal (#9020)
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-47164/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-52804/fixed'...
+From https://github.com/gradio-app/gradio
+ * branch                ee1e2942e0a1ae84a08a05464e41c8108a03fa9c -> FETCH_HEAD
+Note: switching to 'ee1e2942e0a1ae84a08a05464e41c8108a03fa9c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at ee1e2942e Ensure JSON component outputs handled properly in postprocess (#8292)
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-4941/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-52804/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-53848/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-53848/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-53861/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-53861/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-53865/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-53981/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-53981/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-55655/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-53865/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-55655/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-56201/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-56326/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-56201/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-56326/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-6844/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-6866/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-6844/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-6866/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-9701/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-10157/fixed'...
+[prepare_robust] c12f600a984b not on any branch or tag of https://github.com/gradio-app/gradio; fetching it by SHA
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-10157/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-1716/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-1716/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-1944/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-1944/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-22153/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-22153/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-24359/fixed'...
+Updating files:  99% (3111/3115)Updating files: 100% (3115/3115)Updating files: 100% (3115/3115), done.
+[prepare_robust] 929d216d49aa not on any branch or tag of https://github.com/gradio-app/gradio; fetching it by SHA
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-24359/vulnerable'...
+From https://github.com/gradio-app/gradio
+ * branch                c12f600a984bdc269ba3e6db30e3b62186170ab0 -> FETCH_HEAD
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-27516/fixed'...
+Note: switching to 'c12f600a984bdc269ba3e6db30e3b62186170ab0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at c12f600a9 Ci docs (#9041)
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-43859/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-43859/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-46656/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-46656/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-27516/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-47287/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-48383/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-48383/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-47287/vulnerable'...
+From https://github.com/gradio-app/gradio
+ * branch                929d216d49aa05614bc83f0761cf7b1cd803d8fe -> FETCH_HEAD
+Note: switching to '929d216d49aa05614bc83f0761cf7b1cd803d8fe'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 929d216d4 always create a jwt when connecting to a space if a hf_token is present (#8296)
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-48994/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-50181/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2024-9701/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-48994/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-5120/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-53365/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-50181/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-5120/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-53366/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-54121/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-53365/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-54121/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-53366/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-54413/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-54413/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-54886/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-57804/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-54886/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-58180/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-57804/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-58367/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-58438/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-58367/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-59420/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-58438/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-59940/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-59940/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-59420/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-6176/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-61765/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-61765/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-61920/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-62708/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-61920/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-58180/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-6176/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-62727/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-62727/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-62800/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-3gf5-cxq9-w223/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-3gf5-cxq9-w223/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-3vg9-h568-4w9m/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-3vg9-h568-4w9m/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-4r9r-ch6f-vxmx/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-4r9r-ch6f-vxmx/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-753j-mpmx-qq6g/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-753j-mpmx-qq6g/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-9gvj-pp9x-gcfr/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-9gvj-pp9x-gcfr/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-hfmc-7525-mj55/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-vhmj-5q9r-mm9g/fixed'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-hfmc-7525-mj55/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-w235-7p84-xx57/fixed'...
+Updating files:  83% (1762/2108)Updating files:  84% (1771/2108)Updating files:  85% (1792/2108)Updating files:  86% (1813/2108)Updating files:  87% (1834/2108)Updating files:  88% (1856/2108)Updating files:  89% (1877/2108)Updating files:  90% (1898/2108)Updating files:  91% (1919/2108)Updating files:  92% (1940/2108)Updating files:  93% (1961/2108)Updating files:  94% (1982/2108)Updating files:  95% (2003/2108)Updating files:  96% (2024/2108)Updating files:  97% (2045/2108)Updating files:  98% (2066/2108)Updating files:  99% (2087/2108)Updating files: 100% (2108/2108)Updating files: 100% (2108/2108), done.
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-62800/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-w235-7p84-xx57/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/GHSA-vhmj-5q9r-mm9g/vulnerable'...
+Cloning into '/home/ubuntu/vul4py/workspaces/CVE-2025-62708/vulnerable'...
+OK=100  SKIP=0  ERROR=0
+[+] wrote /home/ubuntu/vul4py/workspaces/prepare_summary.tsv
+[2026-11-24T13:41:22Z] 2/6 apply_overrides
+[done] applied=90  skipped=1  total=91
+[2026-11-24T13:41:22Z] 3/6 scan (2 jobs)
+Fetch Shard Index for conda-forge/linux-64                                                      ⧖ Starting
+Fetch Shard Index for conda-forge/linux-64                                                ✔ Done (0.0 sec)
+Fetch Shard Index for conda-forge/noarch                                                        ⧖ Starting
+Fetch Shard Index for conda-forge/noarch                                                  ✔ Done (0.0 sec)
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (2.8 sec)
+
+Resolving Environment                                                                           ⧖ Starting
+Resolving Environment                                                                     ✔ Done (0.2 sec)
+
+Transaction
+
+  Prefix: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py310
+
+  Updating specs:
+
+   - python=3.10
+   - pip
+
+
+  Package                Version  Build                 Channel          Size
+───────────────────────────────────────────────────────────────────────────────
+  Install:
+───────────────────────────────────────────────────────────────────────────────
+
+  + _openmp_mutex            4.5  20_gnu                conda-forge      29kB
+  + bzip2                  1.0.8  hda65f42_10           conda-forge     258kB
+  + ca-certificates   2026.11.20  hbd8a1cb_0            conda-forge     124kB
+  + ld_impl_linux-64      2.46.1  default_hbd61a6d_103  conda-forge     742kB
+  + libexpat               2.9.0  hd2095e1_0            conda-forge      79kB
+  + libffi                 3.7.0  h81df57d_1            conda-forge      68kB
+  + libgcc                16.2.0  ha9f2e26_7            conda-forge       1MB
+  + libgomp               16.2.0  he0feb66_7            conda-forge     641kB
+  + liblzma                5.8.3  hb03c661_1            conda-forge     113kB
+  + libnsl                 2.0.1  hb9d3cd8_1            conda-forge      34kB
+  + libsqlite             3.54.1  h0737f62_101          conda-forge     980kB
+  + libuuid               2.42.4  hcfc3c73_1            conda-forge      36kB
+  + libxcrypt             4.4.38  h280c20c_0            conda-forge     102kB
+  + libzlib                1.3.2  h25fd6f3_3            conda-forge      64kB
+  + ncurses                  6.6  hdb14827_1            conda-forge     911kB
+  + openssl                3.6.5  h781a0a9_0            conda-forge       3MB
+  + packaging               26.3  pyhc364b38_0          conda-forge     116kB
+  + pip                   26.2.1  pyh8b19718_0          conda-forge       1MB
+  + python               3.10.22  h267e890_0_cpython    conda-forge      25MB
+  + readline                 8.3  hd6e31c0_1            conda-forge     349kB
+  + setuptools            84.0.0  pyh332efcf_0          conda-forge     524kB
+  + tk                    8.6.13  noxft_h1df4ec4_4      conda-forge       4MB
+  + tzdata                 2026e  h5d301ff_0            conda-forge     119kB
+  + wheel                 0.48.0  pyhd8ed1ab_0          conda-forge      35kB
+  + zstd                   1.5.7  hb78ec9c_7            conda-forge     601kB
+
+  Summary:
+
+  Install: 25 packages
+
+  Total download: 40MB
+
+───────────────────────────────────────────────────────────────────────────────
+
+
+warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+
+Transaction starting
+Linking libzlib-1.3.2-h25fd6f3_3
+Linking libgomp-16.2.0-he0feb66_7
+Linking zstd-1.5.7-hb78ec9c_7
+Linking _openmp_mutex-4.5-20_gnu
+Linking ld_impl_linux-64-2.46.1-default_hbd61a6d_103
+Linking libgcc-16.2.0-ha9f2e26_7
+Linking bzip2-1.0.8-hda65f42_10
+Linking libnsl-2.0.1-hb9d3cd8_1
+Linking libexpat-2.9.0-hd2095e1_0
+Linking libuuid-2.42.4-hcfc3c73_1
+Linking libffi-3.7.0-h81df57d_1
+Linking libsqlite-3.54.1-h0737f62_101
+Linking liblzma-5.8.3-hb03c661_1
+Linking ncurses-6.6-hdb14827_1
+Linking tk-8.6.13-noxft_h1df4ec4_4
+Linking libxcrypt-4.4.38-h280c20c_0
+Linking readline-8.3-hd6e31c0_1
+Linking tzdata-2026e-h5d301ff_0
+Linking ca-certificates-2026.11.20-hbd8a1cb_0
+Linking openssl-3.6.5-h781a0a9_0
+Linking python-3.10.22-h267e890_0_cpython
+Linking packaging-26.3-pyhc364b38_0
+Linking setuptools-84.0.0-pyh332efcf_0
+Linking wheel-0.48.0-pyhd8ed1ab_0
+Linking pip-26.2.1-pyh8b19718_0
+
+Transaction finished
+
+
+To activate this environment, use:
+
+    micromamba activate /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py310
+
+Or to execute a single command in this environment, use:
+
+    micromamba run -p /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py310 mycommand
+
+Using Cached Shard Index for conda-forge/linux-64                                                   ✔ Done
+Using Cached Shard Index for conda-forge/noarch                                                     ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.1 sec)
+
+Resolving Environment                                                                           ⧖ Starting
+Resolving Environment                                                                     ✔ Done (0.2 sec)
+
+Transaction
+
+  Prefix: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py311
+
+  Updating specs:
+
+   - python=3.11
+   - pip
+
+
+  Package                Version  Build                 Channel           Size
+────────────────────────────────────────────────────────────────────────────────
+  Install:
+────────────────────────────────────────────────────────────────────────────────
+
+  + _openmp_mutex            4.5  20_gnu                conda-forge     Cached
+  + bzip2                  1.0.8  hda65f42_10           conda-forge     Cached
+  + ca-certificates   2026.11.20  hbd8a1cb_0            conda-forge     Cached
+  + ld_impl_linux-64      2.46.1  default_hbd61a6d_103  conda-forge     Cached
+  + libexpat               2.9.0  hd2095e1_0            conda-forge     Cached
+  + libffi                 3.7.0  h81df57d_1            conda-forge     Cached
+  + libgcc                16.2.0  ha9f2e26_7            conda-forge     Cached
+  + libgomp               16.2.0  he0feb66_7            conda-forge     Cached
+  + liblzma                5.8.3  hb03c661_1            conda-forge     Cached
+  + libnsl                 2.0.1  hb9d3cd8_1            conda-forge     Cached
+  + libpython            3.11.18  ha57cdbe_0_cpython    conda-forge        8MB
+  + libsqlite             3.54.1  h0737f62_101          conda-forge     Cached
+  + libuuid               2.42.4  hcfc3c73_1            conda-forge     Cached
+  + libxcrypt             4.4.38  h280c20c_0            conda-forge     Cached
+  + libzlib                1.3.2  h25fd6f3_3            conda-forge     Cached
+  + ncurses                  6.6  hdb14827_1            conda-forge     Cached
+  + openssl                3.6.5  h781a0a9_0            conda-forge     Cached
+  + packaging               26.3  pyhc364b38_0          conda-forge     Cached
+  + pip                   26.2.2  pyh8b19718_2          conda-forge        1MB
+  + python               3.11.18  h5f976f7_0_cpython    conda-forge       23MB
+  + readline                 8.3  hd6e31c0_1            conda-forge     Cached
+  + setuptools            84.2.1  pyhe730653_0          conda-forge      567kB
+  + tk                    8.6.13  noxft_h1df4ec4_4      conda-forge     Cached
+  + tzdata                 2026e  h5d301ff_0            conda-forge     Cached
+  + wheel                 0.48.0  pyhd8ed1ab_0          conda-forge     Cached
+  + zstd                   1.5.7  hb78ec9c_7            conda-forge     Cached
+
+  Summary:
+
+  Install: 26 packages
+
+  Total download: 33MB
+
+────────────────────────────────────────────────────────────────────────────────
+
+
+warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+
+Transaction starting
+Linking ca-certificates-2026.11.20-hbd8a1cb_0
+Linking tzdata-2026e-h5d301ff_0
+Linking libzlib-1.3.2-h25fd6f3_3
+Linking libgomp-16.2.0-he0feb66_7
+Linking zstd-1.5.7-hb78ec9c_7
+Linking _openmp_mutex-4.5-20_gnu
+Linking ld_impl_linux-64-2.46.1-default_hbd61a6d_103
+Linking libgcc-16.2.0-ha9f2e26_7
+Linking bzip2-1.0.8-hda65f42_10
+Linking libnsl-2.0.1-hb9d3cd8_1
+Linking libexpat-2.9.0-hd2095e1_0
+Linking libuuid-2.42.4-hcfc3c73_1
+Linking openssl-3.6.5-h781a0a9_0
+Linking libffi-3.7.0-h81df57d_1
+Linking libsqlite-3.54.1-h0737f62_101
+Linking liblzma-5.8.3-hb03c661_1
+Linking ncurses-6.6-hdb14827_1
+Linking tk-8.6.13-noxft_h1df4ec4_4
+Linking libpython-3.11.18-ha57cdbe_0_cpython
+Linking libxcrypt-4.4.38-h280c20c_0
+Linking readline-8.3-hd6e31c0_1
+Linking python-3.11.18-h5f976f7_0_cpython
+Linking packaging-26.3-pyhc364b38_0
+Linking setuptools-84.2.1-pyhe730653_0
+Linking wheel-0.48.0-pyhd8ed1ab_0
+Linking pip-26.2.2-pyh8b19718_2
+
+Transaction finished
+
+
+To activate this environment, use:
+
+    micromamba activate /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py311
+
+Or to execute a single command in this environment, use:
+
+    micromamba run -p /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py311 mycommand
+
+Using Cached Shard Index for conda-forge/linux-64                                                   ✔ Done
+Using Cached Shard Index for conda-forge/noarch                                                     ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.2 sec)
+
+Resolving Environment                                                                           ⧖ Starting
+Resolving Environment                                                                     ✔ Done (0.3 sec)
+
+Transaction
+
+  Prefix: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py36
+
+  Updating specs:
+
+   - python=3.6
+   - pip
+
+
+  Package                Version  Build                 Channel           Size
+────────────────────────────────────────────────────────────────────────────────
+  Install:
+────────────────────────────────────────────────────────────────────────────────
+
+  + _openmp_mutex            4.5  20_gnu                conda-forge     Cached
+  + ca-certificates   2026.11.20  hbd8a1cb_0            conda-forge     Cached
+  + ld_impl_linux-64      2.46.1  default_hbd61a6d_103  conda-forge     Cached
+  + libffi                 3.4.6  h2dba641_1            conda-forge       57kB
+  + libgcc                16.2.0  ha9f2e26_7            conda-forge     Cached
+  + libgcc-ng             16.2.0  h69a702a_7            conda-forge       29kB
+  + libgomp               16.2.0  he0feb66_7            conda-forge     Cached
+  + liblzma                5.8.3  hb03c661_1            conda-forge     Cached
+  + liblzma-devel          5.8.3  hb03c661_1            conda-forge      492kB
+  + libnsl                 2.0.1  hb9d3cd8_1            conda-forge     Cached
+  + libsqlite             3.54.1  h0737f62_101          conda-forge     Cached
+  + libstdcxx             16.2.0  h934c35e_7            conda-forge        7MB
+  + libstdcxx-ng          16.2.0  hdf11a46_7            conda-forge       29kB
+  + libzlib                1.3.2  h25fd6f3_3            conda-forge     Cached
+  + ncurses                  6.6  hdb14827_1            conda-forge     Cached
+  + openssl               1.1.1w  hd590300_0            conda-forge        2MB
+  + pip                   21.3.1  pyhd8ed1ab_0          conda-forge        1MB
+  + python                3.6.15  hb7a2778_0_cpython    conda-forge       40MB
+  + python_abi               3.6  2_cp36m               conda-forge        4kB
+  + readline                 8.3  hd6e31c0_1            conda-forge     Cached
+  + setuptools            58.0.4  py36h5fab9bb_2        conda-forge      989kB
+  + sqlite                3.54.1  h6e79ffa_101          conda-forge      220kB
+  + tk                    8.6.13  noxft_h1df4ec4_4      conda-forge     Cached
+  + wheel                 0.37.1  pyhd8ed1ab_0          conda-forge       32kB
+  + xz                     5.8.3  ha02ee65_1            conda-forge       24kB
+  + xz-gpl-tools           5.8.3  ha02ee65_1            conda-forge       40kB
+  + xz-tools               5.8.3  hb03c661_1            conda-forge       96kB
+  + zstd                   1.5.7  hb78ec9c_7            conda-forge     Cached
+
+  Summary:
+
+  Install: 28 packages
+
+  Total download: 52MB
+
+────────────────────────────────────────────────────────────────────────────────
+
+
+warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+
+Transaction starting
+Linking libzlib-1.3.2-h25fd6f3_3
+Linking libgomp-16.2.0-he0feb66_7
+Linking zstd-1.5.7-hb78ec9c_7
+Linking _openmp_mutex-4.5-20_gnu
+Linking ld_impl_linux-64-2.46.1-default_hbd61a6d_103
+Linking libgcc-16.2.0-ha9f2e26_7
+Linking libnsl-2.0.1-hb9d3cd8_1
+Linking libffi-3.4.6-h2dba641_1
+Linking libsqlite-3.54.1-h0737f62_101
+Linking liblzma-5.8.3-hb03c661_1
+Linking ncurses-6.6-hdb14827_1
+Linking tk-8.6.13-noxft_h1df4ec4_4
+Linking libstdcxx-16.2.0-h934c35e_7
+Linking libgcc-ng-16.2.0-h69a702a_7
+Linking liblzma-devel-5.8.3-hb03c661_1
+Linking xz-gpl-tools-5.8.3-ha02ee65_1
+Linking xz-tools-5.8.3-hb03c661_1
+Linking readline-8.3-hd6e31c0_1
+Linking libstdcxx-ng-16.2.0-hdf11a46_7
+Linking xz-5.8.3-ha02ee65_1
+Linking sqlite-3.54.1-h6e79ffa_101
+Linking ca-certificates-2026.11.20-hbd8a1cb_0
+Linking openssl-1.1.1w-hd590300_0
+Linking python-3.6.15-hb7a2778_0_cpython
+Linking pip-21.3.1-pyhd8ed1ab_0
+Linking python_abi-3.6-2_cp36m
+Linking setuptools-58.0.4-py36h5fab9bb_2
+Linking wheel-0.37.1-pyhd8ed1ab_0
+
+Transaction finished
+
+
+To activate this environment, use:
+
+    micromamba activate /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py36
+
+Or to execute a single command in this environment, use:
+
+    micromamba run -p /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py36 mycommand
+
+Using Cached Shard Index for conda-forge/linux-64                                                   ✔ Done
+Using Cached Shard Index for conda-forge/noarch                                                     ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.1 sec)
+
+Resolving Environment                                                                           ⧖ Starting
+Resolving Environment                                                                     ✔ Done (0.3 sec)
+
+Transaction
+
+  Prefix: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py37
+
+  Updating specs:
+
+   - python=3.7
+   - pip
+
+
+  Package                Version  Build                 Channel           Size
+────────────────────────────────────────────────────────────────────────────────
+  Install:
+────────────────────────────────────────────────────────────────────────────────
+
+  + _openmp_mutex            4.5  20_gnu                conda-forge     Cached
+  + ca-certificates   2026.11.20  hbd8a1cb_0            conda-forge     Cached
+  + ld_impl_linux-64      2.46.1  default_hbd61a6d_103  conda-forge     Cached
+  + libffi                 3.4.6  h2dba641_1            conda-forge     Cached
+  + libgcc                16.2.0  ha9f2e26_7            conda-forge     Cached
+  + libgcc-ng             16.2.0  h69a702a_7            conda-forge     Cached
+  + libgomp               16.2.0  he0feb66_7            conda-forge     Cached
+  + liblzma                5.8.3  hb03c661_1            conda-forge     Cached
+  + liblzma-devel          5.8.3  hb03c661_1            conda-forge     Cached
+  + libnsl                 2.0.1  hb9d3cd8_1            conda-forge     Cached
+  + libsqlite             3.54.1  h0737f62_101          conda-forge     Cached
+  + libstdcxx             16.2.0  h934c35e_7            conda-forge     Cached
+  + libstdcxx-ng          16.2.0  hdf11a46_7            conda-forge     Cached
+  + libzlib                1.3.2  h25fd6f3_3            conda-forge     Cached
+  + ncurses                  6.6  hdb14827_1            conda-forge     Cached
+  + openssl                3.6.5  h781a0a9_0            conda-forge     Cached
+  + pip                     24.0  pyhd8ed1ab_0          conda-forge        1MB
+  + python                3.7.12  hf930737_100_cpython  conda-forge       60MB
+  + readline                 8.3  hd6e31c0_1            conda-forge     Cached
+  + setuptools            69.0.3  pyhd8ed1ab_0          conda-forge      471kB
+  + sqlite                3.54.1  h6e79ffa_101          conda-forge     Cached
+  + tk                    8.6.13  noxft_h1df4ec4_4      conda-forge     Cached
+  + wheel                 0.42.0  pyhd8ed1ab_0          conda-forge       58kB
+  + xz                     5.8.3  ha02ee65_1            conda-forge     Cached
+  + xz-gpl-tools           5.8.3  ha02ee65_1            conda-forge     Cached
+  + xz-tools               5.8.3  hb03c661_1            conda-forge     Cached
+  + zstd                   1.5.7  hb78ec9c_7            conda-forge     Cached
+
+  Summary:
+
+  Install: 27 packages
+
+  Total download: 62MB
+
+────────────────────────────────────────────────────────────────────────────────
+
+
+warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+
+Transaction starting
+Linking libzlib-1.3.2-h25fd6f3_3
+Linking libgomp-16.2.0-he0feb66_7
+Linking zstd-1.5.7-hb78ec9c_7
+Linking _openmp_mutex-4.5-20_gnu
+Linking ld_impl_linux-64-2.46.1-default_hbd61a6d_103
+Linking libgcc-16.2.0-ha9f2e26_7
+Linking libnsl-2.0.1-hb9d3cd8_1
+Linking libffi-3.4.6-h2dba641_1
+Linking libsqlite-3.54.1-h0737f62_101
+Linking liblzma-5.8.3-hb03c661_1
+Linking ncurses-6.6-hdb14827_1
+Linking tk-8.6.13-noxft_h1df4ec4_4
+Linking libgcc-ng-16.2.0-h69a702a_7
+Linking libstdcxx-16.2.0-h934c35e_7
+Linking xz-gpl-tools-5.8.3-ha02ee65_1
+Linking liblzma-devel-5.8.3-hb03c661_1
+Linking xz-tools-5.8.3-hb03c661_1
+Linking readline-8.3-hd6e31c0_1
+Linking libstdcxx-ng-16.2.0-hdf11a46_7
+Linking xz-5.8.3-ha02ee65_1
+Linking sqlite-3.54.1-h6e79ffa_101
+Linking ca-certificates-2026.11.20-hbd8a1cb_0
+Linking openssl-3.6.5-h781a0a9_0
+Linking python-3.7.12-hf930737_100_cpython
+Linking pip-24.0-pyhd8ed1ab_0
+Linking setuptools-69.0.3-pyhd8ed1ab_0
+Linking wheel-0.42.0-pyhd8ed1ab_0
+
+Transaction finished
+
+
+To activate this environment, use:
+
+    micromamba activate /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py37
+
+Or to execute a single command in this environment, use:
+
+    micromamba run -p /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py37 mycommand
+
+Using Cached Shard Index for conda-forge/linux-64                                                   ✔ Done
+Using Cached Shard Index for conda-forge/noarch                                                     ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.1 sec)
+
+Resolving Environment                                                                           ⧖ Starting
+Resolving Environment                                                                     ✔ Done (0.3 sec)
+
+Transaction
+
+  Prefix: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py38
+
+  Updating specs:
+
+   - python=3.8
+   - pip
+
+
+  Package                Version  Build                 Channel           Size
+────────────────────────────────────────────────────────────────────────────────
+  Install:
+────────────────────────────────────────────────────────────────────────────────
+
+  + _openmp_mutex            4.5  20_gnu                conda-forge     Cached
+  + bzip2                  1.0.8  hda65f42_10           conda-forge     Cached
+  + ca-certificates   2026.11.20  hbd8a1cb_0            conda-forge     Cached
+  + ld_impl_linux-64      2.46.1  default_hbd61a6d_103  conda-forge     Cached
+  + libffi                 3.7.0  h81df57d_1            conda-forge     Cached
+  + libgcc                16.2.0  ha9f2e26_7            conda-forge     Cached
+  + libgomp               16.2.0  he0feb66_7            conda-forge     Cached
+  + liblzma                5.8.3  hb03c661_1            conda-forge     Cached
+  + liblzma-devel          5.8.3  hb03c661_1            conda-forge     Cached
+  + libnsl                 2.0.1  hb9d3cd8_1            conda-forge     Cached
+  + libsqlite             3.54.1  h0737f62_101          conda-forge     Cached
+  + libuuid               2.42.4  hcfc3c73_1            conda-forge     Cached
+  + libxcrypt             4.4.38  h280c20c_0            conda-forge     Cached
+  + libzlib                1.3.2  h25fd6f3_3            conda-forge     Cached
+  + ncurses                  6.6  hdb14827_1            conda-forge     Cached
+  + openssl                3.6.5  h781a0a9_0            conda-forge     Cached
+  + pip                   24.3.1  pyh8b19718_0          conda-forge        1MB
+  + python                3.8.20  h4a871b0_2_cpython    conda-forge       22MB
+  + readline                 8.3  hd6e31c0_1            conda-forge     Cached
+  + setuptools            75.3.0  pyhd8ed1ab_0          conda-forge      780kB
+  + tk                    8.6.13  noxft_h1df4ec4_4      conda-forge     Cached
+  + wheel                 0.45.1  pyhd8ed1ab_0          conda-forge       63kB
+  + xz                     5.8.3  ha02ee65_1            conda-forge     Cached
+  + xz-gpl-tools           5.8.3  ha02ee65_1            conda-forge     Cached
+  + xz-tools               5.8.3  hb03c661_1            conda-forge     Cached
+  + zstd                   1.5.7  hb78ec9c_7            conda-forge     Cached
+
+  Summary:
+
+  Install: 26 packages
+
+  Total download: 24MB
+
+────────────────────────────────────────────────────────────────────────────────
+
+
+warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+
+Transaction starting
+Linking libzlib-1.3.2-h25fd6f3_3
+Linking libgomp-16.2.0-he0feb66_7
+Linking zstd-1.5.7-hb78ec9c_7
+Linking _openmp_mutex-4.5-20_gnu
+Linking ld_impl_linux-64-2.46.1-default_hbd61a6d_103
+Linking libgcc-16.2.0-ha9f2e26_7
+Linking bzip2-1.0.8-hda65f42_10
+Linking libnsl-2.0.1-hb9d3cd8_1
+Linking libuuid-2.42.4-hcfc3c73_1
+Linking libffi-3.7.0-h81df57d_1
+Linking libsqlite-3.54.1-h0737f62_101
+Linking libxcrypt-4.4.38-h280c20c_0
+Linking liblzma-5.8.3-hb03c661_1
+Linking ncurses-6.6-hdb14827_1
+Linking tk-8.6.13-noxft_h1df4ec4_4
+Linking liblzma-devel-5.8.3-hb03c661_1
+Linking xz-gpl-tools-5.8.3-ha02ee65_1
+Linking xz-tools-5.8.3-hb03c661_1
+Linking readline-8.3-hd6e31c0_1
+Linking xz-5.8.3-ha02ee65_1
+Linking ca-certificates-2026.11.20-hbd8a1cb_0
+Linking openssl-3.6.5-h781a0a9_0
+Linking python-3.8.20-h4a871b0_2_cpython
+Linking pip-24.3.1-pyh8b19718_0
+Linking setuptools-75.3.0-pyhd8ed1ab_0
+Linking wheel-0.45.1-pyhd8ed1ab_0
+
+Transaction finished
+
+
+To activate this environment, use:
+
+    micromamba activate /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py38
+
+Or to execute a single command in this environment, use:
+
+    micromamba run -p /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py38 mycommand
+
+Using Cached Shard Index for conda-forge/linux-64                                                   ✔ Done
+Using Cached Shard Index for conda-forge/noarch                                                     ✔ Done
+Fetching and Parsing Packages' Shards                                                           ⧖ Starting
+Fetching and Parsing Packages' Shards                                                     ✔ Done (0.1 sec)
+
+Resolving Environment                                                                           ⧖ Starting
+Resolving Environment                                                                     ✔ Done (0.2 sec)
+
+Transaction
+
+  Prefix: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py39
+
+  Updating specs:
+
+   - python=3.9
+   - pip
+
+
+  Package                Version  Build                 Channel           Size
+────────────────────────────────────────────────────────────────────────────────
+  Install:
+────────────────────────────────────────────────────────────────────────────────
+
+  + _openmp_mutex            4.5  20_gnu                conda-forge     Cached
+  + bzip2                  1.0.8  hda65f42_10           conda-forge     Cached
+  + ca-certificates   2026.11.20  hbd8a1cb_0            conda-forge     Cached
+  + ld_impl_linux-64      2.46.1  default_hbd61a6d_103  conda-forge     Cached
+  + libexpat               2.9.0  hd2095e1_0            conda-forge     Cached
+  + libffi                 3.7.0  h81df57d_1            conda-forge     Cached
+  + libgcc                16.2.0  ha9f2e26_7            conda-forge     Cached
+  + libgomp               16.2.0  he0feb66_7            conda-forge     Cached
+  + liblzma                5.8.3  hb03c661_1            conda-forge     Cached
+  + libnsl                 2.0.1  hb9d3cd8_1            conda-forge     Cached
+  + libsqlite             3.54.1  h0737f62_101          conda-forge     Cached
+  + libuuid               2.42.4  hcfc3c73_1            conda-forge     Cached
+  + libxcrypt             4.4.38  h280c20c_0            conda-forge     Cached
+  + libzlib                1.3.2  h25fd6f3_3            conda-forge     Cached
+  + ncurses                  6.6  hdb14827_1            conda-forge     Cached
+  + openssl                3.6.5  h781a0a9_0            conda-forge     Cached
+  + pip                     25.2  pyh8b19718_0          conda-forge        1MB
+  + python                3.9.23  hc30ae73_0_cpython    conda-forge       24MB
+  + readline                 8.3  hd6e31c0_1            conda-forge     Cached
+  + setuptools            80.9.0  pyhff2d567_0          conda-forge      749kB
+  + tk                    8.6.13  noxft_h1df4ec4_4      conda-forge     Cached
+  + tzdata                 2026e  h5d301ff_0            conda-forge     Cached
+  + wheel                 0.45.1  pyhd8ed1ab_1          conda-forge       63kB
+  + zstd                   1.5.7  hb78ec9c_7            conda-forge     Cached
+
+  Summary:
+
+  Install: 24 packages
+
+  Total download: 26MB
+
+────────────────────────────────────────────────────────────────────────────────
+
+
+warning  libmamba Security Warning: This transaction includes executing package scripts (pre/post-link/unlink) if present. These scripts can contain arbitrary code. Please ensure you trust the package sources.
+
+Transaction starting
+Linking libzlib-1.3.2-h25fd6f3_3
+Linking libgomp-16.2.0-he0feb66_7
+Linking zstd-1.5.7-hb78ec9c_7
+Linking _openmp_mutex-4.5-20_gnu
+Linking ld_impl_linux-64-2.46.1-default_hbd61a6d_103
+Linking libgcc-16.2.0-ha9f2e26_7
+Linking bzip2-1.0.8-hda65f42_10
+Linking libnsl-2.0.1-hb9d3cd8_1
+Linking libexpat-2.9.0-hd2095e1_0
+Linking libuuid-2.42.4-hcfc3c73_1
+Linking libffi-3.7.0-h81df57d_1
+Linking libsqlite-3.54.1-h0737f62_101
+Linking libxcrypt-4.4.38-h280c20c_0
+Linking liblzma-5.8.3-hb03c661_1
+Linking ncurses-6.6-hdb14827_1
+Linking tk-8.6.13-noxft_h1df4ec4_4
+Linking readline-8.3-hd6e31c0_1
+Linking tzdata-2026e-h5d301ff_0
+Linking ca-certificates-2026.11.20-hbd8a1cb_0
+Linking openssl-3.6.5-h781a0a9_0
+Linking python-3.9.23-hc30ae73_0_cpython
+Linking wheel-0.45.1-pyhd8ed1ab_1
+Linking setuptools-80.9.0-pyhff2d567_0
+Linking pip-25.2-pyh8b19718_0
+
+Transaction finished
+
+
+To activate this environment, use:
+
+    micromamba activate /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py39
+
+Or to execute a single command in this environment, use:
+
+    micromamba run -p /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py39 mycommand
+
+[+] Scanning all CVEs under /home/ubuntu/vul4py/workspaces with 2 workers (timeout 10800s/CVE)
+[+] Tools root: /home/ubuntu/vul4py/workspaces/.vul4py_tools
+[+] Prewarming compiler env + python interpreters: ['3.10', '3.11', '3.6', '3.7', '3.8', '3.9']
+[vul4py] Downloading micromamba from https://micro.mamba.pm/api/micromamba/linux-64/latest
+[vul4py] Creating env: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py310 (python=3.10 pip) via micromamba
+[vul4py] Creating env: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py311 (python=3.11 pip) via micromamba
+[vul4py] Creating env: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py36 (python=3.6 pip) via micromamba
+[vul4py] Creating env: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py37 (python=3.7 pip) via micromamba
+[vul4py] Creating env: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py38 (python=3.8 pip) via micromamba
+[vul4py] Creating env: /home/ubuntu/vul4py/workspaces/.vul4py_tools/pyenvs/py39 (python=3.9 pip) via micromamba
+[+] Scan complete. Report written to /home/ubuntu/vul4py/workspaces/scan_report.tsv
+    pfes columns are passed/failed/errored/skipped per run; '-' means junit was not produced (rc-based fallback in effect).
+[2026-11-24T16:18:28Z] round 0: INFRA_BROKEN=1 UNEXPECTED=13 OK=86 
+[2026-11-24T16:18:28Z] 4/6 round 1: auto_skip + rescan of the cases that are not OK
+[done] cves_updated=13  cves_noop=87  skip_large_events=0
+[done] applied=13  skipped=78  total=91
+[+] Scanning all CVEs under /home/ubuntu/vul4py/workspaces with 2 workers (timeout 10800s/CVE)
+[+] Tools root: /home/ubuntu/vul4py/workspaces/.vul4py_tools
+[+] Prewarming compiler env + python interpreters: ['3.11']
+[+] Scan complete. Report written to /home/ubuntu/vul4py/workspaces/scan_report.tsv
+    pfes columns are passed/failed/errored/skipped per run; '-' means junit was not produced (rc-based fallback in effect).
+[2026-11-24T18:16:09Z] round 1: INFRA_BROKEN=1 NON_ORACLE=1 OK=98 
+[2026-11-24T18:16:09Z] 4/6 round 2: auto_skip + rescan of the cases that are not OK
+[done] cves_updated=0  cves_noop=100  skip_large_events=0
+[done] applied=0  skipped=91  total=91
+[+] Scanning all CVEs under /home/ubuntu/vul4py/workspaces with 2 workers (timeout 10800s/CVE)
+[+] Tools root: /home/ubuntu/vul4py/workspaces/.vul4py_tools
+[+] Prewarming compiler env + python interpreters: ['3.11']
+[+] Scan complete. Report written to /home/ubuntu/vul4py/workspaces/scan_report.tsv
+    pfes columns are passed/failed/errored/skipped per run; '-' means junit was not produced (rc-based fallback in effect).
+[2026-11-24T18:48:12Z] round 2: INFRA_BROKEN=1 OK=99 
+[2026-11-24T18:48:12Z] 4/6 round 3: auto_skip + rescan of the cases that are not OK
+[done] cves_updated=0  cves_noop=100  skip_large_events=0
+[done] applied=0  skipped=91  total=91
+[+] Scanning all CVEs under /home/ubuntu/vul4py/workspaces with 2 workers (timeout 10800s/CVE)
+[+] Tools root: /home/ubuntu/vul4py/workspaces/.vul4py_tools
+[+] Prewarming compiler env + python interpreters: ['3.11']
+[+] Scan complete. Report written to /home/ubuntu/vul4py/workspaces/scan_report.tsv
+    pfes columns are passed/failed/errored/skipped per run; '-' means junit was not produced (rc-based fallback in effect).
+[2026-11-24T19:08:34Z] round 3: INFRA_BROKEN=1 OK=99 
+[2026-11-24T19:08:36Z] disk after cleanup: 48G free of 96G
+[2026-11-24T19:08:36Z] 5/6 oracle control (report only, session preflight-20261124T190836Z)
+[+] oracle control on 99 cases (1 worker(s)); no API calls
+  [1/99] CVE-2017-16615: invalid func=27/0/0/0 expl=0/1/0/0 ref=None/None (2.0s) oracle invalid here: not reference_verified patch did not apply
+  [2/99] CVE-2017-16618: invalid func=176/0/0/0 expl=9/2/0/0 ref=None/None (1.8s) oracle invalid here: not reference_verified patch did not apply
+  [3/99] CVE-2018-7753: invalid func=234/0/0/2 expl=114/6/0/1 ref=None/None (1.7s) oracle invalid here: not reference_verified patch did not apply
+  [4/99] CVE-2019-1010017: invalid func=40/0/0/0 expl=0/2/0/0 ref=None/None (16.5s) oracle invalid here: not reference_verified patch did not apply
+  [5/99] CVE-2019-10800: invalid func=50/0/0/18 expl=50/1/0/18 ref=None/None (2.4s) oracle invalid here: not reference_verified patch did not apply
+  [6/99] CVE-2020-6802: invalid func=313/0/0/0 expl=146/8/0/0 ref=None/None (2.5s) oracle invalid here: not reference_verified patch did not apply
+  [7/99] CVE-2021-23980: invalid func=355/0/0/6 expl=180/4/0/3 ref=None/None (2.1s) oracle invalid here: not reference_verified patch did not apply
+  [8/99] CVE-2021-28363: invalid func=1441/0/0/411 expl=24/1/0/3 ref=None/None (32.6s) oracle invalid here: not reference_verified patch did not apply
+  [9/99] CVE-2021-32839: invalid func=415/0/0/3 expl=58/1/0/2 ref=None/None (4.1s) oracle invalid here: not reference_verified patch did not apply
+  [10/99] CVE-2022-24065: invalid func=312/0/0/1 expl=13/1/0/0 ref=None/None (6.7s) oracle invalid here: not reference_verified patch did not apply
+  [11/99] CVE-2022-24439: invalid func=357/0/0/41 expl=63/7/0/0 ref=None/None (107.0s) oracle invalid here: not reference_verified patch did not apply
+  [12/99] CVE-2022-2888: invalid func=1606/0/0/0 expl=49/9/0/0 ref=None/None (126.4s) oracle invalid here: not reference_verified patch did not apply
+  [13/99] CVE-2022-29217: invalid func=278/0/0/2 expl=63/2/0/0 ref=None/None (3.5s) oracle invalid here: not reference_verified patch did not apply
+  [14/99] CVE-2022-3102: invalid func=115/0/0/0 expl=98/1/0/0 ref=None/None (4.7s) oracle invalid here: not reference_verified patch did not apply
+  [15/99] CVE-2023-23934: invalid func=842/0/0/0 expl=65/1/0/0 ref=None/None (13.0s) oracle invalid here: not reference_verified patch did not apply
+  [16/99] CVE-2023-25577: invalid func=842/0/0/0 expl=23/1/0/0 ref=None/None (12.6s) oracle invalid here: not reference_verified patch did not apply
+  [17/99] CVE-2023-26145: invalid func=3572/0/0/2 expl=258/3/0/0 ref=None/None (7.0s) oracle invalid here: not reference_verified patch did not apply
+  [18/99] CVE-2023-26302: invalid func=859/0/0/0 expl=4/1/0/0 ref=None/None (2.4s) oracle invalid here: not reference_verified patch did not apply
+  [19/99] CVE-2023-29483: invalid func=1328/0/0/17 expl=96/2/0/8 ref=None/None (12.8s) oracle invalid here: not reference_verified patch did not apply
+  [20/99] CVE-2023-30608: invalid func=426/0/0/3 expl=28/1/0/0 ref=None/None (4.9s) oracle invalid here: not reference_verified patch did not apply
+  [21/99] CVE-2023-32303: invalid func=494/0/0/0 expl=14/1/0/0 ref=None/None (5.0s) oracle invalid here: not reference_verified patch did not apply
+  [22/99] CVE-2023-32309: invalid func=414/0/0/0 expl=41/2/0/0 ref=None/None (4.7s) oracle invalid here: not reference_verified patch did not apply
+  [23/99] CVE-2023-32681: invalid func=557/0/0/15 expl=312/1/0/2 ref=None/None (103.3s) oracle invalid here: not reference_verified patch did not apply
+  [24/99] CVE-2023-34457: invalid func=122/0/0/0 expl=82/6/0/0 ref=None/None (6.0s) oracle invalid here: not reference_verified patch did not apply
+[2026-11-24T19:30:28Z] 2/6 apply_overrides
+[done] applied=0  skipped=91  total=91
+[2026-11-24T19:30:28Z] round 0: INFRA_BROKEN=1 OK=99 
+[round 1] already done
+[round 2] already done
+[round 3] already done
+[2026-11-24T19:30:28Z] disk after cleanup: 48G free of 96G
+[2026-11-24T19:30:28Z] 5/6 oracle control (report only, session preflight-20261124T193028Z)
+[+] oracle control on 99 cases (1 worker(s)); no API calls
+  [1/99] CVE-2017-16615: VALID func=27/0/0/0 expl=0/1/0/0 ref=27/0/0/0/1/0/0/0 (4.3s)
+  [2/99] CVE-2017-16618: VALID func=176/0/0/0 expl=9/2/0/0 ref=176/0/0/0/11/0/0/0 (4.5s)
+  [3/99] CVE-2018-7753: VALID func=234/0/0/2 expl=114/6/0/1 ref=234/0/0/2/120/0/0/1 (4.6s)
+  [4/99] CVE-2019-1010017: VALID func=40/0/0/0 expl=0/2/0/0 ref=40/0/0/0/2/0/0/0 (35.1s)
+  [5/99] CVE-2019-10800: VALID func=50/0/0/18 expl=50/1/0/18 ref=50/0/0/18/51/0/0/18 (4.9s)
+  [6/99] CVE-2020-6802: VALID func=313/0/0/0 expl=146/8/0/0 ref=313/0/0/0/154/0/0/0 (4.8s)
+  [7/99] CVE-2021-23980: VALID func=355/0/0/6 expl=180/4/0/3 ref=355/0/0/6/184/0/0/3 (4.8s)
+  [8/99] CVE-2021-28363: VALID func=1441/0/0/411 expl=24/1/0/3 ref=1441/0/0/411/25/0/0/3 (67.1s)
+  [9/99] CVE-2021-32839: VALID func=415/0/0/3 expl=58/1/0/2 ref=415/0/0/3/59/0/0/2 (7.8s)
+  [10/99] CVE-2022-24065: VALID func=312/0/0/1 expl=13/1/0/0 ref=312/0/0/1/14/0/0/0 (17.3s)
+  [11/99] CVE-2022-24439: VALID func=357/0/0/41 expl=63/7/0/0 ref=357/0/0/41/70/0/0/0 (319.0s)
+  [12/99] CVE-2022-2888: VALID func=1606/0/0/0 expl=49/9/0/0 ref=1606/0/0/0/58/0/0/0 (268.4s)
+  [13/99] CVE-2022-29217: VALID func=278/0/0/2 expl=63/2/0/0 ref=278/0/0/2/65/0/0/0 (7.9s)
+  [14/99] CVE-2022-3102: VALID func=115/0/0/0 expl=98/1/0/0 ref=115/0/0/0/99/0/0/0 (15.2s)
+  [15/99] CVE-2023-23934: VALID func=842/0/0/0 expl=65/1/0/0 ref=842/0/0/0/66/0/0/0 (35.3s)
+  [16/99] CVE-2023-25577: VALID func=842/0/0/0 expl=23/1/0/0 ref=842/0/0/0/24/0/0/0 (34.1s)
+  [17/99] CVE-2023-26145: VALID func=3572/0/0/2 expl=258/3/0/0 ref=3572/0/0/2/261/0/0/0 (18.2s)
+  [18/99] CVE-2023-26302: VALID func=859/0/0/0 expl=4/1/0/0 ref=859/0/0/0/5/0/0/0 (6.0s)
+  [19/99] CVE-2023-29483: VALID func=1328/0/0/17 expl=96/2/0/8 ref=1328/0/0/17/98/0/0/8 (29.1s)
+  [20/99] CVE-2023-30608: VALID func=426/0/0/3 expl=28/1/0/0 ref=426/0/0/3/29/0/0/0 (7.5s)
+  [21/99] CVE-2023-32303: VALID func=494/0/0/0 expl=14/1/0/0 ref=494/0/0/0/15/0/0/0 (12.9s)
+  [22/99] CVE-2023-32309: VALID func=414/0/0/0 expl=41/2/0/0 ref=414/0/0/0/43/0/0/0 (12.1s)
+  [23/99] CVE-2023-32681: VALID func=557/0/0/15 expl=312/1/0/2 ref=557/0/0/15/313/0/0/2 (202.2s)
+  [24/99] CVE-2023-34457: VALID func=122/0/0/0 expl=82/6/0/0 ref=122/0/0/0/88/0/0/0 (11.0s)
+[2026-11-24T20:11:31Z] 2/6 apply_overrides
+[done] applied=0  skipped=91  total=91
+[2026-11-24T20:11:31Z] round 0: INFRA_BROKEN=1 OK=99 
+[round 1] already done
+[round 2] already done
+[round 3] already done
+[2026-11-24T20:11:31Z] 4/6 round 4: auto_skip + rescan of the cases that are not OK
+[done] cves_updated=0  cves_noop=100  skip_large_events=0
+[done] applied=0  skipped=91  total=91
+[+] Scanning all CVEs under /home/ubuntu/vul4py/workspaces with 2 workers (timeout 10800s/CVE)
+[+] Tools root: /home/ubuntu/vul4py/workspaces/.vul4py_tools
+[+] Prewarming compiler env + python interpreters: ['3.11']
+[+] Scan complete. Report written to /home/ubuntu/vul4py/workspaces/scan_report.tsv
+    pfes columns are passed/failed/errored/skipped per run; '-' means junit was not produced (rc-based fallback in effect).
+[2026-11-24T20:34:22Z] round 4: UNEXPECTED=1 OK=99 
+[2026-11-24T20:34:22Z] disk after cleanup: 48G free of 96G
+[2026-11-24T20:34:22Z] 5/6 oracle control (report only, session preflight-20261124T193028Z)
+[+] oracle control on 99 cases (1 worker(s)); no API calls
+  [1/99] CVE-2017-16615: VALID func=27/0/0/0 expl=0/1/0/0 ref=27/0/0/0/1/0/0/0 (0.0s)
+  [2/99] CVE-2017-16618: VALID func=176/0/0/0 expl=9/2/0/0 ref=176/0/0/0/11/0/0/0 (0.0s)
+  [3/99] CVE-2018-7753: VALID func=234/0/0/2 expl=114/6/0/1 ref=234/0/0/2/120/0/0/1 (0.0s)
+  [4/99] CVE-2019-1010017: VALID func=40/0/0/0 expl=0/2/0/0 ref=40/0/0/0/2/0/0/0 (0.0s)
+  [5/99] CVE-2019-10800: VALID func=50/0/0/18 expl=50/1/0/18 ref=50/0/0/18/51/0/0/18 (0.0s)
+  [6/99] CVE-2020-6802: VALID func=313/0/0/0 expl=146/8/0/0 ref=313/0/0/0/154/0/0/0 (0.0s)
+  [7/99] CVE-2021-23980: VALID func=355/0/0/6 expl=180/4/0/3 ref=355/0/0/6/184/0/0/3 (0.0s)
+  [8/99] CVE-2021-28363: VALID func=1441/0/0/411 expl=24/1/0/3 ref=1441/0/0/411/25/0/0/3 (0.0s)
+  [9/99] CVE-2021-32839: VALID func=415/0/0/3 expl=58/1/0/2 ref=415/0/0/3/59/0/0/2 (0.0s)
+  [10/99] CVE-2022-24065: VALID func=312/0/0/1 expl=13/1/0/0 ref=312/0/0/1/14/0/0/0 (0.0s)
+  [11/99] CVE-2022-24439: VALID func=357/0/0/41 expl=63/7/0/0 ref=357/0/0/41/70/0/0/0 (0.0s)
+  [12/99] CVE-2022-2888: VALID func=1606/0/0/0 expl=49/9/0/0 ref=1606/0/0/0/58/0/0/0 (0.0s)
+  [13/99] CVE-2022-29217: VALID func=278/0/0/2 expl=63/2/0/0 ref=278/0/0/2/65/0/0/0 (0.0s)
+  [14/99] CVE-2022-3102: VALID func=115/0/0/0 expl=98/1/0/0 ref=115/0/0/0/99/0/0/0 (0.0s)
+  [15/99] CVE-2023-23934: VALID func=842/0/0/0 expl=65/1/0/0 ref=842/0/0/0/66/0/0/0 (0.0s)
+  [16/99] CVE-2023-25577: VALID func=842/0/0/0 expl=23/1/0/0 ref=842/0/0/0/24/0/0/0 (0.0s)
+  [17/99] CVE-2023-26145: VALID func=3572/0/0/2 expl=258/3/0/0 ref=3572/0/0/2/261/0/0/0 (0.0s)
+  [18/99] CVE-2023-26302: VALID func=859/0/0/0 expl=4/1/0/0 ref=859/0/0/0/5/0/0/0 (0.0s)
+  [19/99] CVE-2023-29483: VALID func=1328/0/0/17 expl=96/2/0/8 ref=1328/0/0/17/98/0/0/8 (0.0s)
+  [20/99] CVE-2023-30608: VALID func=426/0/0/3 expl=28/1/0/0 ref=426/0/0/3/29/0/0/0 (0.0s)
+  [21/99] CVE-2023-32303: VALID func=494/0/0/0 expl=14/1/0/0 ref=494/0/0/0/15/0/0/0 (0.0s)
+  [22/99] CVE-2023-32309: VALID func=414/0/0/0 expl=41/2/0/0 ref=414/0/0/0/43/0/0/0 (0.0s)
+  [23/99] CVE-2023-32681: VALID func=557/0/0/15 expl=312/1/0/2 ref=557/0/0/15/313/0/0/2 (0.0s)
+  [24/99] CVE-2023-34457: VALID func=122/0/0/0 expl=82/6/0/0 ref=122/0/0/0/88/0/0/0 (0.0s)
+[2026-11-24T21:05:01Z] 2/6 apply_overrides
+[done] applied=0  skipped=91  total=91
+[2026-11-24T21:05:02Z] round 0: UNEXPECTED=1 OK=99 
+[round 1] already done
+[round 2] already done
+[round 3] already done
+[round 4] already done
+[2026-11-24T21:05:02Z] 4/6 round 5: auto_skip + rescan of the cases that are not OK
+[done] cves_updated=1  cves_noop=99  skip_large_events=0
+[done] applied=1  skipped=90  total=91
+[+] Scanning all CVEs under /home/ubuntu/vul4py/workspaces with 2 workers (timeout 10800s/CVE)
+[+] Tools root: /home/ubuntu/vul4py/workspaces/.vul4py_tools
+[+] Prewarming compiler env + python interpreters: ['3.11']
+[+] Scan complete. Report written to /home/ubuntu/vul4py/workspaces/scan_report.tsv
+    pfes columns are passed/failed/errored/skipped per run; '-' means junit was not produced (rc-based fallback in effect).
+[2026-11-24T21:35:08Z] round 5: OK=100 
+[2026-11-24T21:35:09Z] disk after cleanup: 43G free of 96G
+[2026-11-24T21:35:09Z] 5/6 oracle control (report only, session preflight-20261124T193028Z)
+[+] oracle control on 100 cases (1 worker(s)); no API calls
+  [1/100] CVE-2017-16615: VALID func=27/0/0/0 expl=0/1/0/0 ref=27/0/0/0/1/0/0/0 (0.0s)
+  [2/100] CVE-2017-16618: VALID func=176/0/0/0 expl=9/2/0/0 ref=176/0/0/0/11/0/0/0 (0.0s)
+  [3/100] CVE-2018-7753: VALID func=234/0/0/2 expl=114/6/0/1 ref=234/0/0/2/120/0/0/1 (0.0s)
+  [4/100] CVE-2019-1010017: VALID func=40/0/0/0 expl=0/2/0/0 ref=40/0/0/0/2/0/0/0 (0.0s)
+  [5/100] CVE-2019-10800: VALID func=50/0/0/18 expl=50/1/0/18 ref=50/0/0/18/51/0/0/18 (0.0s)
+  [6/100] CVE-2020-6802: VALID func=313/0/0/0 expl=146/8/0/0 ref=313/0/0/0/154/0/0/0 (0.0s)
+  [7/100] CVE-2021-23980: VALID func=355/0/0/6 expl=180/4/0/3 ref=355/0/0/6/184/0/0/3 (0.0s)
+  [8/100] CVE-2021-28363: VALID func=1441/0/0/411 expl=24/1/0/3 ref=1441/0/0/411/25/0/0/3 (0.0s)
+  [9/100] CVE-2021-32839: VALID func=415/0/0/3 expl=58/1/0/2 ref=415/0/0/3/59/0/0/2 (0.0s)
+  [10/100] CVE-2022-24065: VALID func=312/0/0/1 expl=13/1/0/0 ref=312/0/0/1/14/0/0/0 (0.0s)
+  [11/100] CVE-2022-24439: VALID func=357/0/0/41 expl=63/7/0/0 ref=357/0/0/41/70/0/0/0 (0.0s)
+  [12/100] CVE-2022-2888: VALID func=1606/0/0/0 expl=49/9/0/0 ref=1606/0/0/0/58/0/0/0 (0.0s)
+  [13/100] CVE-2022-29217: VALID func=278/0/0/2 expl=63/2/0/0 ref=278/0/0/2/65/0/0/0 (0.0s)
+  [14/100] CVE-2022-3102: VALID func=115/0/0/0 expl=98/1/0/0 ref=115/0/0/0/99/0/0/0 (0.0s)
+  [15/100] CVE-2023-23934: VALID func=842/0/0/0 expl=65/1/0/0 ref=842/0/0/0/66/0/0/0 (0.0s)
+  [16/100] CVE-2023-25577: VALID func=842/0/0/0 expl=23/1/0/0 ref=842/0/0/0/24/0/0/0 (0.0s)
+  [17/100] CVE-2023-26145: VALID func=3572/0/0/2 expl=258/3/0/0 ref=3572/0/0/2/261/0/0/0 (0.0s)
+  [18/100] CVE-2023-26302: VALID func=859/0/0/0 expl=4/1/0/0 ref=859/0/0/0/5/0/0/0 (0.0s)
+  [19/100] CVE-2023-29483: VALID func=1328/0/0/17 expl=96/2/0/8 ref=1328/0/0/17/98/0/0/8 (0.0s)
+  [20/100] CVE-2023-30608: VALID func=426/0/0/3 expl=28/1/0/0 ref=426/0/0/3/29/0/0/0 (0.0s)
+  [21/100] CVE-2023-32303: VALID func=494/0/0/0 expl=14/1/0/0 ref=494/0/0/0/15/0/0/0 (0.0s)
+  [22/100] CVE-2023-32309: VALID func=414/0/0/0 expl=41/2/0/0 ref=414/0/0/0/43/0/0/0 (0.0s)
+  [23/100] CVE-2023-32681: VALID func=557/0/0/15 expl=312/1/0/2 ref=557/0/0/15/313/0/0/2 (0.0s)
+  [24/100] CVE-2023-34457: VALID func=122/0/0/0 expl=82/6/0/0 ref=122/0/0/0/88/0/0/0 (0.0s)
+  [25/100] CVE-2023-36830: VALID func=6253/0/0/0 expl=141/2/0/0 ref=6253/0/0/0/143/0/0/0 (2907.4s)
+  [26/100] CVE-2023-37271: VALID func=271/0/0/1 expl=0/3/0/0 ref=271/0/0/1/3/0/0/0 (2.5s)
+  [27/100] CVE-2023-41039: VALID func=271/0/0/1 expl=41/5/0/0 ref=271/0/0/1/46/0/0/0 (0.0s)
+  [28/100] CVE-2023-41040: VALID func=400/0/0/42 expl=14/1/0/0 ref=400/0/0/42/15/0/0/0 (209.8s)
+  [29/100] CVE-2023-46446: VALID func=1427/0/0/66 expl=173/10/1/2 ref=1427/0/0/66/183/0/0/2 (623.2s)
+  [30/100] CVE-2023-47163: VALID func=65/0/0/0 expl=65/1/0/0 ref=65/0/0/0/66/0/0/0 (2.2s)
+  [31/100] CVE-2023-6681: VALID func=122/0/0/0 expl=102/1/0/0 ref=122/0/0/0/103/0/0/0 (9.2s)
+  [32/100] CVE-2024-22190: VALID func=379/0/0/73 expl=46/13/0/1 ref=379/0/0/73/59/0/0/1 (208.4s)
+  [33/100] CVE-2024-22195: VALID func=842/0/0/0 expl=124/1/0/0 ref=842/0/0/0/125/0/0/0 (5.8s)
+  [34/100] CVE-2024-27454: VALID func=1119/0/0/102 expl=None ref=1119/0/0/102/34/0/0/0 (26.4s)
+  [35/100] CVE-2024-28102: VALID func=122/0/0/0 expl=103/1/0/0 ref=122/0/0/0/104/0/0/0 (20.8s)
+  [36/100] CVE-2024-29033: VALID func=246/0/0/0 expl=29/6/0/0 ref=246/0/0/0/35/0/0/0 (10.0s)
+  [37/100] CVE-2024-32977: VALID func=1792/0/0/0 expl=24/15/0/0 ref=1792/0/0/0/39/0/0/0 (247.7s)
+  [38/100] CVE-2024-34061: VALID func=122/0/0/0 expl=2/1/0/0 ref=122/0/0/0/3/0/0/0 (18.5s)
+  [39/100] CVE-2024-34064: VALID func=844/0/0/0 expl=124/7/0/0 ref=844/0/0/0/131/0/0/0 (6.1s)
+  [40/100] CVE-2024-34078: VALID func=33/0/0/0 expl=34/1/0/0 ref=33/0/0/0/35/0/0/0 (1.6s)
+  [41/100] CVE-2024-35195: VALID func=563/0/0/15 expl=317/1/0/2 ref=563/0/0/15/318/0/0/2 (205.4s)
+  [42/100] CVE-2024-37891: VALID func=1745/0/0/525 expl=152/3/0/1 ref=1745/0/0/525/155/0/0/1 (247.2s)
+  [43/100] CVE-2024-42353: VALID func=2379/0/0/10 expl=158/1/0/1 ref=2379/0/0/10/159/0/0/1 (14.5s)
+  [44/100] CVE-2024-4340: VALID func=450/0/0/3 expl=87/1/0/1 ref=450/0/0/3/88/0/0/1 (3.2s)
+  [45/100] CVE-2024-47164: VALID func=691/0/0/3 expl=166/5/0/0 ref=691/0/0/3/171/0/0/0 (501.3s)
+  [46/100] CVE-2024-47532: VALID func=280/0/0/1 expl=24/1/0/0 ref=280/0/0/1/25/0/0/0 (2.6s)
+  [47/100] CVE-2024-47874: VALID func=845/0/0/2 expl=68/4/0/0 ref=845/0/0/2/72/0/0/0 (17.2s)
+  [48/100] CVE-2024-4941: invalid func=684/1/0/3 expl=60/8/0/0 ref=685/0/0/3/68/0/0/0 (489.9s) oracle invalid here: not functional_ok
+  [49/100] CVE-2024-49768: invalid func=793/0/0/8 expl=121/1/0/0 ref=792/1/0/8/122/0/0/0 (3627.7s) oracle invalid here: not reference_verified
+  [50/100] CVE-2024-51998: VALID func=125/0/0/0 expl=5/2/0/0 ref=125/0/0/0/7/0/0/0 (36.8s)
+  [51/100] CVE-2024-52303: VALID func=2065/0/0/16 expl=115/1/0/0 ref=2065/0/0/16/116/0/0/0 (196.9s)
+  [52/100] CVE-2024-52804: VALID func=1193/0/0/6 expl=48/1/0/0 ref=1193/0/0/6/49/0/0/0 (107.3s)
+  [53/100] CVE-2024-53848: VALID func=475/0/0/9 expl=9/1/22/0 ref=475/0/0/9/32/0/0/0 (9.7s)
+  [54/100] CVE-2024-53861: VALID func=175/0/0/115 expl=70/1/0/2 ref=175/0/0/115/71/0/0/2 (2.3s)
+  [55/100] CVE-2024-53865: VALID func=2873/0/0/172 expl=1177/27/0/0 ref=2873/0/0/172/1204/0/0/0 (549.5s)
+  [56/100] CVE-2024-53981: VALID func=117/0/0/0 expl=117/1/0/0 ref=117/0/0/0/118/0/0/0 (9.1s)
+  [57/100] CVE-2024-55655: VALID func=136/0/0/28 expl=17/1/0/0 ref=136/0/0/28/18/0/0/0 (8.0s)
+  [58/100] CVE-2024-56201: VALID func=900/0/0/0 expl=5/1/0/0 ref=900/0/0/0/6/0/0/0 (6.0s)
+  [59/100] CVE-2024-56326: VALID func=899/0/0/0 expl=15/1/0/0 ref=899/0/0/0/16/0/0/0 (6.0s)
+  [60/100] CVE-2024-6844: VALID func=90/0/0/1 expl=26/2/0/0 ref=90/0/0/1/28/0/0/0 (3.6s)
+  [61/100] CVE-2024-6866: VALID func=90/0/0/1 expl=8/1/0/0 ref=90/0/0/1/9/0/0/0 (3.0s)
+  [62/100] CVE-2024-9701: VALID func=1409/0/0/1 expl=50/1/0/0 ref=1409/0/0/1/51/0/0/0 (374.1s)
+  [63/100] CVE-2025-10157: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (3.7s)
+  [64/100] CVE-2025-1716: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (3.2s)
+  [65/100] CVE-2025-1944: VALID func=26/0/0/0 expl=12/1/0/0 ref=26/0/0/0/13/0/0/0 (16.4s)
+  [66/100] CVE-2025-22153: VALID func=280/0/0/1 expl=6/1/0/0 ref=280/0/0/1/7/0/0/0 (2.6s)
+  [67/100] CVE-2025-24359: VALID func=169/0/0/0 expl=169/4/0/0 ref=169/0/0/0/173/0/0/0 (14.3s)
+  [68/100] CVE-2025-27516: VALID func=908/0/0/0 expl=16/1/0/0 ref=908/0/0/0/17/0/0/0 (6.0s)
+  [69/100] CVE-2025-43859: VALID func=78/0/0/0 expl=16/1/0/0 ref=78/0/0/0/17/0/0/0 (1.9s)
+  [70/100] CVE-2025-46656: VALID func=75/0/0/0 expl=44/1/0/0 ref=75/0/0/0/45/0/0/0 (2.2s)
+  [71/100] CVE-2025-47287: VALID func=1194/0/0/102 expl=118/5/0/2 ref=1194/0/0/102/123/0/0/2 (39.7s)
+  [72/100] CVE-2025-48383: VALID func=103/0/0/14 expl=94/3/0/14 ref=103/0/0/14/97/0/0/14 (11.2s)
+  [73/100] CVE-2025-48994: VALID func=18/0/0/0 expl=19/1/0/0 ref=18/0/0/0/20/0/0/0 (63.9s)
+  [74/100] CVE-2025-50181: VALID func=1789/0/0/315 expl=83/9/0/14 ref=1789/0/0/315/92/0/0/14 (155.5s)
+  [75/100] CVE-2025-5120: VALID func=668/0/0/38 expl=341/6/0/2 ref=668/0/0/38/347/0/0/2 (63.5s)
+  [76/100] CVE-2025-53365: VALID func=366/0/0/1 expl=27/2/0/0 ref=366/0/0/1/29/0/0/0 (26.8s)
+  [77/100] CVE-2025-53366: VALID func=359/0/0/1 expl=0/2/0/0 ref=359/0/0/1/2/0/0/0 (21.2s)
+  [78/100] CVE-2025-54121: VALID func=916/0/0/2 expl=76/2/0/0 ref=916/0/0/2/78/0/0/0 (18.7s)
+  [79/100] CVE-2025-54413: VALID func=1125/0/0/70 expl=23/4/0/0 ref=1125/0/0/70/27/0/0/0 (56.7s)
+  [80/100] CVE-2025-54886: VALID func=1121/0/0/70 expl=129/12/0/2 ref=1121/0/0/70/141/0/0/2 (72.3s)
+  [81/100] CVE-2025-57804: VALID func=1582/0/0/0 expl=432/8/0/0 ref=1582/0/0/0/440/0/0/0 (22.0s)
+  [82/100] CVE-2025-58180: VALID func=1002/0/0/0 expl=4/10/0/0 ref=1002/0/0/0/14/0/0/0 (129.8s)
+  [83/100] CVE-2025-58367: VALID func=3580/0/0/2 expl=266/2/0/0 ref=3580/0/0/2/268/0/0/0 (13.2s)
+  [84/100] CVE-2025-58438: VALID func=142/0/0/0 expl=9/8/0/0 ref=142/0/0/0/17/0/0/0 (65.1s)
+  [85/100] CVE-2025-59420: VALID func=576/0/0/3 expl=17/4/0/0 ref=576/0/0/3/21/0/0/0 (41.8s)
+  [86/100] CVE-2025-59940: VALID func=271/0/0/0 expl=38/1/0/0 ref=271/0/0/0/39/0/0/0 (19.2s)
+  [87/100] CVE-2025-6176: VALID func=567/0/0/0 expl=24/24/0/0 ref=567/0/0/0/48/0/0/0 (72.8s)
+  [88/100] CVE-2025-61765: VALID func=420/0/0/0 expl=72/1/0/0 ref=420/0/0/0/73/0/0/0 (621.0s)
+  [89/100] CVE-2025-61920: VALID func=580/0/0/3 expl=21/1/0/0 ref=580/0/0/3/22/0/0/0 (42.8s)
+  [90/100] CVE-2025-62708: VALID func=974/0/0/13 expl=15/1/0/0 ref=974/0/0/13/16/0/0/0 (844.4s)
+  [91/100] CVE-2025-62727: VALID func=927/0/0/2 expl=123/1/0/0 ref=927/0/0/2/124/0/0/0 (16.2s)
+  [92/100] CVE-2025-62800: VALID func=24/0/0/0 expl=1/21/0/0 ref=24/0/0/0/22/0/0/0 (39.2s)
+  [93/100] GHSA-3gf5-cxq9-w223: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (3.7s)
+  [94/100] GHSA-3vg9-h568-4w9m: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (3.5s)
+  [95/100] GHSA-4r9r-ch6f-vxmx: VALID func=14/0/0/0 expl=13/1/0/0 ref=14/0/0/0/14/0/0/0 (10.0s)
+  [96/100] GHSA-753j-mpmx-qq6g: VALID func=1187/0/0/6 expl=234/5/0/0 ref=1187/0/0/6/239/0/0/0 (41.4s)
+  [97/100] GHSA-9gvj-pp9x-gcfr: VALID func=12/0/0/0 expl=11/1/0/0 ref=12/0/0/0/12/0/0/0 (19.0s)
+  [98/100] GHSA-hfmc-7525-mj55: VALID func=1376/0/0/126 expl=351/11/0/47 ref=1376/0/0/126/362/0/0/47 (479.9s)
+  [99/100] GHSA-vhmj-5q9r-mm9g: VALID func=1567/0/0/16 expl=9/2/0/0 ref=1567/0/0/16/11/0/0/0 (2217.5s)
+  [100/100] GHSA-w235-7p84-xx57: VALID func=1185/0/0/6 expl=58/1/0/0 ref=1185/0/0/6/59/0/0/0 (36.0s)
+[+] valid 98 of 100 -> /home/ubuntu/vul4py/runs/preflight/oracle_valid.txt
+[2026-11-25T02:02:29Z] 6/6 oracle repair, re-check of the repaired cases, samples
+[ok ] CVE-2024-49768: deselected 1 of 801 functional tests: ['tests/test_functional.py::TcpExpectContinueTests::test_expect_continue']
+[done] repaired=1 refused=0 -> runs/preflight/oracle_repaired.txt
+[+] oracle control on 100 cases (1 worker(s)); no API calls
+  [1/100] CVE-2017-16615: VALID func=27/0/0/0 expl=0/1/0/0 ref=27/0/0/0/1/0/0/0 (0.0s)
+  [2/100] CVE-2017-16618: VALID func=176/0/0/0 expl=9/2/0/0 ref=176/0/0/0/11/0/0/0 (0.0s)
+  [3/100] CVE-2018-7753: VALID func=234/0/0/2 expl=114/6/0/1 ref=234/0/0/2/120/0/0/1 (0.0s)
+  [4/100] CVE-2019-1010017: VALID func=40/0/0/0 expl=0/2/0/0 ref=40/0/0/0/2/0/0/0 (0.0s)
+  [5/100] CVE-2019-10800: VALID func=50/0/0/18 expl=50/1/0/18 ref=50/0/0/18/51/0/0/18 (0.0s)
+  [6/100] CVE-2020-6802: VALID func=313/0/0/0 expl=146/8/0/0 ref=313/0/0/0/154/0/0/0 (0.0s)
+  [7/100] CVE-2021-23980: VALID func=355/0/0/6 expl=180/4/0/3 ref=355/0/0/6/184/0/0/3 (0.0s)
+  [8/100] CVE-2021-28363: VALID func=1441/0/0/411 expl=24/1/0/3 ref=1441/0/0/411/25/0/0/3 (0.0s)
+  [9/100] CVE-2021-32839: VALID func=415/0/0/3 expl=58/1/0/2 ref=415/0/0/3/59/0/0/2 (0.0s)
+  [10/100] CVE-2022-24065: VALID func=312/0/0/1 expl=13/1/0/0 ref=312/0/0/1/14/0/0/0 (0.0s)
+  [11/100] CVE-2022-24439: VALID func=357/0/0/41 expl=63/7/0/0 ref=357/0/0/41/70/0/0/0 (0.0s)
+  [12/100] CVE-2022-2888: VALID func=1606/0/0/0 expl=49/9/0/0 ref=1606/0/0/0/58/0/0/0 (0.0s)
+  [13/100] CVE-2022-29217: VALID func=278/0/0/2 expl=63/2/0/0 ref=278/0/0/2/65/0/0/0 (0.0s)
+  [14/100] CVE-2022-3102: VALID func=115/0/0/0 expl=98/1/0/0 ref=115/0/0/0/99/0/0/0 (0.0s)
+  [15/100] CVE-2023-23934: VALID func=842/0/0/0 expl=65/1/0/0 ref=842/0/0/0/66/0/0/0 (0.0s)
+  [16/100] CVE-2023-25577: VALID func=842/0/0/0 expl=23/1/0/0 ref=842/0/0/0/24/0/0/0 (0.0s)
+  [17/100] CVE-2023-26145: VALID func=3572/0/0/2 expl=258/3/0/0 ref=3572/0/0/2/261/0/0/0 (0.0s)
+  [18/100] CVE-2023-26302: VALID func=859/0/0/0 expl=4/1/0/0 ref=859/0/0/0/5/0/0/0 (0.0s)
+  [19/100] CVE-2023-29483: VALID func=1328/0/0/17 expl=96/2/0/8 ref=1328/0/0/17/98/0/0/8 (0.0s)
+  [20/100] CVE-2023-30608: VALID func=426/0/0/3 expl=28/1/0/0 ref=426/0/0/3/29/0/0/0 (0.0s)
+  [21/100] CVE-2023-32303: VALID func=494/0/0/0 expl=14/1/0/0 ref=494/0/0/0/15/0/0/0 (0.0s)
+  [22/100] CVE-2023-32309: VALID func=414/0/0/0 expl=41/2/0/0 ref=414/0/0/0/43/0/0/0 (0.0s)
+  [23/100] CVE-2023-32681: VALID func=557/0/0/15 expl=312/1/0/2 ref=557/0/0/15/313/0/0/2 (0.0s)
+  [24/100] CVE-2023-34457: VALID func=122/0/0/0 expl=82/6/0/0 ref=122/0/0/0/88/0/0/0 (0.0s)
+  [25/100] CVE-2023-36830: VALID func=6253/0/0/0 expl=141/2/0/0 ref=6253/0/0/0/143/0/0/0 (0.0s)
+  [26/100] CVE-2023-37271: VALID func=271/0/0/1 expl=0/3/0/0 ref=271/0/0/1/3/0/0/0 (0.0s)
+  [27/100] CVE-2023-41039: VALID func=271/0/0/1 expl=41/5/0/0 ref=271/0/0/1/46/0/0/0 (0.0s)
+  [28/100] CVE-2023-41040: VALID func=400/0/0/42 expl=14/1/0/0 ref=400/0/0/42/15/0/0/0 (0.0s)
+  [29/100] CVE-2023-46446: VALID func=1427/0/0/66 expl=173/10/1/2 ref=1427/0/0/66/183/0/0/2 (0.0s)
+  [30/100] CVE-2023-47163: VALID func=65/0/0/0 expl=65/1/0/0 ref=65/0/0/0/66/0/0/0 (0.0s)
+  [31/100] CVE-2023-6681: VALID func=122/0/0/0 expl=102/1/0/0 ref=122/0/0/0/103/0/0/0 (0.0s)
+  [32/100] CVE-2024-22190: VALID func=379/0/0/73 expl=46/13/0/1 ref=379/0/0/73/59/0/0/1 (0.0s)
+  [33/100] CVE-2024-22195: VALID func=842/0/0/0 expl=124/1/0/0 ref=842/0/0/0/125/0/0/0 (0.0s)
+  [34/100] CVE-2024-27454: VALID func=1119/0/0/102 expl=None ref=1119/0/0/102/34/0/0/0 (0.0s)
+  [35/100] CVE-2024-28102: VALID func=122/0/0/0 expl=103/1/0/0 ref=122/0/0/0/104/0/0/0 (0.0s)
+  [36/100] CVE-2024-29033: VALID func=246/0/0/0 expl=29/6/0/0 ref=246/0/0/0/35/0/0/0 (0.0s)
+  [37/100] CVE-2024-32977: VALID func=1792/0/0/0 expl=24/15/0/0 ref=1792/0/0/0/39/0/0/0 (0.0s)
+  [38/100] CVE-2024-34061: VALID func=122/0/0/0 expl=2/1/0/0 ref=122/0/0/0/3/0/0/0 (0.0s)
+  [39/100] CVE-2024-34064: VALID func=844/0/0/0 expl=124/7/0/0 ref=844/0/0/0/131/0/0/0 (0.0s)
+  [40/100] CVE-2024-34078: VALID func=33/0/0/0 expl=34/1/0/0 ref=33/0/0/0/35/0/0/0 (0.0s)
+  [41/100] CVE-2024-35195: VALID func=563/0/0/15 expl=317/1/0/2 ref=563/0/0/15/318/0/0/2 (0.0s)
+  [42/100] CVE-2024-37891: VALID func=1745/0/0/525 expl=152/3/0/1 ref=1745/0/0/525/155/0/0/1 (0.0s)
+  [43/100] CVE-2024-42353: VALID func=2379/0/0/10 expl=158/1/0/1 ref=2379/0/0/10/159/0/0/1 (0.0s)
+  [44/100] CVE-2024-4340: VALID func=450/0/0/3 expl=87/1/0/1 ref=450/0/0/3/88/0/0/1 (0.0s)
+  [45/100] CVE-2024-47164: VALID func=691/0/0/3 expl=166/5/0/0 ref=691/0/0/3/171/0/0/0 (0.0s)
+  [46/100] CVE-2024-47532: VALID func=280/0/0/1 expl=24/1/0/0 ref=280/0/0/1/25/0/0/0 (0.0s)
+  [47/100] CVE-2024-47874: VALID func=845/0/0/2 expl=68/4/0/0 ref=845/0/0/2/72/0/0/0 (0.0s)
+  [48/100] CVE-2024-4941: invalid func=684/1/0/3 expl=60/8/0/0 ref=685/0/0/3/68/0/0/0 (0.0s) oracle invalid here: not functional_ok
+  [49/100] CVE-2024-49768: VALID func=792/0/0/8 expl=121/1/0/0 ref=792/0/0/8/122/0/0/0 (31.4s)
+  [50/100] CVE-2024-51998: VALID func=125/0/0/0 expl=5/2/0/0 ref=125/0/0/0/7/0/0/0 (0.0s)
+  [51/100] CVE-2024-52303: VALID func=2065/0/0/16 expl=115/1/0/0 ref=2065/0/0/16/116/0/0/0 (0.0s)
+  [52/100] CVE-2024-52804: VALID func=1193/0/0/6 expl=48/1/0/0 ref=1193/0/0/6/49/0/0/0 (0.0s)
+  [53/100] CVE-2024-53848: VALID func=475/0/0/9 expl=9/1/22/0 ref=475/0/0/9/32/0/0/0 (0.0s)
+  [54/100] CVE-2024-53861: VALID func=175/0/0/115 expl=70/1/0/2 ref=175/0/0/115/71/0/0/2 (0.0s)
+  [55/100] CVE-2024-53865: VALID func=2873/0/0/172 expl=1177/27/0/0 ref=2873/0/0/172/1204/0/0/0 (0.0s)
+  [56/100] CVE-2024-53981: VALID func=117/0/0/0 expl=117/1/0/0 ref=117/0/0/0/118/0/0/0 (0.0s)
+  [57/100] CVE-2024-55655: VALID func=136/0/0/28 expl=17/1/0/0 ref=136/0/0/28/18/0/0/0 (0.0s)
+  [58/100] CVE-2024-56201: VALID func=900/0/0/0 expl=5/1/0/0 ref=900/0/0/0/6/0/0/0 (0.0s)
+  [59/100] CVE-2024-56326: VALID func=899/0/0/0 expl=15/1/0/0 ref=899/0/0/0/16/0/0/0 (0.0s)
+  [60/100] CVE-2024-6844: VALID func=90/0/0/1 expl=26/2/0/0 ref=90/0/0/1/28/0/0/0 (0.0s)
+  [61/100] CVE-2024-6866: VALID func=90/0/0/1 expl=8/1/0/0 ref=90/0/0/1/9/0/0/0 (0.0s)
+  [62/100] CVE-2024-9701: VALID func=1409/0/0/1 expl=50/1/0/0 ref=1409/0/0/1/51/0/0/0 (0.0s)
+  [63/100] CVE-2025-10157: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (0.0s)
+  [64/100] CVE-2025-1716: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (0.0s)
+  [65/100] CVE-2025-1944: VALID func=26/0/0/0 expl=12/1/0/0 ref=26/0/0/0/13/0/0/0 (0.0s)
+  [66/100] CVE-2025-22153: VALID func=280/0/0/1 expl=6/1/0/0 ref=280/0/0/1/7/0/0/0 (0.0s)
+  [67/100] CVE-2025-24359: VALID func=169/0/0/0 expl=169/4/0/0 ref=169/0/0/0/173/0/0/0 (0.0s)
+  [68/100] CVE-2025-27516: VALID func=908/0/0/0 expl=16/1/0/0 ref=908/0/0/0/17/0/0/0 (0.0s)
+  [69/100] CVE-2025-43859: VALID func=78/0/0/0 expl=16/1/0/0 ref=78/0/0/0/17/0/0/0 (0.0s)
+  [70/100] CVE-2025-46656: VALID func=75/0/0/0 expl=44/1/0/0 ref=75/0/0/0/45/0/0/0 (0.0s)
+  [71/100] CVE-2025-47287: VALID func=1194/0/0/102 expl=118/5/0/2 ref=1194/0/0/102/123/0/0/2 (0.0s)
+  [72/100] CVE-2025-48383: VALID func=103/0/0/14 expl=94/3/0/14 ref=103/0/0/14/97/0/0/14 (0.0s)
+  [73/100] CVE-2025-48994: VALID func=18/0/0/0 expl=19/1/0/0 ref=18/0/0/0/20/0/0/0 (0.0s)
+  [74/100] CVE-2025-50181: VALID func=1789/0/0/315 expl=83/9/0/14 ref=1789/0/0/315/92/0/0/14 (0.0s)
+  [75/100] CVE-2025-5120: VALID func=668/0/0/38 expl=341/6/0/2 ref=668/0/0/38/347/0/0/2 (0.0s)
+  [76/100] CVE-2025-53365: VALID func=366/0/0/1 expl=27/2/0/0 ref=366/0/0/1/29/0/0/0 (0.0s)
+  [77/100] CVE-2025-53366: VALID func=359/0/0/1 expl=0/2/0/0 ref=359/0/0/1/2/0/0/0 (0.0s)
+  [78/100] CVE-2025-54121: VALID func=916/0/0/2 expl=76/2/0/0 ref=916/0/0/2/78/0/0/0 (0.0s)
+  [79/100] CVE-2025-54413: VALID func=1125/0/0/70 expl=23/4/0/0 ref=1125/0/0/70/27/0/0/0 (0.0s)
+  [80/100] CVE-2025-54886: VALID func=1121/0/0/70 expl=129/12/0/2 ref=1121/0/0/70/141/0/0/2 (0.0s)
+  [81/100] CVE-2025-57804: VALID func=1582/0/0/0 expl=432/8/0/0 ref=1582/0/0/0/440/0/0/0 (0.0s)
+  [82/100] CVE-2025-58180: VALID func=1002/0/0/0 expl=4/10/0/0 ref=1002/0/0/0/14/0/0/0 (0.0s)
+  [83/100] CVE-2025-58367: VALID func=3580/0/0/2 expl=266/2/0/0 ref=3580/0/0/2/268/0/0/0 (0.0s)
+  [84/100] CVE-2025-58438: VALID func=142/0/0/0 expl=9/8/0/0 ref=142/0/0/0/17/0/0/0 (0.0s)
+  [85/100] CVE-2025-59420: VALID func=576/0/0/3 expl=17/4/0/0 ref=576/0/0/3/21/0/0/0 (0.0s)
+  [86/100] CVE-2025-59940: VALID func=271/0/0/0 expl=38/1/0/0 ref=271/0/0/0/39/0/0/0 (0.0s)
+  [87/100] CVE-2025-6176: VALID func=567/0/0/0 expl=24/24/0/0 ref=567/0/0/0/48/0/0/0 (0.0s)
+  [88/100] CVE-2025-61765: VALID func=420/0/0/0 expl=72/1/0/0 ref=420/0/0/0/73/0/0/0 (0.0s)
+  [89/100] CVE-2025-61920: VALID func=580/0/0/3 expl=21/1/0/0 ref=580/0/0/3/22/0/0/0 (0.0s)
+  [90/100] CVE-2025-62708: VALID func=974/0/0/13 expl=15/1/0/0 ref=974/0/0/13/16/0/0/0 (0.0s)
+  [91/100] CVE-2025-62727: VALID func=927/0/0/2 expl=123/1/0/0 ref=927/0/0/2/124/0/0/0 (0.0s)
+  [92/100] CVE-2025-62800: VALID func=24/0/0/0 expl=1/21/0/0 ref=24/0/0/0/22/0/0/0 (0.0s)
+  [93/100] GHSA-3gf5-cxq9-w223: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (0.0s)
+  [94/100] GHSA-3vg9-h568-4w9m: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (0.0s)
+  [95/100] GHSA-4r9r-ch6f-vxmx: VALID func=14/0/0/0 expl=13/1/0/0 ref=14/0/0/0/14/0/0/0 (0.0s)
+  [96/100] GHSA-753j-mpmx-qq6g: VALID func=1187/0/0/6 expl=234/5/0/0 ref=1187/0/0/6/239/0/0/0 (0.0s)
+  [97/100] GHSA-9gvj-pp9x-gcfr: VALID func=12/0/0/0 expl=11/1/0/0 ref=12/0/0/0/12/0/0/0 (0.0s)
+  [98/100] GHSA-hfmc-7525-mj55: VALID func=1376/0/0/126 expl=351/11/0/47 ref=1376/0/0/126/362/0/0/47 (0.0s)
+  [99/100] GHSA-vhmj-5q9r-mm9g: VALID func=1567/0/0/16 expl=9/2/0/0 ref=1567/0/0/16/11/0/0/0 (0.0s)
+  [100/100] GHSA-w235-7p84-xx57: VALID func=1185/0/0/6 expl=58/1/0/0 ref=1185/0/0/6/59/0/0/0 (0.0s)
+[+] valid 99 of 100 -> /home/ubuntu/vul4py/runs/preflight/oracle_valid.txt
+[done] valid=99 main=94 pilot=5
+
+=========================== ENVIRONMENT READY ===========================
+built_at_utc: 2026-11-25T02:03:01Z
+vul4py_commit: f80f861012cb7b7cfeca7323be51d33e72eaf8f3
+os: Ubuntu 24.04.5 LTS
+kernel: Linux 7.0.0-1018-aws  arch: x86_64  cpus: 2  mem: 7 GiB
+python: Python 3.12.3
+pip_constraint: pytest<9
+auto_skip_rounds: 5
+scan: OK=100 
+scan OK: 100   oracle-valid: 99   main sample: 94   pilot sample: 5
+Not valid, and why: runs/preflight/oracle_report.tsv
+Samples: runs/preflight/main_ids.txt and runs/preflight/pilot_ids.txt
+[+] oracle control on 100 cases (1 worker(s)); no API calls
+  [1/100] CVE-2017-16615: VALID func=27/0/0/0 expl=0/1/0/0 ref=27/0/0/0/1/0/0/0 (0.0s)
+  [2/100] CVE-2017-16618: VALID func=176/0/0/0 expl=9/2/0/0 ref=176/0/0/0/11/0/0/0 (0.0s)
+  [3/100] CVE-2018-7753: VALID func=234/0/0/2 expl=114/6/0/1 ref=234/0/0/2/120/0/0/1 (0.0s)
+  [4/100] CVE-2019-1010017: VALID func=40/0/0/0 expl=0/2/0/0 ref=40/0/0/0/2/0/0/0 (0.0s)
+  [5/100] CVE-2019-10800: VALID func=50/0/0/18 expl=50/1/0/18 ref=50/0/0/18/51/0/0/18 (0.0s)
+  [6/100] CVE-2020-6802: VALID func=313/0/0/0 expl=146/8/0/0 ref=313/0/0/0/154/0/0/0 (0.0s)
+  [7/100] CVE-2021-23980: VALID func=355/0/0/6 expl=180/4/0/3 ref=355/0/0/6/184/0/0/3 (0.0s)
+  [8/100] CVE-2021-28363: VALID func=1441/0/0/411 expl=24/1/0/3 ref=1441/0/0/411/25/0/0/3 (0.0s)
+  [9/100] CVE-2021-32839: VALID func=415/0/0/3 expl=58/1/0/2 ref=415/0/0/3/59/0/0/2 (0.0s)
+  [10/100] CVE-2022-24065: VALID func=312/0/0/1 expl=13/1/0/0 ref=312/0/0/1/14/0/0/0 (0.0s)
+  [11/100] CVE-2022-24439: VALID func=357/0/0/41 expl=63/7/0/0 ref=357/0/0/41/70/0/0/0 (0.0s)
+  [12/100] CVE-2022-2888: VALID func=1606/0/0/0 expl=49/9/0/0 ref=1606/0/0/0/58/0/0/0 (0.0s)
+  [13/100] CVE-2022-29217: VALID func=278/0/0/2 expl=63/2/0/0 ref=278/0/0/2/65/0/0/0 (0.0s)
+  [14/100] CVE-2022-3102: VALID func=115/0/0/0 expl=98/1/0/0 ref=115/0/0/0/99/0/0/0 (0.0s)
+  [15/100] CVE-2023-23934: VALID func=842/0/0/0 expl=65/1/0/0 ref=842/0/0/0/66/0/0/0 (0.0s)
+  [16/100] CVE-2023-25577: VALID func=842/0/0/0 expl=23/1/0/0 ref=842/0/0/0/24/0/0/0 (0.0s)
+  [17/100] CVE-2023-26145: VALID func=3572/0/0/2 expl=258/3/0/0 ref=3572/0/0/2/261/0/0/0 (0.0s)
+  [18/100] CVE-2023-26302: VALID func=859/0/0/0 expl=4/1/0/0 ref=859/0/0/0/5/0/0/0 (0.0s)
+  [19/100] CVE-2023-29483: VALID func=1328/0/0/17 expl=96/2/0/8 ref=1328/0/0/17/98/0/0/8 (0.0s)
+  [20/100] CVE-2023-30608: VALID func=426/0/0/3 expl=28/1/0/0 ref=426/0/0/3/29/0/0/0 (0.0s)
+  [21/100] CVE-2023-32303: VALID func=494/0/0/0 expl=14/1/0/0 ref=494/0/0/0/15/0/0/0 (0.0s)
+  [22/100] CVE-2023-32309: VALID func=414/0/0/0 expl=41/2/0/0 ref=414/0/0/0/43/0/0/0 (0.0s)
+  [23/100] CVE-2023-32681: VALID func=557/0/0/15 expl=312/1/0/2 ref=557/0/0/15/313/0/0/2 (0.0s)
+  [24/100] CVE-2023-34457: VALID func=122/0/0/0 expl=82/6/0/0 ref=122/0/0/0/88/0/0/0 (0.0s)
+  [25/100] CVE-2023-36830: VALID func=6253/0/0/0 expl=141/2/0/0 ref=6253/0/0/0/143/0/0/0 (0.0s)
+  [26/100] CVE-2023-37271: VALID func=271/0/0/1 expl=0/3/0/0 ref=271/0/0/1/3/0/0/0 (0.0s)
+  [27/100] CVE-2023-41039: VALID func=271/0/0/1 expl=41/5/0/0 ref=271/0/0/1/46/0/0/0 (0.0s)
+  [28/100] CVE-2023-41040: VALID func=400/0/0/42 expl=14/1/0/0 ref=400/0/0/42/15/0/0/0 (0.0s)
+  [29/100] CVE-2023-46446: VALID func=1427/0/0/66 expl=173/10/1/2 ref=1427/0/0/66/183/0/0/2 (0.0s)
+  [30/100] CVE-2023-47163: VALID func=65/0/0/0 expl=65/1/0/0 ref=65/0/0/0/66/0/0/0 (0.0s)
+  [31/100] CVE-2023-6681: VALID func=122/0/0/0 expl=102/1/0/0 ref=122/0/0/0/103/0/0/0 (0.0s)
+  [32/100] CVE-2024-22190: VALID func=379/0/0/73 expl=46/13/0/1 ref=379/0/0/73/59/0/0/1 (0.0s)
+  [33/100] CVE-2024-22195: VALID func=842/0/0/0 expl=124/1/0/0 ref=842/0/0/0/125/0/0/0 (0.0s)
+  [34/100] CVE-2024-27454: VALID func=1119/0/0/102 expl=None ref=1119/0/0/102/34/0/0/0 (0.0s)
+  [35/100] CVE-2024-28102: VALID func=122/0/0/0 expl=103/1/0/0 ref=122/0/0/0/104/0/0/0 (0.0s)
+  [36/100] CVE-2024-29033: VALID func=246/0/0/0 expl=29/6/0/0 ref=246/0/0/0/35/0/0/0 (0.0s)
+  [37/100] CVE-2024-32977: VALID func=1792/0/0/0 expl=24/15/0/0 ref=1792/0/0/0/39/0/0/0 (0.0s)
+  [38/100] CVE-2024-34061: VALID func=122/0/0/0 expl=2/1/0/0 ref=122/0/0/0/3/0/0/0 (0.0s)
+  [39/100] CVE-2024-34064: VALID func=844/0/0/0 expl=124/7/0/0 ref=844/0/0/0/131/0/0/0 (0.0s)
+  [40/100] CVE-2024-34078: VALID func=33/0/0/0 expl=34/1/0/0 ref=33/0/0/0/35/0/0/0 (0.0s)
+  [41/100] CVE-2024-35195: VALID func=563/0/0/15 expl=317/1/0/2 ref=563/0/0/15/318/0/0/2 (0.0s)
+  [42/100] CVE-2024-37891: VALID func=1745/0/0/525 expl=152/3/0/1 ref=1745/0/0/525/155/0/0/1 (0.0s)
+  [43/100] CVE-2024-42353: VALID func=2379/0/0/10 expl=158/1/0/1 ref=2379/0/0/10/159/0/0/1 (0.0s)
+  [44/100] CVE-2024-4340: VALID func=450/0/0/3 expl=87/1/0/1 ref=450/0/0/3/88/0/0/1 (0.0s)
+  [45/100] CVE-2024-47164: VALID func=691/0/0/3 expl=166/5/0/0 ref=691/0/0/3/171/0/0/0 (0.0s)
+  [46/100] CVE-2024-47532: VALID func=280/0/0/1 expl=24/1/0/0 ref=280/0/0/1/25/0/0/0 (0.0s)
+  [47/100] CVE-2024-47874: VALID func=845/0/0/2 expl=68/4/0/0 ref=845/0/0/2/72/0/0/0 (0.0s)
+  [48/100] CVE-2024-4941: VALID func=684/0/0/3 expl=60/8/0/0 ref=684/0/0/3/68/0/0/0 (475.6s)
+  [49/100] CVE-2024-49768: VALID func=792/0/0/8 expl=121/1/0/0 ref=792/0/0/8/122/0/0/0 (0.0s)
+  [50/100] CVE-2024-51998: VALID func=125/0/0/0 expl=5/2/0/0 ref=125/0/0/0/7/0/0/0 (0.0s)
+  [51/100] CVE-2024-52303: VALID func=2065/0/0/16 expl=115/1/0/0 ref=2065/0/0/16/116/0/0/0 (0.0s)
+  [52/100] CVE-2024-52804: VALID func=1193/0/0/6 expl=48/1/0/0 ref=1193/0/0/6/49/0/0/0 (0.0s)
+  [53/100] CVE-2024-53848: VALID func=475/0/0/9 expl=9/1/22/0 ref=475/0/0/9/32/0/0/0 (0.0s)
+  [54/100] CVE-2024-53861: VALID func=175/0/0/115 expl=70/1/0/2 ref=175/0/0/115/71/0/0/2 (0.0s)
+  [55/100] CVE-2024-53865: VALID func=2873/0/0/172 expl=1177/27/0/0 ref=2873/0/0/172/1204/0/0/0 (0.0s)
+  [56/100] CVE-2024-53981: VALID func=117/0/0/0 expl=117/1/0/0 ref=117/0/0/0/118/0/0/0 (0.0s)
+  [57/100] CVE-2024-55655: VALID func=136/0/0/28 expl=17/1/0/0 ref=136/0/0/28/18/0/0/0 (0.0s)
+  [58/100] CVE-2024-56201: VALID func=900/0/0/0 expl=5/1/0/0 ref=900/0/0/0/6/0/0/0 (0.0s)
+  [59/100] CVE-2024-56326: VALID func=899/0/0/0 expl=15/1/0/0 ref=899/0/0/0/16/0/0/0 (0.0s)
+  [60/100] CVE-2024-6844: VALID func=90/0/0/1 expl=26/2/0/0 ref=90/0/0/1/28/0/0/0 (0.0s)
+  [61/100] CVE-2024-6866: VALID func=90/0/0/1 expl=8/1/0/0 ref=90/0/0/1/9/0/0/0 (0.0s)
+  [62/100] CVE-2024-9701: VALID func=1409/0/0/1 expl=50/1/0/0 ref=1409/0/0/1/51/0/0/0 (0.0s)
+  [63/100] CVE-2025-10157: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (0.0s)
+  [64/100] CVE-2025-1716: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (0.0s)
+  [65/100] CVE-2025-1944: VALID func=26/0/0/0 expl=12/1/0/0 ref=26/0/0/0/13/0/0/0 (0.0s)
+  [66/100] CVE-2025-22153: VALID func=280/0/0/1 expl=6/1/0/0 ref=280/0/0/1/7/0/0/0 (0.0s)
+  [67/100] CVE-2025-24359: VALID func=169/0/0/0 expl=169/4/0/0 ref=169/0/0/0/173/0/0/0 (0.0s)
+  [68/100] CVE-2025-27516: VALID func=908/0/0/0 expl=16/1/0/0 ref=908/0/0/0/17/0/0/0 (0.0s)
+  [69/100] CVE-2025-43859: VALID func=78/0/0/0 expl=16/1/0/0 ref=78/0/0/0/17/0/0/0 (0.0s)
+  [70/100] CVE-2025-46656: VALID func=75/0/0/0 expl=44/1/0/0 ref=75/0/0/0/45/0/0/0 (0.0s)
+  [71/100] CVE-2025-47287: VALID func=1194/0/0/102 expl=118/5/0/2 ref=1194/0/0/102/123/0/0/2 (0.0s)
+  [72/100] CVE-2025-48383: VALID func=103/0/0/14 expl=94/3/0/14 ref=103/0/0/14/97/0/0/14 (0.0s)
+  [73/100] CVE-2025-48994: VALID func=18/0/0/0 expl=19/1/0/0 ref=18/0/0/0/20/0/0/0 (0.0s)
+  [74/100] CVE-2025-50181: VALID func=1789/0/0/315 expl=83/9/0/14 ref=1789/0/0/315/92/0/0/14 (0.0s)
+  [75/100] CVE-2025-5120: VALID func=668/0/0/38 expl=341/6/0/2 ref=668/0/0/38/347/0/0/2 (0.0s)
+  [76/100] CVE-2025-53365: VALID func=366/0/0/1 expl=27/2/0/0 ref=366/0/0/1/29/0/0/0 (0.0s)
+  [77/100] CVE-2025-53366: VALID func=359/0/0/1 expl=0/2/0/0 ref=359/0/0/1/2/0/0/0 (0.0s)
+  [78/100] CVE-2025-54121: VALID func=916/0/0/2 expl=76/2/0/0 ref=916/0/0/2/78/0/0/0 (0.0s)
+  [79/100] CVE-2025-54413: VALID func=1125/0/0/70 expl=23/4/0/0 ref=1125/0/0/70/27/0/0/0 (0.0s)
+  [80/100] CVE-2025-54886: VALID func=1121/0/0/70 expl=129/12/0/2 ref=1121/0/0/70/141/0/0/2 (0.0s)
+  [81/100] CVE-2025-57804: VALID func=1582/0/0/0 expl=432/8/0/0 ref=1582/0/0/0/440/0/0/0 (0.0s)
+  [82/100] CVE-2025-58180: VALID func=1002/0/0/0 expl=4/10/0/0 ref=1002/0/0/0/14/0/0/0 (0.0s)
+  [83/100] CVE-2025-58367: VALID func=3580/0/0/2 expl=266/2/0/0 ref=3580/0/0/2/268/0/0/0 (0.0s)
+  [84/100] CVE-2025-58438: VALID func=142/0/0/0 expl=9/8/0/0 ref=142/0/0/0/17/0/0/0 (0.0s)
+  [85/100] CVE-2025-59420: VALID func=576/0/0/3 expl=17/4/0/0 ref=576/0/0/3/21/0/0/0 (0.0s)
+  [86/100] CVE-2025-59940: VALID func=271/0/0/0 expl=38/1/0/0 ref=271/0/0/0/39/0/0/0 (0.0s)
+  [87/100] CVE-2025-6176: VALID func=567/0/0/0 expl=24/24/0/0 ref=567/0/0/0/48/0/0/0 (0.0s)
+  [88/100] CVE-2025-61765: VALID func=420/0/0/0 expl=72/1/0/0 ref=420/0/0/0/73/0/0/0 (0.0s)
+  [89/100] CVE-2025-61920: VALID func=580/0/0/3 expl=21/1/0/0 ref=580/0/0/3/22/0/0/0 (0.0s)
+  [90/100] CVE-2025-62708: VALID func=974/0/0/13 expl=15/1/0/0 ref=974/0/0/13/16/0/0/0 (0.0s)
+  [91/100] CVE-2025-62727: VALID func=927/0/0/2 expl=123/1/0/0 ref=927/0/0/2/124/0/0/0 (0.0s)
+  [92/100] CVE-2025-62800: VALID func=24/0/0/0 expl=1/21/0/0 ref=24/0/0/0/22/0/0/0 (0.0s)
+  [93/100] GHSA-3gf5-cxq9-w223: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (0.0s)
+  [94/100] GHSA-3vg9-h568-4w9m: VALID func=28/0/0/0 expl=13/1/0/0 ref=28/0/0/0/14/0/0/0 (0.0s)
+  [95/100] GHSA-4r9r-ch6f-vxmx: VALID func=14/0/0/0 expl=13/1/0/0 ref=14/0/0/0/14/0/0/0 (0.0s)
+  [96/100] GHSA-753j-mpmx-qq6g: VALID func=1187/0/0/6 expl=234/5/0/0 ref=1187/0/0/6/239/0/0/0 (0.0s)
+  [97/100] GHSA-9gvj-pp9x-gcfr: VALID func=12/0/0/0 expl=11/1/0/0 ref=12/0/0/0/12/0/0/0 (0.0s)
+  [98/100] GHSA-hfmc-7525-mj55: VALID func=1376/0/0/126 expl=351/11/0/47 ref=1376/0/0/126/362/0/0/47 (0.0s)
+  [99/100] GHSA-vhmj-5q9r-mm9g: VALID func=1567/0/0/16 expl=9/2/0/0 ref=1567/0/0/16/11/0/0/0 (0.0s)
+  [100/100] GHSA-w235-7p84-xx57: VALID func=1185/0/0/6 expl=58/1/0/0 ref=1185/0/0/6/59/0/0/0 (0.0s)
+[+] valid 100 of 100 -> /home/ubuntu/vul4py/runs/preflight/oracle_valid.txt

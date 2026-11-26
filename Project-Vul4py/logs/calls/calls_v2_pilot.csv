@@ -1,0 +1,118 @@
+version,run,agent,case,stage,role,model,status,input_tokens,output_tokens,thinking_tokens,latency_s,http_attempts,finish_reason,list_cost_usd,api_equivalent_usd,price_note
+v2,pilot,c1,CVE-2021-23980,analyst,analyst,openai:gpt-6-luna,ok,10374,11861,,75.4,1,stop,0.006968,,list price
+v2,pilot,c1,CVE-2021-23980,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,11584,2820,,41.1,1,stop,0.051368,,list price
+v2,pilot,c1,CVE-2021-23980,cand1_r0_t0,repairer,openai:gpt-5.4-mini,ok,11584,52870,,303.2,1,stop,0.246603,,list price
+v2,pilot,c1,CVE-2021-23980,cand1_r0_t1,repairer,openai:gpt-5.4-mini,ok,12229,11034,,62.7,1,stop,0.058825,,list price
+v2,pilot,c1,CVE-2021-23980,cand1_r0_t2,repairer,openai:gpt-5.4-mini,ok,12437,12950,,73.7,1,stop,0.067603,,list price
+v2,pilot,c1,CVE-2021-23980,cand0_cross,repairer,openai:gpt-6.2-sol,ok,13427,3759,,55.3,1,stop,0.064444,,list price
+v2,pilot,c1,CVE-2021-23980,cand1_cross,repairer,openai:gpt-5.4-mini,ok,13366,12030,,64.7,1,stop,0.06416,,list price
+v2,pilot,c1,CVE-2021-23980,cand1_cross_t1,repairer,openai:gpt-5.4-mini,ok,13808,6260,,32.1,1,stop,0.038526,,list price
+v2,pilot,c1,CVE-2021-23980,cand1_cross_t2,repairer,openai:gpt-5.4-mini,ok,14101,12911,,68.6,1,stop,0.068675,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r0_j1,reviewer,openai:gpt-6.1-terra,ok,12715,2641,,39.5,1,stop,0.02592,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r0_j2,reviewer,openai:gpt-6-luna,ok,12715,6807,,49.9,1,stop,0.004675,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r0_j0,reviewer,openai:gpt-6.1-sol,ok,12715,7930,,138.2,1,stop,0.10473,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r1_j2,reviewer,openai:gpt-6-luna,ok,14972,5090,,34.1,1,stop,0.004042,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r1_j1,reviewer,openai:gpt-6.1-terra,ok,14937,2241,,36.6,1,stop,0.026142,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r1_j0,reviewer,openai:gpt-6.1-sol,ok,14047,4976,,98.9,1,stop,0.077854,,list price
+v2,pilot,c1,CVE-2021-23980,cand0_rev1_t0,repairer,openai:gpt-6.2-sol,ok,13061,3321,,60.5,1,stop,0.059332,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r2_j2,reviewer,openai:gpt-6-luna,ok,12655,5353,,38.6,1,stop,0.003942,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r2_j1,reviewer,openai:gpt-6.1-terra,ok,12655,4136,,71.5,1,stop,0.033335,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r2_j0,reviewer,openai:gpt-6.1-sol,ok,12655,18193,,313.8,1,stop,0.20724,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r3_j1,reviewer,openai:gpt-6.1-terra,ok,14621,2314,,40.3,1,stop,0.026191,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r3_j2,reviewer,openai:gpt-6-luna,ok,14929,6621,,44.8,1,stop,0.004803,,list price
+v2,pilot,c1,CVE-2021-23980,jury_r3_j0,reviewer,openai:gpt-6.1-sol,ok,14156,7254,,153.2,1,stop,0.100852,,list price
+v2,pilot,c1,CVE-2023-30608,analyst,analyst,openai:gpt-6-luna,ok,8294,4528,,31.8,1,stop,0.003093,,list price
+v2,pilot,c1,CVE-2023-30608,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,9152,3447,,59.6,1,stop,0.052774,,list price
+v2,pilot,c1,CVE-2023-30608,cand1_r0_t0,repairer,openai:gpt-5.4-mini,ok,9152,16299,,95.0,1,stop,0.08021,,list price
+v2,pilot,c1,CVE-2023-30608,cand1_r0_t1,repairer,openai:gpt-5.4-mini,ok,9665,10732,,60.4,1,stop,0.055543,,list price
+v2,pilot,c1,CVE-2023-30608,cand1_r0_t2,repairer,openai:gpt-5.4-mini,ok,9836,1711,,9.6,1,stop,0.015076,,list price
+v2,pilot,c1,CVE-2023-30608,cand0_cross,repairer,openai:gpt-6.2-sol,ok,10764,2103,,34.9,1,stop,0.042558,,list price
+v2,pilot,c1,CVE-2023-30608,cand1_cross,repairer,openai:gpt-5.4-mini,ok,10322,18097,,105.6,1,stop,0.089178,,list price
+v2,pilot,c1,CVE-2023-30608,jury_r0_j2,reviewer,openai:gpt-6-luna,ok,10002,5536,,38.5,1,stop,0.003768,,list price
+v2,pilot,c1,CVE-2023-30608,jury_r0_j1,reviewer,openai:gpt-6.1-terra,ok,10002,2609,,43.4,1,stop,0.023047,,list price
+v2,pilot,c1,CVE-2023-30608,jury_r0_j0,reviewer,openai:gpt-6.1-sol,ok,10002,7423,,149.8,1,stop,0.094234,,list price
+v2,pilot,c1,CVE-2024-37891,analyst,analyst,openai:gpt-6-luna,ok,5078,12485,,76.1,1,stop,0.00675,,list price
+v2,pilot,c1,CVE-2024-37891,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,6535,1629,,23.9,1,stop,0.02936,,list price
+v2,pilot,c1,CVE-2024-37891,cand1_r0_t0,repairer,openai:gpt-5.4-mini,ok,6535,20064,,118.8,1,stop,0.095189,,list price
+v2,pilot,c1,CVE-2024-37891,cand0_cross,repairer,openai:gpt-6.2-sol,ok,8354,3042,,38.8,1,stop,0.047128,,list price
+v2,pilot,c1,CVE-2024-37891,cand1_cross,repairer,openai:gpt-5.4-mini,ok,8215,4884,,28.8,1,stop,0.028139,,list price
+v2,pilot,c1,CVE-2024-37891,jury_r0_j1,reviewer,openai:gpt-6.1-terra,ok,7624,2023,,27.0,1,stop,0.017739,,list price
+v2,pilot,c1,CVE-2024-37891,jury_r0_j2,reviewer,openai:gpt-6-luna,ok,7624,3789,,26.9,1,stop,0.002657,,list price
+v2,pilot,c1,CVE-2024-37891,jury_r0_j0,reviewer,openai:gpt-6.1-sol,ok,7624,5411,,82.8,1,stop,0.069358,,list price
+v2,pilot,c1,CVE-2024-52303,analyst,analyst,openai:gpt-6-luna,ok,4691,10468,,51.8,1,stop,0.005703,,list price
+v2,pilot,c1,CVE-2024-52303,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,6000,4660,,54.0,1,stop,0.0586,,list price
+v2,pilot,c1,CVE-2024-52303,cand1_r0_t0,repairer,openai:gpt-5.4-mini,ok,6000,16951,,93.6,1,stop,0.08078,,list price
+v2,pilot,c1,CVE-2024-52303,cand0_cross,repairer,openai:gpt-6.2-sol,ok,7680,1829,,28.1,1,stop,0.03365,,list price
+v2,pilot,c1,CVE-2024-52303,cand1_cross,repairer,openai:gpt-5.4-mini,ok,7531,4205,,28.1,1,stop,0.024571,,list price
+v2,pilot,c1,CVE-2024-52303,jury_r0_j2,reviewer,openai:gpt-6-luna,ok,6993,3936,,27.9,1,stop,0.002667,,list price
+v2,pilot,c1,CVE-2024-52303,jury_r0_j1,reviewer,openai:gpt-6.1-terra,ok,6993,2627,,41.7,1,stop,0.020128,,list price
+v2,pilot,c1,CVE-2024-52303,jury_r0_j0,reviewer,openai:gpt-6.1-sol,ok,6993,3277,,58.6,1,stop,0.046756,,list price
+v2,pilot,c1,CVE-2024-52303,jury_r1_j1,reviewer,openai:gpt-6.1-terra,ok,9160,991,,12.1,1,stop,0.014115,,list price
+v2,pilot,c1,CVE-2024-52303,jury_r1_j2,reviewer,openai:gpt-6-luna,ok,8457,3345,,22.2,1,stop,0.002518,,list price
+v2,pilot,c1,CVE-2024-52303,jury_r1_j0,reviewer,openai:gpt-6.1-sol,ok,8609,2565,,40.9,1,stop,0.042868,,list price
+v2,pilot,c1,CVE-2025-58438,analyst,analyst,openai:gpt-6-luna,ok,7765,10499,,59.7,1,stop,0.006026,,list price
+v2,pilot,c1,CVE-2025-58438,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,9039,7963,,112.5,1,stop,0.097708,,list price
+v2,pilot,c1,CVE-2025-58438,cand1_r0_t0,repairer,openai:gpt-5.4-mini,ok,9039,28048,,150.1,1,stop,0.132995,,list price
+v2,pilot,c1,CVE-2025-58438,cand1_r0_t1,repairer,openai:gpt-5.4-mini,ok,9662,2802,,15.6,1,stop,0.019855,,list price
+v2,pilot,c1,CVE-2025-58438,cand1_r0_t2,repairer,openai:gpt-5.4-mini,ok,9971,4379,,22.3,1,stop,0.027184,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r0_j2,reviewer,openai:gpt-6-luna,ok,9946,3292,,22.1,1,stop,0.002641,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r0_j1,reviewer,openai:gpt-6.1-terra,ok,9946,3398,,51.9,1,stop,0.026936,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r0_j0,reviewer,openai:gpt-6.1-sol,ok,9946,6337,,115.7,1,stop,0.083262,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r1_j2,reviewer,openai:gpt-6-luna,ok,11729,3013,,19.6,1,stop,0.002679,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r1_j1,reviewer,openai:gpt-6.1-terra,ok,11755,2254,,35.2,1,stop,0.023025,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r1_j0,reviewer,openai:gpt-6.1-sol,ok,11217,5256,,106.3,1,stop,0.074994,,list price
+v2,pilot,c1,CVE-2025-58438,cand0_rev1_t0,repairer,openai:gpt-6.2-sol,ok,10685,11167,,142.9,1,stop,0.13304,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r2_j1,reviewer,openai:gpt-6.1-terra,ok,11630,2484,,43.1,1,stop,0.02405,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r2_j2,reviewer,openai:gpt-6-luna,ok,11630,6907,,46.6,1,stop,0.004616,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r2_j0,reviewer,openai:gpt-6.1-sol,ok,11630,9733,,186.4,1,stop,0.12059,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r3_j1,reviewer,openai:gpt-6.1-terra,ok,13342,1850,,29.3,1,stop,0.022592,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r3_j2,reviewer,openai:gpt-6-luna,ok,13141,5711,,39.6,1,stop,0.00417,,list price
+v2,pilot,c1,CVE-2025-58438,jury_r3_j0,reviewer,openai:gpt-6.1-sol,ok,12734,3644,,74.1,1,stop,0.061908,,list price
+v2,pilot,c1v2,CVE-2021-23980,analyst,analyst,openai:gpt-6-luna,ok,10374,11524,,72.5,1,stop,0.006799,,list price
+v2,pilot,c1v2,CVE-2021-23980,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,11830,3400,,53.4,1,stop,0.05766,,list price
+v2,pilot,c1v2,CVE-2021-23980,jury_r0_j0,reviewer,claudecode:claude-opus-5-5,ok,20347,1674,531,15.8,1,end_turn,0.114868,0.19624799999999998,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2021-23980,jury_r0_j1,reviewer,claudecode:claude-sonnet-5-5,ok,20351,1884,910,14.6,1,end_turn,0.059542,0.10024,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2021-23980,jury_r0_j2,reviewer,deepseek:deepseek-v4-pro,ok,13376,22531,,183.1,1,stop,0.106879,,list price at DeepSeek peak hours (off-peak is half)
+v2,pilot,c1v2,CVE-2021-23980,jury_r1_j1,reviewer,claudecode:claude-sonnet-5-5,ok,22657,1655,514,12.8,1,end_turn,0.061864,0.107174,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2021-23980,jury_r1_j0,reviewer,claudecode:claude-opus-5-5,ok,22517,2206,821,21.4,1,end_turn,0.134188,0.224248,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2021-23980,jury_r1_j2,reviewer,deepseek:deepseek-v4-pro,ok,14793,28247,,220.9,1,stop,0.131385,,list price at DeepSeek peak hours (off-peak is half)
+v2,pilot,c1v2,CVE-2023-30608,analyst,analyst,openai:gpt-6-luna,ok,8294,3883,,25.3,1,stop,0.002771,,list price
+v2,pilot,c1v2,CVE-2023-30608,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,9056,2727,,48.0,1,stop,0.045382,,list price
+v2,pilot,c1v2,CVE-2023-30608,jury_r0_j1,reviewer,claudecode:claude-sonnet-5-5,ok,21077,2130,1250,17.4,1,end_turn,0.063454,0.105604,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2023-30608,jury_r0_j0,reviewer,claudecode:claude-opus-5-5,ok,21073,3144,1987,31.2,1,end_turn,0.147172,0.231456,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2023-30608,jury_r0_j2,reviewer,deepseek:deepseek-v4-pro,ok,11299,28144,,227.2,1,stop,0.126365,,list price at DeepSeek peak hours (off-peak is half)
+v2,pilot,c1v2,CVE-2024-37891,analyst,analyst,openai:gpt-6-luna,ok,5078,8664,,54.2,1,stop,0.00484,,list price
+v2,pilot,c1v2,CVE-2024-37891,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,6457,4018,,48.8,1,stop,0.053094,,list price
+v2,pilot,c1v2,CVE-2024-37891,jury_r0_j1,reviewer,claudecode:claude-sonnet-5-5,ok,12103,851,0,7.3,1,end_turn,0.032716,0.056918,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2024-37891,jury_r0_j0,reviewer,claudecode:claude-opus-5-5,ok,12099,3322,2169,29.0,1,end_turn,0.114836,0.16322399999999998,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2024-37891,jury_r0_j2,reviewer,deepseek:deepseek-v4-pro,ok,7967,9627,,69.3,1,stop,0.048639,,list price at DeepSeek peak hours (off-peak is half)
+v2,pilot,c1v2,CVE-2024-52303,analyst,analyst,openai:gpt-6-luna,ok,4691,10000,,62.9,1,stop,0.005469,,list price
+v2,pilot,c1v2,CVE-2024-52303,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,6144,5063,,63.8,1,stop,0.062918,,list price
+v2,pilot,c1v2,CVE-2024-52303,jury_r0_j1,reviewer,claudecode:claude-sonnet-5-5,ok,11325,1639,789,13.4,1,end_turn,0.03904,0.061686000000000005,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2024-52303,jury_r0_j0,reviewer,claudecode:claude-opus-5-5,ok,11321,1910,861,19.7,1,end_turn,0.083484,0.12875999999999999,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2024-52303,jury_r0_j2,reviewer,deepseek:deepseek-v4-pro,ok,7112,11648,,77.6,1,stop,0.055514,,list price at DeepSeek peak hours (off-peak is half)
+v2,pilot,c1v2,CVE-2024-52303,jury_r1_j1,reviewer,claudecode:claude-sonnet-5-5,ok,13128,1106,0,8.9,1,end_turn,0.037316,0.063568,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2024-52303,jury_r1_j0,reviewer,claudecode:claude-opus-5-5,ok,12941,2781,1662,28.1,1,end_turn,0.107384,0.15914,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2024-52303,jury_r1_j2,reviewer,deepseek:deepseek-v4-pro,ok,8385,32038,,228.8,1,stop,0.137939,,list price at DeepSeek peak hours (off-peak is half)
+v2,pilot,c1v2,CVE-2025-58438,analyst,analyst,openai:gpt-6-luna,ok,7765,9238,,58.5,1,stop,0.005396,,list price
+v2,pilot,c1v2,CVE-2025-58438,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,9111,7888,,115.1,1,stop,0.097102,,list price
+v2,pilot,c1v2,CVE-2025-58438,jury_r0_j1,reviewer,claudecode:claude-sonnet-5-5,ok,16395,2011,1089,17.6,1,end_turn,0.0529,0.08568600000000001,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2025-58438,jury_r0_j0,reviewer,claudecode:claude-opus-5-5,ok,16391,2877,1538,28.0,1,end_turn,0.123104,0.18866,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2025-58438,jury_r0_j2,reviewer,deepseek:deepseek-v4-pro,ok,10720,36499,,275.1,1,stop,0.158686,,list price at DeepSeek peak hours (off-peak is half)
+v2,pilot,c1v2,CVE-2025-58438,jury_r1_j1,reviewer,claudecode:claude-sonnet-5-5,ok,19025,1330,0,10.0,1,end_turn,0.05135,0.089396,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2025-58438,jury_r1_j0,reviewer,claudecode:claude-opus-5-5,ok,18683,3364,1813,31.1,1,end_turn,0.142012,0.21673599999999998,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2025-58438,jury_r1_j2,reviewer,deepseek:deepseek-v4-pro,ok,12227,19026,,162.6,1,stop,0.091483,,list price at DeepSeek peak hours (off-peak is half)
+v2,pilot,c1v2,CVE-2025-58438,cand0_rev1_t0,repairer,openai:gpt-6.2-sol,ok,11248,7297,,103.3,1,stop,0.095466,,list price
+v2,pilot,c1v2,CVE-2025-58438,jury_r2_j1,reviewer,claudecode:claude-sonnet-5-5,ok,16888,2656,1256,21.2,1,end_turn,0.060336,0.09410800000000001,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2025-58438,jury_r2_j0,reviewer,claudecode:claude-opus-5-5,ok,16884,3620,2217,34.8,1,end_turn,0.139936,0.20746399999999998,"Claude plan, not billed per call; list-price equivalent"
+v2,pilot,c1v2,CVE-2025-58438,jury_r2_j2,reviewer,deepseek:deepseek-v4-pro,ok,11057,27515,,224.1,1,stop,0.123555,,list price at DeepSeek peak hours (off-peak is half)
+v2,pilot,rep_gpt-5.4-mini,CVE-2021-23980,cand0_r0_t0,repairer,openai:gpt-5.4-mini,ok,10444,49994,,279.6,1,stop,0.232806,,list price
+v2,pilot,rep_gpt-5.4-mini,CVE-2023-30608,cand0_r0_t0,repairer,openai:gpt-5.4-mini,ok,8364,19236,,103.8,1,stop,0.092835,,list price
+v2,pilot,rep_gpt-5.4-mini,CVE-2024-37891,cand0_r0_t0,repairer,openai:gpt-5.4-mini,ok,5148,17851,,92.3,1,stop,0.084191,,list price
+v2,pilot,rep_gpt-5.4-mini,CVE-2024-52303,cand0_r0_t0,repairer,openai:gpt-5.4-mini,ok,4761,12243,,71.8,1,stop,0.058664,,list price
+v2,pilot,rep_gpt-5.4-mini,CVE-2025-58438,cand0_r0_t0,repairer,openai:gpt-5.4-mini,ok,7835,29968,,171.0,1,stop,0.140732,,list price
+v2,pilot,rep_gpt-6.2-sol,CVE-2021-23980,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,10444,3743,,46.2,1,stop,0.058318,,list price
+v2,pilot,rep_gpt-6.2-sol,CVE-2023-30608,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,8364,3630,,55.4,1,stop,0.053028,,list price
+v2,pilot,rep_gpt-6.2-sol,CVE-2024-37891,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,5148,4780,,54.0,1,stop,0.058096,,list price
+v2,pilot,rep_gpt-6.2-sol,CVE-2024-52303,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,4761,4720,,56.8,1,stop,0.056722,,list price
+v2,pilot,rep_gpt-6.2-sol,CVE-2025-58438,cand0_r0_t0,repairer,openai:gpt-6.2-sol,ok,7835,8207,,113.4,1,stop,0.09774,,list price

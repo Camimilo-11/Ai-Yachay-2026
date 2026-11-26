@@ -1,0 +1,6 @@
+vuln_id,repo_url,fix_commit
+CVE-2017-16615,https://github.com/thanethomson/MLAlchemy,bc795757febdcce430d89f9d08f75c32d6989d3c
+CVE-2017-16618,https://github.com/tadashi-aikawa/owlmixin,5d0575303f6df869a515ced4285f24ba721e0d4e
+CVE-2018-7753,https://github.com/mozilla/bleach,c5df5789ec3471a31311f42c2d19fc2cf21b35ef
+CVE-2019-1010017,https://github.com/savon-noir/python-libnmap,71b707758851e4b622f87d9a73266e06f60aeab4
+CVE-2019-10800,https://github.com/codecov/codecov-python,2a80aa434f74feb31242b6f213b75ce63ae97902
