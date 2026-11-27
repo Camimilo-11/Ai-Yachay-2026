@@ -11,6 +11,7 @@ as committed, so the hashes they quote still match.
 | `decisiones_v3.txt` | evigate (executable evidence) on the 29 C1 patches | v4 |
 | `decisiones_v4.txt` | Confirmatory test of the hint-coverage rule on the 65 unused cases | v4 |
 | `decisiones_v5.txt` | Retrieval for a cheaper model and the rule for v6 | v5 |
+| `decisiones_v5_1.txt` | Exploratory v5.1: related project code, coverage check and retrieval keyed by the case's CWE | v5.1 |
 
 | Case list | Cases | Use |
 |---|---|---|

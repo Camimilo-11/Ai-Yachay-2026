@@ -1,0 +1,75 @@
+# Decisiones v5.1: Claude Haiku 5.5 con dos pasos nuevos del arnés y el RAG rehecho por la CWE del caso, sobre los mismos 95 casos de v5; fijadas ANTES de correr cualquier caso de v5.1. EXPLORATORIA.
+estado=fijado
+objetivo=ver si tres cambios que salen de los registros de v5 suben la VRR de Claude Haiku 5.5, y si el RAG rehecho por la CWE del caso suma algo encima de los otros dos
+caracter=exploratoria. Los cambios se eligieron mirando los resultados de v5 en estos mismos 95 casos y en Vul4Py no quedan casos sin usar, así que ningún resultado de v5.1 confirma una hipótesis: un efecto positivo es una pista que habría que probar en casos nuevos. Así lo pide si_no_se_confirma de decisiones_v5.txt y así se reporta en el paper
+origen=H1 de v5 no se confirmó (VRR 13,8 % con RAG frente a 14,9 % sin RAG, p = 0,73); regla_v6 de decisiones_v5: n8n espera y se sigue afinando el RAG, probando primero en los 5 casos de desarrollo
+
+# De dónde salen los cambios (registros de v5 en experiments/v5_rag/)
+abstenciones=49 de las 190 respuestas de Haiku no traen parche (23 sin RAG, 26 con RAG). Las 190 llamadas terminaron normalmente (end_turn): no son cortes, Haiku se abstuvo ("not found"), como permite el prompt. En unas 30 de las 49 dice que le falta código que no se le mostró (quién llama a la función, un helper o una constante de otro archivo). GPT-6.2 Sol no se abstuvo en ninguno de sus 95 casos con el mismo prompt
+rag_v5=solo 28 de los 285 ejemplos recuperados compartían una CWE con su caso; 76 de los 95 casos no recibieron ningún ejemplo de su propia debilidad y las mitigaciones mostradas eran las de los ejemplos, no las del caso. De los 11 casos que cambiaron entre M y M+RAG, 5 tienen que ver con abstenciones: 3 abstenciones de M pasaron a reparaciones verificadas con RAG y 2 reparaciones verificadas de M pasaron a abstenciones
+localizacion=38 de las 48 afirmaciones falsas de M (37 de 45 en M+RAG) no tocan todos los rangos de la pista; la regla de cobertura de la v4 bajó el FAR de 77 % a 53 % en los dos brazos
+sin_cambio=modelo (claudecode:claude-haiku-5-5, esfuerzo high, por el plan de Claude), prompt base (prompt_sha256 eb3d749d..., igual a v4 y v5), pista (hint lines), un intento inicial por caso, arnés de v5 (VUL4PY_CLEAN_ENV=1, VUL4PY_FLAKE_RERUN=2), base vectorial de v5 (misma colección, embedder, consulta y filtro de repositorio), casos y control del oráculo
+
+# Brazos (mismos 95 casos de v5, en orden)
+c0mr51=M'+RAG': preset c0 + (1) contexto del proyecto + (2) chequeo de cobertura + (3) RAG por la CWE del caso. Corre primero
+c0m51=M': lo mismo sin (3). Corre después
+orden=c0mr51, luego c0m51; nunca dos multiagent.py a la vez
+para_que=c0mr51 frente a c0m51 mide solo el RAG por CWE (los dos llevan 1 y 2). c0m51 frente al c0m de v5 mide los pasos 1 y 2 (corridas distintas sobre los mismos casos; por el plan, Claude Code no acepta temperature, así que las respuestas pueden variar entre corridas aunque nada cambie)
+evigate=las pruebas de exploit escritas por el modelo (v4) no entran: en la v4 no bajaron el FAR (54,5 %) y alargan la corrida
+
+# (1) Contexto del proyecto (scripts/v51_context.py; multiagent.py --project-context 4000)
+que=después de los archivos fuente, una sección con código del mismo proyecto que no está en ellos, buscado por nombre: las definiciones (funciones, clases, constantes de módulo) de los nombres que usan las líneas de la pista y, después, el resto de la función señalada; y las funciones que llaman a las funciones señaladas
+reglas=solo el checkout vulnerable; nunca la versión corregida, pruebas, docs, ejemplos, setup.py ni entornos virtuales; nombres genéricos (get, run, parse, logger, tipos de typing...) y nombres con más de 2 definiciones se saltan salvo que el archivo de la pista los importe de un módulo del proyecto; nombres ya definidos en los archivos mostrados se saltan; hasta 6 definiciones y 4 llamadores (2 por función), cada fragmento hasta 60 líneas, todo dentro de 4000 tokens estimados a 3,6 caracteres por token, en el formato de extractos que ya usa el prompt
+fuga=la sección sale de nombres que el modelo ya ve en la pista; no dice nada del fix. Queda en project_context.md con su sha256 en cada caso
+probado=en local, sin llamadas: en 4 casos reales donde Haiku dijo que le faltaba código (urllib3 CVE-2021-28363, bleach CVE-2020-6802, webob CVE-2024-42353, skops CVE-2025-54413) trae justo lo que nombró (create_proxy_ssl_context, el llamador de _parse en html5lib, SCHEME_RE, get_module y compañía), entre 12 y 1103 tokens, en menos de 0,2 s por caso
+
+# (2) Chequeo de cobertura (multiagent.py --coverage-check 1)
+que=si el parche de la primera respuesta no toca todos los rangos de la pista (la misma definición de fa_metrics.hint_coverage de la v4: tolerancia de 3 líneas), se le devuelven al mismo modelo los rangos sin tocar, con la respuesta anterior, y responde una vez más con las mismas cuatro secciones. Si no trajo parche (abstención), se le muestran todos los rangos y puede volver a decir "not found"
+reglas=una sola revisión por caso. La revisión reemplaza la respuesta solo si trae autoevaluación legible; si no la trae o la llamada falla, queda la respuesta anterior. Las negativas no se revisan. patch_initial.diff guarda el parche de antes del chequeo y se evalúa también (V_initial), para medir qué cambió la revisión
+fuga=solo usa la pista, que el modelo ya recibe; no usa nada del oráculo, de las pruebas ni del fix
+
+# (3) RAG por la CWE del caso (scripts/rag_cwe.py; multiagent.py --rag runs/v5/kb_rag_r_v1 --rag-mode cwe)
+que=las CWE del caso salen de su aviso público (cwe_map.json de la misma base, armado antes de v5 desde OSV y GitHub). Se recuperan fixes de OTROS repositorios que comparten al menos una de esas CWE, ordenados por la misma similitud de código de v5, el mejor pedazo por caso de origen y como mucho 2 casos; primero va el nombre de la CWE del caso y las mitigaciones de MITRE para ella (hasta 2 CWE)
+sin_ejemplos=un caso con CWE pero sin fixes de otro repositorio con esa CWE recibe solo la guía; un caso sin CWE (2 de los 95) no recibe sección
+presupuesto=hasta 3000 tokens, igual que v5
+composicion=calculada sobre la base antes de correr (no es un resultado): de los 95 casos, 61 reciben ejemplos de su CWE (49 con 2 y 12 con 1), 32 solo la guía y 2 ninguna sección
+diferencia_de_informacion=a diferencia de v5, la sección le dice al modelo la clase de debilidad del caso (sale de su aviso, como la pista sale del fix). Es parte del brazo con RAG y se reporta así: c0mr51 frente a c0m51 mide recuperación más esa etiqueta
+fuga=la misma auditoría de v5: similitud (difflib) entre cada ejemplo y el fix oficial del caso; con 0,5 o más el caso se marca y se reporta también el análisis sin los casos marcados
+probado=en local con una base de prueba: el filtro nunca devolvió el repositorio del caso ni una CWE distinta, el caso sin CWE no recibe sección y el caso sin ejemplos recibe solo la guía
+
+# Lo que no cambia sin las opciones nuevas
+compatibilidad=sin --project-context, --coverage-check ni --rag-mode cwe, multiagent.py da byte a byte el mismo prompt que en v5 (con y sin --rag) y los mismos registros: comprobado en local con 3 casos reales y un modelo simulado. El prompt_sha256 sigue siendo eb3d749d...
+
+# Desarrollo y corrida
+desarrollo=los 5 casos del piloto (pilot_ids.txt, sha256 72304de2...) en runs/v51_dev, con el control del oráculo copiado de runs/v5_dev (sesión v5dev). Se mira solo que los dos brazos corran, que las secciones respeten el presupuesto, que el chequeo se dispare cuando debe y que la auditoría de fuga no marque nada (scripts/v51_devcheck.py). Nada se ajusta por cuántos repara y estos 5 no entran al análisis
+evaluacion=los 95 casos de v5 (v5_ids.txt, sha256 24106120...) en runs/v51, con el control del oráculo copiado de runs/v5/_baseline (sesión v5: no se repite)
+entorno=export VUL4PY_CLEAN_ENV=1 VUL4PY_FLAKE_RERUN=2
+m_prima_rag=python scripts/multiagent.py --preset c0 --ids-file runs/preflight/v5_ids.txt --runs runs/v51 --agent c0mr51 --repairers claudecode:claude-haiku-5-5 --session v5 --models-file models.json --rag runs/v5/kb_rag_r_v1 --rag-mode cwe --project-context 4000 --coverage-check 1
+m_prima=el mismo comando con --agent c0m51 y sin --rag ni --rag-mode
+interrupciones=si el plan llega a su límite, multiagent.py espera y sigue; si la corrida se corta, se relanza el mismo comando y ningún caso congelado se repite; se anota aquí
+costo_estimado=unas 300-330 llamadas de Haiku (190 iniciales más una revisión en la mayoría de los casos): unos 6-8 USD a precio de lista; por el plan no se factura aparte
+tiempo_estimado=unas 5-6 horas para los dos brazos (en v5, Haiku solo y Haiku con RAG tardaron 3,7 horas)
+
+# Análisis (una sola vez, cuando terminen los dos brazos; nunca métricas parciales)
+por_brazo=casos completos, VRR y FAR con IC de Wilson al 95 %, afirmaciones, abstenciones antes y después del chequeo, casos revisados, costo a precio de lista y costo por reparación verificada (cada llamada cuenta)
+principal_exploratorio=VRR(c0mr51) - VRR(c0m51) en los casos completos en ambos: diferencia pareada con el IC de Newcombe para datos pareados (método 10) y McNemar exacto bilateral, reportados como estimación; no hay alfa ni hipótesis que se confirme
+secundarios=(1) c0m51 frente al c0m de v5 y c0mr51 frente al c0mr de v5, pareados de la misma forma; (2) efecto del chequeo dentro de cada brazo: V_initial frente a V y FAR antes y después de la revisión; (3) c0mr51 frente al C0 de v5: diferencia de VRR (Newcombe pareado) y razón de costo por reparación verificada con bootstrap pareado (10 000 remuestreos, semilla 2026, precios de lista); (4) la regla de cobertura de la v4 sobre los parches finales de cada brazo (Fisher unilateral, descriptivo: el chequeo ya empuja hacia la cobertura); (5) auditorías: casos marcados por fuga, casos con ejemplos de su CWE, solo guía o sin sección, y tamaño del contexto del proyecto
+script=scripts/confirm_v51.py implementa exactamente este plan; se entrega durante la corrida y su md5 se agrega aquí antes de correrlo, sin mirar resultados parciales
+no_se_hace=no se cambian parámetros, prompts ni corpus después de ver resultados de los 95; los 5 de desarrollo no entran al análisis
+
+# Versiones
+multiagent_md5=86b7c03704917bbd36e90bf599c9b0a2 (agrega --project-context, --coverage-check y --rag-mode; sin ellas, igual que v5 e8124b7a)
+v51_context_md5=c28dc70e74c24fed319f71821f7bbb2c (nuevo)
+rag_cwe_md5=3a341778e8614ba3e93e4181ccfa72c0 (nuevo; usa las funciones de rag_repair.py, sin cambios)
+rag_repair_md5=c127fce6e778464af0dbb26f5a512df5 (sin cambios)
+fa_metrics_md5=b1ad2f963a16f6e33acd83a49772c167 (sin cambios; v51_context.py usa su definición de cobertura)
+protocols_md5=3b66e683c96635b78b4d51f775694a1f (sin cambios)
+v51_devcheck_md5=29e7905ab43002adf08b38b93421411f (nuevo; solo revisa el desarrollo)
+eval_harness_sha256=af97432b765da580f3d358b26d1bb28fc6a93ee644391ca83d04313f1a2f0a9b (sin cambios)
+kb_manifest_sha256=ff64187843d2918d7f7642ad6ff4f5c6764cb9e5dee95e72987660d67ddde5f1 (la misma base de v5)
+redactado_utc=2026-11-27T11:45:00Z
+
+# Agregado durante la corrida (2026-11-27T11:42Z), antes de que terminara y sin mirar resultados de v5.1
+confirm_v51_md5=2544b59bcb8b85cdf3cac4c62431e21b (scripts/confirm_v51.py; implementa el análisis de arriba con las funciones de confirm_v4 y confirm_v5; el costo cuenta cada llamada con su tramo de precio; probado con registros simulados)
+analisis_comandos=en la instancia: python scripts/fa_metrics.py --runs runs/v51 --workspaces workspaces; después python scripts/confirm_v51.py --results runs/v51/results.csv --v5-results runs/v5/results.csv --runs runs/v51 --ids-file runs/preflight/v5_ids.txt --models-file models.json --json runs/v51/confirm_v51.json (también puede correrse una sola vez fuera de la instancia sobre los registros descargados)
+nota_hora=el redactado_utc de arriba es aproximado y quedó adelantado: el archivo se fijó antes de armar el paquete v51_instancia.tgz (2026-11-27T11:38Z, sha256 b3889f95...), cuya copia de este archivo (sin estas líneas agregadas) tiene sha256 3f7a36466c8917911d488a8a1f475bc9da54a0b92e30b4d3e0a6d90853837906

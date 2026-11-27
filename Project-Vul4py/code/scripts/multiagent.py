@@ -926,6 +926,50 @@ async def repair_with_gate(ctx: Ctx, rec: dict, k: int, model: ModelRef, message
     return cand  # pragma: no cover
 
 
+async def coverage_check(ctx: Ctx, rec: dict, c: Dict[str, Any], files: Dict[str, str], out_dir: Path,
+                         hint: str, label: str) -> None:
+    """v5.1 (--coverage-check N): when the candidate's patch does not touch every hinted line range (the
+    coverage of fa_metrics, decisiones_v4), the untouched ranges go back to the same repairer, up to N times.
+    A revision replaces the answer only when it has a parseable self-assessment; otherwise, or when the call
+    fails, the previous answer stands. Refusals and failed calls are not revised."""
+    import v51_context as V51
+    trail = c.setdefault("coverage_check", [])
+    model = ctx.model_by_spec[c["model"]]
+    msgs = list(c["messages_base"])
+    for i in range(ctx.args.coverage_check):
+        if c.get("status") in ("api_error", "refused") or not c.get("versions"):
+            return
+        v = _current(c)
+        unc = V51.uncovered(hint, v.get("diff", ""))
+        entry: Dict[str, Any] = {"round": i + 1, "coverage_before": V51.coverage(hint, v.get("diff", "")),
+                                 "uncovered": [list(x) for x in unc]}
+        trail.append(entry)
+        if not unc:
+            entry["action"] = "none"
+            return
+        key = f"cand{c['k']}_cov{i + 1}"
+        log(f"  C  {label}: {len(unc)} hinted range(s) untouched, coverage check -> {model.spec}")
+        msgs = msgs + [{"role": "assistant", "content": v.get("md", "")},
+                       {"role": "user", "content": V51.coverage_message(unc, bool(v.get("diff")))}]
+        md = await _ask(ctx, rec, key, "repairer", model, msgs, out_dir)
+        if md is None:
+            entry["action"] = "api_error_kept_previous"
+            return
+        diff = extract_diff(md)
+        sa = self_assessment(md)
+        _write(out_dir / f"{key}.diff", diff)
+        if sa["parse_status"] == "missing":
+            entry["action"] = "unparsed_kept_previous"
+            return
+        gr = _grounding(section(md, "Vulnerability") or md, files)
+        refused = P.is_refusal(md, bool(diff))
+        c["versions"].append({"key": key, "md": md, "diff": diff, "self": sa, "coverage_revision": i + 1,
+                              "grounding": {k2: v2 for k2, v2 in gr.items() if k2 != "grounded_items"},
+                              "refused": refused})
+        c["status"] = "refused" if refused else ("ok" if diff else "no_patch")
+        entry.update({"action": "revised", "coverage_after": V51.coverage(hint, diff)})
+
+
 def _current(c: Dict[str, Any]) -> Dict[str, Any]:
     return c["versions"][-1] if c.get("versions") else {}
 
@@ -1173,6 +1217,21 @@ async def run_case(ctx: Ctx, vid: str, agent: str) -> Optional[Dict[str, Any]]:
     files, excerpts, mode = fit_context(case_dir, rels, budget, hint_ranges_of(hint))
     code = render(files, excerpts)
     _write(out_dir / "context.md", code)
+    code_r, rec_pc = code, None      # v5.1 (--project-context): the repairer also sees related project code
+    if getattr(a, "project_context", 0) and files:
+        import v51_context as V51
+        try:
+            rfiles, rex, rec_pc = await asyncio.get_running_loop().run_in_executor(
+                None, V51.related_code, case_dir, files, hint, a.project_context)
+        except Exception as e:  # noqa: BLE001
+            rfiles, rex, rec_pc = {}, {}, {"error": repr(e)}
+        if rfiles:
+            pc = V51.RELATED_INTRO + render(rfiles, rex)
+            _write(out_dir / "project_context.md", pc)
+            code_r = code + "\n\n" + pc
+            rec_pc["section_sha256"] = hashlib.sha256(pc.encode()).hexdigest()
+        log(f"  P  {agent}/{vid}: {len((rec_pc or {}).get('snippets', []))} related excerpt(s) "
+            f"~{(rec_pc or {}).get('tokens_est', 0)} tokens")
     hint_block = HINT_BLOCK.format(hint=hint) if hint else ""
     vpy = case_dir / "vulnerable" / ".venv" / "bin" / "python"
     python = str(vpy) if vpy.exists() else None
@@ -1187,6 +1246,8 @@ async def run_case(ctx: Ctx, vid: str, agent: str) -> Optional[Dict[str, Any]]:
         "code_budget_tokens": budget, "stages": {}, "candidates": [], "jury_rounds": [],
         "generation_status": "complete", "incomplete_reason": "", "started_at_utc": utc_now(),
     }
+    if rec_pc is not None:
+        rec["project_context"] = rec_pc
     t0 = time.perf_counter()
     async with ctx.case_sem:
         if not files:
@@ -1217,9 +1278,13 @@ async def run_case(ctx: Ctx, vid: str, agent: str) -> Optional[Dict[str, Any]]:
         reference_block = ""
         if getattr(a, "rag", None) and rec["generation_status"] == "complete":
             import rag_repair
+            lookup = rag_repair.lookup
+            if getattr(a, "rag_mode", "similar") == "cwe":       # v5.1: retrieval keyed by the case's CWE
+                import rag_cwe
+                lookup = rag_cwe.lookup
             try:
                 reference_block, rec["rag"] = await asyncio.get_running_loop().run_in_executor(
-                    None, rag_repair.lookup, a.rag, case_dir, meta, hint)
+                    None, lookup, a.rag, case_dir, meta, hint)
                 _write(out_dir / "rag_section.md", reference_block)
                 log(f"  R  {agent}/{vid}: {[h['case'] for h in rec['rag']['hits']]} "
                     f"~{rec['rag']['section_tokens_est']} tokens" + (" LEAK?" if rec["rag"]["leak_flag"] else ""))
@@ -1231,7 +1296,7 @@ async def run_case(ctx: Ctx, vid: str, agent: str) -> Optional[Dict[str, Any]]:
         if rec["generation_status"] == "complete":
             sys_b = REPAIRER_SYSTEM.replace("{with_analysis}", with_analysis)
             usr_b = REPAIRER_USER.format(hint_block=hint_block, analysis_block=analysis_block + reference_block,
-                                         code=code)
+                                         code=code_r)
             log(f"  B  {agent}/{vid} -> {', '.join(m.spec for m in repairers)}")
             cands = list(await asyncio.gather(*[
                 repair_with_gate(ctx, rec, k, m, [{"role": "system", "content": sys_b},
@@ -1244,6 +1309,10 @@ async def run_case(ctx: Ctx, vid: str, agent: str) -> Optional[Dict[str, Any]]:
                 rec["generation_status"], rec["incomplete_reason"] = "incomplete", "every repairer failed (API)"
         initial_primary = _current(cands[0]).get("diff", "") if cands else ""
         _write(out_dir / "patch_initial.diff", initial_primary)
+        # ---------------------------------------------------------------- 2b. coverage check (v5.1 only)
+        if getattr(a, "coverage_check", 0) and rec["generation_status"] == "complete" and hint:
+            for c in cands:
+                await coverage_check(ctx, rec, c, files, out_dir, hint, f"{agent}/{vid}")
         # ---------------------------------------------------------------- 3. cross-examination
         live = [c for c in cands if c.get("status") == "ok"]
         if a.cross_exam and len(live) >= 2 and rec["generation_status"] == "complete":
@@ -1340,6 +1409,9 @@ async def run_case(ctx: Ctx, vid: str, agent: str) -> Optional[Dict[str, Any]]:
             "cross_critiques": (c.get("cross") or {}).get("critiques"),
             "versions": [{k: v for k, v in ver.items() if k not in ("md", "diff")} for ver in c.get("versions", [])],
         } for c in cands]
+        for cd, c in zip(rec["candidates"], cands):
+            if c.get("coverage_check") is not None:
+                cd["coverage_check"] = c["coverage_check"]
         for c in cands:
             if _current(c).get("diff"):
                 _write(out_dir / f"cand{c['k']}_final.diff", _current(c)["diff"])
@@ -1516,6 +1588,10 @@ async def amain(a) -> int:
                                                  (f"jury{len(jurors)}", jurors),
                                                  (f"debate{a.debate_rounds}", jurors and a.debate_rounds),
                                                  (f"revise{a.max_revisions}", jurors and a.max_revisions)) if on)
+    if getattr(a, "project_context", 0):
+        ctx.pipeline_name += "+context"
+    if getattr(a, "coverage_check", 0):
+        ctx.pipeline_name += f"+coverage{a.coverage_check}"
     a.runs.mkdir(parents=True, exist_ok=True)
     exp = {"schema": SCHEMA, "started_at_utc": utc_now(), "condition": a.condition, "pipeline": ctx.pipeline_name,
            "models": {"analyst": analyst.spec if analyst else None, "repairers": [m.spec for m in repairers],
@@ -1531,8 +1607,19 @@ async def amain(a) -> int:
     except Exception:  # noqa: BLE001
         pass
     if getattr(a, "rag", None):
-        import rag_repair
-        exp["rag"] = rag_repair.describe(a.rag)      # also loads the model once, before the first case
+        if getattr(a, "rag_mode", "similar") == "cwe":
+            import rag_cwe
+            exp["rag"] = rag_cwe.describe(a.rag)     # also loads the model once, before the first case
+        else:
+            import rag_repair
+            exp["rag"] = rag_repair.describe(a.rag)      # also loads the model once, before the first case
+    if getattr(a, "project_context", 0) or getattr(a, "coverage_check", 0):
+        import v51_context
+        exp["v51"] = {"context_version": v51_context.VERSION, "texts_sha256": v51_context.texts_sha256(),
+                      "project_context_tokens": a.project_context, "coverage_check": a.coverage_check,
+                      "coverage_tolerance_lines": v51_context.fa_metrics.HINT_TOLERANCE,
+                      "multiagent_sha256": sha256_file(Path(__file__)),
+                      "v51_context_sha256": sha256_file(Path(v51_context.__file__))}
     exp_path = a.runs / f"experiment_{a.agent}.json"
     _write(exp_path, json.dumps(exp, indent=2))
     log(f"[+] {a.agent}: {len(ids)} cases; {ctx.pipeline_name}; repairers={[m.spec for m in repairers]} "
@@ -1696,6 +1783,15 @@ def build_parser() -> argparse.ArgumentParser:
                     help="RAG-R base built by scripts/rag_repair.py (decisiones_v5): fixes retrieved from other "
                          "repositories go between the hint and the source files of the repairer prompt; without "
                          "it the prompt is unchanged")
+    io.add_argument("--rag-mode", choices=("similar", "cwe"), default="similar",
+                    help="v5.1: 'cwe' retrieves fixes of the case's own weakness (scripts/rag_cwe.py); "
+                         "'similar' is RAG-R v1 of v5 (default)")
+    io.add_argument("--project-context", type=int, default=0, metavar="TOKENS",
+                    help="v5.1: related code of the same project (definitions the hinted lines use, callers of the "
+                         "hinted functions; scripts/v51_context.py) after the source files, within TOKENS; 0 = off")
+    io.add_argument("--coverage-check", type=int, default=0, metavar="N",
+                    help="v5.1: send the hinted ranges the patch does not touch back to the repairer, up to N "
+                         "times (fa_metrics coverage, tolerance 3 lines); 0 = off")
     ap.add_argument("--ping", default="", help="Comma-separated provider:model list: one tiny request each")
     return ap
 

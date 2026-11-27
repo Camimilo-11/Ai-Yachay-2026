@@ -11,3 +11,4 @@ which files hold the evidence; the decisions fixed before each run are in [`../p
 | [`v3_main/`](v3_main/) | Nov 25-26 | Main sample (C0, C0g, C1) with every claim rule, and the GPT benchmark |
 | [`v4_evigate_confirmation/`](v4_evigate_confirmation/) | Nov 26 | evigate on the 29 C1 patches and the confirmatory run of the coverage rule (65 cases) |
 | [`v5_rag/`](v5_rag/) | Nov 26-27 | Knowledge base of the retrieval step, development check, main run (H1 not confirmed) and its case records |
+| [`v5_1_context_cwe/`](v5_1_context_cwe/) | Nov 27- | Exploratory follow-up of v5: related project code, coverage check and retrieval keyed by the case's CWE; decisions and code fixed before the run, results when it ends |
