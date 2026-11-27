@@ -7,8 +7,8 @@ Writes figures/<name>.pdf and .png (300 dpi) and figures/MANIFEST.json, which re
 input files with their sha256, the transformations and the uncertainty shown. Rules followed:
 - proportions are shown as points with 95% Wilson intervals, with n in the label; bars start at zero;
 - color is never the only cue (markers and labels carry the same information; Okabe-Ito palette);
-- nothing is typed by hand except two documented constants: the lab's reference run (23 attempts) and the
-  number of cases that passed the scan with the public Vul4Py release (18, docs/README_multiagent.md).
+- nothing is typed by hand except one documented constant: the number of cases that passed the scan with the
+  public Vul4Py release (18, docs/README_multiagent.md).
 Figures whose data are not in the repository yet (the confirmation run of v4, the v5 arms) are drawn
 without those rows, and the manifest says which rows are missing.
 """
@@ -36,8 +36,6 @@ MM = 1 / 25.4
 RC = {"font.size": 8, "axes.titlesize": 8.5, "axes.labelsize": 8, "xtick.labelsize": 7.5, "ytick.labelsize": 7.5,
       "legend.fontsize": 7, "axes.spines.top": False, "axes.spines.right": False, "pdf.fonttype": 42,
       "ps.fonttype": 42, "savefig.dpi": 300, "figure.dpi": 150}
-LAB_REFERENCE = {"label": "Lab reference run (23 attempts)", "n": 23, "verified": 1, "claims": 23, "false": 22,
-                 "source": "reference results distributed with the course lab (23 attempts)"}
 PUBLIC_RELEASE_OK = {"value": 18, "source": "docs/README_multiagent.md: 18 cases passed the first scan with the public release"}
 MANIFEST: dict = {"generated_utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "figures": {}}
 
@@ -158,7 +156,7 @@ def fig_pilot():
 def fig_main():
     main = rows(ROOT / "v3_main/results.csv")
     v0 = rows(ROOT / "v0_mvp/results.csv")
-    series = [(LAB_REFERENCE["label"], LAB_REFERENCE["verified"], LAB_REFERENCE["n"], LAB_REFERENCE["false"], LAB_REFERENCE["claims"], OKABE["grey"], "s")]
+    series = []
     v0c = [r for r in v0 if r["claim"] == "True"]
     series.append(("v0 MVP, laguna-xs-2.1 (5 cases)", sum(bit(r["verified_repair"]) for r in v0), len(v0),
                    sum(1 for r in v0c if r["verified_repair"] == "False"), len(v0c), OKABE["grey"], "D"))
@@ -201,7 +199,7 @@ def fig_main():
             ax.grid(axis="x", lw=0.3, alpha=0.5)
     save(fig, "fig_main_vrr_far", [ROOT / "v3_main/results.csv", ROOT / "v0_mvp/results.csv"] + ([conf] if conf.exists() else []) + ([v5] if v5.exists() else []),
          {"what": "VRR and FAR with 95% Wilson intervals; labels give k/n", "claim_rule": "repairer's own claim (C0, C0g, v5); unanimous jury (C1, primary rule of decisiones_v3)",
-          "constants": [LAB_REFERENCE], "missing_rows": missing})
+          "missing_rows": missing})
 
 
 # ----------------------------------------------------------------------------- figure 4: jury calibration
@@ -390,12 +388,11 @@ def fig_v0():
         v = sum(bit(r["verified_repair"]) for r in rs)
         claims = [r for r in rs if bit(r["claim"]) == 1]
         fa = sum(1 for r in claims if bit(r["verified_repair"]) == 0)
-        L = LAB_REFERENCE
-        series = [("VRR, pilot", v, n, OKABE["blue"], "o"), ("VRR, lab reference", L["verified"], L["n"], OKABE["grey"], "s"),
-                  ("FAR, pilot", fa, len(claims), OKABE["blue"], "o"), ("FAR, lab reference", L["false"], L["claims"], OKABE["grey"], "s")]
+        series = [("VRR", v, n, OKABE["blue"], "o"), ("FAR", fa, len(claims), OKABE["vermillion"], "s")]
         for i, (lab, k, m, col, mk) in enumerate(series):
-            dotrow(a2, len(series) - 1 - i - (0.4 if i >= 2 else 0), k, m, col, mk)
-        a2.set_yticks([len(series) - 1 - i - (0.4 if i >= 2 else 0) for i in range(len(series))], [s[0] for s in series])
+            dotrow(a2, len(series) - 1 - i, k, m, col, mk)
+        a2.set_yticks([len(series) - 1 - i for i in range(len(series))], [s[0] for s in series])
+        a2.set_ylim(-0.6, len(series) - 0.4)
         a2.set_xlim(0, 1)
         a2.xaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0))
         a2.set_xlabel("Proportion with 95% Wilson interval")
@@ -405,7 +402,6 @@ def fig_v0():
              {"transformations": ["VRR = verified/attempts; FAR = unverified positive claims/positive claims",
                                   "functional and exploit cells are 'not run' when the patch did not apply or was empty"],
               "uncertainty": "95% Wilson score intervals (z = 1.959964)",
-              "constants": {"lab_reference": LAB_REFERENCE},
               "values": {"pilot": {"n": n, "verified": v, "claims": len(claims), "false": fa}}})
 
 

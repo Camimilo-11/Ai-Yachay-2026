@@ -144,7 +144,7 @@ whose only model is gpt-6.2-sol.
 
 ## v2: jury from other families (budget of 20 USD per provider)
 
-The professor's key ran out during the first main run (Nov 25, 11:41 UTC; those outputs are archived
+The OpenAI key provided for the course ran out during the first main run (Nov 25, 11:41 UTC; those outputs are archived
 in `runs/final_v0` and excluded). The rest runs on three budgets of 20 USD (OpenAI, Anthropic,
 DeepSeek). The repairer stays gpt-6.2-sol (the only one measured in the pilot, so C0, C0g and C1 share
 it), gpt-5.4-mini leaves C1 (1 of 5 repaired, the most output tokens, and the only false assurance of

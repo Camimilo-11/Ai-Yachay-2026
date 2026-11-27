@@ -31,9 +31,7 @@
    "what the model received in CVE-2019-1010017"
   ],
   "deferred_to_authors": [
-   "a sample-size and hypothesis plan for the main study is not in the inputs",
-   "temperature of the pilot run",
-   "how to cite the laboratory reference run"
+   "a sample-size and hypothesis plan for the main study is not in the inputs"
   ],
   "scores_after": {
    "Originality": 2,
@@ -46,5 +44,10 @@
    "Overall": 5
   }
  },
- "stage5_format": "compiled with the official MDPI class (Definitions/ from the MDPI Article Template provided by the author), journal option 'ai', 10 pages, no undefined citations or references and no overfull lines; the local build replaced the bbm font package, which this paper does not use, with a stand-in"
+ "stage5_format": "compiled with the official MDPI class (Definitions/ from the MDPI Article Template provided by the author), journal option 'ai', 10 pages, no undefined citations or references and no overfull lines; the local build replaced the bbm font package, which this paper does not use, with a stand-in",
+ "author_answers_2026_11_26": [
+  "school, email, course (Networks / Redes), repository URL, research type, instructor who approved NVIDIA (Eugenio Morocho) and Claude version filled in",
+  "temperature stated as the runner's behaviour (0 unless set on the command line)",
+  "placeholder DOI of the class removed from the footers"
+ ]
 }

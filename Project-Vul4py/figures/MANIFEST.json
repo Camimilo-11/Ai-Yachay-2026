@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-26T23:11:36Z",
+ "generated_utc": "2026-11-26T23:47:13Z",
  "figures": {
   "fig_environment": {
    "files": [
@@ -48,16 +48,6 @@
    },
    "what": "VRR and FAR with 95% Wilson intervals; labels give k/n",
    "claim_rule": "repairer's own claim (C0, C0g, v5); unanimous jury (C1, primary rule of decisiones_v3)",
-   "constants": [
-    {
-     "label": "Lab reference run (23 attempts)",
-     "n": 23,
-     "verified": 1,
-     "claims": 23,
-     "false": 22,
-     "source": "reference results distributed with the course lab (23 attempts)"
-    }
-   ],
    "missing_rows": [
     "v5 arms (v5_rag/results.csv)"
    ]
@@ -133,16 +123,6 @@
     "functional and exploit cells are 'not run' when the patch did not apply or was empty"
    ],
    "uncertainty": "95% Wilson score intervals (z = 1.959964)",
-   "constants": {
-    "lab_reference": {
-     "label": "Lab reference run (23 attempts)",
-     "n": 23,
-     "verified": 1,
-     "claims": 23,
-     "false": 22,
-     "source": "reference results distributed with the course lab (23 attempts)"
-    }
-   },
    "values": {
     "pilot": {
      "n": 5,

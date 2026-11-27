@@ -7,8 +7,8 @@
   approved by the instructor.
 - Prompt: one fixed system prompt ("security engineer"; answer CLAIM: YES/NO, CONFIDENCE: 0-100, PATCH: unified
   diff) and one user template per case with the vulnerable versions of the files the reference fix changes
-  (at most 4 files, 60 kB) (v0_mvp/code/scripts/run_agent.py). Runner default temperature 0
-  [PENDIENTE: confirm it was not overridden].
+  (at most 4 files, 60 kB) (v0_mvp/code/scripts/run_agent.py). The runner sends temperature 0
+  unless another value is given on its command line.
 - Benchmark size: 100 vulnerabilities (92 CVEs, 8 GitHub advisories) in 60 open-source Python projects (dataset/vul4py.csv lists
   61 repository URLs because starlette appears under encode/ and kludex/);
   paper: Bui et al. (2026), arXiv:2608.00692.
@@ -40,7 +40,6 @@ answer per case is recorded, and not every failed request was preserved.
 - VRR = 1/5 = 20% (95% Wilson 3.6-62.4%).
 - Positive claims: 4; unverified: 3. FAR = 3/4 = 75% (95% Wilson 30.1-95.4%).
 - Tokens: 18,989 input and 845 output in the five saved calls; cost 0 USD (free API catalog).
-- Reference (lab run, 23 attempts): VRR 1/23 = 4.3% (0.8-21.0%); FAR 22/23 = 95.7% (79.0-99.2%).
 
 ## Observations
 - The model claimed success with 95% confidence on four of five cases; only one was verified.

@@ -20,15 +20,26 @@
 
 \newcommand{\pend}[1]{\textcolor{red}{\textbf{[PENDIENTE: #1]}}}
 
+% No DOI has been assigned to this paper: the class's placeholder DOI is removed from the footers.
+\makeatletter
+\fancypagestyle{plain}{%
+  \renewcommand{\footrulewidth}{0.4pt}%
+  \fancyhead{\null\vspace{8pt}}%
+  \fancyfoot[L]{\fontsize{8}{8}\selectfont Version {\@ \today} submitted to {\em \journalname}}%
+  \fancyfoot[R]{}%
+}
+\rfoot{}
+\makeatother
+
 \Title{Measuring False Assurance in LLM-Based Automated Vulnerability Repair: A Research Proposal and a Five-Case Pilot on Vul4Py}
 
 \Author{Camilo Vasquez}
 
 \AuthorNames{Camilo Vasquez}
 
-\address[1]{\pend{school and department}, Yachay Tech University, Urcuqu\'i, Ecuador; \pend{institutional e-mail}}
+\address[1]{School of Mathematical and Computational Sciences, Yachay Tech University, Urcuqu\'i, Ecuador; camilo.vasquez@yachaytech.edu.ec}
 
-\corres{Correspondence: \pend{institutional e-mail}}
+\corres{Correspondence: camilo.vasquez@yachaytech.edu.ec}
 
 \abstract{Large language models (LLMs) that repair security vulnerabilities usually state that the repair works. When the statement is wrong, a developer who trusts it may ship code that is still vulnerable. This paper proposes to measure this false assurance on real Python vulnerabilities and reports a pilot of the measurement. The study uses the Vul4Py benchmark, where a repair is verified only when the patch applies, the project's functional tests pass and the vulnerability's exploit tests pass. It reports the verified repair rate (VRR) and the false assurance rate (FAR), the share of positive claims that are not verified, with 95\% Wilson intervals. In the pilot, one model (poolside/laguna-xs-2.1) answered five cases with a claim, a confidence and a patch, saved before any test ran. One repair was verified (VRR 20\%; 95\% CI 3.6--62.4\%), and three of the four positive claims, all made with 95\% confidence, were not (FAR 75\%; 30.1--95.4\%); one of those patches changed nothing. The pilot is too small to estimate rates but shows that the protocol works and that confident claims can be false. The planned study validates all 100 environments and replaces the single model with a three-model pipeline judged by the same oracle.}
 
@@ -45,7 +56,7 @@ Automated program repair has a long history, with oracles ranging from test suit
 
 A repair tool returns a patch and, explicitly or implicitly, the statement that the patch fixes the problem. That statement is not evidence. Confidence that LLMs express in words tends to be overconfident~\cite{Xiong2024CanLlmsExpress}, and although larger models are reasonably calibrated on multiple-choice questions, their estimates of whether they know an answer generalise poorly to new tasks~\cite{Kadavath2022LanguageModelsMostly}. Benchmarks of vulnerability repair with executable checks report how many repairs succeed~\cite{Bui2022Vul4jDatasetOf,Wei2025PatchevalNewBenchmark,Bui2026Vul4pyBenchmarkingAutomated}. The measurement proposed here also records the model's claim before the oracle runs and reports how often a positive claim is not confirmed by the oracle. We call this outcome \emph{false assurance}: the developer receives a positive claim about a repair that the executable tests do not confirm.
 
-This paper is the research proposal of the project (milestone~1) and reports the pilot that tested the measurement end to end. The research question is: when an LLM repairs a real Python vulnerability and claims that the repair works, how often is the claim false under an executable oracle, and how does this false assurance rate relate to the rate of verified repairs? A follow-up question for the planned study is whether splitting the task among several models lowers false assurance without lowering the number of verified repairs. The research is applied and quantitative \pend{confirm the type of research}: it measures the behaviour of LLM-based repair on a public benchmark with a fixed protocol. The question and the evaluation harness come from a laboratory assignment of the course \pend{name of the course where the Vul4Py lab was assigned}, which this project extends.
+This paper is the research proposal of the project (milestone~1) and reports the pilot that tested the measurement end to end. The research question is: when an LLM repairs a real Python vulnerability and claims that the repair works, how often is the claim false under an executable oracle, and how does this false assurance rate relate to the rate of verified repairs? A follow-up question for the planned study is whether splitting the task among several models lowers false assurance without lowering the number of verified repairs. The research is applied and quantitative, with an experimental design: the pilot reported here is exploratory, and the planned study compares configurations of the repair system on the same cases with a fixed protocol. The question and the evaluation harness come from a laboratory assignment of the Networks course (Redes) at the same university, which this project extends.
 
 The contributions of this paper are three. First, a measurement protocol in which the claim, its confidence and the patch are saved before an executable oracle decides whether the repair is verified, with two metrics (VRR and FAR) and their uncertainty. Second, a five-case pilot that runs the protocol end to end, with every prompt, answer, patch and oracle verdict released. Third, the plan of the study: validation of the benchmark environments and a three-model pipeline whose claims are judged by the same oracle, with the tokens, time and cost of every model call recorded. Section~\ref{sec:related} reviews related work, Section~\ref{sec:methods} describes the benchmark, the system, the metrics and the planned study, Section~\ref{sec:results} reports the pilot, Section~\ref{sec:discussion} discusses what it shows and its limitations, and Section~\ref{sec:conclusions} concludes.
 
@@ -71,21 +82,23 @@ A natural way to make a claim trustworthy is to let a model check it, either the
 
 \subsection{Benchmark and Executable Oracle}
 
-The study uses Vul4Py~\cite{Bui2026Vul4pyBenchmarkingAutomated} at commit \texttt{f80f861} of the repository used in the laboratory \pend{repository URL; candidate: https://github.com/tabudz/vul4py}. The benchmark lists 100 vulnerabilities (92 with CVE identifiers and 8 with GitHub advisory identifiers) from 60 open-source Python projects. Each case provides the vulnerable and the fixed commit, the project's functional tests and the exploit tests of the vulnerability. A repair is \emph{verified} when three conditions hold in order: the patch applies to the vulnerable version, the functional tests still pass, and the exploit tests pass. Skipped tests are reported but never count as passes, and a patch that does not apply, or an empty patch, is not verified. The oracle is run by the evaluation script of the laboratory harness (\texttt{run\_eval.py}), only after the model's answer has been saved.
+The study uses Vul4Py~\cite{Bui2026Vul4pyBenchmarkingAutomated} at commit \texttt{f80f861} of the benchmark repository used in the laboratory. The benchmark lists 100 vulnerabilities (92 with CVE identifiers and 8 with GitHub advisory identifiers) from 60 open-source Python projects. Each case provides the vulnerable and the fixed commit, the project's functional tests and the exploit tests of the vulnerability. A repair is \emph{verified} when three conditions hold in order: the patch applies to the vulnerable version, the functional tests still pass, and the exploit tests pass. Skipped tests are reported but never count as passes, and a patch that does not apply, or an empty patch, is not verified. The oracle is run by the evaluation script of the laboratory harness (\texttt{run\_eval.py}), only after the model's answer has been saved.
 
 \subsection{System Design}
 
 Figure~\ref{fig:system} shows the system. The input is a benchmark case. The repair stage builds a prompt from the case, calls the model and saves its answer (claim, confidence and patch) before any test runs. The evaluation stage applies the patch and runs the functional and exploit tests. The output stage compares each claim with the oracle's verdict and computes the metrics of Section~\ref{sec:metrics}, together with the tokens, time and cost of each call.
 
 \begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
 \centering
-\fbox{\parbox{0.92\linewidth}{\centering\vspace{1.6cm}\pend{system diagram drawn by the author (rubric: not AI-generated); components and arrows in inputs/system\_diagram\_spec.md. Replace this box with \texttt{\textbackslash includegraphics[width=\textbackslash linewidth]\{figures/fig\_system\_overview.pdf\}}}\vspace{1.6cm}}}
-\caption{System overview. A Vul4Py case enters the repair stage, whose answer (claim, confidence and patch) is frozen before the executable oracle checks, in order, that the patch applies, that the functional tests pass and that the exploit tests pass. The metrics compare each claim with the oracle's verdict.\label{fig:system}}
+\includegraphics[width=\linewidth]{figures/fig_system_overview.pdf}
+\end{adjustwidth}
+\caption{System overview. A Vul4Py case enters the repair stage, whose answer (claim, confidence and patch) is frozen before the executable oracle checks, in order, that the patch applies, that the functional tests pass and that the exploit tests pass. The metrics compare each claim with the oracle's verdict. Drawn from the TikZ source \texttt{figures/fig\_system\_overview.tex}.\label{fig:system}}
 \end{figure}
 
 \subsection{Repair Agent Used in the Pilot}
 
-The pilot used the model \texttt{poolside/\allowbreak laguna-xs-2.1} through NVIDIA's OpenAI-compatible endpoint in the NVIDIA API catalog, which is free of charge; the instructor approved this provider. The runner was the laboratory harness (\texttt{run\_agent.py}). Its system prompt asks the model, as a security engineer, to assess whether its proposed patch fully fixes the vulnerability and preserves baseline behaviour, based only on the provided context and before independent tests, and to answer in a fixed format: a claim (YES or NO), a confidence from 0 to 100 and the patch as a unified diff. The user prompt gives the vulnerability identifier and the vulnerable versions of the files that the reference fix changes, up to four files and 60~kB, and asks for a minimal fix that keeps the baseline tests passing. The runner's default temperature is 0 \pend{confirm that it was not overridden}. The runner parses the claim, the confidence and the diff and saves them, with the raw answer, the token counts and the elapsed time, before the oracle runs. The pilot cases are the first five of the benchmark list: CVE-2017-16615 (MLAlchemy), CVE-2017-16618 (owlmixin), CVE-2018-7753 (bleach), CVE-2019-1010017 (python-libnmap) and CVE-2019-10800 (codecov-python).
+The pilot used the model \texttt{poolside/\allowbreak laguna-xs-2.1} through NVIDIA's OpenAI-compatible endpoint in the NVIDIA API catalog, which is free of charge; the instructor approved this provider. The runner was the laboratory harness (\texttt{run\_agent.py}). Its system prompt asks the model, as a security engineer, to assess whether its proposed patch fully fixes the vulnerability and preserves baseline behaviour, based only on the provided context and before independent tests, and to answer in a fixed format: a claim (YES or NO), a confidence from 0 to 100 and the patch as a unified diff. The user prompt gives the vulnerability identifier and the vulnerable versions of the files that the reference fix changes, up to four files and 60~kB, and asks for a minimal fix that keeps the baseline tests passing. The runner sends a temperature of 0 unless another value is given on its command line. The runner parses the claim, the confidence and the diff and saves them, with the raw answer, the token counts and the elapsed time, before the oracle runs. The pilot cases are the first five of the benchmark list: CVE-2017-16615 (MLAlchemy), CVE-2017-16618 (owlmixin), CVE-2018-7753 (bleach), CVE-2019-1010017 (python-libnmap) and CVE-2019-10800 (codecov-python).
 
 \subsection{Metrics}\label{sec:metrics}
 
@@ -104,15 +117,15 @@ The Wilson interval is preferred to the textbook Wald interval because the cover
 
 \subsection{Baselines}
 
-Two baselines frame the results. The first is the reference run distributed with the laboratory assignment: 23 attempts, all with a positive claim, of which one was verified (VRR $1/23$) and 22 were not (FAR $22/23$) \pend{how to cite the laboratory reference run}. Its models, cases and attempt protocol are not the same as the pilot's \pend{confirm}, so it is context rather than a controlled comparison. The second baseline is the pilot itself, against which the planned pipeline will be compared.
+The pilot is the baseline of the study: the planned pipeline will be compared with it on the same cases and with the same oracle. As external context, the authors of Vul4Py report that the strongest directly prompted LLM in their evaluation repaired 4 of the 100 cases and an agentic system 41~\cite{Bui2026Vul4pyBenchmarkingAutomated}; their protocol differs from the pilot's, so these numbers are not compared statistically with it.
 
 \subsection{Planned Study}
 
-The pilot is the first step of a larger study. First, every one of the 100 benchmark environments is to be built and checked, so that a case enters the experiments only if the oracle behaves as expected on it. The setup of the pilot showed why this is needed: the exploit test of the first case could not even be collected until a missing dependency was installed. Second, the single model of the pilot is to be replaced by a pipeline of three models from the NVIDIA API catalog with separate roles: one describes the structure of the code, one identifies the vulnerability and writes the fix, and one evaluates the result, with the least reliable model given the lightest task \pend{confirm the plan}. The pipeline is compared with the single model on the same cases and judged by the same oracle, so that its effect on VRR and FAR can be measured. In every run, the claim of each attempt is frozen before the oracle runs, and every model call is recorded with its tokens, time and cost.
+The pilot is the first step of a larger study. First, every one of the 100 benchmark environments is to be built and checked, so that a case enters the experiments only if the oracle behaves as expected on it. The setup of the pilot showed why this is needed: the exploit test of the first case could not even be collected until a missing dependency was installed. Second, the single model of the pilot is to be replaced by a pipeline of three models from the NVIDIA API catalog with separate roles: one describes the structure of the code, one identifies the vulnerability and writes the fix, and one evaluates the result, with the least reliable model given the lightest task. The pipeline is compared with the single model on the same cases and judged by the same oracle, so that its effect on VRR and FAR can be measured. In every run, the claim of each attempt is frozen before the oracle runs, and every model call is recorded with its tokens, time and cost.
 
 \subsection{Schedule and Resources}
 
-Table~\ref{tab:schedule} lists the phases of the study. The pilot used the free NVIDIA API catalog, which the planned pipeline also uses, and the benchmark environments are built on the author's computer \pend{confirm}.
+Table~\ref{tab:schedule} lists the phases of the study. The pilot used the free NVIDIA API catalog, which the planned pipeline also uses, and the benchmark environments are built on the author's computer.
 
 \begin{table}[H]
 \caption{Phases of the study.\label{tab:schedule}}
@@ -130,7 +143,7 @@ Final report & Paper, repository and presentation & 3 December \\
 
 \subsection{Use of Generative AI}\label{sec:ai}
 
-Generative AI is the object of this study: the prompts, answers, token counts and elapsed times of the repair model are released with the paper. In addition, the author used Claude (Anthropic) \pend{model version} as an assistant to write and review analysis scripts, to organise the repository and to draft and edit the text of this manuscript. All numbers were computed from the released files, every reference was checked in a scholarly source, and the author reviewed the output and takes full responsibility for the content. The system diagram (Figure~\ref{fig:system}) was drawn by the author without AI tools.
+Generative AI is the object of this study: the prompts, answers, token counts and elapsed times of the repair model are released with the paper. In addition, the author used Claude Opus 5.5 (Anthropic) as an assistant to write and review analysis scripts, to organise the repository and to draft and edit the text of this manuscript. All numbers were computed from the released files, every reference was checked in a scholarly source, and the author reviewed the output and takes full responsibility for the content. The TikZ code of the system diagram (Figure~\ref{fig:system}) was also written with this assistant, from components and connections specified by the author.
 
 %-----------------------------------------------------------------------------------------------
 \section{Preliminary Results}\label{sec:results}
@@ -161,14 +174,14 @@ Total & 4 YES & & & & 1 & 18,989/845 & 822.5 \\
 
 \subsection{Aggregate Metrics}
 
-One of five repairs was verified, so VRR is 20\% (95\% CI 3.6--62.4\%). Three of the four positive claims were not verified, so FAR is 75\% (95\% CI 30.1--95.4\%). Figure~\ref{fig:pilot}b shows both rates with the laboratory reference run, whose VRR is 4.3\% (0.8--21.0\%) and whose FAR is 95.7\% (79.0--99.2\%). The intervals of the pilot and the reference run overlap for both metrics, so the pilot does not distinguish them. The five saved calls used 18,989 input and 845 output tokens and took 822.5~s in total, between 15.5 and 409.3~s per call. The API catalog was free, so the pilot cost nothing. Some requests failed with HTTP errors and were resubmitted (Section~\ref{sec:limits}); only the final saved answer of each case enters these numbers.
+One of five repairs was verified, so VRR is 20\% (95\% CI 3.6--62.4\%). Three of the four positive claims were not verified, so FAR is 75\% (95\% CI 30.1--95.4\%). Figure~\ref{fig:pilot}b shows both rates; with five attempts their intervals are wide, so the pilot illustrates the measurement rather than estimating the rates. The five saved calls used 18,989 input and 845 output tokens and took 822.5~s in total, between 15.5 and 409.3~s per call. The API catalog was free, so the pilot cost nothing. Some requests failed with HTTP errors and were resubmitted (Section~\ref{sec:limits}); only the final saved answer of each case enters these numbers.
 
 \begin{figure}[H]
 \begin{adjustwidth}{-\extralength}{0cm}
 \centering
 \includegraphics[width=\linewidth]{figures/fig_v0_pilot.pdf}
 \end{adjustwidth}
-\caption{Pilot results. (\textbf{a}) Oracle stage reached by each answer: circles mark a stage passed, crosses a stage failed and dashes a stage not run; the labels below the crosses give the number of failed exploit tests. (\textbf{b}) VRR and FAR of the pilot ($n=5$ attempts and $n=4$ positive claims) and of the laboratory reference run ($n=23$), with 95\% Wilson intervals. Drawn by \texttt{figures/make\_figures.py} from \texttt{v0\_mvp/results.csv}.\label{fig:pilot}}
+\caption{Pilot results. (\textbf{a}) Oracle stage reached by each answer: circles mark a stage passed, crosses a stage failed and dashes a stage not run; the labels below the crosses give the number of failed exploit tests. (\textbf{b}) VRR and FAR of the pilot ($n=5$ attempts and $n=4$ positive claims), with 95\% Wilson intervals. Drawn by \texttt{figures/make\_figures.py} from \texttt{v0\_mvp/results.csv}.\label{fig:pilot}}
 \end{figure}
 
 %-----------------------------------------------------------------------------------------------
@@ -182,7 +195,7 @@ These observations shape the planned study. A patch that changes nothing or does
 
 \subsection{Limitations and Threats to Validity}\label{sec:limits}
 
-The pilot has five cases and one model, so its rates are illustrations with wide intervals and say nothing about other models, cases or languages. Some API requests failed with HTTP 503 (busy or resource limit) and, during setup, HTTP 410 and 403; requests were resubmitted after some failures, so more than five requests were made, only the final saved answer of each case was evaluated, and not every failed request was preserved. This departs from the one-attempt design of the laboratory assignment. The results file records tokens and elapsed time but not the time at which each answer was generated. The laboratory reference run differs from the pilot in protocol, so the two are not a controlled comparison. Finally, the input given to the model was fixed by the harness, at most four files changed by the reference fix, and in one case those files did not contain the vulnerable code; this is a property of the harness and is reported as such. The vulnerabilities and their fixes are public, so the model may have seen them during training, and the pilot cannot separate repair from recall.
+The pilot has five cases and one model, so its rates are illustrations with wide intervals and say nothing about other models, cases or languages. Some API requests failed with HTTP 503 (busy or resource limit) and, during setup, HTTP 410 and 403; requests were resubmitted after some failures, so more than five requests were made, only the final saved answer of each case was evaluated, and not every failed request was preserved. This departs from the one-attempt design of the laboratory assignment. The results file records tokens and elapsed time but not the time at which each answer was generated. Finally, the input given to the model was fixed by the harness, at most four files changed by the reference fix, and in one case those files did not contain the vulnerable code; this is a property of the harness and is reported as such. The vulnerabilities and their fixes are public, so the model may have seen them during training, and the pilot cannot separate repair from recall.
 
 %-----------------------------------------------------------------------------------------------
 \section{Conclusions}\label{sec:conclusions}
@@ -191,17 +204,17 @@ This paper proposes to measure false assurance in LLM-based vulnerability repair
 
 \vspace{6pt}
 
-\authorcontributions{C.V. designed the study, ran the pilot, analysed the data and wrote the manuscript \pend{confirm; add co-authors if any}.}
+\authorcontributions{C.V. designed the study, ran the pilot, analysed the data and wrote the manuscript.}
 
-\funding{This research received no external funding \pend{confirm}.}
+\funding{This research received no external funding.}
 
 \institutionalreview{Not applicable.}
 
 \informedconsent{Not applicable.}
 
-\dataavailability{The prompts, raw answers, patches and oracle verdicts of the pilot, the results table, the scripts and the figure code are available in the project repository \pend{repository URL}, folder \texttt{v0\_mvp}. No API keys are included.}
+\dataavailability{The prompts, raw answers, patches and oracle verdicts of the pilot, the results table, the scripts and the figure code are available in the project repository (\url{https://github.com/Camimilo-11/Ai-Yachay-2026/tree/main/Project-Vul4py}), folder \texttt{v0\_mvp}. No API keys are included.}
 
-\acknowledgments{The author thanks \pend{instructor} for approving the use of NVIDIA's API catalog for the pilot. During the preparation of this manuscript and study, the author used Claude (Anthropic) \pend{version} for the purposes of writing and reviewing analysis code, organising the repository and drafting the manuscript, as described in Section~\ref{sec:ai}. The author has reviewed and edited the output and takes full responsibility for the content of this publication.}
+\acknowledgments{The author thanks Eugenio Morocho for approving the use of NVIDIA's API catalog for the pilot. During the preparation of this manuscript and study, the author used Claude Opus 5.5 (Anthropic) for the purposes of writing and reviewing analysis code, organising the repository and drafting the manuscript, as described in Section~\ref{sec:ai}. The author has reviewed and edited the output and takes full responsibility for the content of this publication.}
 
 \conflictsofinterest{The author declares no conflicts of interest.}
 

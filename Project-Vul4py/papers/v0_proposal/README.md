@@ -6,7 +6,7 @@ MDPI research-article format (LaTeX, for Overleaf), in English.
 |---|---|---|
 | `inputs/idea.md` | problem, research question, objective, method, baselines, planned work, schedule | draft, to be confirmed by the author |
 | `inputs/experimental_log.md` | the v0 run: setup, per-case results, aggregate metrics, observations, limits (every number from `v0_mvp/`) | draft, to be confirmed by the author |
-| `inputs/system_diagram_spec.md` | components and arrows of the system diagram | the diagram itself is drawn by the author (not AI-generated, as the rubric requires) |
+| `inputs/system_diagram_spec.md` | components and arrows of the system diagram | drawn as `paper/figures/fig_system_overview.tex` (TikZ) |
 | `paper/main.tex` | the manuscript (MDPI class) | first full draft; red `[PENDIENTE: ...]` marks are details the author must fill in |
 | `paper/references.bib`, `paper/citation_map.json` | 27 references, each checked on its source page | done |
 | `paper/figures/fig_v0_pilot.pdf` | Figure 2, drawn by `figures/make_figures.py fig_v0` from `v0_mvp/results.csv` | done |
@@ -20,9 +20,9 @@ folder of the MDPI Article Template (class `mdpi.cls`, style `mdpi.bst`, logos).
 
 1. Compress the folder `paper/` into a .zip file.
 2. Overleaf: New Project, Upload Project, choose the .zip; set `main.tex` as the main document if Overleaf asks.
-3. When the system diagram is ready, export it as `figures/fig_system_overview.pdf` and replace the red box of
-   Figure 1 with `\includegraphics[width=\linewidth]{figures/fig_system_overview.pdf}`.
-4. Recompile and look for every red `[PENDIENTE: ...]` before submitting.
+3. Figure 1 is `figures/fig_system_overview.pdf`, compiled from `figures/fig_system_overview.tex` (TikZ; compile it
+   with pdflatex after editing).
+4. Recompile and check that no red `[PENDIENTE: ...]` mark is left before submitting.
 
 `paper/main.pdf` is the current draft compiled with the same class.
 

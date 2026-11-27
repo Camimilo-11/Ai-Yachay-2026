@@ -1,7 +1,8 @@
-# System diagram of the proposal: what to draw (by hand, in draw.io, PowerPoint or Figma)
+# System diagram of the proposal: components and arrows (Figure 1)
 
-The rubric requires a diagram designed by the author and NOT generated with AI. This file only lists the
-components and arrows; draw it yourself. Left to right, four zones as the rubric asks:
+Components and arrows of Figure 1 of the v0 paper, drawn as TikZ code in `paper/figures/fig_system_overview.tex`
+(written with the AI assistant at the author's request; the rubric's rule on author-designed diagrams applies to
+the final paper). Left to right, four zones as the rubric asks:
 Input -> Processing / AI method -> Evaluation -> Output.
 
 ## 1. Input

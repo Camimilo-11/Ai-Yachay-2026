@@ -1,8 +1,8 @@
 # Measuring False Assurance in LLM-Based Automated Vulnerability Repair
 
-Research project for the Artificial Intelligence course (Yachay Tech, 2026), by Camilo Vasquez.
-It is combined, with permission, with the course where the Vul4Py lab was assigned:
-[PENDIENTE: name of that course and its instructor].
+Research project for the Artificial Intelligence course (Yachay Tech University, 2026), by Camilo Vasquez (Computer
+Science, School of Mathematical and Computational Sciences). It is combined, with permission, with the Networks course
+(Redes), where the Vul4Py lab was assigned.
 
 **Research question.** When a large language model repairs a real Python vulnerability and claims the
 repair works, how often is the claim false when the patch is checked by executable tests, and which
@@ -17,8 +17,7 @@ reported with a 95% Wilson interval.
 **Benchmark.** Vul4Py (Bui et al., 2026, arXiv:2608.00692; [PENDIENTE: link to its repository]), commit
 `f80f861012cb7b7cfeca7323be51d33e72eaf8f3`: 100 real vulnerabilities (92 CVEs and 8 GitHub advisories) in
 60 open-source Python projects, each with the vulnerable and
-fixed commits, functional tests and exploit tests. Baselines: the lab's reference run (23 attempts:
-VRR 1/23, FAR 22/23) and our own v0 MVP.
+fixed commits, functional tests and exploit tests. Baseline: our own v0 MVP.
 
 ## Versions
 
