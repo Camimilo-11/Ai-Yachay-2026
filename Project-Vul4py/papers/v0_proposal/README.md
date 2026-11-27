@@ -5,11 +5,11 @@ MDPI research-article format (LaTeX, for Overleaf), in English.
 | File | Content | Status |
 |---|---|---|
 | `inputs/idea.md` | problem, research question, objective, method, baselines, planned work, schedule | draft, to be confirmed by the author |
-| `inputs/experimental_log.md` | the v0 run: setup, per-case results, aggregate metrics, observations, limits (every number from `v0_mvp/`) | draft, to be confirmed by the author |
+| `inputs/experimental_log.md` | the v0 run: setup, per-case results, aggregate metrics, observations, limits (every number from `experiments/v0_mvp/`) | draft, to be confirmed by the author |
 | `inputs/system_diagram_spec.md` | components and arrows of the system diagram | drawn as `paper/figures/fig_system_overview.tex` (TikZ) |
 | `paper/main.tex` | the manuscript (MDPI class) | first full draft; red `[PENDIENTE: ...]` marks are details the author must fill in |
 | `paper/references.bib`, `paper/citation_map.json` | 27 references, each checked on its source page | done |
-| `paper/figures/fig_v0_pilot.pdf` | Figure 2, drawn by `figures/make_figures.py fig_v0` from `v0_mvp/results.csv` | done |
+| `paper/figures/fig_v0_pilot.pdf` | Figure 2, drawn by `results/figures/make_figures.py fig_v0` from `experiments/v0_mvp/results.csv` | done |
 | `paper/outline.json`, `paper/worklog.json` | outline and record of the writing pipeline | done |
 | `paper/Definitions/` | official MDPI class, styles and logos (MDPI Article Template) | as distributed by MDPI |
 
@@ -26,5 +26,5 @@ folder of the MDPI Article Template (class `mdpi.cls`, style `mdpi.bst`, logos).
 
 `paper/main.pdf` is the current draft compiled with the same class.
 
-Every number in the paper comes from `v0_mvp/` (results, oracle verdicts and saved model answers); every
+Every number in the paper comes from `experiments/v0_mvp/` (results, oracle verdicts and saved model answers); every
 reference was checked on its source page before it was cited.

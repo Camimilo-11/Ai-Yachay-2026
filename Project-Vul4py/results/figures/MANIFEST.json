@@ -1,0 +1,136 @@
+{
+ "generated_utc": "2026-11-27T01:21:37Z",
+ "figures": {
+  "fig_environment": {
+   "files": [
+    "results/figures/fig_environment.pdf",
+    "results/figures/fig_environment.png"
+   ],
+   "inputs": {
+    "experiments/v1_environment/scan_report_round0.tsv": "3ca6b2079577ddd7b8425f8abdc1147f1fc09cf3fa70d359b62184dd2be64cf6",
+    "experiments/v1_environment/scan_report_round1.tsv": "cf4c640b925c41d4ead12bd82d065a4dc1365589db3dacbc74dcb4d2da990f1c",
+    "experiments/v1_environment/scan_report_round2.tsv": "d94591e2ba3671eaa906e7a9854ae0896f70c8d2bd82f8fdd06852f98718ebdc",
+    "experiments/v1_environment/scan_report_round3.tsv": "d94591e2ba3671eaa906e7a9854ae0896f70c8d2bd82f8fdd06852f98718ebdc",
+    "experiments/v1_environment/scan_report_round4.tsv": "93e9c82885f4ac05c10252e430fa32a0a21e8122f4a807d6fbeceb6fbeb67a00",
+    "experiments/v1_environment/scan_report_round5.tsv": "d5dba837688c23358c39c5dd00b3f02b0d4ba3156456846bf7584b70e65cdbf5",
+    "prereg/oracle_valid.txt": "d57e7777269d18dd95e66aa903dc47d1dbb4a39d7200f22a46e91107caff166d"
+   },
+   "what": "cases with status OK per scan round on the instance; oracle-control survivors",
+   "constants": [
+    {
+     "value": 18,
+     "source": "code/docs/README_multiagent.md: 18 cases passed the first scan with the public release"
+    }
+   ]
+  },
+  "fig_pilot_benchmarks": {
+   "files": [
+    "results/figures/fig_pilot_benchmarks.pdf",
+    "results/figures/fig_pilot_benchmarks.png"
+   ],
+   "inputs": {
+    "experiments/v3_main/gpt_benchmark/gpt_benchmark_verdicts.csv": "c13e5ce551266d0d83ff8da764e0754a7d80a42eeef41ce794dc3b29ad7cf79d",
+    "experiments/v2_pilot_tournament/results.csv": "e8164ac2382c71e757fd370925b3d6c38e313515bb41d0d2cc53a34b79777def",
+    "experiments/v0_mvp/results.csv": "427c81dcbf41262a8bc46fabc7bac6ee04260d4e42c041e1abf9b80f2121eba3"
+   },
+   "what": "VRR per model or condition on 5 cases",
+   "uncertainty": "95% Wilson score interval; n = 5 per row"
+  },
+  "fig_main_vrr_far": {
+   "files": [
+    "results/figures/fig_main_vrr_far.pdf",
+    "results/figures/fig_main_vrr_far.png"
+   ],
+   "inputs": {
+    "experiments/v3_main/results.csv": "389f15726328e2513d0e9bfc9dca041bfeaa3910274adda70f28e8147609b3b7",
+    "experiments/v0_mvp/results.csv": "427c81dcbf41262a8bc46fabc7bac6ee04260d4e42c041e1abf9b80f2121eba3",
+    "experiments/v4_evigate_confirmation/confirm/results.csv": "e0fada585047c7f83bb755f6b9408a1528164f809c4cd3ec0e65d35e555fc3bd"
+   },
+   "what": "VRR and FAR with 95% Wilson intervals; labels give k/n",
+   "claim_rule": "repairer's own claim (C0, C0g, v5); unanimous jury (C1, primary rule of decisiones_v3)",
+   "missing_rows": [
+    "v5 arms (experiments/v5_rag/results.csv)"
+   ]
+  },
+  "fig_jury_calibration": {
+   "files": [
+    "results/figures/fig_jury_calibration.pdf",
+    "results/figures/fig_jury_calibration.png"
+   ],
+   "inputs": {
+    "experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json": "ccbf78f17ada372753b8e338b06db72df0639d7cbcbb34b5c23fdaed0ea03c34",
+    "experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_usage.json": "a26da874abe2a3c6df269d03a6b1ba5f17de864f06baf5e9c120693bfb57b948"
+   },
+   "what": "per-juror AUROC, sensitivity, specificity on 28 candidates; cost of 5 calls",
+   "note": "point estimates; the 28 candidates come from 5 pilot cases, so the scores are not independent"
+  },
+  "fig_calls_tokens_time": {
+   "files": [
+    "results/figures/fig_calls_tokens_time.pdf",
+    "results/figures/fig_calls_tokens_time.png"
+   ],
+   "inputs": {
+    "results/logs/calls/calls_v0_mvp.csv": "5be7505c46de3c9086aebe117538b6a704e16d82b3085d6ce742c6ee669432c7",
+    "results/logs/calls/calls_v2_pilot.csv": "c2a67b6942fc7f6f08ea22b2857efb0302540f8c1266ab6f776ee6696815c43e",
+    "results/logs/calls/calls_v3_main.csv": "59e872ff4315266e831932bebb6e3582b3702c1d3bdb6ef0b1f6b3c708ce1109",
+    "results/logs/calls/calls_v4_confirm.csv": "8a70e84afa783af9b69b648afab30b637dff1950c1497799edc59d15db6992c7",
+    "results/logs/calls/calls_v5_dev.csv": "d93185e02ee65d7fe0289548bf99ae64f83b4b94ef0263e6e13af7dd5de0778a"
+   },
+   "what": "distribution per model and role of input/output tokens and latency per call",
+   "transform": "log10 x-axis; zero values drawn at 1; boxes without outliers, points are calls"
+  },
+  "fig_cost_per_repair": {
+   "files": [
+    "results/figures/fig_cost_per_repair.pdf",
+    "results/figures/fig_cost_per_repair.png"
+   ],
+   "inputs": {
+    "results/logs/calls/calls_v3_main.csv": "59e872ff4315266e831932bebb6e3582b3702c1d3bdb6ef0b1f6b3c708ce1109",
+    "experiments/v3_main/results.csv": "389f15726328e2513d0e9bfc9dca041bfeaa3910274adda70f28e8147609b3b7"
+   },
+   "what": "sum of list-price cost of all calls per condition / attempts and / verified repairs",
+   "note": "C1 includes Claude jurors on the Claude plan priced at list-price equivalent and DeepSeek at peak prices",
+   "missing_rows": [
+    "v5 arms (results/logs/calls/calls_v5.csv)"
+   ]
+  },
+  "fig_coverage_rule": {
+   "files": [
+    "results/figures/fig_coverage_rule.pdf",
+    "results/figures/fig_coverage_rule.png"
+   ],
+   "inputs": {
+    "experiments/v3_main/results.csv": "389f15726328e2513d0e9bfc9dca041bfeaa3910274adda70f28e8147609b3b7",
+    "experiments/v4_evigate_confirmation/confirm/results.csv": "e0fada585047c7f83bb755f6b9408a1528164f809c4cd3ec0e65d35e555fc3bd"
+   },
+   "what": "FAR of claims and of claims that touch every hinted range (+-3 lines)",
+   "missing_rows": [
+    "C0 (main): results.csv without hint_coverage (re-run fa_metrics.py of v4 on runs/final)",
+    "C0g (main): results.csv without hint_coverage (re-run fa_metrics.py of v4 on runs/final)",
+    "C1 (main): results.csv without hint_coverage (re-run fa_metrics.py of v4 on runs/final)"
+   ]
+  },
+  "fig_v0_pilot": {
+   "files": [
+    "results/figures/fig_v0_pilot.pdf",
+    "results/figures/fig_v0_pilot.png"
+   ],
+   "inputs": {
+    "experiments/v0_mvp/results.csv": "427c81dcbf41262a8bc46fabc7bac6ee04260d4e42c041e1abf9b80f2121eba3"
+   },
+   "transformations": [
+    "VRR = verified/attempts; FAR = unverified positive claims/positive claims",
+    "functional and exploit cells are 'not run' when the patch did not apply or was empty"
+   ],
+   "uncertainty": "95% Wilson score intervals (z = 1.959964)",
+   "values": {
+    "pilot": {
+     "n": 5,
+     "verified": 1,
+     "claims": 4,
+     "false": 3
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+  "plotting_plan": [
+    {"figure_id": "fig_study_flow", "title": "Study flow from v0 to v5", "plot_type": "diagram", "data_source": "experimental_log.md, prereg/",
+     "objective": "TikZ flow of the versions: v0 pilot (5 cases) -> v1 environments (18 -> 100 valid) -> v2 pilot, tournament and juror calibration (5 pilot cases) -> v3 main sample (30 cases, 29 complete; C0, C0g, C1) -> v4 evigate on the 29 C1 patches and the coverage rule confirmed on 65 unused cases (63 complete) -> v5 Haiku with and without RAG on 95 cases. Each box names its decisions file and its primary test.", "aspect_ratio": "wide"},
+    {"figure_id": "fig_pipeline_c1", "title": "Multi-model pipeline (condition C1)", "plot_type": "diagram", "data_source": "docs/README_multiagent.md",
+     "objective": "TikZ: context -> analyst -> repairer -> mechanical gate (2 retries) -> jury of 3 cross-family reviewers -> unanimous claim / debate / revision / abstain -> freeze -> oracle; C0 and C0g marked as subsets.", "aspect_ratio": "wide"},
+    {"figure_id": "fig_system_v5", "title": "Retrieval for a cheaper model (v5)", "plot_type": "diagram", "data_source": "prereg/decisiones_v5.txt", "objective": "Existing TikZ redraw of the v5 flow (whiteboard 'Flujo RAG de la v5').", "aspect_ratio": "wide"},
+    {"figure_id": "fig_environment", "plot_type": "plot", "data_source": "v1_environment/scan_report_round*.tsv", "objective": "Valid cases: public release 18, rounds R0-R5, oracle control 100."},
+    {"figure_id": "fig_pilot_benchmarks", "plot_type": "plot", "data_source": "v2/v3 pilot-scale runs", "objective": "VRR with Wilson intervals of every 5-case comparison."},
+    {"figure_id": "fig_jury_calibration", "plot_type": "plot", "data_source": "v2_pilot_tournament/judge_calibration_v2", "objective": "AUROC, sensitivity, specificity and cost of the 5 candidate jurors."},
+    {"figure_id": "fig_main_vrr_far", "plot_type": "plot", "data_source": "v3_main/results.csv, v4 confirm", "objective": "VRR and FAR of C0, C0g, C1 and the confirmation run."},
+    {"figure_id": "fig_coverage_rule", "plot_type": "plot", "data_source": "v4 confirm/results.csv (+ runs/final after the v4 metrics are rerun)", "objective": "FAR of all repairer claims vs. claims kept by the coverage rule."},
+    {"figure_id": "fig_calls_tokens_time", "plot_type": "plot", "data_source": "logs/calls/*.csv", "objective": "Input tokens, output tokens and seconds of every recorded call by model and role."},
+    {"figure_id": "fig_cost_per_repair", "plot_type": "plot", "data_source": "logs/calls/calls_v3_main.csv, v3_main/results.csv", "objective": "List-price cost per attempted case and per verified repair in C0, C0g and C1."},
+    {"figure_id": "fig_v5_results", "plot_type": "plot", "data_source": "runs/v5 (pending)", "objective": "VRR and FAR of C0 (v5 harness), Haiku and Haiku + RAG on the 95 cases; drawn when the run ends."}
+  ],
+  "intro_related_work_plan": {
+    "introduction_strategy": {
+      "hook_hypothesis": "LLM repair tools return a patch and a statement that it works; users trust such statements (Perry 2023; Parasuraman 2010).",
+      "problem_gap_hypothesis": "Benchmarks report how many repairs succeed, not how often a positive claim is false; the verification steps people add (gates, LLM juries, model-written tests, retrieval) are rarely measured against an executable oracle together with their cost.",
+      "research_questions": ["RQ1 measurement (FAR next to VRR)", "RQ2 gate and cross-family jury", "RQ3 executable evidence and localization rule, confirmed on unused cases", "RQ4 retrieval for a cheaper model and cost per verified repair"]
+    },
+    "related_work_strategy": [
+      {"subsection": "LLM-based vulnerability repair and its benchmarks", "citations": ["Pearce2023ExaminingZeroShot", "Wu2023HowEffectiveAre", "Bui2022Vul4jDatasetOf", "Wei2025PatchevalNewBenchmark", "Bui2026Vul4pyBenchmarkingAutomated", "Jimenez2024SwebenchCanLanguage", "Fu2022VulrepairT5Based"]},
+      {"subsection": "Plausible versus correct patches", "citations": ["Qi2015AnalysisOfPatch", "Smith2015IsTheCure", "Xiong2018IdentifyingPatchCorrectness", "Ahmed2026InvestigatingTestOverfitting"]},
+      {"subsection": "Self-verification, LLM judges, juries and debate", "citations": ["Huang2024LargeLanguageModels", "Olausson2024IsSelfRepair", "Zheng2023JudgingLlmAs", "Panickssery2024LlmEvaluatorsRecognize", "Kim2025CorrelatedErrorsIn", "Jiang2026CodejudgebenchBenchmarkingLlm", "Verga2024ReplacingJudgesWith", "Du2024ImprovingFactualityAnd"], "search_directions": ["panel of diverse LLM judges", "multi-agent debate"]},
+      {"subsection": "Retrieval for repair and executable environments", "citations": ["Lewis2020RetrievalAugmentedGeneration", "Wang2023RapGenRetrieval", "Zhou2024OutOfSight", "Bouzenia2025YouNameIt", "Luo2014EmpiricalAnalysisFlaky"], "search_directions": ["retrieval-augmented patch generation", "CWE knowledge for vulnerability repair", "LLM agents that set up test environments", "flaky tests"]}
+    ]
+  },
+  "section_plan": [
+    {"section": "Introduction", "points": ["false assurance and why it matters", "v0 pilot motivated environment validation and multi-model verification", "RQ1-RQ4", "contributions", "organization"]},
+    {"section": "Related Work", "subsections": 4},
+    {"section": "Materials and Methods", "subsections": ["Benchmark, oracle and metrics (equations)", "Study design and preregistration (Table runs; Figure study flow)", "Environment validation v1 (Table repairs)", "Models and the multi-model pipeline (Table models; Figure C1)", "Conditions and claim rules v3", "Juror calibration", "Executable evidence (evigate) and the coverage rule v4", "Retrieval for a cheaper model v5 (Figure v5)", "Calls, tokens, time and cost", "Statistical analysis", "Use of generative AI"]},
+    {"section": "Results", "subsections": ["Environments (Figure environment)", "Pilot-scale comparisons (Table tournament/benchmark; Figure pilot)", "Juror calibration (Table; Figure)", "Main sample (Table conditions; Table failure modes; Figure main)", "Claim rules and protocols (Table rules; Table protocols)", "Executable evidence (Table statuses)", "Coverage rule: discovery and confirmation (Table; Figure)", "v5 (Table dev gate + main run, PENDIENTE until the run ends)", "Calls, tokens, time and cost (Table per run; Table per model and role; Table cost per verified repair; Figures calls and cost)"]},
+    {"section": "Discussion", "points": ["RQ1: FAR stays high (43-66%) with a strong model; most failures pass functional tests but not exploit tests", "RQ2: gate and jury did not lower FAR; jury multiplied cost", "RQ3: model-written exploit tests did not lower FAR; the localization rule did, confirmed, at the price of correct claims; hint = footprint of the official fix", "RQ4: pending", "threats to validity", "v6 plan"]},
+    {"section": "Conclusions"}
+  ]
+}

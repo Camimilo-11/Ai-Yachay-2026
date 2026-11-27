@@ -1,4 +1,4 @@
-# Experimental log (input for the v0 paper). Every number comes from v0_mvp/.
+# Experimental log (input for the v0 paper). Every number comes from experiments/v0_mvp/.
 
 ## Setup
 - Benchmark: Vul4Py, commit f80f861012cb7b7cfeca7323be51d33e72eaf8f3 [PENDIENTE: confirm the v0 runs used this
@@ -7,7 +7,7 @@
   approved by the instructor.
 - Prompt: one fixed system prompt ("security engineer"; answer CLAIM: YES/NO, CONFIDENCE: 0-100, PATCH: unified
   diff) and one user template per case with the vulnerable versions of the files the reference fix changes
-  (at most 4 files, 60 kB) (v0_mvp/code/scripts/run_agent.py). The runner sends temperature 0
+  (at most 4 files, 60 kB) (experiments/v0_mvp/code/scripts/run_agent.py). The runner sends temperature 0
   unless another value is given on its command line.
 - Benchmark size: 100 vulnerabilities (92 CVEs, 8 GitHub advisories) in 60 open-source Python projects (dataset/vul4py.csv lists
   61 repository URLs because starlette appears under encode/ and kludex/);
