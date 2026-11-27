@@ -243,7 +243,7 @@ Proportions are reported with 95\% Wilson score intervals~\cite{Wilson1927Probab
 
 \subsection{Use of Generative AI}\label{sec:ai}
 
-LLMs are the object of this study: their prompts, answers, tokens, latencies and costs are released with the paper. In addition, the author used Claude Opus 5.5 (Anthropic) as an assistant to write and review the scripts of the study, to organise the repository, to write the TikZ code of Figures~\ref{fig:flow} and~\ref{fig:pipeline} from components and connections specified by the author, to write the prompts for Figures~\ref{fig:v5} and~\ref{fig:v6}, and to draft and edit the text of this manuscript. Figures~\ref{fig:v5} and~\ref{fig:v6} were drawn with ChatGPT (OpenAI, model GPT-6.2 Sol) from those prompts, and every label and connection was checked against the decisions files. All numbers were computed from the released files by the released scripts, every reference was checked in a scholarly source, and the author reviewed the output and takes full responsibility for the content.
+LLMs are the object of this study: for v0 and for every case of v2--v4 and the v5 development check that went through the pipeline, the answers of every model, the patches, their evaluation and the record of every call (tokens, latency, cost and the SHA-256 of its prompt) are released with the paper. In addition, the author used Claude Opus 5.5 (Anthropic) as an assistant to write and review the scripts of the study, to organise the repository, to write the TikZ code of Figures~\ref{fig:flow} and~\ref{fig:pipeline} from components and connections specified by the author, to write the prompts for Figures~\ref{fig:v5} and~\ref{fig:v6}, and to draft and edit the text of this manuscript. Figures~\ref{fig:v5} and~\ref{fig:v6} were drawn with ChatGPT (OpenAI, model GPT-6.2 Sol) from those prompts, and every label and connection was checked against the decisions files. All numbers were computed by the released scripts from the frozen records of the runs, every reference was checked in a scholarly source, and the author reviewed the output and takes full responsibility for the content.
 
 %-----------------------------------------------------------------------------------------------
 \section{Results}\label{sec:results}
@@ -257,7 +257,7 @@ With the public release, 18 of the 100 cases passed the first scan. With the rep
 \centering
 \includegraphics[width=\linewidth]{figures/fig_environment.pdf}
 \end{adjustwidth}
-\caption{Cases that pass the scan with the public release (in a sandbox of the size of the instance) and after each build round on the instance (R0--R5), and cases that pass the oracle control. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{experiments/v1\_environment/scan\_report\_round*.tsv} and \texttt{oracle\_report.tsv}.\label{fig:env}}
+\caption{Cases that pass the scan with the public release (in a sandbox of the size of the instance) and after each build round on the instance (R0--R5), and cases that pass the oracle control; only the build rounds are joined, since they form one series. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{experiments/v1\_environment/scan\_report\_round*.tsv} and \texttt{oracle\_report.tsv} (checked against \texttt{prereg/oracle\_valid.txt}); the public-release count is the one recorded in \texttt{code/docs/README\_multiagent.md}.\label{fig:env}}
 \end{figure}
 
 \subsection{Pilot-Scale Comparisons (v2 and v3)}\label{sec:respilot}
@@ -287,7 +287,7 @@ GPT benchmark & GPT-6 Luna / GPT-6.1 Terra / GPT-6.2 Astra / GPT-6.2 Sol / GPT-6
 \centering
 \includegraphics[width=\linewidth]{figures/fig_pilot_benchmarks.pdf}
 \end{adjustwidth}
-\caption{VRR with 95\% Wilson intervals of every comparison run on five cases: the v0 pilot on its own five cases, the GPT benchmark, the tournament repairers and the two C1 pilots. Drawn by \texttt{results/figures/make\_figures.py}.\label{fig:pilotfig}}
+\caption{VRR with 95\% Wilson intervals of every comparison run on five cases: the v0 pilot on its own five cases, the GPT benchmark, the tournament repairers and the two C1 pilots. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{experiments/v0\_mvp/results.csv}, \texttt{experiments/v2\_pilot\_tournament/results.csv} and \texttt{experiments/v3\_main/gpt\_benchmark/gpt\_benchmark\_verdicts.csv}.\label{fig:pilotfig}}
 \end{figure}
 
 \subsection{Juror Calibration (v2)}\label{sec:rescalib}
@@ -321,7 +321,7 @@ GPT-6 Luna & v1, 23 candidates & 0.672 & 0.800 & 0.778 & 0.421 & -- \\
 \centering
 \includegraphics[width=\linewidth]{figures/fig_jury_calibration.pdf}
 \end{adjustwidth}
-\caption{Calibration v2. Left: AUROC of the stated confidence, sensitivity and specificity of each candidate juror on 28 candidates with known truth (13 correct, 15 wrong). Right: cost of its five calls as recorded, the client's own report for the Claude models (hatched) and the billed list price for DeepSeek. Drawn by \texttt{results/figures/make\_figures.py}.\label{fig:calib}}
+\caption{Calibration v2. Left: AUROC of the stated confidence, sensitivity and specificity of each candidate juror on 28 candidates with known truth (13 correct, 15 wrong). Right: list-price cost of its five calls. Asterisks mark the three selected jurors. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{experiments/v2\_pilot\_tournament/judge\_calibration\_v2/} (summary and token use), the prices in \texttt{code/models.json} and the jury in \texttt{prereg/decisiones\_v2.txt}.\label{fig:calib}}
 \end{figure}
 
 \subsection{Main Sample (v3)}\label{sec:resmain}
@@ -350,12 +350,12 @@ C0, confirmation cases (v4) & 63 & 22/63 = 34.9\% (24.3--47.2) & 61 & 40/61 = 65
 \centering
 \includegraphics[width=\linewidth]{figures/fig_main_vrr_far.pdf}
 \end{adjustwidth}
-\caption{VRR and FAR with 95\% Wilson intervals: the v0 pilot, the three conditions of the main sample and C0 on the 63 confirmation cases. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{experiments/v3\_main/results.csv} and \texttt{experiments/v4\_evigate\_confirmation/confirm/results.csv}.\label{fig:main}}
+\caption{VRR and FAR with 95\% Wilson intervals: the v0 pilot, the three conditions of the main sample and C0 on the 63 confirmation cases. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{experiments/v0\_mvp/results.csv}, \texttt{experiments/v3\_main/results.csv} and \texttt{experiments/v4\_evigate\_confirmation/confirm/results.csv}.\label{fig:main}}
 \end{figure}
 
 \subsection{Claim Rules and the Jury Protocol (v3)}\label{sec:resrules}
 
-Table~\ref{tab:rules} applies every claim rule to the same 29 C1 attempts. The unanimous jury caught one false claim of the repairer (McNemar $p=1.000$). Only the confident majority lowered FAR noticeably, from 48.1\% to 36.8\% ($p=0.031$ on false assurances), and it did so by claiming 19 instead of 27 patches, which lowered the safe yield from 48.3\% to 41.4\%. The independent vote in round 0, before any debate, claimed 21 patches with FAR 42.9\%; debate and revision added claims, and with them false ones. Table~\ref{tab:protocols} gives the behaviour of the protocol. C1 abstained in 3 of the 29 cases; 21 cases were resolved by the independent vote and 5 after the debate, and no revision produced a unanimous verdict. The gate rejected few patch versions, and most of them were repaired after its feedback. Quotes of code that does not exist were rare (1 of 1535 citations in C1), and no model refused. In every condition, whenever some candidate patch was correct, the selected one was correct.
+Table~\ref{tab:rules} applies every claim rule to the same 29 C1 attempts. The unanimous jury caught one false claim of the repairer (McNemar $p=1.000$). Only the confident majority lowered FAR noticeably, from 48.1\% to 36.8\% ($p=0.031$ on false assurances), and it did so by claiming 19 instead of 27 patches, which lowered the safe yield from 48.3\% to 41.4\%. The independent vote in round 0, before any debate, claimed 21 patches with FAR 42.9\%; debate and revision added claims, and with them false ones. Table~\ref{tab:protocols} gives the behaviour of the protocol. C1 abstained in 3 of the 29 cases; 21 cases were resolved by the independent vote, 5 after the debate and none after a revision (a revision reached unanimity only in the excluded orjson case). The gate rejected few patch versions, and most of them were repaired after its feedback. Quotes of code that does not exist were rare (1 of 1535 citations in C1), and no model refused. In every condition, whenever some candidate patch was correct, the selected one was correct.
 
 \begin{table}[H]
 \caption{Claim rules on the 29 complete attempts of C1 and the claims of evigate on the same patches. McNemar: exact test on false assurances against the repairer's claim (for evigate, against the unanimous jury).\label{tab:rules}}
@@ -380,7 +380,7 @@ evigate, executable evidence (v4) & 11 & 6 & 54.5\% (28.0--78.7) & 17.2\% & 0.03
 \end{table}
 
 \begin{table}[H]
-\caption{Behaviour of the protocol in the three conditions of the main sample (29 complete attempts each).\label{tab:protocols}}
+\caption{Behaviour of the protocol in the three conditions of the main sample (29 complete attempts each; model calls and API time count all 30 attempted cases).\label{tab:protocols}}
 \begin{adjustwidth}{-\extralength}{0cm}
 \footnotesize
 \begin{tabularx}{\fulllength}{@{}Xccc@{}}
@@ -466,7 +466,7 @@ In the development check on the five pilot cases, which is not part of the analy
 \toprule
 \textbf{Arm} & \textbf{N} & \textbf{VRR} & \textbf{Claims} & \textbf{FAR} & \textbf{Cost (USD)} & \textbf{Per verified repair} \\
 \midrule
-Development, M (Haiku 5.5) & 5 & 2/5 & 4 & 2/4 & 0.059 & 0.030 \\
+Development, M (Haiku 5.5) & 5 & 2/5 & 4 & 2/4 & 0.059 & 0.029 \\
 Development, M+RAG & 5 & 2/5 & 4 & 2/4 & 0.065 & 0.033 \\
 \midrule
 Main run, C0 (GPT-6.2 Sol, v5 harness) & \multicolumn{6}{l}{\pend{N, VRR, claims, FAR (Wilson CI) and cost when the run ends}} \\
@@ -502,7 +502,7 @@ v5 main run (M and M+RAG) & \multicolumn{6}{l}{\pend{calls, tokens, time and cos
 \end{table}
 
 \begin{table}[H]
-\caption{Calls by model and role over every per-call record (v0, v2--v4 and the v5 development check; the 25 calibration calls are recorded as totals and not included). Latency: median seconds per call. In parentheses: the Claude client's own report.\label{tab:costmodel}}
+\caption{Calls by model and role over every per-call record (v0, v2--v4 and the v5 development check; the 25 calibration calls are recorded as totals and not included). Latency: median seconds per call. In parentheses: the Claude client's own report. The rows do not add up exactly to the total because of rounding.\label{tab:costmodel}}
 \begin{adjustwidth}{-\extralength}{0cm}
 \footnotesize
 \begin{tabularx}{\fulllength}{@{}Xlrrrrr@{}}
@@ -514,7 +514,7 @@ Claude Opus 5.5 & juror & 57 & 2,134,275 & 169,842 & 26.4 & 11.93 (20.47) \\
 DeepSeek V4 Pro & juror & 57 & 1,406,726 & 1,284,226 & 193.6 & 6.94 \\
 Claude Sonnet 5.5 & juror & 57 & 2,139,020 & 105,212 & 13.4 & 5.33 (9.61) \\
 GPT-5.4 mini & repairer & 22 & 210,005 & 365,519 & 72.8 & 1.80 \\
-GPT-6.1 Sol & juror & 12 & 132,328 & 81,999 & 111.0 & 1.09 \\
+GPT-6.1 Sol & juror & 12 & 132,328 & 81,999 & 111.0 & 1.08 \\
 GPT-6.1 Terra & juror & 12 & 135,380 & 29,568 & 39.9 & 0.28 \\
 GPT-6 Luna & analyst & 40 & 584,093 & 353,525 & 57.3 & 0.24 \\
 GPT-6 Luna & juror & 12 & 134,793 & 59,400 & 36.3 & 0.04 \\
@@ -535,7 +535,7 @@ Total & & 477 & 10,395,956 & 4,006,331 & & 47.86 \\
 \toprule
 \textbf{Condition} & \textbf{Attempted (complete)} & \textbf{Verified} & \textbf{Cost (USD)} & \textbf{Per attempted case} & \textbf{Per verified repair} \\
 \midrule
-C0, main sample & 30 (29) & 16 & 3.33 & 0.111 & 0.208 \\
+C0, main sample & 30 (29) & 16 & 3.32 & 0.111 & 0.208 \\
 C0g, main sample & 30 (29) & 14 & 3.68 & 0.123 & 0.263 \\
 C1, main sample & 30 (29) & 14 & 27.40 & 0.913 & 1.957 \\
 C0, confirmation cases & 65 (63) & 22 & 6.12 & 0.094 & 0.278 \\
@@ -551,7 +551,7 @@ M+RAG, v5 main run & \multicolumn{5}{l}{\pend{when the run ends}} \\
 \centering
 \includegraphics[width=\linewidth]{figures/fig_calls_tokens_time.pdf}
 \end{adjustwidth}
-\caption{Input tokens, output tokens and latency of every recorded call (v0, v2--v4 and the v5 development check), one point per call, by model and role, on log scales; boxes give the quartiles. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{results/logs/calls/*.csv}.\label{fig:calls}}
+\caption{Input tokens, output tokens and latency of every recorded call (v0, v2--v4 and the v5 development check), one point per call, by model and role (colour), on log scales; boxes give the quartiles. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{results/logs/calls/*.csv}.\label{fig:calls}}
 \end{figure}
 
 \begin{figure}[H]
@@ -614,7 +614,7 @@ On Vul4Py with a valid oracle on all 100 cases, 43--66\% of the positive repair 
 
 \informedconsent{Not applicable.}
 
-\dataavailability{The decisions files, case lists, results tables, per-call logs, console logs, environment repairs, scripts and figure code are available in the project repository (\url{https://github.com/Camimilo-11/Ai-Yachay-2026/tree/main/Project-Vul4py}), with one folder per version under \texttt{experiments/} and the frozen answers of the confirmation run and of v5; the frozen records of the other runs are in evidence packages listed with their SHA-256 in each version folder. The prepared workspaces (about 100~GB) and the full run directories are not included; every result comes with the command that produced it. No API keys are included.}
+\dataavailability{The decisions files, case lists, results tables, per-call logs, console logs, environment repairs, scripts and figure code are available in the project repository (\url{https://github.com/Camimilo-11/Ai-Yachay-2026/tree/main/Project-Vul4py}), with one folder per version under \texttt{experiments/}. For v0 and for every case of v2--v4 and the v5 development check that went through the pipeline, these folders also hold the answers of every model, the patches, the oracle's evaluation and the frozen record of every call with the SHA-256 of its prompt; the prompts of v2--v5 are rebuilt from the benchmark and are not included. The prepared workspaces (about 100~GB) are not included; every result comes with the command that produced it. No API keys are included.}
 
 \acknowledgments{The author thanks Eugenio Morocho for approving the use of NVIDIA's API catalog for the pilot. The OpenAI and DeepSeek API credit used in v2--v4 was provided for the course. During the preparation of this study and manuscript, the author used Claude Opus 5.5 (Anthropic) to write and review analysis code, organise the repository, write the TikZ code of two diagrams and the prompts of two others, and draft and edit the manuscript, and ChatGPT (OpenAI, model GPT-6.2 Sol) to draw Figures~\ref{fig:v5} and~\ref{fig:v6}, as described in Section~\ref{sec:ai}. The author has reviewed and edited the output and takes full responsibility for the content of this publication.}
 

@@ -1,0 +1,43 @@
+{
+  "cve_id": "GHSA-9gvj-pp9x-gcfr",
+  "repo_url": "https://github.com/mmaitre314/picklescan",
+  "fix_commit": "58983e1c20973ac42f2df7ff15d7c8cd32f9b688",
+  "vulnerable_ref": "2974a252df7649ca910c4d6c79afa1029ee99423",
+  "fixed_ref": "58983e1c20973ac42f2df7ff15d7c8cd32f9b688",
+  "versions": {
+    "vulnerable": {
+      "git_ref": "2974a252df7649ca910c4d6c79afa1029ee99423"
+    },
+    "fixed": {
+      "git_ref": "58983e1c20973ac42f2df7ff15d7c8cd32f9b688"
+    }
+  },
+  "python_version": "3.11",
+  "install_cmds": [
+    "python -m pip install -U pip wheel",
+    "pip install -e .",
+    "python -m pip install aiohttp || echo 'doctor: could not install aiohttp'",
+    "python -m pip install numpy || echo 'doctor: could not install numpy'",
+    "python -m pip install py7zr || echo 'doctor: could not install py7zr'",
+    "python -m pip install requests || echo 'doctor: could not install requests'",
+    "python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch==2.15.0'",
+    "pip install -e . --no-deps"
+  ],
+  "functional_test_cmd_base": "pytest -q --deselect tests/test_scanner.py::test_scan_numpy --deselect tests/test_scanner.py::test_scan_file_path_npz",
+  "baseline_test_files": [
+    "tests/test_scanner.py",
+    "tests/__init__.py"
+  ],
+  "exploit_test_cmd_base": "pytest -q --deselect tests/test_scanner.py::test_scan_numpy --deselect tests/test_scanner.py::test_scan_file_path_npz",
+  "new_test_files": [
+    "tests/test_scanner.py"
+  ],
+  "new_code_files": [
+    "src/picklescan/scanner.py"
+  ],
+  "exploit_expectation": {
+    "vulnerable_should_fail": true,
+    "fixed_should_pass": true
+  },
+  "notes": ""
+}

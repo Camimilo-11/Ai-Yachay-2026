@@ -1,0 +1,27 @@
+{
+  "session": "final",
+  "checked_at_utc": "2026-11-25T20:45:52Z",
+  "harness": "eval_harness/2",
+  "exploit_unpatched_rc": 1,
+  "functional_unpatched": "14/0/0/0",
+  "exploit_unpatched": "13/1/0/0",
+  "functional_reference": "14/0/0/0",
+  "exploit_reference": "14/0/0/0",
+  "reference_apply_ok": true,
+  "reference_notes": "",
+  "reference_files": [
+    ".devcontainer/Dockerfile",
+    ".devcontainer/devcontainer.json",
+    "conda.extras.yaml",
+    "requirements.txt",
+    "requirements_extras.txt",
+    "setup.cfg",
+    "src/picklescan/cli.py",
+    "src/picklescan/scanner.py"
+  ],
+  "functional_ok": true,
+  "exploit_discriminates": true,
+  "reference_verified": true,
+  "healthy": true,
+  "reason": ""
+}

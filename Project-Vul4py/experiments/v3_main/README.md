@@ -1,9 +1,10 @@
 # v3: GPT benchmark and the main sample (C0, C0g, C1)
 
-November 25-26, 2026. First, five GPT models repaired the 5 pilot cases through Codex
+November 25-26, 2026. First, four GPT models (five configurations) repaired the 5 pilot cases through Codex
 (`gpt_benchmark/`): GPT-6 Luna 0/5, GPT-6.1 Terra 1/5, GPT-6.2 Astra 3/5, GPT-6.2 Sol 3/5 (also with trimmed
 context). Then three conditions ran on the main sample (30 cases, 29 complete; `prereg/main_ids.txt`),
-with GPT-6.2 Sol as the repairer and the rules fixed in `prereg/decisiones_v3.txt`:
+with GPT-6.2 Sol as the repairer and the rules fixed in `prereg/decisiones_v1.txt` (C0, C0g) and
+`prereg/decisiones_v2.txt` (C1):
 
 | Condition | VRR (95% CI) | FAR (95% CI) |
 |---|---|---|
@@ -19,5 +20,10 @@ See `results/figures/fig_main_vrr_far.pdf` and `results/figures/fig_cost_per_rep
 | `results.csv`, `summary.md`, `summary.json` | per-attempt rows and every acceptance rule (fa_metrics.py) |
 | `experiment_c0.json`, `experiment_c0g.json`, `experiment_c1.json` | exact configuration, token use and cost of each condition |
 | `gpt_benchmark/` | verdict per model and case of the GPT benchmark |
+| `final/<arm>/<case>/` | the frozen record of each case (`llm_response.json`: models, tokens, time, HTTP attempts, prompt sha256), every model answer (`*.md`: repairer, analyst, jurors, revisions), every patch (`*.diff`) and the oracle's evaluation (`eval.json`); `final/<arm>__initial/` and `__cand*/` evaluate the initial patches and the other candidates, and `final/_baseline/` holds the oracle control of each case |
 | `../../results/logs/calls/calls_v3_main.csv` | every model call (280) with tokens, time and list-price cost |
 | `../../results/logs/console/v3_final_*.log` | consoles of the three conditions |
+
+Every answer and patch has the sha256 recorded in its `llm_response.json`, every `patch.diff` has the `patch_sha256`
+of `results.csv`, and every `eval.json` gives the verdict in `results.csv` (checked by `results/audit/audit_paper.py`).
+The prompts (`context.md`) are not included: they are rebuilt from the benchmark, and their sha256 is in each record.

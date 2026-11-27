@@ -21,6 +21,11 @@ See `results/figures/fig_pilot_benchmarks.pdf` and `results/figures/fig_jury_cal
 |---|---|
 | `results.csv`, `summary.md`, `summary.json` | per-attempt rows and metrics of the pilot (fa_metrics.py) |
 | `experiment_*.json` | exact configuration of each pilot run |
+| `pilot/<arm>/<case>/` | the frozen record of each case (`llm_response.json`: models, tokens, time, HTTP attempts, prompt sha256), every model answer (`*.md`: repairers, analyst, jurors, cross-examination, revisions), every patch (`*.diff`) and the oracle's evaluation (`eval.json`); `pilot/<arm>__initial/` and `__cand*/` evaluate the initial patches and the other candidates, and `pilot/_baseline/` holds the oracle control of each case |
 | `judge_calibration_v1/`, `judge_calibration_v2/` | juror verdicts per candidate, summary, token use and cost |
 | `../../results/logs/calls/calls_v2_pilot.csv` | every model call of the pilot with tokens, time and cost |
 | `../../results/logs/console/v2_*.log` | consoles of the tournament, the pilots and the calibration |
+
+Every answer and patch has the sha256 recorded in its `llm_response.json`, every `patch.diff` has the `patch_sha256`
+of `results.csv`, and every `eval.json` gives the verdict in `results.csv` (checked by `results/audit/audit_paper.py`).
+The prompts (`context.md`) are not included: they are rebuilt from the benchmark, and their sha256 is in each record.

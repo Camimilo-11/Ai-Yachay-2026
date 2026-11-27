@@ -33,6 +33,6 @@ does not touch that code) and smolagents tests that found an API key in the envi
 | `confirm/summary.md`, `confirm/summary.json` | VRR, FAR and the acceptance rules with 95% Wilson intervals (`code/scripts/fa_metrics.py`) |
 | `confirm/confirm_v4.json` | the confirmatory analysis of `prereg/decisiones_v4.txt` (`code/scripts/confirm_v4.py`): Fisher test, rates, cases lost |
 | `confirm/experiment_c0.json` | models, settings and harness of the run |
-| `confirm/c0/<case>/llm_response.json` | the frozen record of each case: prompt hashes, answer, tokens, time, HTTP attempts |
+| `confirm/c0/<case>/` | the frozen record of each case (`llm_response.json`: prompt sha256, tokens, time, HTTP attempts), the answer (`cand0_r0_t0.md`), the patches (`*.diff`) and the oracle's evaluation (`eval.json`); `confirm/_baseline/` holds the oracle control of each case |
 | `../../results/logs/calls/calls_v4_confirm.csv` | one row per model call: 65 calls of GPT-6.2 Sol, 848,338 input and 442,252 output tokens, 6.12 USD at list price |
 | `../../results/logs/console/v4_confirm_c0.log` | console output of the run |

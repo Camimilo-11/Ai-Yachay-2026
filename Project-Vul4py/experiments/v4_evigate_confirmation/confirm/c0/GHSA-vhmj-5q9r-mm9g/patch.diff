@@ -1,0 +1,23 @@
+--- a/edumfa/lib/radiusserver.py
++++ b/edumfa/lib/radiusserver.py
+@@ -116,10 +116,20 @@
+ 
+         # PwCrypt encodes unicode strings to UTF-8
+         req["User-Password"] = req.PwCrypt(password)
++        req.add_message_authenticator()
+         try:
+             response = srv.SendPacket(req)
+ 
+             if response.code == pyrad.packet.AccessAccept:
++                authenticators = response.get(80, ())  # Message-Authenticator
++                if (len(authenticators) != 1
++                        or len(authenticators[0]) != 16
++                        or not response.verify_message_authenticator(
++                            secret=req.secret,
++                            original_authenticator=req.authenticator)):
++                    log.warning("Radiusserver %s returned an Access-Accept without "
++                                "a valid Message-Authenticator." % config.server)
++                    return False
+                 log.info("Radiusserver %s granted "
+                          "access to user %s." % (config.server, user))
+                 success = True

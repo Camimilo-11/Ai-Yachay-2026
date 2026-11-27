@@ -1,0 +1,21 @@
+{
+  "agent": "c0g",
+  "vuln_id": "GHSA-hfmc-7525-mj55",
+  "apply_ok": true,
+  "func_ok": true,
+  "exploit_ok": false,
+  "plausible": false,
+  "func_pfes": "1376/0/0/126",
+  "exploit_pfes": "361/1/0/47",
+  "notes": "",
+  "elapsed_s": 352.8,
+  "harness": "eval_harness/2 (post-install restore)",
+  "exploit_rc": 1,
+  "env_check": {
+    "healthy": true,
+    "functional_unpatched": "1376/0/0/126",
+    "exploit_unpatched": "351/11/0/47",
+    "functional_reference": "1376/0/0/126",
+    "exploit_reference": "362/0/0/47"
+  }
+}

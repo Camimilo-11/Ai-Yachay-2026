@@ -100,8 +100,10 @@ addenda.
    and `python results/figures/make_figures.py`.
 
 The prepared workspaces (about 100 GB) and the full run directories are not in this repository; every result here
-comes with the command that produced it, and the frozen records of each case are in the evidence packages listed in
-each version folder (with their sha256).
+comes with the command that produced it. The frozen record of each case is in the version folders for v0, v2-v4
+and the v5 development check: the answers of every model, the patches, the oracle's evaluation, and the tokens, time
+and prompt sha256 of every call. The prompts themselves (`context.md`) are not included: they are rebuilt from the
+benchmark, and their sha256 is in each record.
 
 ## Cost of the experiments (list prices)
 
@@ -117,7 +119,8 @@ each version folder (with their sha256).
 
 ## Use of AI tools
 
-Large language models are the object of study: their calls, prompts, answers and costs are recorded in
-`results/logs/`. The code, analyses and documents of this project were developed with the help of an AI assistant
+Large language models are the object of study: the tokens, time and cost of every call are recorded in
+`results/logs/calls/` and the consoles in `results/logs/console/`; the frozen answers are in the version folders
+named above. The code, analyses and documents of this project were developed with the help of an AI assistant
 (Claude Opus 5.5, Anthropic), and two diagrams of the final paper were drawn with ChatGPT (OpenAI); both uses are
 declared in the papers. Every result comes from the runs and files in this repository.

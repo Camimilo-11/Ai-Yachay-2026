@@ -1,0 +1,101 @@
+figure,item,measure,numerator,denominator,value,ci95_low,ci95_high,unit,source
+fig_environment,Public release (sandbox scan),valid_cases,,,18.000000,,,cases,code/docs/README_multiagent.md: 18 cases passed the first scan with the public release
+fig_environment,R0,valid_cases,,,86.000000,,,cases,experiments/v1_environment/scan_report_round0.tsv (status OK)
+fig_environment,R1,valid_cases,,,98.000000,,,cases,experiments/v1_environment/scan_report_round1.tsv (status OK)
+fig_environment,R2,valid_cases,,,99.000000,,,cases,experiments/v1_environment/scan_report_round2.tsv (status OK)
+fig_environment,R3,valid_cases,,,99.000000,,,cases,experiments/v1_environment/scan_report_round3.tsv (status OK)
+fig_environment,R4,valid_cases,,,99.000000,,,cases,experiments/v1_environment/scan_report_round4.tsv (status OK)
+fig_environment,R5,valid_cases,,,100.000000,,,cases,experiments/v1_environment/scan_report_round5.tsv (status OK)
+fig_environment,Oracle control,valid_cases,,,100.000000,,,cases,experiments/v1_environment/oracle_report.tsv (healthy == True)
+fig_pilot_benchmarks,v0 MVP: laguna-xs-2.1 (own pilot),VRR,1,5,0.200000,0.036224,0.624465,proportion,experiments/v0_mvp/results.csv
+fig_pilot_benchmarks,GPT benchmark: GPT-6 Luna,VRR,0,5,0.000000,0.000000,0.434482,proportion,experiments/v3_main/gpt_benchmark/gpt_benchmark_verdicts.csv
+fig_pilot_benchmarks,GPT benchmark: GPT-6.1 Terra,VRR,1,5,0.200000,0.036224,0.624465,proportion,experiments/v3_main/gpt_benchmark/gpt_benchmark_verdicts.csv
+fig_pilot_benchmarks,GPT benchmark: GPT-6.2 Astra,VRR,3,5,0.600000,0.230724,0.882379,proportion,experiments/v3_main/gpt_benchmark/gpt_benchmark_verdicts.csv
+fig_pilot_benchmarks,GPT benchmark: GPT-6.2 Sol,VRR,3,5,0.600000,0.230724,0.882379,proportion,experiments/v3_main/gpt_benchmark/gpt_benchmark_verdicts.csv
+fig_pilot_benchmarks,GPT benchmark: GPT-6.2 Sol (trimmed context),VRR,3,5,0.600000,0.230724,0.882379,proportion,experiments/v3_main/gpt_benchmark/gpt_benchmark_verdicts.csv
+fig_pilot_benchmarks,Tournament repairer: GPT-5.4 mini,VRR,1,5,0.200000,0.036224,0.624465,proportion,experiments/v2_pilot_tournament/results.csv
+fig_pilot_benchmarks,Tournament repairer: GPT-6.2 Sol,VRR,3,5,0.600000,0.230724,0.882379,proportion,experiments/v2_pilot_tournament/results.csv
+fig_pilot_benchmarks,Pilot C1: GPT-model jury,VRR,3,5,0.600000,0.230724,0.882379,proportion,experiments/v2_pilot_tournament/results.csv
+fig_pilot_benchmarks,Pilot C1 v2: cross-family jury,VRR,3,5,0.600000,0.230724,0.882379,proportion,experiments/v2_pilot_tournament/results.csv
+fig_main_vrr_far,"v0 pilot, laguna-xs-2.1",VRR,1,5,0.200000,0.036224,0.624465,proportion,experiments/v0_mvp/results.csv
+fig_main_vrr_far,"v0 pilot, laguna-xs-2.1",FAR,3,4,0.750000,0.300642,0.954413,proportion,experiments/v0_mvp/results.csv
+fig_main_vrr_far,C0: repairer alone (main sample),VRR,16,29,0.551724,0.375480,0.715868,proportion,experiments/v3_main/results.csv
+fig_main_vrr_far,C0: repairer alone (main sample),FAR,12,28,0.428571,0.265085,0.609292,proportion,experiments/v3_main/results.csv
+fig_main_vrr_far,C0g: repairer + mechanical gate,VRR,14,29,0.482759,0.313861,0.655690,proportion,experiments/v3_main/results.csv
+fig_main_vrr_far,C0g: repairer + mechanical gate,FAR,14,28,0.500000,0.326331,0.673669,proportion,experiments/v3_main/results.csv
+fig_main_vrr_far,C1: analyst + unanimous jury,VRR,14,29,0.482759,0.313861,0.655690,proportion,experiments/v3_main/results.csv
+fig_main_vrr_far,C1: analyst + unanimous jury,FAR,12,26,0.461538,0.287559,0.645421,proportion,experiments/v3_main/results.csv
+fig_main_vrr_far,C0: 63 confirmation cases,VRR,22,63,0.349206,0.243260,0.472485,proportion,experiments/v4_evigate_confirmation/confirm/results.csv
+fig_main_vrr_far,C0: 63 confirmation cases,FAR,40,61,0.655738,0.530497,0.762525,proportion,experiments/v4_evigate_confirmation/confirm/results.csv
+fig_jury_calibration,Claude Opus 5.5,AUROC,,,0.912821,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,Claude Opus 5.5,Sensitivity,,,0.846154,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,Claude Opus 5.5,Specificity,,,0.666667,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,Claude Opus 5.5,list_price_cost_5_calls,,,0.675724,,,USD,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_usage.json tokens x code/models.json prices
+fig_jury_calibration,Claude Sonnet 5.5,AUROC,,,0.905128,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,Claude Sonnet 5.5,Sensitivity,,,0.846154,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,Claude Sonnet 5.5,Specificity,,,0.733333,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,Claude Sonnet 5.5,list_price_cost_5_calls,,,0.299072,,,USD,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_usage.json tokens x code/models.json prices
+fig_jury_calibration,Claude Haiku 5.5,AUROC,,,0.900000,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,Claude Haiku 5.5,Sensitivity,,,0.769231,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,Claude Haiku 5.5,Specificity,,,0.733333,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,Claude Haiku 5.5,list_price_cost_5_calls,,,0.076323,,,USD,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_usage.json tokens x code/models.json prices
+fig_jury_calibration,DeepSeek V4 Pro,AUROC,,,0.838462,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,DeepSeek V4 Pro,Sensitivity,,,0.846154,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,DeepSeek V4 Pro,Specificity,,,0.933333,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,DeepSeek V4 Pro,list_price_cost_5_calls,,,0.808864,,,USD,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_usage.json tokens x code/models.json prices
+fig_jury_calibration,DeepSeek Flash,AUROC,,,0.743590,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,DeepSeek Flash,Sensitivity,,,0.846154,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,DeepSeek Flash,Specificity,,,0.866667,,,proportion,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json
+fig_jury_calibration,DeepSeek Flash,list_price_cost_5_calls,,,0.277750,,,USD,experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_usage.json tokens x code/models.json prices
+fig_calls_tokens_time,Claude Opus 5.5 (juror),median_input_tokens,,,17550.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,Claude Sonnet 5.5 (juror),median_input_tokens,,,17599.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,DeepSeek V4 Pro (juror),median_input_tokens,,,11299.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6 Luna (juror),median_input_tokens,,,11679.500000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6.1 Sol (juror),median_input_tokens,,,11423.500000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6.1 Terra (juror),median_input_tokens,,,11692.500000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6.2 Sol (repairer),median_input_tokens,,,8058.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-5.4 mini (repairer),median_input_tokens,,,9663.500000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,Claude Haiku 5.5 (repairer),median_input_tokens,,,13877.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,laguna-xs-2.1 (repairer),median_input_tokens,,,2394.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6 Luna (analyst),median_input_tokens,,,7765.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,Claude Opus 5.5 (juror),median_output_tokens,,,2781.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,Claude Sonnet 5.5 (juror),median_output_tokens,,,1641.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,DeepSeek V4 Pro (juror),median_output_tokens,,,20685.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6 Luna (juror),median_output_tokens,,,5221.500000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6.1 Sol (juror),median_output_tokens,,,5874.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6.1 Terra (juror),median_output_tokens,,,2399.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6.2 Sol (repairer),median_output_tokens,,,6321.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-5.4 mini (repairer),median_output_tokens,,,12930.500000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,Claude Haiku 5.5 (repairer),median_output_tokens,,,21437.500000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,laguna-xs-2.1 (repairer),median_output_tokens,,,183.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6 Luna (analyst),median_output_tokens,,,8766.000000,,,tokens,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,Claude Opus 5.5 (juror),median_latency_s,,,26.400000,,,seconds,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,Claude Sonnet 5.5 (juror),median_latency_s,,,13.400000,,,seconds,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,DeepSeek V4 Pro (juror),median_latency_s,,,193.600000,,,seconds,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6 Luna (juror),median_latency_s,,,36.300000,,,seconds,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6.1 Sol (juror),median_latency_s,,,111.000000,,,seconds,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6.1 Terra (juror),median_latency_s,,,39.900000,,,seconds,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6.2 Sol (repairer),median_latency_s,,,91.700000,,,seconds,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-5.4 mini (repairer),median_latency_s,,,72.750000,,,seconds,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,Claude Haiku 5.5 (repairer),median_latency_s,,,83.300000,,,seconds,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,laguna-xs-2.1 (repairer),median_latency_s,,,49.700000,,,seconds,results/logs/calls/calls_v*.csv
+fig_calls_tokens_time,GPT-6 Luna (analyst),median_latency_s,,,57.300000,,,seconds,results/logs/calls/calls_v*.csv
+fig_cost_per_repair,C0,cost_per_attempted_case,,,0.110828,,,USD,results/logs/calls/calls_v3_main.csv / experiments/v3_main/results.csv
+fig_cost_per_repair,C0,total_list_cost,,,3.324828,,,USD,results/logs/calls/calls_v3_main.csv
+fig_cost_per_repair,C0,denominator_cost_per_attempted_case,,,30.000000,,,count,experiments/v3_main/results.csv
+fig_cost_per_repair,C0g,cost_per_attempted_case,,,0.122608,,,USD,results/logs/calls/calls_v3_main.csv / experiments/v3_main/results.csv
+fig_cost_per_repair,C0g,total_list_cost,,,3.678246,,,USD,results/logs/calls/calls_v3_main.csv
+fig_cost_per_repair,C0g,denominator_cost_per_attempted_case,,,30.000000,,,count,experiments/v3_main/results.csv
+fig_cost_per_repair,C1,cost_per_attempted_case,,,0.913240,,,USD,results/logs/calls/calls_v3_main.csv / experiments/v3_main/results.csv
+fig_cost_per_repair,C1,total_list_cost,,,27.397207,,,USD,results/logs/calls/calls_v3_main.csv
+fig_cost_per_repair,C1,denominator_cost_per_attempted_case,,,30.000000,,,count,experiments/v3_main/results.csv
+fig_cost_per_repair,C0,cost_per_verified_repair,,,0.207802,,,USD,results/logs/calls/calls_v3_main.csv / experiments/v3_main/results.csv
+fig_cost_per_repair,C0,denominator_cost_per_verified_repair,,,16.000000,,,count,experiments/v3_main/results.csv
+fig_cost_per_repair,C0g,cost_per_verified_repair,,,0.262732,,,USD,results/logs/calls/calls_v3_main.csv / experiments/v3_main/results.csv
+fig_cost_per_repair,C0g,denominator_cost_per_verified_repair,,,14.000000,,,count,experiments/v3_main/results.csv
+fig_cost_per_repair,C1,cost_per_verified_repair,,,1.956943,,,USD,results/logs/calls/calls_v3_main.csv / experiments/v3_main/results.csv
+fig_cost_per_repair,C1,denominator_cost_per_verified_repair,,,14.000000,,,count,experiments/v3_main/results.csv
+fig_coverage_rule,All positive claims,FAR,40,61,0.655738,0.530497,0.762525,proportion,experiments/v4_evigate_confirmation/confirm/results.csv
+fig_coverage_rule,Claims kept by the rule,FAR,11,23,0.478261,0.292372,0.670373,proportion,experiments/v4_evigate_confirmation/confirm/results.csv
+fig_v0_pilot,v0 pilot,VRR,1,5,0.200000,0.036224,0.624465,proportion,experiments/v0_mvp/results.csv
+fig_v0_pilot,v0 pilot,FAR,3,4,0.750000,0.300642,0.954413,proportion,experiments/v0_mvp/results.csv

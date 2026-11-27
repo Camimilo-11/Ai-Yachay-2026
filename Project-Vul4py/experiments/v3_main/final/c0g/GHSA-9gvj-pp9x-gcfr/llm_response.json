@@ -1,0 +1,138 @@
+{
+ "schema": "fa-multiagent/2",
+ "vuln_id": "GHSA-9gvj-pp9x-gcfr",
+ "agent": "c0g",
+ "run_index": 1,
+ "condition": "c0g",
+ "pipeline": "repair1+gate",
+ "models": {
+  "analyst": null,
+  "repairers": [
+   "openai:gpt-6.2-sol"
+  ],
+  "repairer": "openai:gpt-6.2-sol",
+  "jurors": [],
+  "reviewer": null
+ },
+ "context_files": [
+  "src/picklescan/scanner.py"
+ ],
+ "context_mode": "full",
+ "hint": "lines",
+ "hint_text": "- src/picklescan/scanner.py: lines 255, 269",
+ "code_budget_tokens": 416000,
+ "stages": {
+  "cand0_r0_t0": {
+   "role": "repairer",
+   "model": "openai:gpt-6.2-sol",
+   "model_reported": "gpt-6.2-sol",
+   "response_id": "chatcmpl-EoEmkRfDx3nEpI2hZtDn0KXo2ucV0",
+   "http_status": 200,
+   "http_headers": {
+    "x-ratelimit-limit-requests": "5000",
+    "x-ratelimit-limit-tokens": "1000000",
+    "x-ratelimit-remaining-requests": "4999",
+    "x-ratelimit-remaining-tokens": "991090",
+    "x-ratelimit-reset-requests": "12ms",
+    "x-ratelimit-reset-tokens": "534ms",
+    "x-request-id": "req_5acf66f98881425bbd9334f6342c0895"
+   },
+   "finish_reason": "stop",
+   "reasoning_content": null,
+   "input_tokens": 5023,
+   "output_tokens": 7945,
+   "latency_ms": 116579.1,
+   "request_sent_at_utc": "2026-11-25T21:25:42.173+00:00",
+   "http_attempts": [
+    {
+     "attempt": 1,
+     "started_at_utc": "2026-11-25T21:25:42.173+00:00",
+     "http_status": 200,
+     "latency_ms": 116579.1
+    }
+   ],
+   "params_dropped": [],
+   "status": "ok"
+  }
+ },
+ "candidates": [
+  {
+   "k": 0,
+   "model": "openai:gpt-6.2-sol",
+   "status": "ok",
+   "duplicate_of": null,
+   "merged": [],
+   "n_versions": 1,
+   "revised": 0,
+   "cross_decision": null,
+   "cross_critiques": null,
+   "versions": [
+    {
+     "key": "cand0_r0_t0",
+     "self": {
+      "claim": 1,
+      "confidence": 0.88,
+      "parse_status": "ok"
+     },
+     "grounding": {
+      "n": 11,
+      "grounded": 11,
+      "rejected": 0,
+      "rejected_items": []
+     },
+     "refused": false,
+     "gate": {
+      "ok": true,
+      "failures": [],
+      "files_touched": [
+       "src/picklescan/scanner.py"
+      ],
+      "changed_lines": 66,
+      "applies": true,
+      "apply_method": "git apply -p1",
+      "files_deleted": [],
+      "files_changed": [
+       "src/picklescan/scanner.py"
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "jury_rounds": [],
+ "generation_status": "complete",
+ "incomplete_reason": "",
+ "started_at_utc": "2026-11-25T21:00:18.179+00:00",
+ "selected_k": 0,
+ "generator": {
+  "claim": 1,
+  "confidence": 0.88,
+  "parse_status": "ok",
+  "diff_extracted": true,
+  "patch_bytes": 3046,
+  "refused": false,
+  "model": "openai:gpt-6.2-sol"
+ },
+ "generator_initial": {
+  "claim": 1,
+  "confidence": 0.88,
+  "parse_status": "ok"
+ },
+ "n_rounds": 1,
+ "api_calls": 1,
+ "latency_ms_api_total": 116579.1,
+ "http_retries": 0,
+ "input_tokens_total": 5023,
+ "output_tokens_total": 7945,
+ "wall_time_s": 1640.63,
+ "finished_at_utc": "2026-11-25T21:27:38.804+00:00",
+ "frozen_at_utc": "2026-11-25T21:27:38.804+00:00",
+ "sha256": {
+  "cand0_final.diff": "38e70fe3938e8ca39f30396fd73a562e8e28330f7900dd214c0dde5631040895",
+  "cand0_r0_t0.diff": "38e70fe3938e8ca39f30396fd73a562e8e28330f7900dd214c0dde5631040895",
+  "cand0_r0_t0.md": "be85640ed1a24644913aa150523cd5a1f92922907659762813d70bddb08ffdae",
+  "context.md": "d0f96afe1aa9f89075144e6fc2560545b7ec881126bd67372b3d24a7e52d2cf3",
+  "patch.diff": "38e70fe3938e8ca39f30396fd73a562e8e28330f7900dd214c0dde5631040895",
+  "patch_initial.diff": "38e70fe3938e8ca39f30396fd73a562e8e28330f7900dd214c0dde5631040895"
+ }
+}

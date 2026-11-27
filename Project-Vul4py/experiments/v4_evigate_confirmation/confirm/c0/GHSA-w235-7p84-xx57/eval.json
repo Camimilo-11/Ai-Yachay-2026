@@ -1,0 +1,21 @@
+{
+  "agent": "c0",
+  "vuln_id": "GHSA-w235-7p84-xx57",
+  "apply_ok": true,
+  "func_ok": true,
+  "exploit_ok": true,
+  "plausible": true,
+  "func_pfes": "1185/0/0/6",
+  "exploit_pfes": "59/0/0/0",
+  "notes": "",
+  "elapsed_s": 17.8,
+  "harness": "eval_harness/2 (post-install restore)",
+  "exploit_rc": 0,
+  "env_check": {
+    "healthy": true,
+    "functional_unpatched": "1185/0/0/6",
+    "exploit_unpatched": "58/1/0/0",
+    "functional_reference": "1185/0/0/6",
+    "exploit_reference": "59/0/0/0"
+  }
+}

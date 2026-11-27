@@ -1,0 +1,60 @@
+--- a/src/picklescan/scanner.py
++++ b/src/picklescan/scanner.py
+@@ -309,7 +309,12 @@
+     for rg in raw_globals:
+         g = Global(rg[0], rg[1], SafetyLevel.Dangerous)
+         safe_filter = _safe_globals.get(g.module)
+         unsafe_filter = _unsafe_globals.get(g.module)
++        if unsafe_filter != "*" and any(
++            rule == "*" and g.module.startswith(module + ".")
++            for module, rule in _unsafe_globals.items()
++        ):
++            unsafe_filter = "*"
+         if "unknown" in g.module or "unknown" in g.name:
+             g.safety = SafetyLevel.Dangerous
+             _log.warning(
+@@ -518,21 +523,37 @@
+     return scan_result
+ 
+ 
++def _has_pickle_globals(data: IO[bytes]) -> bool:
++    start = data.tell()
++    try:
++        while True:
++            for opcode, _, _ in pickletools.genops(data):
++                if opcode.name in ("GLOBAL", "INST", "STACK_GLOBAL"):
++                    return True
++    except (ValueError, OverflowError):
++        return False
++    finally:
++        data.seek(start)
++
++
+ def scan_directory_path(path) -> ScanResult:
+     scan_result = ScanResult([])
+ 
+     for base_path, _, file_names in os.walk(path):
+         for file_name in file_names:
+             file_ext = os.path.splitext(file_name)[1]
+-            if (
+-                file_ext not in _zip_file_extensions
+-                and file_ext not in _pickle_file_extensions
+-                and file_ext not in _pytorch_file_extensions
+-            ):
+-                continue
++            supported_ext = (
++                file_ext in _zip_file_extensions
++                or file_ext in _pickle_file_extensions
++                or file_ext in _pytorch_file_extensions
++            )
+             file_path = os.path.join(base_path, file_name)
+-            _log.debug("Scanning file %s", file_path)
++            if not supported_ext and not os.path.isfile(file_path):
++                continue
+             with open(file_path, "rb") as file:
++                if not supported_ext and not _has_pickle_globals(file):
++                    continue
++                _log.debug("Scanning file %s", file_path)
+                 scan_result.merge(scan_bytes(file, file_path, file_ext))
+ 
+     return scan_result

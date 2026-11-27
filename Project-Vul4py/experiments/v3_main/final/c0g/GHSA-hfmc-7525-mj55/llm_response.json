@@ -1,0 +1,138 @@
+{
+ "schema": "fa-multiagent/2",
+ "vuln_id": "GHSA-hfmc-7525-mj55",
+ "agent": "c0g",
+ "run_index": 1,
+ "condition": "c0g",
+ "pipeline": "repair1+gate",
+ "models": {
+  "analyst": null,
+  "repairers": [
+   "openai:gpt-6.2-sol"
+  ],
+  "repairer": "openai:gpt-6.2-sol",
+  "jurors": [],
+  "reviewer": null
+ },
+ "context_files": [
+  "asyncssh/connection.py"
+ ],
+ "context_mode": "full",
+ "hint": "lines",
+ "hint_text": "- asyncssh/connection.py: lines 863, 1401-1404, 1548, 1584-1585, 1594-1596, 1648, 1692, 2194-2195, 2199-2200",
+ "code_budget_tokens": 416000,
+ "stages": {
+  "cand0_r0_t0": {
+   "role": "repairer",
+   "model": "openai:gpt-6.2-sol",
+   "model_reported": "gpt-6.2-sol",
+   "response_id": "chatcmpl-EoEo9p3aquPaGICQa24kweDfBadSd",
+   "http_status": 200,
+   "http_headers": {
+    "x-ratelimit-limit-requests": "5000",
+    "x-ratelimit-limit-tokens": "1000000",
+    "x-ratelimit-remaining-requests": "4999",
+    "x-ratelimit-remaining-tokens": "899646",
+    "x-ratelimit-reset-requests": "12ms",
+    "x-ratelimit-reset-tokens": "6.021s",
+    "x-request-id": "req_e080feb06466436c9b2d150aa87ee5e6"
+   },
+   "finish_reason": "stop",
+   "reasoning_content": null,
+   "input_tokens": 78022,
+   "output_tokens": 15280,
+   "latency_ms": 190228.9,
+   "request_sent_at_utc": "2026-11-25T21:27:09.166+00:00",
+   "http_attempts": [
+    {
+     "attempt": 1,
+     "started_at_utc": "2026-11-25T21:27:09.166+00:00",
+     "http_status": 200,
+     "latency_ms": 190228.9
+    }
+   ],
+   "params_dropped": [],
+   "status": "ok"
+  }
+ },
+ "candidates": [
+  {
+   "k": 0,
+   "model": "openai:gpt-6.2-sol",
+   "status": "ok",
+   "duplicate_of": null,
+   "merged": [],
+   "n_versions": 1,
+   "revised": 0,
+   "cross_decision": null,
+   "cross_critiques": null,
+   "versions": [
+    {
+     "key": "cand0_r0_t0",
+     "self": {
+      "claim": 1,
+      "confidence": 0.94,
+      "parse_status": "ok"
+     },
+     "grounding": {
+      "n": 10,
+      "grounded": 10,
+      "rejected": 0,
+      "rejected_items": []
+     },
+     "refused": false,
+     "gate": {
+      "ok": true,
+      "failures": [],
+      "files_touched": [
+       "asyncssh/connection.py"
+      ],
+      "changed_lines": 51,
+      "applies": true,
+      "apply_method": "git apply -p1",
+      "files_deleted": [],
+      "files_changed": [
+       "asyncssh/connection.py"
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "jury_rounds": [],
+ "generation_status": "complete",
+ "incomplete_reason": "",
+ "started_at_utc": "2026-11-25T21:00:18.191+00:00",
+ "selected_k": 0,
+ "generator": {
+  "claim": 1,
+  "confidence": 0.94,
+  "parse_status": "ok",
+  "diff_extracted": true,
+  "patch_bytes": 4438,
+  "refused": false,
+  "model": "openai:gpt-6.2-sol"
+ },
+ "generator_initial": {
+  "claim": 1,
+  "confidence": 0.94,
+  "parse_status": "ok"
+ },
+ "n_rounds": 1,
+ "api_calls": 1,
+ "latency_ms_api_total": 190228.9,
+ "http_retries": 0,
+ "input_tokens_total": 78022,
+ "output_tokens_total": 15280,
+ "wall_time_s": 1801.48,
+ "finished_at_utc": "2026-11-25T21:30:19.671+00:00",
+ "frozen_at_utc": "2026-11-25T21:30:19.671+00:00",
+ "sha256": {
+  "cand0_final.diff": "e96137ea529e99e5d7063195f963037905e83775107d9a43958a36dd0c801e92",
+  "cand0_r0_t0.diff": "e96137ea529e99e5d7063195f963037905e83775107d9a43958a36dd0c801e92",
+  "cand0_r0_t0.md": "157f4a3ac4019b087cad86597f7043207137ab42f39202ab9e7f5f3d8af81bbd",
+  "context.md": "c17c0ff8a9e219a60cd46f299d082a87fb2deb477080ce32f628904c235a626d",
+  "patch.diff": "e96137ea529e99e5d7063195f963037905e83775107d9a43958a36dd0c801e92",
+  "patch_initial.diff": "e96137ea529e99e5d7063195f963037905e83775107d9a43958a36dd0c801e92"
+ }
+}

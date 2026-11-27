@@ -26,7 +26,7 @@ alone) and 0.065 USD (Haiku + RAG) for the 5 cases at list price (`results/logs/
 | `kb_rag_r_v1/chunks.jsonl` | the 913 chunks (hunks of the upstream fixes with 10 lines of context) |
 | `kb_rag_r_v1/cwe_map.json`, `cwe_guides.json` | CWE ids of each case (OSV, GitHub advisories) and the MITRE mitigations used (CWE list 5.0) |
 | `dev_gate/results.csv`, `summary.*`, `experiment_*.json` | the development check: both arms on the 5 pilot cases |
-| `dev_gate/<arm>/<case>/llm_response.json`, `rag_section.md` | frozen record of each answer and the section the RAG inserted |
+| `dev_gate/<arm>/<case>/` | the frozen record (`llm_response.json`), the answer (`*.md`), the patches (`*.diff`), the oracle's evaluation (`eval.json`) and, in M+RAG, the section the RAG inserted (`rag_section.md`); `dev_gate/_baseline/` holds the oracle control |
 
 The embedding model files (`kb_rag_r_v1/models/`) and the Qdrant store are rebuilt by `code/scripts/rag_repair.py build`
 and are not in the repository.

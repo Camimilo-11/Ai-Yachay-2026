@@ -1,11 +1,15 @@
 {
- "generated_utc": "2026-11-27T01:21:37Z",
+ "generated_utc": "2026-11-27T03:19:43Z",
  "figures": {
   "fig_environment": {
    "files": [
     "results/figures/fig_environment.pdf",
     "results/figures/fig_environment.png"
    ],
+   "outputs": {
+    "results/figures/fig_environment.pdf": "4a55bea1671f067189d82fb80ff01547b30fefbc45d23ffa4ea179e18219f3ba",
+    "results/figures/fig_environment.png": "079dc015e355e8e800ad6c9faab9b8fbe1fd23b7bb56e32adc0e5c9f637ccc90"
+   },
    "inputs": {
     "experiments/v1_environment/scan_report_round0.tsv": "3ca6b2079577ddd7b8425f8abdc1147f1fc09cf3fa70d359b62184dd2be64cf6",
     "experiments/v1_environment/scan_report_round1.tsv": "cf4c640b925c41d4ead12bd82d065a4dc1365589db3dacbc74dcb4d2da990f1c",
@@ -13,9 +17,11 @@
     "experiments/v1_environment/scan_report_round3.tsv": "d94591e2ba3671eaa906e7a9854ae0896f70c8d2bd82f8fdd06852f98718ebdc",
     "experiments/v1_environment/scan_report_round4.tsv": "93e9c82885f4ac05c10252e430fa32a0a21e8122f4a807d6fbeceb6fbeb67a00",
     "experiments/v1_environment/scan_report_round5.tsv": "d5dba837688c23358c39c5dd00b3f02b0d4ba3156456846bf7584b70e65cdbf5",
-    "prereg/oracle_valid.txt": "d57e7777269d18dd95e66aa903dc47d1dbb4a39d7200f22a46e91107caff166d"
+    "experiments/v1_environment/oracle_report.tsv": "720d03849937f368280b0c6964c4fe9a0b05eeb0b0d56c20a0d2b510389b369d",
+    "prereg/oracle_valid.txt": "d57e7777269d18dd95e66aa903dc47d1dbb4a39d7200f22a46e91107caff166d",
+    "code/docs/README_multiagent.md": "7960e39298673e634f2141fe2528b6eba85abe9ae99d7f7ba55ca9633ab6654f"
    },
-   "what": "cases with status OK per scan round on the instance; oracle-control survivors",
+   "what": "cases with status OK per scan round on the instance; oracle-control survivors; public release as a separate point (sandbox scan), not joined to the rounds",
    "constants": [
     {
      "value": 18,
@@ -28,6 +34,10 @@
     "results/figures/fig_pilot_benchmarks.pdf",
     "results/figures/fig_pilot_benchmarks.png"
    ],
+   "outputs": {
+    "results/figures/fig_pilot_benchmarks.pdf": "199e6e48607045c35ad8159ace9b13a21fbb6ecd4d9ccdcda6e3848dd7743a5c",
+    "results/figures/fig_pilot_benchmarks.png": "abe9cc852ef28d9b392862d24448e22821f73249857f71d30f1efd50078ec763"
+   },
    "inputs": {
     "experiments/v3_main/gpt_benchmark/gpt_benchmark_verdicts.csv": "c13e5ce551266d0d83ff8da764e0754a7d80a42eeef41ce794dc3b29ad7cf79d",
     "experiments/v2_pilot_tournament/results.csv": "e8164ac2382c71e757fd370925b3d6c38e313515bb41d0d2cc53a34b79777def",
@@ -41,13 +51,17 @@
     "results/figures/fig_main_vrr_far.pdf",
     "results/figures/fig_main_vrr_far.png"
    ],
+   "outputs": {
+    "results/figures/fig_main_vrr_far.pdf": "0ff876d23d6b342a605c6784fa55989ba427a9370629f182266d06bfd3b6354c",
+    "results/figures/fig_main_vrr_far.png": "8d96e58baef28a4f6aa2eb65e7495ba3af187439ee81d1968d622f94abcca5fd"
+   },
    "inputs": {
     "experiments/v3_main/results.csv": "389f15726328e2513d0e9bfc9dca041bfeaa3910274adda70f28e8147609b3b7",
     "experiments/v0_mvp/results.csv": "427c81dcbf41262a8bc46fabc7bac6ee04260d4e42c041e1abf9b80f2121eba3",
     "experiments/v4_evigate_confirmation/confirm/results.csv": "e0fada585047c7f83bb755f6b9408a1528164f809c4cd3ec0e65d35e555fc3bd"
    },
    "what": "VRR and FAR with 95% Wilson intervals; labels give k/n",
-   "claim_rule": "repairer's own claim (C0, C0g, v5); unanimous jury (C1, primary rule of decisiones_v3)",
+   "claim_rule": "repairer's own claim (C0, C0g, v5); unanimous jury (C1, primary rule)",
    "missing_rows": [
     "v5 arms (experiments/v5_rag/results.csv)"
    ]
@@ -57,11 +71,22 @@
     "results/figures/fig_jury_calibration.pdf",
     "results/figures/fig_jury_calibration.png"
    ],
+   "outputs": {
+    "results/figures/fig_jury_calibration.pdf": "433af38ee2f03c526ffd090d19fca859935d97ab4c1cd1cece7dc9b9403a2d49",
+    "results/figures/fig_jury_calibration.png": "12476f6655fca42451f8e19521b8bf75040d52d4ae089823f40ba1057bbc754f"
+   },
    "inputs": {
     "experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_summary.json": "ccbf78f17ada372753b8e338b06db72df0639d7cbcbb34b5c23fdaed0ea03c34",
-    "experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_usage.json": "a26da874abe2a3c6df269d03a6b1ba5f17de864f06baf5e9c120693bfb57b948"
+    "experiments/v2_pilot_tournament/judge_calibration_v2/judge_calibration_usage.json": "a26da874abe2a3c6df269d03a6b1ba5f17de864f06baf5e9c120693bfb57b948",
+    "code/models.json": "8a4e49ff8ade33572fecc2f579b0ce62231094276efe9ac30690446aa5a170b2",
+    "prereg/decisiones_v2.txt": "dff8ce148a4cb8b7bbb5ba43f85910e0043e9fb67730985ab59eb61cbfaba1b2"
    },
-   "what": "per-juror AUROC, sensitivity, specificity on 28 candidates; cost of 5 calls",
+   "what": "per-juror AUROC, sensitivity, specificity on 28 candidates; list-price cost of 5 calls (tokens x models.json)",
+   "selected": [
+    "claudecode:claude-opus-5-5",
+    "claudecode:claude-sonnet-5-5",
+    "deepseek:deepseek-v4-pro"
+   ],
    "note": "point estimates; the 28 candidates come from 5 pilot cases, so the scores are not independent"
   },
   "fig_calls_tokens_time": {
@@ -69,6 +94,10 @@
     "results/figures/fig_calls_tokens_time.pdf",
     "results/figures/fig_calls_tokens_time.png"
    ],
+   "outputs": {
+    "results/figures/fig_calls_tokens_time.pdf": "319b65b885602f47405aab0ef003a7abe615bb1182660d0a3ad6a5ffd6513191",
+    "results/figures/fig_calls_tokens_time.png": "287aae22a3d1a785b3d5d1f0c11eb2e732eecad40828cb5fc1c68359fe3ec204"
+   },
    "inputs": {
     "results/logs/calls/calls_v0_mvp.csv": "5be7505c46de3c9086aebe117538b6a704e16d82b3085d6ce742c6ee669432c7",
     "results/logs/calls/calls_v2_pilot.csv": "c2a67b6942fc7f6f08ea22b2857efb0302540f8c1266ab6f776ee6696815c43e",
@@ -77,19 +106,23 @@
     "results/logs/calls/calls_v5_dev.csv": "d93185e02ee65d7fe0289548bf99ae64f83b4b94ef0263e6e13af7dd5de0778a"
    },
    "what": "distribution per model and role of input/output tokens and latency per call",
-   "transform": "log10 x-axis; zero values drawn at 1; boxes without outliers, points are calls"
+   "transform": "log10 x-axis; zero values drawn at 1; boxes = quartiles, whiskers = 1.5 IQR, points = calls with fixed jitter"
   },
   "fig_cost_per_repair": {
    "files": [
     "results/figures/fig_cost_per_repair.pdf",
     "results/figures/fig_cost_per_repair.png"
    ],
+   "outputs": {
+    "results/figures/fig_cost_per_repair.pdf": "b4864e8d8d2134ac783602b21572432a9e068d83cff511618a4d3797e082e78e",
+    "results/figures/fig_cost_per_repair.png": "98822bb6f0208e6cb9fd52924069726e5659bd70119a44d84d7afde31a07fcb3"
+   },
    "inputs": {
     "results/logs/calls/calls_v3_main.csv": "59e872ff4315266e831932bebb6e3582b3702c1d3bdb6ef0b1f6b3c708ce1109",
     "experiments/v3_main/results.csv": "389f15726328e2513d0e9bfc9dca041bfeaa3910274adda70f28e8147609b3b7"
    },
    "what": "sum of list-price cost of all calls per condition / attempts and / verified repairs",
-   "note": "C1 includes Claude jurors on the Claude plan priced at list-price equivalent and DeepSeek at peak prices",
+   "note": "C1 includes Claude jurors on the Claude plan priced at list price and DeepSeek at peak prices",
    "missing_rows": [
     "v5 arms (results/logs/calls/calls_v5.csv)"
    ]
@@ -99,15 +132,18 @@
     "results/figures/fig_coverage_rule.pdf",
     "results/figures/fig_coverage_rule.png"
    ],
+   "outputs": {
+    "results/figures/fig_coverage_rule.pdf": "64a3451ed1a42f10079682d8d108ae3f01eda110c9047f9b851192676911a40a",
+    "results/figures/fig_coverage_rule.png": "1d3f31643637664aec03e7889fcd82ca5bde3c8392994d1dfb6d424916df2e77"
+   },
    "inputs": {
-    "experiments/v3_main/results.csv": "389f15726328e2513d0e9bfc9dca041bfeaa3910274adda70f28e8147609b3b7",
     "experiments/v4_evigate_confirmation/confirm/results.csv": "e0fada585047c7f83bb755f6b9408a1528164f809c4cd3ec0e65d35e555fc3bd"
    },
    "what": "FAR of claims and of claims that touch every hinted range (+-3 lines)",
    "missing_rows": [
-    "C0 (main): results.csv without hint_coverage (re-run fa_metrics.py of v4 on runs/final)",
-    "C0g (main): results.csv without hint_coverage (re-run fa_metrics.py of v4 on runs/final)",
-    "C1 (main): results.csv without hint_coverage (re-run fa_metrics.py of v4 on runs/final)"
+    "C0, main sample: results.csv without hint_coverage (re-run fa_metrics.py of v4 on runs/final)",
+    "C0g, main sample: results.csv without hint_coverage (re-run fa_metrics.py of v4 on runs/final)",
+    "C1, main sample: results.csv without hint_coverage (re-run fa_metrics.py of v4 on runs/final)"
    ]
   },
   "fig_v0_pilot": {
@@ -115,6 +151,10 @@
     "results/figures/fig_v0_pilot.pdf",
     "results/figures/fig_v0_pilot.png"
    ],
+   "outputs": {
+    "results/figures/fig_v0_pilot.pdf": "8452dd3d05c4efd458bd24d508a7e9c1ff623979e1edbad296a663339de4f4f7",
+    "results/figures/fig_v0_pilot.png": "4d278911d5bd6cd6a60154aa6bf68101906fd91627e780e274aa39cbbbae5dd3"
+   },
    "inputs": {
     "experiments/v0_mvp/results.csv": "427c81dcbf41262a8bc46fabc7bac6ee04260d4e42c041e1abf9b80f2121eba3"
    },

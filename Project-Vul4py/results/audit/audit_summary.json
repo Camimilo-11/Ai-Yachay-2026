@@ -1,0 +1,44 @@
+{
+ "checks": 505,
+ "status": {
+  "PASS": 504,
+  "OPEN": 1
+ },
+ "by_area": {
+  "Environment (Fig. 4, Sec. 4.1, Table 2)": {
+   "PASS": 20
+  },
+  "Pilot comparisons (Table 4, Fig. 5, Sec. 4.2)": {
+   "PASS": 22
+  },
+  "Juror calibration (Table 5, Fig. 6, Sec. 4.3)": {
+   "PASS": 74
+  },
+  "Main sample and confirmation (Table 6, Fig. 7, Sec. 4.4, abstract)": {
+   "PASS": 68
+  },
+  "Claim rules and protocol (Tables 7-8, Sec. 4.5)": {
+   "PASS": 104
+  },
+  "Hint-coverage rule (Table 10, Fig. 8, Sec. 4.7, abstract)": {
+   "PASS": 36,
+   "OPEN": 1
+  },
+  "Calls, tokens and cost (Tables 12-14, Figs. 9-10, Sec. 4.9)": {
+   "PASS": 113
+  },
+  "v5 development check and knowledge base (Table 11, Sec. 3.8, 4.8)": {
+   "PASS": 15
+  },
+  "Methods facts (Tables 1 and 3, Secs. 3.2-3.5)": {
+   "PASS": 28
+  },
+  "Released case records (v2-v4, v5 development check)": {
+   "PASS": 8
+  },
+  "Data figures (values, provenance, integrity)": {
+   "PASS": 16
+  }
+ },
+ "fails": []
+}
