@@ -1,0 +1,17 @@
+--- a/src/picklescan/scanner.py
++++ b/src/picklescan/scanner.py
+@@ -134,7 +134,7 @@
+     "ssl": "*",  # DNS exfiltration via ssl.get_server_certificate()
+     "subprocess": "*",
+     "sys": "*",
+-    "code": {"InteractiveInterpreter.runcode"},
++    "code": {"InteractiveInterpreter.runcode", "InteractiveInterpreter.runsource"},
+     "idlelib.autocomplete": {"AutoComplete.get_entity", "AutoComplete.fetch_completions"},
+     "idlelib.calltip": {"Calltip.fetch_tip", "get_entity"},
+     "idlelib.debugobj": {"ObjectTreeItem.SetText"},
+@@ -156,4 +156,4 @@
+     },  # allows storing a pickle inside a pickle (if this has valid use cases, scan the input bytes instead of flagging the global)
+-    "torch.utils.bottleneck.__main__": {"run_cprofile"},
++    "torch.utils.bottleneck.__main__": {"run_cprofile", "run_autograd_prof"},
+     "torch.utils.collect_env": {"run"},
+     "torch.utils.data.datapipes.utils.decoder": {

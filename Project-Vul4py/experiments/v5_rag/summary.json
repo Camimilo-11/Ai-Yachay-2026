@@ -1,0 +1,662 @@
+{
+  "c0": {
+    "attempts": 95,
+    "N_complete": 94,
+    "N_incomplete": 1,
+    "incomplete": [
+      {
+        "agent": "c0",
+        "vuln_id": "CVE-2024-27454",
+        "reason": "verification error: exploit crashed the test process (rc=139)"
+      }
+    ],
+    "sum_V": 38,
+    "VRR": 0.40425531914893614,
+    "VRR_CI95": [
+      0.3107019003298408,
+      0.5053270080101492
+    ],
+    "sum_C_gen": 91,
+    "sum_FA_gen": 54,
+    "FAR_gen": 0.5934065934065934,
+    "FAR_gen_CI95": [
+      0.4906943596629895,
+      0.6885521449830141
+    ],
+    "N_reviewed": 0,
+    "sum_C_rev": 0,
+    "sum_FA_rev": 0,
+    "FAR_rev": null,
+    "FAR_rev_CI95": [
+      null,
+      null
+    ],
+    "rules": {
+      "repairer": {
+        "N": 94,
+        "accepted": 91,
+        "false_assurance": 54,
+        "FAR": 0.5934065934065934,
+        "FAR_CI95": [
+          0.4906943596629895,
+          0.6885521449830141
+        ],
+        "coverage": 0.9680851063829787,
+        "safe_yield": 0.39361702127659576,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "judge1": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "consensus": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "majority": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "unanimous": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": true
+      },
+      "gate": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "pre_revision": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "independent": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "coverage": {
+        "N": 94,
+        "accepted": 36,
+        "false_assurance": 14,
+        "FAR": 0.3888888888888889,
+        "FAR_CI95": [
+          0.24784872971943556,
+          0.5513554102736486
+        ],
+        "coverage": 0.3829787234042553,
+        "safe_yield": 0.23404255319148937,
+        "mcnemar_p_vs_repairer": 1.8189894035458565e-12,
+        "primary": false
+      },
+      "coverage75": {
+        "N": 94,
+        "accepted": 44,
+        "false_assurance": 18,
+        "FAR": 0.4090909090909091,
+        "FAR_CI95": [
+          0.2768785553665456,
+          0.5559024637104528
+        ],
+        "coverage": 0.46808510638297873,
+        "safe_yield": 0.2765957446808511,
+        "mcnemar_p_vs_repairer": 2.9103830456733704e-11,
+        "primary": false
+      },
+      "gate_coverage": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      }
+    },
+    "protocols": {
+      "N": 94,
+      "abstention_rate": 0.0,
+      "resolved_independent": 0,
+      "resolved_by_debate": 0,
+      "resolved_after_revision": 0,
+      "gate_failed_versions": 0,
+      "candidates_rescued_by_gate_feedback": 0,
+      "refusals": 0,
+      "citations": 940,
+      "citations_rejected": 0,
+      "citation_rejection_rate": 0.0,
+      "cases_with_a_correct_candidate": 38,
+      "jury_picked_correct": 38,
+      "VRR_oracle_best_candidate": 0.40425531914893614
+    },
+    "brier_gen": 0.4961329787234042,
+    "mean_conf_gen_when_claim": 0.9372527472527472,
+    "precision_gen": 0.4065934065934066,
+    "median_L_analyst_ms": null,
+    "median_L_repairer_ms": null,
+    "median_L_reviewer_ms": null,
+    "median_L_api_total_ms": 97557.9,
+    "median_wall_time_s": 1331.94,
+    "professor_format": {
+      "not_applied_or_broke_functionality": 8,
+      "N": 94,
+      "applied_failed_security": 48,
+      "applied_and_functional": 86
+    },
+    "http_retries_total": 0,
+    "tokens_in_total": 1362127,
+    "tokens_out_total": 671977
+  },
+  "c0m": {
+    "attempts": 95,
+    "N_complete": 95,
+    "N_incomplete": 0,
+    "incomplete": [],
+    "sum_V": 14,
+    "VRR": 0.14736842105263157,
+    "VRR_CI95": [
+      0.08986080618409027,
+      0.23228598567514475
+    ],
+    "sum_C_gen": 62,
+    "sum_FA_gen": 48,
+    "FAR_gen": 0.7741935483870968,
+    "FAR_gen_CI95": [
+      0.6559437898306864,
+      0.8604481701545532
+    ],
+    "N_reviewed": 0,
+    "sum_C_rev": 0,
+    "sum_FA_rev": 0,
+    "FAR_rev": null,
+    "FAR_rev_CI95": [
+      null,
+      null
+    ],
+    "rules": {
+      "repairer": {
+        "N": 95,
+        "accepted": 62,
+        "false_assurance": 48,
+        "FAR": 0.7741935483870968,
+        "FAR_CI95": [
+          0.6559437898306864,
+          0.8604481701545532
+        ],
+        "coverage": 0.6526315789473685,
+        "safe_yield": 0.14736842105263157,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "judge1": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "consensus": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "majority": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "unanimous": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": true
+      },
+      "gate": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "pre_revision": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "independent": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "coverage": {
+        "N": 95,
+        "accepted": 19,
+        "false_assurance": 10,
+        "FAR": 0.5263157894736842,
+        "FAR_CI95": [
+          0.3170780910485948,
+          0.7267019496745859
+        ],
+        "coverage": 0.2,
+        "safe_yield": 0.09473684210526316,
+        "mcnemar_p_vs_repairer": 7.275957614183426e-12,
+        "primary": false
+      },
+      "coverage75": {
+        "N": 95,
+        "accepted": 19,
+        "false_assurance": 10,
+        "FAR": 0.5263157894736842,
+        "FAR_CI95": [
+          0.3170780910485948,
+          0.7267019496745859
+        ],
+        "coverage": 0.2,
+        "safe_yield": 0.09473684210526316,
+        "mcnemar_p_vs_repairer": 7.275957614183426e-12,
+        "primary": false
+      },
+      "gate_coverage": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      }
+    },
+    "protocols": {
+      "N": 95,
+      "abstention_rate": 0.0,
+      "resolved_independent": 0,
+      "resolved_by_debate": 0,
+      "resolved_after_revision": 0,
+      "gate_failed_versions": 0,
+      "candidates_rescued_by_gate_feedback": 0,
+      "refusals": 0,
+      "citations": 521,
+      "citations_rejected": 1,
+      "citation_rejection_rate": 0.0019193857965451055,
+      "cases_with_a_correct_candidate": 14,
+      "jury_picked_correct": 14,
+      "VRR_oracle_best_candidate": 0.14736842105263157
+    },
+    "brier_gen": 0.16813052631578948,
+    "mean_conf_gen_when_claim": 0.5243548387096774,
+    "precision_gen": 0.22580645161290325,
+    "median_L_analyst_ms": null,
+    "median_L_repairer_ms": null,
+    "median_L_reviewer_ms": null,
+    "median_L_api_total_ms": 82047.8,
+    "median_wall_time_s": 2167.03,
+    "professor_format": {
+      "not_applied_or_broke_functionality": 39,
+      "N": 95,
+      "applied_failed_security": 42,
+      "applied_and_functional": 56
+    },
+    "http_retries_total": 0,
+    "tokens_in_total": 2226545,
+    "tokens_out_total": 2400652
+  },
+  "c0mr": {
+    "attempts": 95,
+    "N_complete": 94,
+    "N_incomplete": 1,
+    "incomplete": [
+      {
+        "agent": "c0mr",
+        "vuln_id": "CVE-2024-27454",
+        "reason": "verification error: exploit crashed the test process (rc=139)"
+      }
+    ],
+    "sum_V": 13,
+    "VRR": 0.13829787234042554,
+    "VRR_CI95": [
+      0.08263778085987693,
+      0.22236031731341882
+    ],
+    "sum_C_gen": 58,
+    "sum_FA_gen": 45,
+    "FAR_gen": 0.7758620689655172,
+    "FAR_gen_CI95": [
+      0.6533888225573762,
+      0.8640633944322592
+    ],
+    "N_reviewed": 0,
+    "sum_C_rev": 0,
+    "sum_FA_rev": 0,
+    "FAR_rev": null,
+    "FAR_rev_CI95": [
+      null,
+      null
+    ],
+    "rules": {
+      "repairer": {
+        "N": 94,
+        "accepted": 58,
+        "false_assurance": 45,
+        "FAR": 0.7758620689655172,
+        "FAR_CI95": [
+          0.6533888225573762,
+          0.8640633944322592
+        ],
+        "coverage": 0.6170212765957447,
+        "safe_yield": 0.13829787234042554,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "judge1": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "consensus": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "majority": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "unanimous": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": true
+      },
+      "gate": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "pre_revision": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "independent": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      },
+      "coverage": {
+        "N": 94,
+        "accepted": 15,
+        "false_assurance": 8,
+        "FAR": 0.5333333333333333,
+        "FAR_CI95": [
+          0.3011697987531101,
+          0.751904647673791
+        ],
+        "coverage": 0.1595744680851064,
+        "safe_yield": 0.07446808510638298,
+        "mcnemar_p_vs_repairer": 1.4551915228366852e-11,
+        "primary": false
+      },
+      "coverage75": {
+        "N": 94,
+        "accepted": 16,
+        "false_assurance": 8,
+        "FAR": 0.5,
+        "FAR_CI95": [
+          0.27999563470387406,
+          0.7200043652961259
+        ],
+        "coverage": 0.1702127659574468,
+        "safe_yield": 0.0851063829787234,
+        "mcnemar_p_vs_repairer": 1.4551915228366852e-11,
+        "primary": false
+      },
+      "gate_coverage": {
+        "N": 0,
+        "accepted": 0,
+        "false_assurance": 0,
+        "FAR": null,
+        "FAR_CI95": [
+          null,
+          null
+        ],
+        "coverage": null,
+        "safe_yield": null,
+        "mcnemar_p_vs_repairer": null,
+        "primary": false
+      }
+    },
+    "protocols": {
+      "N": 94,
+      "abstention_rate": 0.0,
+      "resolved_independent": 0,
+      "resolved_by_debate": 0,
+      "resolved_after_revision": 0,
+      "gate_failed_versions": 0,
+      "candidates_rescued_by_gate_feedback": 0,
+      "refusals": 0,
+      "citations": 548,
+      "citations_rejected": 0,
+      "citation_rejection_rate": 0.0,
+      "cases_with_a_correct_candidate": 13,
+      "jury_picked_correct": 13,
+      "VRR_oracle_best_candidate": 0.13829787234042554
+    },
+    "brier_gen": 0.16070851063829789,
+    "mean_conf_gen_when_claim": 0.5310344827586206,
+    "precision_gen": 0.22413793103448276,
+    "median_L_analyst_ms": null,
+    "median_L_repairer_ms": null,
+    "median_L_reviewer_ms": null,
+    "median_L_api_total_ms": 70942.0,
+    "median_wall_time_s": 1762.23,
+    "professor_format": {
+      "not_applied_or_broke_functionality": 40,
+      "N": 94,
+      "applied_failed_security": 41,
+      "applied_and_functional": 54
+    },
+    "http_retries_total": 0,
+    "tokens_in_total": 2378287,
+    "tokens_out_total": 1984738
+  }
+}

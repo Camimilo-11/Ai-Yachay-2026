@@ -316,5 +316,12 @@
   "source": "https://search.r-project.org/CRAN/refmans/Epi/html/ci.pd.html",
   "abstract_summary": "Hybrid score (method 10) interval for a difference of independent proportions, used for the v4 pass-rate difference.",
   "verified": "2026-11-27 (record read in two reference lists: title, author, journal, volume, pages and year)"
+ },
+ "Semgrep2026CommunityEdition": {
+  "title": "Semgrep Community Edition",
+  "venue": "software (GitHub, LGPL-2.1, Semgrep, Inc.)",
+  "source": "https://github.com/semgrep/semgrep",
+  "abstract_summary": "Open-source lightweight static analysis engine whose rules are patterns that look like code; 30+ languages including Python; the Community Edition analyses within a single function or file.",
+  "verified": "2026-11-27 (GitHub repository and semgrep.dev/products/community-edition read; name, owner and license matched)"
  }
 }

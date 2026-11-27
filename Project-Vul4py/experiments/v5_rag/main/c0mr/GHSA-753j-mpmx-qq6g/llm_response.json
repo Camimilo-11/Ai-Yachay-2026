@@ -1,0 +1,242 @@
+{
+ "schema": "fa-multiagent/2",
+ "vuln_id": "GHSA-753j-mpmx-qq6g",
+ "agent": "c0mr",
+ "run_index": 1,
+ "condition": "c0",
+ "pipeline": "repair1",
+ "models": {
+  "analyst": null,
+  "repairers": [
+   "claudecode:claude-haiku-5-5"
+  ],
+  "repairer": "claudecode:claude-haiku-5-5",
+  "jurors": [],
+  "reviewer": null
+ },
+ "context_files": [
+  "tornado/http1connection.py",
+  "tornado/httputil.py"
+ ],
+ "context_mode": "full",
+ "hint": "lines",
+ "hint_text": "- tornado/http1connection.py: lines 394, 398-401, 423-425, 565, 603-609, 635, 640, 645-649, 867\n- tornado/httputil.py: lines 64, 174, 182",
+ "code_budget_tokens": 396000,
+ "stages": {
+  "cand0_r0_t0": {
+   "role": "repairer",
+   "model": "claudecode:claude-haiku-5-5",
+   "model_reported": "claude-haiku-5-5",
+   "response_id": "dfa60473-8cdc-4a69-a2d9-44e7e07ab9f7",
+   "http_status": 200,
+   "http_headers": {},
+   "finish_reason": "end_turn",
+   "refusal_category": null,
+   "reasoning_content": null,
+   "input_tokens": 27881,
+   "output_tokens": 32321,
+   "latency_ms": 120069.1,
+   "thinking_tokens": 30743,
+   "api_equivalent_usd": 0.0217365,
+   "backend": "claude-code 2.1.332 (Claude Code)",
+   "flattened_turns": false,
+   "request_sent_at_utc": "2026-11-27T06:58:07.477+00:00",
+   "http_attempts": [
+    {
+     "attempt": 1,
+     "started_at_utc": "2026-11-27T06:58:07.477+00:00",
+     "outcome": "ok",
+     "latency_ms": 120069.1
+    }
+   ],
+   "params_dropped": [],
+   "status": "ok"
+  }
+ },
+ "candidates": [
+  {
+   "k": 0,
+   "model": "claudecode:claude-haiku-5-5",
+   "status": "ok",
+   "duplicate_of": null,
+   "merged": [],
+   "n_versions": 1,
+   "revised": 0,
+   "cross_decision": null,
+   "cross_critiques": null,
+   "versions": [
+    {
+     "key": "cand0_r0_t0",
+     "self": {
+      "claim": 1,
+      "confidence": 0.4,
+      "parse_status": "ok"
+     },
+     "grounding": {
+      "n": 8,
+      "grounded": 8,
+      "rejected": 0,
+      "rejected_items": []
+     },
+     "refused": false
+    }
+   ]
+  }
+ ],
+ "jury_rounds": [],
+ "generation_status": "complete",
+ "incomplete_reason": "",
+ "started_at_utc": "2026-11-27T05:58:36.149+00:00",
+ "rag": {
+  "kb": "rag_r_v1",
+  "manifest_sha256": "ff64187843d2918d7f7642ad6ff4f5c6764cb9e5dee95e72987660d67ddde5f1",
+  "embed_model": "jinaai/jina-embeddings-v2-base-code",
+  "repo_filtered": "https://github.com/tornadoweb/tornado",
+  "query_ranges": {
+   "tornado/http1connection.py": [
+    [
+     394,
+     394
+    ],
+    [
+     398,
+     401
+    ],
+    [
+     423,
+     425
+    ],
+    [
+     565,
+     565
+    ],
+    [
+     603,
+     609
+    ],
+    [
+     635,
+     635
+    ],
+    [
+     640,
+     640
+    ],
+    [
+     645,
+     649
+    ],
+    [
+     867,
+     867
+    ]
+   ],
+   "tornado/httputil.py": [
+    [
+     64,
+     64
+    ],
+    [
+     174,
+     174
+    ],
+    [
+     182,
+     182
+    ]
+   ]
+  },
+  "query_chars": 4000,
+  "hits": [
+   {
+    "case": "CVE-2025-62727",
+    "repo": "https://github.com/kludex/starlette",
+    "file": "starlette/responses.py",
+    "hunk": 2,
+    "old_start": 455,
+    "cwe": [
+     "CWE-407"
+    ],
+    "score": 0.6305
+   },
+   {
+    "case": "CVE-2025-57804",
+    "repo": "https://github.com/python-hyper/h2",
+    "file": "src/h2/utilities.py",
+    "hunk": 0,
+    "old_start": 24,
+    "cwe": [
+     "CWE-93"
+    ],
+    "score": 0.5567
+   },
+   {
+    "case": "CVE-2025-50181",
+    "repo": "https://github.com/urllib3/urllib3",
+    "file": "dummyserver/app.py",
+    "hunk": 0,
+    "old_start": 227,
+    "cwe": [
+     "CWE-601"
+    ],
+    "score": 0.5154
+   }
+  ],
+  "cwe_guides": [
+   "CWE-407",
+   "CWE-93"
+  ],
+  "section_chars": 2178,
+  "section_tokens_est": 544,
+  "section_sha256": "01740c8ff044b22e80b97941048d0f6c1efa9591c3f8c2b65ed7fe0e4cb0e1dd",
+  "leak_audit": [
+   {
+    "case": "CVE-2025-62727",
+    "ratio": 0.0
+   },
+   {
+    "case": "CVE-2025-57804",
+    "ratio": 0.0
+   },
+   {
+    "case": "CVE-2025-50181",
+    "ratio": 0.0
+   }
+  ],
+  "leak_flag": false,
+  "elapsed_ms": 5028.5
+ },
+ "selected_k": 0,
+ "generator": {
+  "claim": 1,
+  "confidence": 0.4,
+  "parse_status": "ok",
+  "diff_extracted": true,
+  "patch_bytes": 796,
+  "refused": false,
+  "model": "claudecode:claude-haiku-5-5"
+ },
+ "generator_initial": {
+  "claim": 1,
+  "confidence": 0.4,
+  "parse_status": "ok"
+ },
+ "n_rounds": 1,
+ "api_calls": 1,
+ "latency_ms_api_total": 120069.1,
+ "http_retries": 0,
+ "input_tokens_total": 27881,
+ "output_tokens_total": 32321,
+ "wall_time_s": 3691.4,
+ "finished_at_utc": "2026-11-27T07:00:07.551+00:00",
+ "frozen_at_utc": "2026-11-27T07:00:07.551+00:00",
+ "sha256": {
+  "cand0_final.diff": "6264354162ecff0f003bd9e833f7db3558c7278801b3498650d3404169be584c",
+  "cand0_r0_t0.diff": "6264354162ecff0f003bd9e833f7db3558c7278801b3498650d3404169be584c",
+  "cand0_r0_t0.md": "d17e9ad81ace77e9d3d69670661155c66f6fbaba60870e9af5b689d19e90eb86",
+  "context.md": "08246a56cc66cde3b483baf176bae670d6251363e63c5da5f019b1b8e4fbd107",
+  "patch.diff": "6264354162ecff0f003bd9e833f7db3558c7278801b3498650d3404169be584c",
+  "patch_initial.diff": "6264354162ecff0f003bd9e833f7db3558c7278801b3498650d3404169be584c",
+  "rag_section.md": "01740c8ff044b22e80b97941048d0f6c1efa9591c3f8c2b65ed7fe0e4cb0e1dd"
+ }
+}

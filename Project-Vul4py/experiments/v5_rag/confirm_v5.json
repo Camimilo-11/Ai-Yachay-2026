@@ -1,0 +1,183 @@
+{
+ "arms": {
+  "c0": {
+   "attempted": 95,
+   "complete": 94,
+   "incomplete": [
+    "CVE-2024-27454"
+   ],
+   "V": 38,
+   "VRR": 0.40425531914893614,
+   "VRR_ci": [
+    0.3107019003298408,
+    0.5053270080101492
+   ],
+   "claims": 91,
+   "false_claims": 54,
+   "FAR": 0.5934065934065934,
+   "FAR_ci": [
+    0.4906943596629895,
+    0.6885521449830141
+   ],
+   "safe_yield": 0.39361702127659576,
+   "cost_usd": 8.8829,
+   "CPV_usd": 0.2338,
+   "input_tokens": 1169407,
+   "output_tokens": 654404,
+   "coverage_rule": {
+    "pass_correct": 22,
+    "veto_correct": 15,
+    "pass_wrong": 14,
+    "veto_wrong": 40,
+    "FAR": 0.3888888888888889,
+    "FAR_ci": [
+     0.24784872971943556,
+     0.5513554102736486
+    ],
+    "fisher_one_sided_p": 0.0013477158737949303
+   }
+  },
+  "c0m": {
+   "attempted": 95,
+   "complete": 95,
+   "incomplete": [],
+   "V": 14,
+   "VRR": 0.14736842105263157,
+   "VRR_ci": [
+    0.08986080618409027,
+    0.23228598567514475
+   ],
+   "claims": 62,
+   "false_claims": 48,
+   "FAR": 0.7741935483870968,
+   "FAR_ci": [
+    0.6559437898306864,
+    0.8604481701545532
+   ],
+   "safe_yield": 0.14736842105263157,
+   "cost_usd": 2.2441,
+   "CPV_usd": 0.1603,
+   "input_tokens": 2226545,
+   "output_tokens": 2400652,
+   "coverage_rule": {
+    "pass_correct": 9,
+    "veto_correct": 5,
+    "pass_wrong": 10,
+    "veto_wrong": 38,
+    "FAR": 0.5263157894736842,
+    "FAR_ci": [
+     0.3170780910485948,
+     0.7267019496745859
+    ],
+    "fisher_one_sided_p": 0.003483707750407971
+   }
+  },
+  "c0mr": {
+   "attempted": 95,
+   "complete": 94,
+   "incomplete": [
+    "CVE-2024-27454"
+   ],
+   "V": 13,
+   "VRR": 0.13829787234042554,
+   "VRR_ci": [
+    0.08263778085987693,
+    0.22236031731341882
+   ],
+   "claims": 58,
+   "false_claims": 45,
+   "FAR": 0.7758620689655172,
+   "FAR_ci": [
+    0.6533888225573762,
+    0.8640633944322592
+   ],
+   "safe_yield": 0.13829787234042554,
+   "cost_usd": 1.6807,
+   "CPV_usd": 0.1293,
+   "input_tokens": 2071298,
+   "output_tokens": 1954895,
+   "coverage_rule": {
+    "pass_correct": 7,
+    "veto_correct": 6,
+    "pass_wrong": 8,
+    "veto_wrong": 37,
+    "FAR": 0.5333333333333333,
+    "FAR_ci": [
+     0.3011697987531101,
+     0.751904647673791
+    ],
+    "fisher_one_sided_p": 0.014603006782909819
+   }
+  }
+ },
+ "H1": {
+  "n_paired": 94,
+  "both": 8,
+  "only_m": 6,
+  "only_mr": 5,
+  "neither": 75,
+  "VRR_m": 0.14893617021276595,
+  "VRR_mr": 0.13829787234042554,
+  "diff": -0.010638297872340413,
+  "diff_ci": [
+   -0.08708236001442544,
+   0.06510959676780066
+  ],
+  "p_one_sided": 0.7255859375,
+  "p_two_sided": 1.0,
+  "confirmed": false
+ },
+ "CPV": {
+  "n_paired": 94,
+  "CPV_c0": 0.23375931578947368,
+  "CPV_c0mr": 0.12928693076923076,
+  "ratio_c0_over_c0mr": 1.8080660929813526,
+  "ratio_ci95": [
+   0.9912058078973219,
+   2.852609428204447
+  ],
+  "resamples": 10000,
+  "undefined_resamples": 0
+ },
+ "VRR_c0mr_minus_c0": {
+  "n_paired": 94,
+  "diff": -0.26595744680851063,
+  "ci95": [
+   -0.3603050528805312,
+   -0.167718228736821
+  ],
+  "only_c0mr": 1,
+  "only_c0": 26
+ },
+ "harness_audit": {
+  "compared": 95,
+  "V_changed": [
+   {
+    "case": "CVE-2024-35195",
+    "V_before": 1,
+    "V_v5": 0,
+    "func_before": "563/0/0/15",
+    "func_v5": "563/0/0/15"
+   }
+  ],
+  "now_complete": [
+   "CVE-2024-52804",
+   "CVE-2025-5120"
+  ],
+  "no_longer_complete": []
+ },
+ "rag_audit": {
+  "records": 95,
+  "errors": [],
+  "leak_flagged": [],
+  "max_leak_ratio": 0.095,
+  "with_cwe_guides": 95,
+  "section_tokens_mean": 1130.3,
+  "manifests": [
+   "ff64187843d2918d7f7642ad6ff4f5c6764cb9e5dee95e72987660d67ddde5f1"
+  ],
+  "embed_models": [
+   "jinaai/jina-embeddings-v2-base-code"
+  ]
+ }
+}

@@ -29,7 +29,7 @@ losing correct repairs?
 | FAR when the claim needs exploit tests written by a model (evigate) | 54.5% |
 | Hint-coverage rule, confirmed on 63 unused cases | FAR 65.6% -> 47.8%, one-sided Fisher p = 0.024 |
 | Cost per verified repair: repairer alone vs. full pipeline with jury | 0.21 vs. 1.96 USD (list price) |
-| v5: retrieval (RAG) for Claude Haiku 5.5, a model 20 times cheaper | running |
+| v5: retrieval (RAG) for Claude Haiku 5.5, a model 20 times cheaper | no gain: VRR 13.8% vs. 14.9% without RAG (p = 0.73); 77% of its claims false |
 
 **Metrics.** A repair is *verified* when the patch applies, the project's functional tests still pass and the exploit
 tests of the vulnerability pass (the Vul4Py oracle). VRR = verified repairs / complete attempts. FAR = positive
@@ -82,7 +82,7 @@ addenda.
 | **v2** | Nov 25 | Pipeline on the EC2 instance: repairer tournament, pilot of the full pipeline, calibration of jurors from other families | Pilot: GPT-6.2 Sol 3/5 vs. GPT-5.4 mini 1/5; jurors chosen by AUROC | [`experiments/v2_pilot_tournament/`](experiments/v2_pilot_tournament/) |
 | **v3** | Nov 25-26 | GPT benchmark on the pilot cases; main sample of 29 cases: C0 (repairer alone), C0g (+ mechanical gate), C1 (+ unanimous jury) | C0: VRR 55.2%, FAR 42.9%; C1: VRR 48.3%, FAR 46.2% | [`experiments/v3_main/`](experiments/v3_main/) |
 | **v4** | Nov 26 | evigate (executable evidence); hint-coverage rule found post hoc and confirmed on 63 new cases | Coverage rule: FAR 65.6% -> 47.8%, one-sided Fisher p = 0.024 | [`experiments/v4_evigate_confirmation/`](experiments/v4_evigate_confirmation/) |
-| **v5** | Nov 26- | RAG with Qdrant so a 20x cheaper model (Claude Haiku 5.5) repairs; harness without secrets and with reruns of flaky tests | running | [`experiments/v5_rag/`](experiments/v5_rag/) |
+| **v5** | Nov 26-27 | RAG with Qdrant so a 20x cheaper model (Claude Haiku 5.5) repairs; harness without secrets and with reruns of flaky tests | H1 not confirmed: VRR 13.8% vs. 14.9% (p = 0.73); coverage rule held again (FAR 77% -> 53%) | [`experiments/v5_rag/`](experiments/v5_rag/) |
 
 ## Reproducing
 
@@ -100,8 +100,8 @@ addenda.
    and `python results/figures/make_figures.py`.
 
 The prepared workspaces (about 100 GB) and the full run directories are not in this repository; every result here
-comes with the command that produced it. The frozen record of each case is in the version folders for v0, v2-v4
-and the v5 development check: the answers of every model, the patches, the oracle's evaluation, and the tokens, time
+comes with the command that produced it. The frozen record of each case is in the version folders for v0 and
+v2-v5 (v5: development check and main run): the answers of every model, the patches, the oracle's evaluation, and the tokens, time
 and prompt sha256 of every call. The prompts themselves (`context.md`) are not included: they are rebuilt from the
 benchmark, and their sha256 is in each record.
 
@@ -115,7 +115,7 @@ benchmark, and their sha256 is in each record.
 | v3 main sample (C0, C0g, C1) | 280 | 8,105,924 / 2,356,785 | 34.40 USD (Claude jurors at list price) |
 | v4 confirmation (C0, 65 cases) | 65 | 848,338 / 442,252 | 6.12 USD |
 | v5 development check (5 pilot cases, both arms) | 10 | 138,975 / 220,165 | 0.12 USD (Claude plan, list-price equivalent) |
-| v5 (Haiku 5.5, with and without RAG, 95 cases) | running | | |
+| v5 main run (Haiku 5.5, with and without RAG, 95 cases) | 190 | 4,604,832 / 4,385,390 | 4.15 USD (5.33 with the Claude client's own report) |
 
 ## Use of AI tools
 

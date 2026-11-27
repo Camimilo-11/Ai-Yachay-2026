@@ -1,18 +1,19 @@
 {
   "pipeline": "PaperOrchestra (Song et al., 2026, arXiv:2604.05018), run by Claude Opus 5.5 with the author's inputs",
-  "inputs": ["papers/final/inputs/idea.md", "papers/final/inputs/experimental_log.md", "prereg/decisiones_v1-v5.txt", "version folders v1-v5", "logs/calls/*.csv"],
+  "inputs": ["papers/final/inputs/idea.md", "papers/final/inputs/experimental_log.md", "prereg/decisiones_v1-v5.txt", "version folders v1-v5", "results/logs/calls/*.csv"],
   "stages": [
     {"stage": 1, "name": "outline", "date": "2026-11-27", "output": "outline.json"},
     {"stage": 2, "name": "literature", "date": "2026-11-27", "output": "references.bib, citation_map.json",
-     "notes": "27 references reused from the v0 paper; 19 new ones verified on their source pages (NeurIPS, ACM/researchr, SMU repository, PMLR, arXiv, RePEc, R documentation, Rothamsted repository, NOAA bibliography, University of Washington copy of Efron 1979, OSF preprint record); scholarly APIs (Semantic Scholar, OpenAlex, Crossref, dblp) were blocked by the network proxy and were not used."},
+     "notes": "27 references reused from the v0 paper; 20 new ones verified on their source pages (NeurIPS, ACM/researchr, SMU repository, PMLR, arXiv, RePEc, R documentation, Rothamsted repository, NOAA bibliography, University of Washington copy of Efron 1979, OSF preprint record, Semgrep repository); scholarly APIs (Semantic Scholar, OpenAlex, Crossref, dblp) were blocked by the network proxy and were not used."},
     {"stage": 3, "name": "figures", "date": "2026-11-27",
      "notes": "Two TikZ diagrams (study flow, C1 pipeline); the v5 and v6 diagrams drawn by the author with ChatGPT (GPT-6.2 Sol) from prompts that list every component, checked against decisiones_v5; seven data figures from figures/make_figures.py."},
     {"stage": 4, "name": "sections", "date": "2026-11-27", "output": "main.tex",
-     "notes": "v1-v4 complete; v5 results marked [PENDIENTE] until the run ends."},
+     "notes": "v1-v4 written first with the v5 results marked [PENDIENTE]; the marks were filled on 2026-11-27 from experiments/v5_rag/results.csv, confirm_v5.json and results/logs/calls/calls_v5.csv after the main run ended."},
     {"stage": 5, "name": "review and format", "date": "2026-11-27",
      "checks": ["every number of Tables 6-8, 9, 10, 13 recomputed from v3_main/results.csv, confirm/results.csv, the calibration summaries, summary_evigate.json and logs/calls (0 mismatches)",
-                "abstract 175 words without the pending v5 sentence (MDPI limit about 200)",
-                "compiled with the MDPI class: 24 pages, no undefined references, no overfull boxes"],
+                "independent audit (results/audit/audit_paper.py) of every number, table cell and plotted value, including v5: 610 checks, 609 pass, 1 open (v3 per-case hint coverage)",
+                "abstract 199 words with the v5 sentence (MDPI limit about 200)",
+                "compiled with the MDPI class: 25 pages, no undefined references, no overfull boxes"],
      "review_points_addressed": ["'did not lower FAR' stated for these samples", "false claims described as 'most', with the per-condition counts", "calibration cost reported at list price, client report in parentheses", "the early confirmatory look of v4 reported as a deviation"]}
   ]
 }

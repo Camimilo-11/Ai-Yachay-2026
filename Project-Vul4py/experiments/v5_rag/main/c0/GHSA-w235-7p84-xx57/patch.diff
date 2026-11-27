@@ -1,0 +1,38 @@
+--- a/tornado/curl_httpclient.py
++++ b/tornado/curl_httpclient.py
+@@ -347,14 +347,16 @@
+         if "Pragma" not in request.headers:
+             request.headers["Pragma"] = ""
+ 
+-        curl.setopt(
+-            pycurl.HTTPHEADER,
+-            [
+-                b"%s: %s"
+-                % (native_str(k).encode("ASCII"), native_str(v).encode("ISO8859-1"))
+-                for k, v in request.headers.get_all()
+-            ],
+-        )
++        header_list = []
++        for k, v in request.headers.get_all():
++            header = b"%s: %s" % (
++                native_str(k).encode("ASCII"),
++                native_str(v).encode("ISO8859-1"),
++            )
++            if b"\r" in header or b"\n" in header:
++                raise ValueError("Newline in header: " + repr(header))
++            header_list.append(header)
++        curl.setopt(pycurl.HTTPHEADER, header_list)
+ 
+         curl.setopt(
+             pycurl.HEADERFUNCTION,
+--- a/tornado/http1connection.py
++++ b/tornado/http1connection.py
+@@ -453,7 +453,7 @@
+         )
+         lines.extend(line.encode("latin1") for line in header_lines)
+         for line in lines:
+-            if b"\n" in line:
++            if b"\r" in line or b"\n" in line:
+                 raise ValueError("Newline in header: " + repr(line))
+         future = None
+         if self.stream.closed():

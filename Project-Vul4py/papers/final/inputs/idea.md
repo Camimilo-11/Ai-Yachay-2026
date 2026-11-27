@@ -39,7 +39,7 @@ measured.
   cases (63 complete) with C0.
 - v5, RAG: Claude Haiku 5.5 alone and with RAG-R (Qdrant, local embeddings, fixes from other repositories, CWE
   mitigations) on the 95 cases of the main sample and the confirmation; C0 re-evaluated with the v5 harness.
-  [PENDIENTE: results when the run ends]
+  H1 was not confirmed (VRR 13.8% with retrieval vs. 14.9% without, p = 0.73); the coverage rule held for Haiku.
 
 ## Practices
 Every run's decisions (models, cases, conditions, primary test, analysis) were written and committed before the run

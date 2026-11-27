@@ -1,0 +1,9 @@
+--- a/edumfa/static/components/config/views/config.radius.edit.html
++++ b/edumfa/static/components/config/views/config.radius.edit.html
+@@ -70,5 +70,5 @@
+         <div class="col-sm-9">
+             <input name="secret" class="form-control"
+-                   type="secret"
++                   type="password"
+                    ng-model="params.secret"
+                    required

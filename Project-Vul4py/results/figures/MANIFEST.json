@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-27T03:19:43Z",
+ "generated_utc": "2026-11-27T10:33:25Z",
  "figures": {
   "fig_environment": {
    "files": [
@@ -52,19 +52,18 @@
     "results/figures/fig_main_vrr_far.png"
    ],
    "outputs": {
-    "results/figures/fig_main_vrr_far.pdf": "0ff876d23d6b342a605c6784fa55989ba427a9370629f182266d06bfd3b6354c",
-    "results/figures/fig_main_vrr_far.png": "8d96e58baef28a4f6aa2eb65e7495ba3af187439ee81d1968d622f94abcca5fd"
+    "results/figures/fig_main_vrr_far.pdf": "409e47f5862f01f6bd8502ab6da8d4625003cfeab934c9311b4803b159b65daf",
+    "results/figures/fig_main_vrr_far.png": "444637fe52ca5d77f643a41619ce26e240c54a6aa6591420cd94ea2f0b8a90cb"
    },
    "inputs": {
     "experiments/v3_main/results.csv": "389f15726328e2513d0e9bfc9dca041bfeaa3910274adda70f28e8147609b3b7",
     "experiments/v0_mvp/results.csv": "427c81dcbf41262a8bc46fabc7bac6ee04260d4e42c041e1abf9b80f2121eba3",
-    "experiments/v4_evigate_confirmation/confirm/results.csv": "e0fada585047c7f83bb755f6b9408a1528164f809c4cd3ec0e65d35e555fc3bd"
+    "experiments/v4_evigate_confirmation/confirm/results.csv": "e0fada585047c7f83bb755f6b9408a1528164f809c4cd3ec0e65d35e555fc3bd",
+    "experiments/v5_rag/results.csv": "11e4cb46581a78c5099bd8d9fa877298b5918ac6bb4b7c36b2e7b76fc353fafd"
    },
    "what": "VRR and FAR with 95% Wilson intervals; labels give k/n",
    "claim_rule": "repairer's own claim (C0, C0g, v5); unanimous jury (C1, primary rule)",
-   "missing_rows": [
-    "v5 arms (experiments/v5_rag/results.csv)"
-   ]
+   "missing_rows": []
   },
   "fig_jury_calibration": {
    "files": [
@@ -95,14 +94,15 @@
     "results/figures/fig_calls_tokens_time.png"
    ],
    "outputs": {
-    "results/figures/fig_calls_tokens_time.pdf": "319b65b885602f47405aab0ef003a7abe615bb1182660d0a3ad6a5ffd6513191",
-    "results/figures/fig_calls_tokens_time.png": "287aae22a3d1a785b3d5d1f0c11eb2e732eecad40828cb5fc1c68359fe3ec204"
+    "results/figures/fig_calls_tokens_time.pdf": "a27c37c09b66be5227125de3e8a88c6141995049ed53d22b231631c4314a88b0",
+    "results/figures/fig_calls_tokens_time.png": "867f927db2dc9c7541b906dd4659c1a95c87bd09e340f6424c7a69fa883a16a7"
    },
    "inputs": {
     "results/logs/calls/calls_v0_mvp.csv": "5be7505c46de3c9086aebe117538b6a704e16d82b3085d6ce742c6ee669432c7",
     "results/logs/calls/calls_v2_pilot.csv": "c2a67b6942fc7f6f08ea22b2857efb0302540f8c1266ab6f776ee6696815c43e",
     "results/logs/calls/calls_v3_main.csv": "59e872ff4315266e831932bebb6e3582b3702c1d3bdb6ef0b1f6b3c708ce1109",
     "results/logs/calls/calls_v4_confirm.csv": "8a70e84afa783af9b69b648afab30b637dff1950c1497799edc59d15db6992c7",
+    "results/logs/calls/calls_v5.csv": "062699a4aa2e0745c4452145c300188255799401454b72ec643e1f1f5316d3d7",
     "results/logs/calls/calls_v5_dev.csv": "d93185e02ee65d7fe0289548bf99ae64f83b4b94ef0263e6e13af7dd5de0778a"
    },
    "what": "distribution per model and role of input/output tokens and latency per call",
@@ -123,9 +123,7 @@
    },
    "what": "sum of list-price cost of all calls per condition / attempts and / verified repairs",
    "note": "C1 includes Claude jurors on the Claude plan priced at list price and DeepSeek at peak prices",
-   "missing_rows": [
-    "v5 arms (results/logs/calls/calls_v5.csv)"
-   ]
+   "missing_rows": []
   },
   "fig_coverage_rule": {
    "files": [

@@ -1,0 +1,21 @@
+--- a/tornado/httputil.py
++++ b/tornado/httputil.py
+@@ -74,6 +74,9 @@ def _normalize_header(name: str) -> str:
+     """
+     return "-".join([w.capitalize() for w in name.split("-")])
+ 
+ 
++_HEADER_NAME_RE = re.compile(r"[!#$%&'*+\-.^_`|~0-9A-Za-z]+")
++
++
+ class HTTPHeaders(collections.abc.MutableMapping):
+     """A dictionary that maintains ``Http-Header-Case`` for all keys.
+@@ -179,6 +182,8 @@ class HTTPHeaders(collections.abc.MutableMapping):
+         else:
+             try:
+                 name, value = line.split(":", 1)
+             except ValueError:
+                 raise HTTPInputError("no colon in header line")
++            if not _HEADER_NAME_RE.fullmatch(name):
++                raise HTTPInputError("invalid header name %r" % name)
+             self.add(name, value.strip())

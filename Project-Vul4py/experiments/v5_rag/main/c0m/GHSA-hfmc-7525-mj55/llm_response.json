@@ -1,0 +1,120 @@
+{
+ "schema": "fa-multiagent/2",
+ "vuln_id": "GHSA-hfmc-7525-mj55",
+ "agent": "c0m",
+ "run_index": 1,
+ "condition": "c0",
+ "pipeline": "repair1",
+ "models": {
+  "analyst": null,
+  "repairers": [
+   "claudecode:claude-haiku-5-5"
+  ],
+  "repairer": "claudecode:claude-haiku-5-5",
+  "jurors": [],
+  "reviewer": null
+ },
+ "context_files": [
+  "asyncssh/connection.py"
+ ],
+ "context_mode": "full",
+ "hint": "lines",
+ "hint_text": "- asyncssh/connection.py: lines 863, 1401-1404, 1548, 1584-1585, 1594-1596, 1648, 1692, 2194-2195, 2199-2200",
+ "code_budget_tokens": 396000,
+ "stages": {
+  "cand0_r0_t0": {
+   "role": "repairer",
+   "model": "claudecode:claude-haiku-5-5",
+   "model_reported": "claude-haiku-5-5",
+   "response_id": "60e0c415-2639-4fbc-a1d0-7f42bd1e7e2a",
+   "http_status": 200,
+   "http_headers": {},
+   "finish_reason": "end_turn",
+   "refusal_category": null,
+   "reasoning_content": null,
+   "input_tokens": 125851,
+   "output_tokens": 50083,
+   "latency_ms": 189387.9,
+   "thinking_tokens": 49692,
+   "api_equivalent_usd": 0.2510575,
+   "backend": "claude-code 2.1.332 (Claude Code)",
+   "flattened_turns": false,
+   "request_sent_at_utc": "2026-11-27T04:56:23.624+00:00",
+   "http_attempts": [
+    {
+     "attempt": 1,
+     "started_at_utc": "2026-11-27T04:56:23.624+00:00",
+     "outcome": "ok",
+     "latency_ms": 189387.9
+    }
+   ],
+   "params_dropped": [],
+   "status": "ok"
+  }
+ },
+ "candidates": [
+  {
+   "k": 0,
+   "model": "claudecode:claude-haiku-5-5",
+   "status": "no_patch",
+   "duplicate_of": null,
+   "merged": [],
+   "n_versions": 1,
+   "revised": 0,
+   "cross_decision": null,
+   "cross_critiques": null,
+   "versions": [
+    {
+     "key": "cand0_r0_t0",
+     "self": {
+      "claim": 0,
+      "confidence": 0.0,
+      "parse_status": "ok"
+     },
+     "grounding": {
+      "n": 0,
+      "grounded": 0,
+      "rejected": 0,
+      "rejected_items": []
+     },
+     "refused": false
+    }
+   ]
+  }
+ ],
+ "jury_rounds": [],
+ "generation_status": "complete",
+ "incomplete_reason": "",
+ "started_at_utc": "2026-11-27T03:44:42.789+00:00",
+ "selected_k": 0,
+ "generator": {
+  "claim": 0,
+  "confidence": 0.0,
+  "parse_status": "ok",
+  "diff_extracted": false,
+  "patch_bytes": 0,
+  "refused": false,
+  "model": "claudecode:claude-haiku-5-5"
+ },
+ "generator_initial": {
+  "claim": 0,
+  "confidence": 0.0,
+  "parse_status": "ok"
+ },
+ "n_rounds": 1,
+ "api_calls": 1,
+ "latency_ms_api_total": 189387.9,
+ "http_retries": 0,
+ "input_tokens_total": 125851,
+ "output_tokens_total": 50083,
+ "wall_time_s": 4490.22,
+ "finished_at_utc": "2026-11-27T04:59:33.014+00:00",
+ "frozen_at_utc": "2026-11-27T04:59:33.014+00:00",
+ "sha256": {
+  "cand0_r0_t0.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "cand0_r0_t0.md": "f1df5b0d1ca1f9fb1ef31cd79e78a49cba95c707d16bebdbc820ff2d0d941067",
+  "context.md": "c17c0ff8a9e219a60cd46f299d082a87fb2deb477080ce32f628904c235a626d",
+  "patch.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "patch_initial.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ }
+}

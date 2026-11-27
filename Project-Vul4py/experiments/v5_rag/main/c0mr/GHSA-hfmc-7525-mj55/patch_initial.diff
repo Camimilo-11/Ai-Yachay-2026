@@ -1,0 +1,12 @@
+--- a/asyncssh/connection.py
++++ b/asyncssh/connection.py
+@@ -2191,9 +2191,6 @@
+ 
+         self._key_options = options
+ 
+-        if self.get_key_option('principals'):
+-            username = ''
+-
+         try:
+             cert.validate(CERT_TYPE_USER, username)
+         except ValueError:

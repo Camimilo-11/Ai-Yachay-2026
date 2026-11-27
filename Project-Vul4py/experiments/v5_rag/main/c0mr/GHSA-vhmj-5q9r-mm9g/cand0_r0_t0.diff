@@ -1,0 +1,38 @@
+--- a/edumfa/lib/radiusserver.py
++++ b/edumfa/lib/radiusserver.py
+@@ -27,2 +27,3 @@
+ import logging
++import os
+ from edumfa.lib.log import log_with
+@@ -48,3 +49,26 @@
+ 
+ 
++# RADIUS dictionaries are only read from this directory. Paths outside of it
++# are rejected, so that a user who may write RADIUS server definitions cannot
++# make the server read arbitrary files.
++DICTIONARY_BASE_DIR = "/etc/edumfa"
++
++
++def _get_safe_dictionary_path(path):
++    """
++    Resolve the path of a RADIUS dictionary and make sure it is located
++    inside DICTIONARY_BASE_DIR. Symbolic links and ".." are resolved first.
++
++    :param path: The path of the RADIUS dictionary
++    :return: The resolved absolute path
++    :raises ConfigAdminError: if the path is outside of DICTIONARY_BASE_DIR
++    """
++    base_dir = os.path.realpath(DICTIONARY_BASE_DIR)
++    real_path = os.path.realpath(path)
++    if os.path.commonpath([base_dir, real_path]) != base_dir:
++        raise ConfigAdminError("The RADIUS dictionary must be located in "
++                               "{0!s}.".format(base_dir))
++    return real_path
++
++
+ class RADIUSServer:
+@@ -104,3 +128,3 @@
+                      secret=to_bytes(decryptPassword(config.secret)),
+-                     dict=Dictionary(r_dict))
++                     dict=Dictionary(_get_safe_dictionary_path(r_dict)))
+ 

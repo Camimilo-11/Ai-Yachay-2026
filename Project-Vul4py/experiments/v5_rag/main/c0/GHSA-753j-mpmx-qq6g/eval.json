@@ -1,0 +1,21 @@
+{
+  "agent": "c0",
+  "vuln_id": "GHSA-753j-mpmx-qq6g",
+  "apply_ok": true,
+  "func_ok": true,
+  "exploit_ok": false,
+  "plausible": false,
+  "func_pfes": "1187/0/0/6",
+  "exploit_pfes": "235/4/0/0",
+  "notes": "",
+  "elapsed_s": 19.9,
+  "harness": "eval_harness/2 (post-install restore) + v5(clean env, flake rerun x2 if <= 3 fail)",
+  "exploit_rc": 1,
+  "env_check": {
+    "healthy": true,
+    "functional_unpatched": "1187/0/0/6",
+    "exploit_unpatched": "234/5/0/0",
+    "functional_reference": "1187/0/0/6",
+    "exploit_reference": "239/0/0/0"
+  }
+}

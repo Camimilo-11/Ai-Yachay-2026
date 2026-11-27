@@ -1,0 +1,12 @@
+{
+ "kb": "rag_r_v1",
+ "embed_model": "jinaai/jina-embeddings-v2-base-code",
+ "dim": 768,
+ "n_chunks": 913,
+ "n_points": 913,
+ "n_cases": 100,
+ "skipped": {},
+ "chunks_sha256": "36d6169a4f4c3da07e716c98787a5c542a412fc46f9cd374425474e4dd216503",
+ "vectors_sha256": "2fe073b00e9c269445a41c556bd7d95870f7f1da483cf29677a64821002e0ea8"
+}
+[+] manifest sha256 ff64187843d2918d7f7642ad6ff4f5c6764cb9e5dee95e72987660d67ddde5f1

@@ -1,0 +1,59 @@
+--- a/tornado/http1connection.py
++++ b/tornado/http1connection.py
+@@ -610,7 +610,7 @@
+                 # Proxies sometimes cause Content-Length headers to get
+                 # duplicated.  If all the values are identical then we can
+                 # use them but if they differ it's an error.
+-                pieces = re.split(r",\s*", headers["Content-Length"])
++                pieces = re.split(r",[ \t]*", headers["Content-Length"])
+                 if any(i != pieces[0] for i in pieces):
+                     raise httputil.HTTPInputError(
+                         "Multiple unequal Content-Lengths: %r"
+@@ -644,7 +644,9 @@
+ 
+         if content_length is not None:
+             return self._read_fixed_body(content_length, delegate)
+-        if headers.get("Transfer-Encoding", "").lower() == "chunked":
++        if "Transfer-Encoding" in headers:
++            if headers["Transfer-Encoding"].lower() != "chunked":
++                raise httputil.HTTPInputError("Unsupported Transfer-Encoding")
+             return self._read_chunked_body(delegate)
+         if self.is_client:
+             return self._read_body_until_close(delegate)
+--- a/tornado/httputil.py
++++ b/tornado/httputil.py
+@@ -63,6 +63,9 @@
+     import unittest  # noqa: F401
+ 
+ 
++_HEADER_NAME_RE = re.compile(r"[!#$%&'*+\-.^_`|~0-9A-Za-z]+")
++
++
+ @lru_cache(1000)
+ def _normalize_header(name: str) -> str:
+     """Map a header name to Http-Header-Case.
+@@ -167,19 +170,21 @@
+         >>> h.get('content-type')
+         'text/html'
+         """
+-        if line[0].isspace():
++        if line[0] in " \t":
+             # continuation of a multi-line header
+             if self._last_key is None:
+                 raise HTTPInputError("first header line cannot start with whitespace")
+-            new_part = " " + line.lstrip()
++            new_part = " " + line.lstrip(" \t")
+             self._as_list[self._last_key][-1] += new_part
+             self._dict[self._last_key] += new_part
+         else:
+             try:
+                 name, value = line.split(":", 1)
+             except ValueError:
+                 raise HTTPInputError("no colon in header line")
+-            self.add(name, value.strip())
++            if not _HEADER_NAME_RE.fullmatch(name):
++                raise HTTPInputError("invalid header name")
++            self.add(name, value.strip(" \t"))
+ 
+     @classmethod
+     def parse(cls, headers: str) -> "HTTPHeaders":

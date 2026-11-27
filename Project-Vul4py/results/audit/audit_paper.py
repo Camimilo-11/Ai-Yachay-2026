@@ -470,7 +470,8 @@ check("C5.interim", A, "l.431 deviation", f"interim analysis without the 3 cases
 
 # =============================================================================================== 7. calls and cost
 A = "Calls, tokens and cost (Tables 12-14, Figs. 9-10, Sec. 4.9)"
-files = {"v0": "calls_v0_mvp.csv", "v2": "calls_v2_pilot.csv", "v3": "calls_v3_main.csv", "v4": "calls_v4_confirm.csv", "v5dev": "calls_v5_dev.csv"}
+files = {"v0": "calls_v0_mvp.csv", "v2": "calls_v2_pilot.csv", "v3": "calls_v3_main.csv", "v4": "calls_v4_confirm.csv", "v5dev": "calls_v5_dev.csv",
+         "v5": "calls_v5.csv"}
 C = {k: rows(f"results/logs/calls/{f}") for k, f in files.items()}
 maxdiff = 0.0
 for k, rs in C.items():
@@ -482,7 +483,7 @@ check("$0.rowcost", A, "results/logs/calls/*.csv", "max |list_cost_usd - tokens 
 check("$0.status", A, "Fig. 9 uses status ok", "calls with status other than ok", 0, sum(r["status"] != "ok" for rs in C.values() for r in rs), kind="exact")
 T12 = {"v0": (5, 18989, 845, "0.23", 0.0, None, None), "v2": (117, 1283730, 986284, "2.35", "7.22", "2.48", "1.57"),
        "v3": (280, 8105924, 2356785, "6.87", "34.40", "27.60", "15.70"), "v4": (65, 848338, 442252, "1.70", "6.12", None, None),
-       "v5dev": (10, 138975, 220165, "0.24", "0.12", "0.14", "0.12")}
+       "v5dev": (10, 138975, 220165, "0.24", "0.12", "0.14", "0.12"), "v5": (190, 4604832, 4385390, "4.68", "4.15", "5.33", "4.15")}
 for k, (n, tin, tout, h, cost, cl_rep, cl_list) in T12.items():
     rs = C[k]
     check(f"$1.{k}.calls", A, "Table 12", f"{k} calls", n, len(rs), kind="exact")
@@ -511,7 +512,7 @@ T13 = [("GPT-6.2 Sol", "repairer", 193, 3361372, 1336030, "91.7", "20.08", None)
        ("DeepSeek V4 Pro", "juror", 57, 1406726, 1284226, "193.6", "6.94", None), ("Claude Sonnet 5.5", "juror", 57, 2139020, 105212, "13.4", "5.33", "9.61"),
        ("GPT-5.4 mini", "repairer", 22, 210005, 365519, "72.8", "1.80", None), ("GPT-6.1 Sol", "juror", 12, 132328, 81999, "111.0", "1.08", None),
        ("GPT-6.1 Terra", "juror", 12, 135380, 29568, "39.9", "0.28", None), ("GPT-6 Luna", "analyst", 40, 584093, 353525, "57.3", "0.24", None),
-       ("GPT-6 Luna", "juror", 12, 134793, 59400, "36.3", "0.04", None), ("Claude Haiku 5.5", "repairer", 10, 138975, 220165, "83.3", "0.12", "0.14"),
+       ("GPT-6 Luna", "juror", 12, 134793, 59400, "36.3", "0.04", None), ("Claude Haiku 5.5", "repairer", 200, 4743807, 4605555, "74.9", "4.28", "5.47"),
        ("laguna-xs-2.1", "repairer", 5, 18989, 845, "49.7", "0", None)]
 check("$2.groups", A, "Table 13; Fig. 9", "model-role groups in the call logs", len(T13), len(G), kind="exact")
 for m, ro, n, tin, tout, lat, cost, client_ in T13:
@@ -525,12 +526,12 @@ for m, ro, n, tin, tout, lat, cost, client_ in T13:
     if client_:
         check(f"$2.{tag}.client", A, "Table 13; l.238", f"{tag} client report (USD)", client_, sum(float(r["api_equivalent_usd"] or 0) for r in rs))
 allrows = [r for rs in C.values() for r in rs]
-check("$2.total", A, "Table 13 total", "calls / tokens in / tokens out", "477/10395956/4006331",
+check("$2.total", A, "Table 13 total", "calls / tokens in / tokens out", "667/15000788/8391721",
       f"{len(allrows)}/{sum(int(r['input_tokens']) for r in allrows)}/{sum(int(r['output_tokens']) for r in allrows)}", kind="exact")
-check("$2.total_cost", A, "Table 13 total", "list price total (USD)", "47.86", sum(float(r["list_cost_usd"] or 0) for r in allrows))
+check("$2.total_cost", A, "Table 13 total", "list price total (USD)", "52.02", sum(float(r["list_cost_usd"] or 0) for r in allrows))
 rsum = sum(float(x[6]) for x in T13)
 check("$2.rounding", A, "Table 13 total and caption", "printed total vs sum of the rounded rows (within 0.005 per row; caption notes rounding)",
-      "47.86", rsum, tol=0.005 * len(T13) + 1e-9, note=f"rows sum to {rsum:.2f}; caption note present: "
+      "52.02", rsum, tol=0.005 * len(T13) + 1e-9, note=f"rows sum to {rsum:.2f}; caption note present: "
       f"{'do not add up exactly to the total because of rounding' in (ROOT / 'papers/final/paper/main.tex').read_text(encoding='utf-8')}")
 dsk = G[("DeepSeek V4 Pro", "juror")]
 check("$3.ds_out", A, "l.482", "DeepSeek V4 Pro mean output tokens per call (about 22,500)", 22500,
@@ -637,7 +638,10 @@ check("X6.refused", A, "Sec. 4.5; 4.8; 3.4", "refusals in v3, v4, v5 dev and cal
 med = {k: statistics.median(float(r["latency_s"]) for r in rs) for k, rs in G.items()}
 mout = {k: statistics.fmean(int(r["output_tokens"]) for r in rs) for k, rs in G.items()}
 check("X6.slowest", A, "l.482", "model with the highest median latency", "DeepSeek V4 Pro", max(med, key=med.get)[0], kind="exact")
-check("X6.most_out", A, "l.482", "model with the most output tokens per call", "DeepSeek V4 Pro", max(mout, key=mout.get)[0], kind="exact")
+top2 = sorted(mout, key=mout.get, reverse=True)[:2]
+check("X6.most_out", A, "Sec. 4.9", "the two models with the most output tokens per call (about 23,000 and 22,500)",
+      "Claude Haiku 5.5 23000, DeepSeek V4 Pro 22500", ", ".join(f"{k[0]} {round(mout[k], -2):.0f}" for k in top2), kind="exact",
+      note="rounded to hundreds; the text says about 22,500 and 23,000")
 check("X6.gate3", A, "l.459", "feasibility-gate threshold (decisiones_v5)", "True", str("en 3 o más" in dv5), kind="exact")
 check("X5.v4_lost", A, "l.431; Limitations", "v4 lost cases documented (tornado timeout; API key)", "True",
       str("tornado" in (ROOT / "experiments/v4_evigate_confirmation/README.md").read_text(encoding="utf-8") and
@@ -645,14 +649,15 @@ check("X5.v4_lost", A, "l.431; Limitations", "v4 lost cases documented (tornado 
       note="results.csv only says 'oracle invalid here'; the causes are documented in the README and the console log")
 
 # =============================================================================================== 9b. released records
-A = "Released case records (v2-v4, v5 development check)"
+A = "Released case records (v0, v2-v5)"
 v0runs = [d for d in (ROOT / "experiments/v0_mvp/runs/official/gpt").iterdir() if d.is_dir()]
 REC = {"v2": ("experiments/v2_pilot_tournament/pilot", "experiments/v2_pilot_tournament/results.csv",
               ["rep_gpt-5.4-mini", "rep_gpt-6.2-sol", "c1", "c1v2"], ids["pilot_ids.txt"]),
        "v3": ("experiments/v3_main/final", "experiments/v3_main/results.csv", ["c0", "c0g", "c1"], ids["main_ids.txt"]),
        "v4": ("experiments/v4_evigate_confirmation/confirm", "experiments/v4_evigate_confirmation/confirm/results.csv", ["c0"],
               ids["confirm65_ids.txt"]),
-       "v5dev": ("experiments/v5_rag/dev_gate", "experiments/v5_rag/dev_gate/results.csv", ["c0m", "c0mr"], ids["pilot_ids.txt"])}
+       "v5dev": ("experiments/v5_rag/dev_gate", "experiments/v5_rag/dev_gate/results.csv", ["c0m", "c0mr"], ids["pilot_ids.txt"]),
+       "v5": ("experiments/v5_rag/main", "experiments/v5_rag/results.csv", ["c0", "c0m", "c0mr"], v5ids)}
 nrec, nfiles, badfile, npatch, badpatch, nv, badv, ncase_bad, nanswers = Counter(), 0, [], 0, [], 0, [], [], Counter()
 for ver, (base, res, arms, expected) in REC.items():
     rrows = {(r["agent"], r["vuln_id"]): r for r in rows(res)}
@@ -682,10 +687,10 @@ for ver, (base, res, arms, expected) in REC.items():
                 nv += 1
                 if int(float(r["V"])) != int(bool(ev["apply_ok"]) and bool(ev["func_ok"]) and bool(ev["exploit_ok"])):
                     badv.append(f"{ver}/{arm_}/{c}")
-check("X7.released", A, "Sec. 3.10; Data availability", "case records in the repo: v0 / v2 / v3 / v4 / v5 dev", "5/20/90/65/10",
-      f"{len(v0runs)}/{nrec['v2']}/{nrec['v3']}/{nrec['v4']}/{nrec['v5dev']}", kind="exact")
-check("X7.answers", A, "Sec. 3.10", "case records that include the model answers (v2 / v3 / v4 / v5 dev)", "20/90/65/10",
-      f"{nanswers['v2']}/{nanswers['v3']}/{nanswers['v4']}/{nanswers['v5dev']}", kind="exact")
+check("X7.released", A, "Sec. 3.10; Data availability", "case records in the repo: v0 / v2 / v3 / v4 / v5 dev / v5", "5/20/90/65/10/285",
+      f"{len(v0runs)}/{nrec['v2']}/{nrec['v3']}/{nrec['v4']}/{nrec['v5dev']}/{nrec['v5']}", kind="exact")
+check("X7.answers", A, "Sec. 3.10", "case records that include the model answers (v2 / v3 / v4 / v5 dev / v5)", "20/90/65/10/285",
+      f"{nanswers['v2']}/{nanswers['v3']}/{nanswers['v4']}/{nanswers['v5dev']}/{nanswers['v5']}", kind="exact")
 check("X7.cases", A, "Table 1", "arms whose released cases differ from the prereg lists", 0, len(ncase_bad), kind="exact", note="; ".join(ncase_bad))
 check("X7.filehash", A, "llm_response.json sha256 maps", f"released files whose sha256 differs from their record (of {nfiles})", 0,
       len(badfile), kind="exact", note="; ".join(badfile[:20]))
@@ -705,10 +710,162 @@ check("X7.statement", A, "Sec. 3.10; Data availability", "the paper states what 
       str("the answers of every model, the patches, their evaluation and the record of every call" in tx and
           "evidence packages" not in tx), kind="exact")
 
+# =============================================================================================== 9c. v5 main run
+A = "v5 main run (Tables 10-14, Fig. 7, Sec. 4.8-4.9, abstract, discussion)"
+import numpy as np  # noqa: E402
+
+
+def newcombe_paired(a, b_, c, d):
+    """p1 - p2 for paired 0/1 data with a = both, b_ = only the first, c = only the second, d = neither
+    (Newcombe 1998, method 10, Wilson bounds from root finding)."""
+    n = a + b_ + c + d
+    p1, p2 = (a + b_) / n, (a + c) / n
+    l1, u1 = wilson_root(a + b_, n)
+    l2, u2 = wilson_root(a + c, n)
+    den = (a + b_) * (c + d) * (a + c) * (b_ + d)
+    num = a * d - b_ * c
+    if num > 0:
+        num = max(num - n / 2, 0)
+    phi = num / math.sqrt(den) if den else 0.0
+    dl = p1 - p2
+    lo = dl - math.sqrt(max((p1 - l1) ** 2 - 2 * phi * (p1 - l1) * (u2 - p2) + (u2 - p2) ** 2, 0))
+    hi = dl + math.sqrt(max((u1 - p1) ** 2 - 2 * phi * (u1 - p1) * (p2 - l2) + (p2 - l2) ** 2, 0))
+    return dl, lo, hi
+
+
+r5 = rows("experiments/v5_rag/results.csv")
+done5 = {g: {r["vuln_id"]: r for r in r5 if r["agent"] == g and r["status"] == "complete" and b(r["V"]) in (0, 1)} for g in ("c0", "c0m", "c0mr")}
+check("V5.complete", A, "Table 1; Sec. 4.8", "complete cases C0 / M / M+RAG", "94/95/94", "/".join(str(len(done5[g])) for g in ("c0", "c0m", "c0mr")), kind="exact")
+inc5 = {g: sorted(r["vuln_id"] for r in r5 if r["agent"] == g and r["status"] != "complete") for g in ("c0", "c0m", "c0mr")}
+check("V5.orjson", A, "Sec. 4.8", "incomplete cases (C0, M+RAG): the orjson crash", "CVE-2024-27454|CVE-2024-27454|",
+      f"{','.join(inc5['c0'])}|{','.join(inc5['c0mr'])}|{','.join(inc5['c0m'])}", kind="exact")
+check("V5.orjson_m", A, "Sec. 4.8", "orjson in M: the patch did not apply", "patch did not apply",
+      next(r["eval_notes"] for r in r5 if r["agent"] == "c0m" and r["vuln_id"] == "CVE-2024-27454"), kind="exact")
+c5 = C["v5"]
+case_cost5 = defaultdict(float)
+for r in c5:
+    case_cost5[(r["agent"], r["case"])] += float(r["list_cost_usd"] or 0)
+case_cost0 = defaultdict(float)
+for r in [r for r in C["v3"] if r["agent"] == "c0"] + C["v4"]:
+    case_cost0[r["case"]] += float(r["list_cost_usd"] or 0)
+T11 = {"c0": (94, 38, "40.4", "31.1", "50.5", 91, 54, "59.3", "49.1", "68.9", "8.88", "0.234"),
+       "c0m": (95, 14, "14.7", "9.0", "23.2", 62, 48, "77.4", "65.6", "86.0", "2.24", "0.160"),
+       "c0mr": (94, 13, "13.8", "8.3", "22.2", 58, 45, "77.6", "65.3", "86.4", "1.68", "0.129")}
+for g, (n, vk, vp, vl, vh, cl, fk, fp, fl, fh, cost, cpv) in T11.items():
+    d5 = list(done5[g].values())
+    vv = sum(b(r["V"]) for r in d5)
+    cls = [r for r in d5 if b(r["D_repairer"]) == 1]
+    kn_ci(f"V5.{g}.vrr", A, "Table 11; Fig. 7", f"{g} VRR", vk, n, vp, vl, vh, vv, len(d5))
+    check(f"V5.{g}.claims", A, "Table 11", f"{g} claims", cl, len(cls), kind="exact")
+    kn_ci(f"V5.{g}.far", A, "Table 11; Table 10; Fig. 7", f"{g} FAR", fk, cl, fp, fl, fh, sum(1 for r in cls if b(r["V"]) == 0), len(cls))
+    cc = sum(case_cost0[c] for c in done5[g]) if g == "c0" else sum(case_cost5[(g, c)] for c in done5[g])
+    check(f"V5.{g}.cost", A, "Table 11", f"{g} cost of the complete cases (USD)", cost, cc)
+    check(f"V5.{g}.cpv", A, "Table 11", f"{g} cost per verified repair, complete cases", cpv, cc / vv)
+# H1: M+RAG against M on the cases complete in both
+pair = sorted(set(done5["c0m"]) & set(done5["c0mr"]))
+vm = [b(done5["c0m"][c]["V"]) for c in pair]
+vr = [b(done5["c0mr"][c]["V"]) for c in pair]
+a_ = sum(1 for x, y in zip(vr, vm) if x and y); only_r = sum(1 for x, y in zip(vr, vm) if x and not y)
+only_m = sum(1 for x, y in zip(vr, vm) if y and not x); none_ = len(pair) - a_ - only_r - only_m
+check("V5.H1.n", A, "Sec. 4.8", "cases complete in both M and M+RAG", 94, len(pair), kind="exact")
+check("V5.H1.discordant", A, "Sec. 4.8", "retrieval turned unverified into verified / verified into unverified", "5/6", f"{only_r}/{only_m}", kind="exact")
+p1s = binomtest(only_r, only_r + only_m, 0.5, alternative="greater").pvalue
+check("V5.H1.p", A, "Sec. 4.8; abstract; discussion", "H1 one-sided exact McNemar p", "0.73", p1s)
+check("V5.H1.vrr", A, "Sec. 4.8; abstract", "paired VRR with / without retrieval (%)", "13.8/14.9",
+      f"{pct(sum(vr), len(pair)):.1f}/{pct(sum(vm), len(pair)):.1f}", kind="exact")
+dl, lo, hi = newcombe_paired(a_, only_r, only_m, none_)
+check("V5.H1.diff", A, "Sec. 4.8", "VRR(M+RAG) - VRR(M), points", "-1.1", 100 * dl)
+check("V5.H1.lo", A, "Sec. 4.8; discussion", "Newcombe paired 95% CI low, points", "-8.7", 100 * lo)
+check("V5.H1.hi", A, "Sec. 4.8; discussion", "Newcombe paired 95% CI high, points", "6.5", 100 * hi)
+check("V5.H1.confirmed", A, "Sec. 4.8", "H1 confirmed (p < 0.05 and VRR(M+RAG) > VRR(M))", "False", str(p1s < 0.05 and sum(vr) > sum(vm)), kind="exact")
+# M+RAG against C0
+pair0 = sorted(set(done5["c0"]) & set(done5["c0mr"]))
+v0_ = [b(done5["c0"][c]["V"]) for c in pair0]
+vr0 = [b(done5["c0mr"][c]["V"]) for c in pair0]
+aa = sum(1 for x, y in zip(vr0, v0_) if x and y); onr = sum(1 for x, y in zip(vr0, v0_) if x and not y)
+on0 = sum(1 for x, y in zip(vr0, v0_) if y and not x); nn = len(pair0) - aa - onr - on0
+check("V5.c0.discordant", A, "Sec. 4.8", "cases verified only by C0 / only by M+RAG", "26/1", f"{on0}/{onr}", kind="exact")
+dl, lo, hi = newcombe_paired(aa, onr, on0, nn)
+check("V5.c0.diff", A, "Sec. 4.8; discussion", "VRR(M+RAG) - VRR(C0), points", "-26.6", 100 * dl)
+check("V5.c0.lo", A, "Sec. 4.8", "Newcombe paired 95% CI, low (points)", "-36.0", 100 * lo)
+check("V5.c0.hi", A, "Sec. 4.8", "Newcombe paired 95% CI, high (points)", "-16.8", 100 * hi)
+# cost per verified repair: ratio C0 / M+RAG with a paired bootstrap (own resampling; the interval is Monte Carlo)
+k0 = np.array([case_cost0[c] for c in pair0]); kr = np.array([case_cost5[("c0mr", c)] for c in pair0])
+w0 = np.array(v0_, dtype=float); wr = np.array(vr0, dtype=float)
+ratio = (k0.sum() / w0.sum()) / (kr.sum() / wr.sum())
+check("V5.cpv.ratio", A, "Sec. 4.8", "cost per verified repair, C0 / M+RAG", "1.81", ratio)
+rng = np.random.default_rng(20261127)
+rs_ = []
+for _ in range(10000):
+    ix = rng.integers(0, len(pair0), len(pair0))
+    if w0[ix].sum() and wr[ix].sum():
+        rs_.append((k0[ix].sum() / w0[ix].sum()) / (kr[ix].sum() / wr[ix].sum()))
+blo, bhi = np.percentile(rs_, [2.5, 97.5])
+check("V5.cpv.lo", A, "Sec. 4.8", "bootstrap 95% CI low (own resamples, Monte Carlo)", "0.99", blo, tol=0.10,
+      note="confirm_v5.py uses seed 2026; this audit draws its own resamples, so only agreement within 0.10 is required")
+check("V5.cpv.hi", A, "Sec. 4.8", "bootstrap 95% CI high (own resamples, Monte Carlo)", "2.85", bhi, tol=0.10)
+# the coverage rule in the three arms (Table 10, replication rows)
+for g, (kc_, nc_, kw_, nw_, fr, flo, fhi, pr) in {"c0": (22, 37, 14, 54, "38.9", "24.8", "55.1", "0.001"),
+                                                   "c0m": (9, 14, 10, 48, "52.6", "31.7", "72.7", "0.003"),
+                                                   "c0mr": (7, 13, 8, 45, "53.3", "30.1", "75.2", "0.015")}.items():
+    cls = [r for r in done5[g].values() if b(r["D_repairer"]) == 1]
+    cor = [r for r in cls if b(r["V"]) == 1]; wro = [r for r in cls if b(r["V"]) == 0]
+    kc5 = sum(b(r["D_coverage"]) == 1 for r in cor); kw5 = sum(b(r["D_coverage"]) == 1 for r in wro)
+    check(f"V5.cov.{g}.pass", A, "Table 10; Sec. 4.8", f"{g}: correct / wrong claims kept by the rule", f"{kc_}/{nc_} {kw_}/{nw_}",
+          f"{kc5}/{len(cor)} {kw5}/{len(wro)}", kind="exact")
+    kn_ci(f"V5.cov.{g}.far", A, "Table 10; Sec. 4.8", f"{g}: FAR with the rule", kw_, kc_ + kw_, fr, flo, fhi, kw5, kc5 + kw5)
+    check(f"V5.cov.{g}.p", A, "Table 10; Sec. 4.8", f"{g}: one-sided Fisher p", pr, fisher_greater(kc5, len(cor), kw5, len(wro)))
+# the corrected harness: C0 verdicts that changed, cases recovered
+before = {r["vuln_id"]: r for r in v3 if r["agent"] == "c0"}
+before.update({r["vuln_id"]: r for r in v4 if r["agent"] == "c0"})
+changed = sorted(c for c, r in done5["c0"].items() if before[c]["status"] == "complete" and b(before[c]["V"]) != b(r["V"]))
+check("V5.harness.changed", A, "Sec. 4.8", "C0 verdicts changed by the v5 harness", "CVE-2024-35195 1->0",
+      " ".join(f"{c} {b(before[c]['V'])}->{b(done5['c0'][c]['V'])}" for c in changed), kind="exact")
+check("V5.harness.exploit", A, "Sec. 4.8", "CVE-2024-35195 exploit tests before / v5", "318/0/0/2 -> 317/1/0/2",
+      f"{before['CVE-2024-35195']['exploit_pfes']} -> {done5['c0']['CVE-2024-35195']['exploit_pfes']}", kind="exact")
+recov = sorted(c for c in done5["c0"] if before[c]["status"] != "complete")
+check("V5.harness.recovered", A, "Sec. 4.8; Limitations", "cases lost in v4 now complete, and their C0 verdicts",
+      "CVE-2024-52804:1 CVE-2025-5120:0", " ".join(f"{c}:{b(done5['c0'][c]['V'])}" for c in recov), kind="exact")
+for g, (emp, fx, fn) in {"c0m": (23, 34, 48), "c0mr": (26, 33, 45)}.items():
+    d5 = list(done5[g].values())
+    cls_f = [r for r in d5 if b(r["D_repairer"]) == 1 and b(r["V"]) == 0]
+    check(f"V5.{g}.empty", A, "Sec. 4.8", f"{g}: empty patches", emp, sum(1 for r in d5 if (r["eval_notes"] or "").startswith("empty patch")), kind="exact")
+    check(f"V5.{g}.exploitonly", A, "Sec. 4.8", f"{g}: false claims whose patch failed only the exploit tests", f"{fx}/{fn}",
+          f"{sum(1 for r in cls_f if b(r['A']) == 1 and b(r['F']) == 1 and b(r['S']) == 0)}/{len(cls_f)}", kind="exact")
+# retrieval records: leakage audit and the repository filter
+lk, same_repo, recs = [], 0, 0
+for f in glob.glob(str(ROOT / "experiments/v5_rag/main/c0mr/*/llm_response.json")):
+    rg = json.loads(Path(f).read_text(encoding="utf-8")).get("rag") or {}
+    recs += 1
+    lk += [x["ratio"] for x in rg.get("leak_audit", [])] + ([9.9] if rg.get("leak_flag") else [])
+    same_repo += sum(1 for h in rg.get("hits", []) if h["repo"] == rg.get("repo_filtered") or h["case"] == Path(f).parent.name)
+check("V5.rag.records", A, "Sec. 4.8", "M+RAG case records with a retrieval record", 95, recs, kind="exact")
+check("V5.rag.leak", A, "Sec. 4.8", "largest leakage similarity (flagged at 0.5)", "0.095", max(lk))
+check("V5.rag.filter", A, "Sec. 3.8", "retrieved examples from the case's own repository or case", 0, same_repo, kind="exact")
+# costs counting every call (Table 14 and Sec. 4.9)
+cm_all = sum(float(r["list_cost_usd"]) for r in c5 if r["agent"] == "c0m")
+cr_all = sum(float(r["list_cost_usd"]) for r in c5 if r["agent"] == "c0mr")
+c0_all = sum(case_cost0.values())
+for g, cost, att, comp, ver, per_case, per_rep, val in (("c0m", "2.24", 95, 95, 14, "0.024", "0.160", cm_all),
+                                                       ("c0mr", "1.91", 95, 94, 13, "0.020", "0.147", cr_all)):
+    check(f"V5.t14.{g}.att", A, "Table 14", f"{g} attempted (complete), verified", f"{att} ({comp}) {ver}",
+          f"{sum(1 for r in r5 if r['agent'] == g)} ({len(done5[g])}) {sum(b(r['V']) for r in done5[g].values())}", kind="exact")
+    check(f"V5.t14.{g}.cost", A, "Table 14", f"{g} cost, every call (USD)", cost, val)
+    check(f"V5.t14.{g}.case", A, "Table 14", f"{g} per attempted case", per_case, val / att)
+    check(f"V5.t14.{g}.rep", A, "Table 14; Sec. 4.9", f"{g} per verified repair", per_rep, val / ver)
+check("V5.txt.c0", A, "Sec. 4.9; discussion", "GPT-6.2 Sol per verified repair on the same 95 cases, every call", "0.25", c0_all / 38)
+check("V5.txt.ratio", A, "Sec. 4.9", "verified repairs 1.6 to 1.7 times cheaper", "1.6-1.7",
+      f"{(c0_all / 38) / (cm_all / 14):.1f}-{(c0_all / 38) / (cr_all / 13):.1f}", kind="exact")
+out_m = statistics.fmean(int(r["output_tokens"]) for r in c5 if r["agent"] == "c0m")
+out_r = statistics.fmean(int(r["output_tokens"]) for r in c5 if r["agent"] == "c0mr")
+out_g = statistics.fmean(int(r["output_tokens"]) for r in [r for r in C["v3"] if r["agent"] == "c0"] + C["v4"])
+check("V5.txt.tokens", A, "Sec. 4.9", "output tokens per call: M+RAG - M against GPT-6.2 Sol (thousands)", "21-25 / 7.1",
+      f"{out_r / 1000:.0f}-{out_m / 1000:.0f} / {out_g / 1000:.1f}", kind="exact")
+
 # =============================================================================================== 10. figures
 A = "Data figures (values, provenance, integrity)"
 FV = rows("results/figures/figure_values.csv")
-check("F0.count", A, "figure_values.csv", "plotted values recorded", 100, len(FV), kind="exact")
+check("F0.count", A, "figure_values.csv", "plotted values recorded (100 before v5, 6 more for its arms in Fig. 7)", 106, len(FV), kind="exact")
 # every proportion with k/n: value and Wilson bounds by root finding
 props = [r for r in FV if r["numerator"] != "" and r["denominator"] != ""]
 bad = []
@@ -733,6 +890,11 @@ for key, (rs, claim, *_r) in T6.items():
     expect[("fig_main_vrr_far", lab, "FAR")] = (a["fa"], a["claims"])
 expect[("fig_main_vrr_far", "v0 pilot, laguna-xs-2.1", "VRR")] = (1, 5)
 expect[("fig_main_vrr_far", "v0 pilot, laguna-xs-2.1", "FAR")] = (3, 4)
+for g, lab in (("c0", "v5: C0 re-evaluated, v5 harness"), ("c0m", "v5: Haiku 5.5 alone"), ("c0mr", "v5: Haiku 5.5 + RAG")):
+    d5 = list(done5[g].values())
+    cls = [r for r in d5 if b(r["D_repairer"]) == 1]
+    expect[("fig_main_vrr_far", lab, "VRR")] = (sum(b(r["V"]) for r in d5), len(d5))
+    expect[("fig_main_vrr_far", lab, "FAR")] = (sum(1 for r in cls if b(r["V"]) == 0), len(cls))
 expect[("fig_v0_pilot", "v0 pilot", "VRR")] = (sum(r["verified_repair"] == "True" for r in v0), len(v0))
 expect[("fig_v0_pilot", "v0 pilot", "FAR")] = (sum(r["verified_repair"] == "False" for r in v0_claims), len(v0_claims))
 expect[("fig_coverage_rule", "All positive claims", "FAR")] = (len(wrong), len(cr))

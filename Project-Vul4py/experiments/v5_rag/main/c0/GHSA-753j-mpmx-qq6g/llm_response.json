@@ -1,0 +1,125 @@
+{
+ "schema": "fa-multiagent/2",
+ "vuln_id": "GHSA-753j-mpmx-qq6g",
+ "agent": "c0",
+ "run_index": 1,
+ "condition": "c0",
+ "pipeline": "repair1",
+ "models": {
+  "analyst": null,
+  "repairers": [
+   "openai:gpt-6.2-sol"
+  ],
+  "repairer": "openai:gpt-6.2-sol",
+  "jurors": [],
+  "reviewer": null
+ },
+ "context_files": [
+  "tornado/http1connection.py",
+  "tornado/httputil.py"
+ ],
+ "context_mode": "full",
+ "hint": "lines",
+ "hint_text": "- tornado/http1connection.py: lines 394, 398-401, 423-425, 565, 603-609, 635, 640, 645-649, 867\n- tornado/httputil.py: lines 64, 174, 182",
+ "code_budget_tokens": 416000,
+ "stages": {
+  "cand0_r0_t0": {
+   "role": "repairer",
+   "model": "openai:gpt-6.2-sol",
+   "model_reported": "gpt-6.2-sol",
+   "response_id": "chatcmpl-EoV0mmAL7Tg5I9DCytGFD2slinbLy",
+   "http_status": 200,
+   "http_headers": {
+    "x-ratelimit-limit-requests": "5000",
+    "x-ratelimit-limit-tokens": "1000000",
+    "x-ratelimit-remaining-requests": "4999",
+    "x-ratelimit-remaining-tokens": "981170",
+    "x-ratelimit-reset-requests": "12ms",
+    "x-ratelimit-reset-tokens": "1.129s",
+    "x-request-id": "req_71d8e2fbabd54a13bca8f03e001b38f0"
+   },
+   "finish_reason": "stop",
+   "reasoning_content": null,
+   "input_tokens": 16791,
+   "output_tokens": 9901,
+   "latency_ms": 138696.5,
+   "request_sent_at_utc": "2026-11-26T14:45:15.349+00:00",
+   "http_attempts": [
+    {
+     "attempt": 1,
+     "started_at_utc": "2026-11-26T14:45:15.349+00:00",
+     "http_status": 200,
+     "latency_ms": 138696.5
+    }
+   ],
+   "params_dropped": [],
+   "status": "ok"
+  }
+ },
+ "candidates": [
+  {
+   "k": 0,
+   "model": "openai:gpt-6.2-sol",
+   "status": "ok",
+   "duplicate_of": null,
+   "merged": [],
+   "n_versions": 1,
+   "revised": 0,
+   "cross_decision": null,
+   "cross_critiques": null,
+   "versions": [
+    {
+     "key": "cand0_r0_t0",
+     "self": {
+      "claim": 1,
+      "confidence": 0.91,
+      "parse_status": "ok"
+     },
+     "grounding": {
+      "n": 13,
+      "grounded": 13,
+      "rejected": 0,
+      "rejected_items": []
+     },
+     "refused": false
+    }
+   ]
+  }
+ ],
+ "jury_rounds": [],
+ "generation_status": "complete",
+ "incomplete_reason": "",
+ "started_at_utc": "2026-11-26T13:56:59.151+00:00",
+ "selected_k": 0,
+ "generator": {
+  "claim": 1,
+  "confidence": 0.91,
+  "parse_status": "ok",
+  "diff_extracted": true,
+  "patch_bytes": 2422,
+  "refused": false,
+  "model": "openai:gpt-6.2-sol"
+ },
+ "generator_initial": {
+  "claim": 1,
+  "confidence": 0.91,
+  "parse_status": "ok"
+ },
+ "n_rounds": 1,
+ "api_calls": 1,
+ "latency_ms_api_total": 138696.5,
+ "http_retries": 0,
+ "input_tokens_total": 16791,
+ "output_tokens_total": 9901,
+ "wall_time_s": 3034.9,
+ "finished_at_utc": "2026-11-26T14:47:34.048+00:00",
+ "frozen_at_utc": "2026-11-26T14:47:34.048+00:00",
+ "sha256": {
+  "cand0_final.diff": "55b8635122aa95ba69c7daaf506db34787390e20c2029c3ac8c4fc1b24414762",
+  "cand0_r0_t0.diff": "55b8635122aa95ba69c7daaf506db34787390e20c2029c3ac8c4fc1b24414762",
+  "cand0_r0_t0.md": "660206f30c1c99ffd2e040a65ead8c72c25e7f81e838a47da6ea94e28e77c3ed",
+  "context.md": "08246a56cc66cde3b483baf176bae670d6251363e63c5da5f019b1b8e4fbd107",
+  "patch.diff": "55b8635122aa95ba69c7daaf506db34787390e20c2029c3ac8c4fc1b24414762",
+  "patch_initial.diff": "55b8635122aa95ba69c7daaf506db34787390e20c2029c3ac8c4fc1b24414762"
+ }
+}

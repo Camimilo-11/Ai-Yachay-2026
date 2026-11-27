@@ -25,10 +25,11 @@ verde voltio; the light colours are outlined in indigo so that they read on whit
 An independent audit of the final paper (Nov 26, 2026): `audit_paper.py` recomputes, from the raw files and without
 the project's own code, every checked number of the paper's text and tables and every plotted value.
 `audit_checks_before_fixes.csv` is the first run (497 checks, 12 discrepancies, none of which changed a result), and
-`audit_checks.csv` the run after the corrections (505 checks: 504 pass and one open item, the per-case hint coverage
-of the v3 patches, which is not in the repository). The final run also checks the case records released for v2-v4
-and the v5 development check: every file against the sha256 in its record, every patch against `results.csv`, every
-verdict against the oracle's `eval.json`, and that no file holds an API key. Rerun with `python results/audit/audit_paper.py . results/audit`.
+`audit_checks.csv` the run after the corrections and the v5 results (610 checks: 609 pass and one open item, the
+per-case hint coverage of the v3 patches, which is not in the repository). The final run also checks every v5 number
+of the paper (H1, the paired Newcombe intervals, the cost ratio with its own bootstrap, the coverage rule, the harness
+changes) and the case records released for v2-v5: every file against the sha256 in its record, every patch against `results.csv`, every
+verdict against the oracle's `eval.json`, and that no file holds an API key. Rerun with `python results/audit/audit_paper.py . results/audit` (needs numpy and scipy).
 
 ## `logs/`
 

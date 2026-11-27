@@ -77,7 +77,7 @@
 - Confirmation calls: 65, 848,338 input / 442,252 output tokens, 6.12 USD.
 - Caveat: in Vul4Py the hint is the footprint of the official fix; outside the dataset the rule needs a report with locations.
 
-## v5: RAG for a cheaper model (Nov 26-27) [PENDIENTE: results]
+## v5: RAG for a cheaper model (Nov 26-27)
 - Harness options (off by default, so v1-v4 reproduce): VUL4PY_CLEAN_ENV=1 (no secret-named variables in the test shell),
   VUL4PY_FLAKE_RERUN=2 (rerun when 1-3 functional tests fail; failed only if failed every time; exploit tests never rerun).
 - Arms on 95 cases (main + confirmation): C0 frozen patches re-evaluated with the v5 harness (no model calls); M = Claude Haiku 5.5
@@ -91,6 +91,19 @@
 - Development gate (5 pilot cases, not analysed): M 2/5 verified, FAR 2/4; M+RAG 2/5, FAR 2/4; no refusals; RAG sections
   585-1269 tokens; no leakage flags; 10 calls, 138,975 / 220,165 tokens, 0.12 USD (M 0.059, M+RAG 0.065).
 - Prices (code/models.json, USD per million input/output tokens): Haiku 5.5 0.10/0.50; GPT-6.2 Sol 2/10.
+- Main run (experiments/v5_rag/results.csv, confirm_v5.json; no interruptions; C0 22:23-03:44 UTC, M -05:58, M+RAG -07:24):
+  C0 94/95 complete, VRR 38/94 = 40.4% (31.1-50.5), FAR 54/91 = 59.3% (49.1-68.9), cost of the complete cases 8.88 USD,
+  0.234 USD per verified repair; M 95/95, VRR 14/95 = 14.7% (9.0-23.2), FAR 48/62 = 77.4% (65.6-86.0), 2.24 USD, 0.160;
+  M+RAG 94/95, VRR 13/94 = 13.8% (8.3-22.2), FAR 45/58 = 77.6% (65.3-86.4), 1.68 USD, 0.129. orjson crashed again (C0, M+RAG).
+- H1 not confirmed: 94 paired cases, both 8, only M+RAG 5, only M 6, neither 75; one-sided exact McNemar p = 0.726;
+  VRR 13.8% vs 14.9%, difference -1.1 points (Newcombe paired 95% CI -8.7 to 6.5). Leakage audit: no case flagged (max 0.095).
+- M+RAG vs C0: -26.6 points (95% CI -36.0 to -16.8; only C0 26, only M+RAG 1); CPV ratio C0/M+RAG 1.81 (bootstrap 0.99-2.85).
+- Coverage rule: C0 22/37 correct and 14/54 wrong kept, FAR 38.9% (24.8-55.1), p = 0.0013; M 9/14 and 10/48, FAR 52.6%
+  (31.7-72.7), p = 0.0035; M+RAG 7/13 and 8/45, FAR 53.3% (30.1-75.2), p = 0.015 (one-sided Fisher).
+- Harness: tornado CVE-2024-52804 and smolagents CVE-2025-5120 complete (C0 verified the first); one C0 verdict changed,
+  CVE-2024-35195 (exploit 318/0/0/2 -> 317/1/0/2). Haiku: 23 and 26 empty patches; false claims failing only the exploit
+  tests 34/48 and 33/45. Calls: 190, 4,604,832 / 4,385,390 tokens, 4.68 h, 4.15 USD (client report 5.33); every call
+  counted, 0.160 (M) and 0.147 (M+RAG) USD per verified repair against 0.249 for GPT-6.2 Sol on the same 95 cases.
 
 ## Cost summary (list prices)
 | Run | Calls | Input / output tokens | Cost |
@@ -101,4 +114,4 @@
 | v3 main sample | 280 | 8,105,924 / 2,356,785 | 34.40 |
 | v4 confirmation | 65 | 848,338 / 442,252 | 6.12 |
 | v5 development | 10 | 138,975 / 220,165 | 0.12 |
-| v5 main run | [PENDIENTE] | | |
+| v5 main run | 190 | 4,604,832 / 4,385,390 | 4.15 (5.33 with the client's report) |

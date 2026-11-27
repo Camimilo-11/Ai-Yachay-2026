@@ -1,0 +1,227 @@
+{
+ "schema": "fa-multiagent/2",
+ "vuln_id": "GHSA-hfmc-7525-mj55",
+ "agent": "c0mr",
+ "run_index": 1,
+ "condition": "c0",
+ "pipeline": "repair1",
+ "models": {
+  "analyst": null,
+  "repairers": [
+   "claudecode:claude-haiku-5-5"
+  ],
+  "repairer": "claudecode:claude-haiku-5-5",
+  "jurors": [],
+  "reviewer": null
+ },
+ "context_files": [
+  "asyncssh/connection.py"
+ ],
+ "context_mode": "full",
+ "hint": "lines",
+ "hint_text": "- asyncssh/connection.py: lines 863, 1401-1404, 1548, 1584-1585, 1594-1596, 1648, 1692, 2194-2195, 2199-2200",
+ "code_budget_tokens": 396000,
+ "stages": {
+  "cand0_r0_t0": {
+   "role": "repairer",
+   "model": "claudecode:claude-haiku-5-5",
+   "model_reported": "claude-haiku-5-5",
+   "response_id": "fa7b02b0-470c-4d5a-b7d9-655d3b15ead8",
+   "http_status": 200,
+   "http_headers": {},
+   "finish_reason": "end_turn",
+   "refusal_category": null,
+   "reasoning_content": null,
+   "input_tokens": 128510,
+   "output_tokens": 15329,
+   "latency_ms": 64058.9,
+   "thinking_tokens": 14312,
+   "api_equivalent_usd": 0.16683150000000002,
+   "backend": "claude-code 2.1.332 (Claude Code)",
+   "flattened_turns": false,
+   "request_sent_at_utc": "2026-11-27T07:00:07.548+00:00",
+   "http_attempts": [
+    {
+     "attempt": 1,
+     "started_at_utc": "2026-11-27T07:00:07.548+00:00",
+     "outcome": "ok",
+     "latency_ms": 64058.9
+    }
+   ],
+   "params_dropped": [],
+   "status": "ok"
+  }
+ },
+ "candidates": [
+  {
+   "k": 0,
+   "model": "claudecode:claude-haiku-5-5",
+   "status": "ok",
+   "duplicate_of": null,
+   "merged": [],
+   "n_versions": 1,
+   "revised": 0,
+   "cross_decision": null,
+   "cross_critiques": null,
+   "versions": [
+    {
+     "key": "cand0_r0_t0",
+     "self": {
+      "claim": 1,
+      "confidence": 0.45,
+      "parse_status": "ok"
+     },
+     "grounding": {
+      "n": 3,
+      "grounded": 3,
+      "rejected": 0,
+      "rejected_items": []
+     },
+     "refused": false
+    }
+   ]
+  }
+ ],
+ "jury_rounds": [],
+ "generation_status": "complete",
+ "incomplete_reason": "",
+ "started_at_utc": "2026-11-27T05:58:36.207+00:00",
+ "rag": {
+  "kb": "rag_r_v1",
+  "manifest_sha256": "ff64187843d2918d7f7642ad6ff4f5c6764cb9e5dee95e72987660d67ddde5f1",
+  "embed_model": "jinaai/jina-embeddings-v2-base-code",
+  "repo_filtered": "https://github.com/ronf/asyncssh",
+  "query_ranges": {
+   "asyncssh/connection.py": [
+    [
+     863,
+     863
+    ],
+    [
+     1401,
+     1404
+    ],
+    [
+     1548,
+     1548
+    ],
+    [
+     1584,
+     1585
+    ],
+    [
+     1594,
+     1596
+    ],
+    [
+     1648,
+     1648
+    ],
+    [
+     1692,
+     1692
+    ],
+    [
+     2194,
+     2195
+    ],
+    [
+     2199,
+     2200
+    ]
+   ]
+  },
+  "query_chars": 4000,
+  "hits": [
+   {
+    "case": "CVE-2024-53865",
+    "repo": "https://github.com/zhmcclient/python-zhmcclient",
+    "file": "zhmcclient/_session.py",
+    "hunk": 0,
+    "old_start": 39,
+    "cwe": [
+     "CWE-312"
+    ],
+    "score": 0.5585
+   },
+   {
+    "case": "CVE-2022-29217",
+    "repo": "https://github.com/jpadilla/pyjwt",
+    "file": "jwt/algorithms.py",
+    "hunk": 2,
+    "old_start": 551,
+    "cwe": [
+     "CWE-327"
+    ],
+    "score": 0.5517
+   },
+   {
+    "case": "CVE-2025-53365",
+    "repo": "https://github.com/modelcontextprotocol/python-sdk",
+    "file": "src/mcp/shared/session.py",
+    "hunk": 0,
+    "old_start": 333,
+    "cwe": [
+     "CWE-248"
+    ],
+    "score": 0.4944
+   }
+  ],
+  "cwe_guides": [
+   "CWE-312",
+   "CWE-327"
+  ],
+  "section_chars": 7786,
+  "section_tokens_est": 1946,
+  "section_sha256": "1fa84f74eb82b054f4454d165b61764ee06e44f64e521c6a76d06cfc72c49fac",
+  "leak_audit": [
+   {
+    "case": "CVE-2024-53865",
+    "ratio": 0.0
+   },
+   {
+    "case": "CVE-2022-29217",
+    "ratio": 0.0
+   },
+   {
+    "case": "CVE-2025-53365",
+    "ratio": 0.017
+   }
+  ],
+  "leak_flag": false,
+  "elapsed_ms": 5188.4
+ },
+ "selected_k": 0,
+ "generator": {
+  "claim": 1,
+  "confidence": 0.45,
+  "parse_status": "ok",
+  "diff_extracted": true,
+  "patch_bytes": 292,
+  "refused": false,
+  "model": "claudecode:claude-haiku-5-5"
+ },
+ "generator_initial": {
+  "claim": 1,
+  "confidence": 0.45,
+  "parse_status": "ok"
+ },
+ "n_rounds": 1,
+ "api_calls": 1,
+ "latency_ms_api_total": 64058.9,
+ "http_retries": 0,
+ "input_tokens_total": 128510,
+ "output_tokens_total": 15329,
+ "wall_time_s": 3755.43,
+ "finished_at_utc": "2026-11-27T07:01:11.638+00:00",
+ "frozen_at_utc": "2026-11-27T07:01:11.638+00:00",
+ "sha256": {
+  "cand0_final.diff": "75fea9e01ea435bcb9c3ed1d278a2c7d8dc5f954d6ca2af410364f80a677abdc",
+  "cand0_r0_t0.diff": "75fea9e01ea435bcb9c3ed1d278a2c7d8dc5f954d6ca2af410364f80a677abdc",
+  "cand0_r0_t0.md": "06d89836915d3b3394ab1b3c5a487c1d5265aa664e885175172fd78efa536ef3",
+  "context.md": "c17c0ff8a9e219a60cd46f299d082a87fb2deb477080ce32f628904c235a626d",
+  "patch.diff": "75fea9e01ea435bcb9c3ed1d278a2c7d8dc5f954d6ca2af410364f80a677abdc",
+  "patch_initial.diff": "75fea9e01ea435bcb9c3ed1d278a2c7d8dc5f954d6ca2af410364f80a677abdc",
+  "rag_section.md": "1fa84f74eb82b054f4454d165b61764ee06e44f64e521c6a76d06cfc72c49fac"
+ }
+}

@@ -1,0 +1,280 @@
+{
+ "schema": "fa-multiagent/2",
+ "vuln_id": "GHSA-vhmj-5q9r-mm9g",
+ "agent": "c0mr",
+ "run_index": 1,
+ "condition": "c0",
+ "pipeline": "repair1",
+ "models": {
+  "analyst": null,
+  "repairers": [
+   "claudecode:claude-haiku-5-5"
+  ],
+  "repairer": "claudecode:claude-haiku-5-5",
+  "jurors": [],
+  "reviewer": null
+ },
+ "context_files": [
+  "edumfa/api/radiusserver.py",
+  "edumfa/lib/radiusserver.py",
+  "edumfa/models.py",
+  "edumfa/static/components/config/views/config.radius.edit.html"
+ ],
+ "context_mode": "full",
+ "hint": "lines",
+ "hint_text": "- edumfa/api/radiusserver.py: lines 68, 75, 127, 134\n- edumfa/lib/radiusserver.py: lines 79, 112-115, 120, 195, 202, 221, 231, 237, 253, 263, 293\n- edumfa/models.py: lines 2427, 2445, 2473\n- edumfa/static/components/config/views/config.radius.edit.html: lines 65, 128",
+ "code_budget_tokens": 396000,
+ "stages": {
+  "cand0_r0_t0": {
+   "role": "repairer",
+   "model": "claudecode:claude-haiku-5-5",
+   "model_reported": "claude-haiku-5-5",
+   "response_id": "bffecf3b-a056-43c3-893f-f5d86253f01b",
+   "http_status": 200,
+   "http_headers": {},
+   "finish_reason": "end_turn",
+   "refusal_category": null,
+   "reasoning_content": null,
+   "input_tokens": 52315,
+   "output_tokens": 30814,
+   "latency_ms": 117404.4,
+   "thinking_tokens": 28687,
+   "api_equivalent_usd": 0.025869800000000002,
+   "backend": "claude-code 2.1.332 (Claude Code)",
+   "flattened_turns": false,
+   "request_sent_at_utc": "2026-11-27T07:00:22.662+00:00",
+   "http_attempts": [
+    {
+     "attempt": 1,
+     "started_at_utc": "2026-11-27T07:00:22.662+00:00",
+     "outcome": "ok",
+     "latency_ms": 117404.4
+    }
+   ],
+   "params_dropped": [],
+   "status": "ok"
+  }
+ },
+ "candidates": [
+  {
+   "k": 0,
+   "model": "claudecode:claude-haiku-5-5",
+   "status": "ok",
+   "duplicate_of": null,
+   "merged": [],
+   "n_versions": 1,
+   "revised": 0,
+   "cross_decision": null,
+   "cross_critiques": null,
+   "versions": [
+    {
+     "key": "cand0_r0_t0",
+     "self": {
+      "claim": 0,
+      "confidence": 0.3,
+      "parse_status": "ok"
+     },
+     "grounding": {
+      "n": 7,
+      "grounded": 7,
+      "rejected": 0,
+      "rejected_items": []
+     },
+     "refused": false
+    }
+   ]
+  }
+ ],
+ "jury_rounds": [],
+ "generation_status": "complete",
+ "incomplete_reason": "",
+ "started_at_utc": "2026-11-27T05:58:36.258+00:00",
+ "rag": {
+  "kb": "rag_r_v1",
+  "manifest_sha256": "ff64187843d2918d7f7642ad6ff4f5c6764cb9e5dee95e72987660d67ddde5f1",
+  "embed_model": "jinaai/jina-embeddings-v2-base-code",
+  "repo_filtered": "https://github.com/edumfa/edumfa",
+  "query_ranges": {
+   "edumfa/api/radiusserver.py": [
+    [
+     68,
+     68
+    ],
+    [
+     75,
+     75
+    ],
+    [
+     127,
+     127
+    ],
+    [
+     134,
+     134
+    ]
+   ],
+   "edumfa/lib/radiusserver.py": [
+    [
+     79,
+     79
+    ],
+    [
+     112,
+     115
+    ],
+    [
+     120,
+     120
+    ],
+    [
+     195,
+     195
+    ],
+    [
+     202,
+     202
+    ],
+    [
+     221,
+     221
+    ],
+    [
+     231,
+     231
+    ],
+    [
+     237,
+     237
+    ],
+    [
+     253,
+     253
+    ],
+    [
+     263,
+     263
+    ],
+    [
+     293,
+     293
+    ]
+   ],
+   "edumfa/models.py": [
+    [
+     2427,
+     2427
+    ],
+    [
+     2445,
+     2445
+    ],
+    [
+     2473,
+     2473
+    ]
+   ],
+   "edumfa/static/components/config/views/config.radius.edit.html": [
+    [
+     65,
+     65
+    ],
+    [
+     128,
+     128
+    ]
+   ]
+  },
+  "query_chars": 4000,
+  "hits": [
+   {
+    "case": "CVE-2024-47164",
+    "repo": "https://github.com/gradio-app/gradio",
+    "file": "gradio/routes.py",
+    "hunk": 2,
+    "old_start": 73,
+    "cwe": [
+     "CWE-22"
+    ],
+    "score": 0.5931
+   },
+   {
+    "case": "CVE-2024-32977",
+    "repo": "https://github.com/octoprint/octoprint",
+    "file": "src/octoprint/server/api/__init__.py",
+    "hunk": 0,
+    "old_start": 38,
+    "cwe": [
+     "CWE-290"
+    ],
+    "score": 0.577
+   },
+   {
+    "case": "CVE-2022-2888",
+    "repo": "https://github.com/octoprint/octoprint",
+    "file": "src/octoprint/server/api/__init__.py",
+    "hunk": 0,
+    "old_start": 38,
+    "cwe": [
+     "CWE-613"
+    ],
+    "score": 0.5585
+   }
+  ],
+  "cwe_guides": [
+   "CWE-22",
+   "CWE-290"
+  ],
+  "section_chars": 3155,
+  "section_tokens_est": 789,
+  "section_sha256": "9a27d4032c20622120c87f5f4594410ea8ebae0e590ff3784e426ac103a779f3",
+  "leak_audit": [
+   {
+    "case": "CVE-2024-47164",
+    "ratio": 0.0
+   },
+   {
+    "case": "CVE-2024-32977",
+    "ratio": 0.0
+   },
+   {
+    "case": "CVE-2022-2888",
+    "ratio": 0.0
+   }
+  ],
+  "leak_flag": false,
+  "elapsed_ms": 6374.9
+ },
+ "selected_k": 0,
+ "generator": {
+  "claim": 0,
+  "confidence": 0.3,
+  "parse_status": "ok",
+  "diff_extracted": true,
+  "patch_bytes": 1341,
+  "refused": false,
+  "model": "claudecode:claude-haiku-5-5"
+ },
+ "generator_initial": {
+  "claim": 0,
+  "confidence": 0.3,
+  "parse_status": "ok"
+ },
+ "n_rounds": 1,
+ "api_calls": 1,
+ "latency_ms_api_total": 117404.4,
+ "http_retries": 0,
+ "input_tokens_total": 52315,
+ "output_tokens_total": 30814,
+ "wall_time_s": 3823.81,
+ "finished_at_utc": "2026-11-27T07:02:20.068+00:00",
+ "frozen_at_utc": "2026-11-27T07:02:20.068+00:00",
+ "sha256": {
+  "cand0_final.diff": "bbe0c9ed50f60d1df01735ee9ae8665f8026a5fbaf69cb88a68db30ff854947a",
+  "cand0_r0_t0.diff": "bbe0c9ed50f60d1df01735ee9ae8665f8026a5fbaf69cb88a68db30ff854947a",
+  "cand0_r0_t0.md": "d71af0b36d75b77be401e6f1b460bf63e1f5219b4e84505688b0e047b95971b4",
+  "context.md": "77f65bd234abd21615f2f59c0197a1f1e1a4ec68e904a195846c77ea692b0e8f",
+  "patch.diff": "bbe0c9ed50f60d1df01735ee9ae8665f8026a5fbaf69cb88a68db30ff854947a",
+  "patch_initial.diff": "bbe0c9ed50f60d1df01735ee9ae8665f8026a5fbaf69cb88a68db30ff854947a",
+  "rag_section.md": "9a27d4032c20622120c87f5f4594410ea8ebae0e590ff3784e426ac103a779f3"
+ }
+}

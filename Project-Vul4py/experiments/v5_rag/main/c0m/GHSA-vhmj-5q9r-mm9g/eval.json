@@ -1,0 +1,21 @@
+{
+  "agent": "c0m",
+  "vuln_id": "GHSA-vhmj-5q9r-mm9g",
+  "apply_ok": true,
+  "func_ok": true,
+  "exploit_ok": false,
+  "plausible": false,
+  "func_pfes": "1567/0/0/16",
+  "exploit_pfes": "9/2/0/0",
+  "notes": "",
+  "elapsed_s": 1098.6,
+  "harness": "eval_harness/2 (post-install restore) + v5(clean env, flake rerun x2 if <= 3 fail)",
+  "exploit_rc": 1,
+  "env_check": {
+    "healthy": true,
+    "functional_unpatched": "1567/0/0/16",
+    "exploit_unpatched": "9/2/0/0",
+    "functional_reference": "1567/0/0/16",
+    "exploit_reference": "11/0/0/0"
+  }
+}

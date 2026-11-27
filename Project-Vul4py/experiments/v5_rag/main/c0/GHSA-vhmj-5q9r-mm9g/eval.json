@@ -1,0 +1,45 @@
+{
+  "agent": "c0",
+  "vuln_id": "GHSA-vhmj-5q9r-mm9g",
+  "apply_ok": true,
+  "func_ok": false,
+  "exploit_ok": false,
+  "plausible": false,
+  "func_pfes": "1559/8/0/16",
+  "exploit_pfes": "5/6/0/0",
+  "notes": "",
+  "elapsed_s": 1110.3,
+  "harness": "eval_harness/2 (post-install restore) + v5(clean env, flake rerun x2 if <= 3 fail)",
+  "flake_rerun": {
+    "first_failed": [
+      "tests.test_api_radiusserver.RADIUSServerTestCase::test_02_send_test_email",
+      "tests.test_lib_policydecorator.LibPolicyTestCase::test_06_passthru",
+      "tests.test_lib_policydecorator.LibPolicyTestCase::test_13_passthru_priorities",
+      "tests.test_lib_policydecorator.LibPolicyTestCase::test_16_passthru_assign",
+      "tests.test_lib_radiusserver.RADIUSServerTestCase::test_04_RADIUS_request",
+      "tests.test_lib_radiusserver.RADIUSServerTestCase::test_05_RADIUS_request",
+      "tests.test_lib_radiusserver.RADIUSServerTestCase::test_06_test_radius",
+      "tests.test_lib_radiusserver.RADIUSServerTestCase::test_07_non_ascii"
+    ],
+    "reruns": [],
+    "persistent": [
+      "tests.test_api_radiusserver.RADIUSServerTestCase::test_02_send_test_email",
+      "tests.test_lib_policydecorator.LibPolicyTestCase::test_06_passthru",
+      "tests.test_lib_policydecorator.LibPolicyTestCase::test_13_passthru_priorities",
+      "tests.test_lib_policydecorator.LibPolicyTestCase::test_16_passthru_assign",
+      "tests.test_lib_radiusserver.RADIUSServerTestCase::test_04_RADIUS_request",
+      "tests.test_lib_radiusserver.RADIUSServerTestCase::test_05_RADIUS_request",
+      "tests.test_lib_radiusserver.RADIUSServerTestCase::test_06_test_radius",
+      "tests.test_lib_radiusserver.RADIUSServerTestCase::test_07_non_ascii"
+    ],
+    "skipped": "8 failures > 3"
+  },
+  "exploit_rc": 1,
+  "env_check": {
+    "healthy": true,
+    "functional_unpatched": "1567/0/0/16",
+    "exploit_unpatched": "9/2/0/0",
+    "functional_reference": "1567/0/0/16",
+    "exploit_reference": "11/0/0/0"
+  }
+}

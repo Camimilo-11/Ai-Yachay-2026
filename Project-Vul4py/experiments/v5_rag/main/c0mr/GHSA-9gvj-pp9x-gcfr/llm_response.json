@@ -1,0 +1,199 @@
+{
+ "schema": "fa-multiagent/2",
+ "vuln_id": "GHSA-9gvj-pp9x-gcfr",
+ "agent": "c0mr",
+ "run_index": 1,
+ "condition": "c0",
+ "pipeline": "repair1",
+ "models": {
+  "analyst": null,
+  "repairers": [
+   "claudecode:claude-haiku-5-5"
+  ],
+  "repairer": "claudecode:claude-haiku-5-5",
+  "jurors": [],
+  "reviewer": null
+ },
+ "context_files": [
+  "src/picklescan/scanner.py"
+ ],
+ "context_mode": "full",
+ "hint": "lines",
+ "hint_text": "- src/picklescan/scanner.py: lines 255, 269",
+ "code_budget_tokens": 396000,
+ "stages": {
+  "cand0_r0_t0": {
+   "role": "repairer",
+   "model": "claudecode:claude-haiku-5-5",
+   "model_reported": "claude-haiku-5-5",
+   "response_id": "8e19696a-5991-466d-b93d-f2325f2bc684",
+   "http_status": 200,
+   "http_headers": {},
+   "finish_reason": "end_turn",
+   "refusal_category": null,
+   "reasoning_content": null,
+   "input_tokens": 10128,
+   "output_tokens": 27809,
+   "latency_ms": 111764.8,
+   "thinking_tokens": 26756,
+   "api_equivalent_usd": 0.0159299,
+   "backend": "claude-code 2.1.332 (Claude Code)",
+   "flattened_turns": false,
+   "request_sent_at_utc": "2026-11-27T06:58:30.896+00:00",
+   "http_attempts": [
+    {
+     "attempt": 1,
+     "started_at_utc": "2026-11-27T06:58:30.896+00:00",
+     "outcome": "ok",
+     "latency_ms": 111764.8
+    }
+   ],
+   "params_dropped": [],
+   "status": "ok"
+  }
+ },
+ "candidates": [
+  {
+   "k": 0,
+   "model": "claudecode:claude-haiku-5-5",
+   "status": "no_patch",
+   "duplicate_of": null,
+   "merged": [],
+   "n_versions": 1,
+   "revised": 0,
+   "cross_decision": null,
+   "cross_critiques": null,
+   "versions": [
+    {
+     "key": "cand0_r0_t0",
+     "self": {
+      "claim": 0,
+      "confidence": 0.05,
+      "parse_status": "ok"
+     },
+     "grounding": {
+      "n": 4,
+      "grounded": 4,
+      "rejected": 0,
+      "rejected_items": []
+     },
+     "refused": false
+    }
+   ]
+  }
+ ],
+ "jury_rounds": [],
+ "generation_status": "complete",
+ "incomplete_reason": "",
+ "started_at_utc": "2026-11-27T05:58:36.174+00:00",
+ "rag": {
+  "kb": "rag_r_v1",
+  "manifest_sha256": "ff64187843d2918d7f7642ad6ff4f5c6764cb9e5dee95e72987660d67ddde5f1",
+  "embed_model": "jinaai/jina-embeddings-v2-base-code",
+  "repo_filtered": "https://github.com/mmaitre314/picklescan",
+  "query_ranges": {
+   "src/picklescan/scanner.py": [
+    [
+     255,
+     255
+    ],
+    [
+     269,
+     269
+    ]
+   ]
+  },
+  "query_chars": 3491,
+  "hits": [
+   {
+    "case": "CVE-2025-24359",
+    "repo": "https://github.com/lmfit/asteval",
+    "file": "asteval/astutils.py",
+    "hunk": 1,
+    "old_start": 33,
+    "cwe": [
+     "CWE-134",
+     "CWE-749"
+    ],
+    "score": 0.4889
+   },
+   {
+    "case": "CVE-2025-54413",
+    "repo": "https://github.com/skops-dev/skops",
+    "file": "skops/io/_persist.py",
+    "hunk": 1,
+    "old_start": 188,
+    "cwe": [
+     "CWE-351"
+    ],
+    "score": 0.4425
+   },
+   {
+    "case": "CVE-2025-5120",
+    "repo": "https://github.com/huggingface/smolagents",
+    "file": "src/smolagents/local_python_executor.py",
+    "hunk": 1,
+    "old_start": 245,
+    "cwe": [
+     "CWE-94"
+    ],
+    "score": 0.4254
+   }
+  ],
+  "cwe_guides": [
+   "CWE-134",
+   "CWE-749"
+  ],
+  "section_chars": 4318,
+  "section_tokens_est": 1080,
+  "section_sha256": "d5c7470da6947409a360ee84c094410535c7235b67f7ebfb19a7d4cf8e405b64",
+  "leak_audit": [
+   {
+    "case": "CVE-2025-24359",
+    "ratio": 0.0
+   },
+   {
+    "case": "CVE-2025-54413",
+    "ratio": 0.0
+   },
+   {
+    "case": "CVE-2025-5120",
+    "ratio": 0.0
+   }
+  ],
+  "leak_flag": false,
+  "elapsed_ms": 3240.6
+ },
+ "selected_k": 0,
+ "generator": {
+  "claim": 0,
+  "confidence": 0.05,
+  "parse_status": "ok",
+  "diff_extracted": false,
+  "patch_bytes": 0,
+  "refused": false,
+  "model": "claudecode:claude-haiku-5-5"
+ },
+ "generator_initial": {
+  "claim": 0,
+  "confidence": 0.05,
+  "parse_status": "ok"
+ },
+ "n_rounds": 1,
+ "api_calls": 1,
+ "latency_ms_api_total": 111764.8,
+ "http_retries": 0,
+ "input_tokens_total": 10128,
+ "output_tokens_total": 27809,
+ "wall_time_s": 3706.49,
+ "finished_at_utc": "2026-11-27T07:00:22.663+00:00",
+ "frozen_at_utc": "2026-11-27T07:00:22.663+00:00",
+ "sha256": {
+  "cand0_r0_t0.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "cand0_r0_t0.md": "f48131d59054ca7af9c8d4f81fc7aa120ff62baf8ce1335b49df01ab9985b153",
+  "context.md": "d0f96afe1aa9f89075144e6fc2560545b7ec881126bd67372b3d24a7e52d2cf3",
+  "patch.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "patch_initial.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "rag_section.md": "d5c7470da6947409a360ee84c094410535c7235b67f7ebfb19a7d4cf8e405b64"
+ }
+}

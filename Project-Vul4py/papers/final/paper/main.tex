@@ -1,7 +1,7 @@
 %  Final paper (v1-v5) of the project "Measuring False Assurance in LLM-Based Automated Vulnerability Repair".
 %  Official MDPI LaTeX template (Definitions/ from the MDPI Article Template); this file replaces template.tex.
 %  The class sets the reference style (Definitions/mdpi.bst). Journal option: ai (MDPI journal "AI").
-%  Red [PENDIENTE: ...] marks are the v5 results, filled in when the run ends.
+%  The v5 results were filled in on 27 November 2026; \pend (red [PENDIENTE: ...] marks) is kept for later placeholders.
 \documentclass[ai,article,submit,oneauthor]{Definitions/mdpi}
 
 \firstpage{1}
@@ -41,7 +41,7 @@
 
 \corres{Correspondence: camilo.vasquez@yachaytech.edu.ec}
 
-\abstract{Large language models (LLMs) that repair vulnerabilities also state that their patches work; a developer who trusts a false statement ships vulnerable code. We measured this false assurance on Vul4Py, whose oracle verifies a repair only when the patch applies and both functional and exploit tests pass. Installation repairs raised the cases with a valid oracle from 18 to 100. Every answer was frozen before evaluation and every analysis fixed before its run. With GPT-6.2 Sol repairing 29 cases, 42.9\% of its positive claims were false (false assurance rate, FAR), mostly patches that passed the functional tests but not the exploit tests. In these samples, a mechanical gate (FAR 50.0\%), a unanimous jury of Claude and DeepSeek models (46.2\%) and exploit tests written by a model (54.5\%) did not lower FAR, and the jury raised the cost per verified repair from 0.21 to 1.96~USD. Claiming only when the patch touches every hinted line range did: on 63 unused cases FAR fell from 65.6\% to 47.8\% (one-sided Fisher $p=0.024$), at the cost of 9 of 21 correct claims. \pend{v5: effect of retrieval on the verified repair rate of Claude Haiku 5.5 and its cost per verified repair, one sentence of at most 25 words}}
+\abstract{Large language models (LLMs) that repair vulnerabilities also state that their patches work; a developer who trusts a false statement ships vulnerable code. We measured this false assurance on Vul4Py, whose oracle verifies a repair only when the patch applies and both functional and exploit tests pass. Installation repairs raised the cases with a valid oracle from 18 to 100. Every answer was frozen before evaluation and every analysis fixed before its run. With GPT-6.2 Sol repairing 29 cases, 42.9\% of its positive claims were false (false assurance rate, FAR), mostly patches that passed the functional but not the exploit tests. In these samples, a mechanical gate (FAR 50.0\%), a unanimous jury of Claude and DeepSeek models (46.2\%) and model-written exploit tests (54.5\%) did not lower FAR, and the jury raised the cost per verified repair from 0.21 to 1.96~USD. Claiming only when the patch touches every hinted line range did: on 63 unused cases FAR fell from 65.6\% to 47.8\% (one-sided Fisher $p=0.024$), at the cost of 9 of 21 correct claims. Retrieval did not raise the verified repair rate of the cheaper Claude Haiku 5.5 (13.8\% against 14.9\%, $p=0.73$), and 77\% of its claims were false.}
 
 \keyword{automated vulnerability repair; large language models; false assurance; LLM-as-a-judge; retrieval-augmented generation; executable oracle; preregistration; Vul4Py}
 
@@ -116,7 +116,7 @@ v2 & 25 Nov & 5 pilot & Repairer tournament, two pilots of the pipeline, calibra
 v3 & 25--26 Nov & 29/30 main & Conditions C0, C0g and C1 with GPT-6.2 Sol as the repairer; GPT benchmark on the pilot cases & \texttt{decisiones\_v1}, \texttt{\_v2} & VRR and FAR, unanimous rule \\
 v4a & 26 Nov & 29 main & Exploit tests written by a model (evigate) on the 29 patches of C1 & \texttt{decisiones\_v3} & paired with the jury \\
 v4b & 26 Nov & 63/65 new & C0 on the 65 unused cases to confirm the hint-coverage rule & \texttt{decisiones\_v4} & one-sided Fisher \\
-v5 & 26--27 Nov & 95 & C0 re-evaluated with a corrected harness; Claude Haiku 5.5 with and without retrieval & \texttt{decisiones\_v5} & one-sided exact McNemar \\
+v5 & 26--27 Nov & 94--95/95 & C0 re-evaluated with a corrected harness; Claude Haiku 5.5 with and without retrieval & \texttt{decisiones\_v5} & one-sided exact McNemar \\
 \bottomrule
 \end{tabularx}
 \end{adjustwidth}
@@ -243,7 +243,7 @@ Proportions are reported with 95\% Wilson score intervals~\cite{Wilson1927Probab
 
 \subsection{Use of Generative AI}\label{sec:ai}
 
-LLMs are the object of this study: for v0 and for every case of v2--v4 and the v5 development check that went through the pipeline, the answers of every model, the patches, their evaluation and the record of every call (tokens, latency, cost and the SHA-256 of its prompt) are released with the paper. In addition, the author used Claude Opus 5.5 (Anthropic) as an assistant to write and review the scripts of the study, to organise the repository, to write the TikZ code of Figures~\ref{fig:flow} and~\ref{fig:pipeline} from components and connections specified by the author, to write the prompts for Figures~\ref{fig:v5} and~\ref{fig:v6}, and to draft and edit the text of this manuscript. Figures~\ref{fig:v5} and~\ref{fig:v6} were drawn with ChatGPT (OpenAI, model GPT-6.2 Sol) from those prompts, and every label and connection was checked against the decisions files. All numbers were computed by the released scripts from the frozen records of the runs, every reference was checked in a scholarly source, and the author reviewed the output and takes full responsibility for the content.
+LLMs are the object of this study: for v0 and for every case of v2--v5 that went through the pipeline, the answers of every model, the patches, their evaluation and the record of every call (tokens, latency, cost and the SHA-256 of its prompt) are released with the paper. In addition, the author used Claude Opus 5.5 (Anthropic) as an assistant to write and review the scripts of the study, to organise the repository, to write the TikZ code of Figures~\ref{fig:flow} and~\ref{fig:pipeline} from components and connections specified by the author, to write the prompts for Figures~\ref{fig:v5} and~\ref{fig:v6}, and to draft and edit the text of this manuscript. Figures~\ref{fig:v5} and~\ref{fig:v6} were drawn with ChatGPT (OpenAI, model GPT-6.2 Sol) from those prompts, and every label and connection was checked against the decisions files. All numbers were computed by the released scripts from the frozen records of the runs, every reference was checked in a scholarly source, and the author reviewed the output and takes full responsibility for the content.
 
 %-----------------------------------------------------------------------------------------------
 \section{Results}\label{sec:results}
@@ -350,7 +350,7 @@ C0, confirmation cases (v4) & 63 & 22/63 = 34.9\% (24.3--47.2) & 61 & 40/61 = 65
 \centering
 \includegraphics[width=\linewidth]{figures/fig_main_vrr_far.pdf}
 \end{adjustwidth}
-\caption{VRR and FAR with 95\% Wilson intervals: the v0 pilot, the three conditions of the main sample and C0 on the 63 confirmation cases. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{experiments/v0\_mvp/results.csv}, \texttt{experiments/v3\_main/results.csv} and \texttt{experiments/v4\_evigate\_confirmation/confirm/results.csv}.\label{fig:main}}
+\caption{VRR and FAR with 95\% Wilson intervals: the v0 pilot, the three conditions of the main sample, C0 on the 63 confirmation cases and the three arms of v5 on the 95 cases. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{experiments/v0\_mvp/results.csv}, \texttt{experiments/v3\_main/results.csv}, \texttt{experiments/v4\_evigate\_confirmation/confirm/results.csv} and \texttt{experiments/v5\_rag/results.csv}.\label{fig:main}}
 \end{figure}
 
 \subsection{Claim Rules and the Jury Protocol (v3)}\label{sec:resrules}
@@ -431,7 +431,7 @@ Total & & 14 & 15 & 29 \\
 On the main sample, keeping a claim only when the patch touched every hinted line range lowered FAR in the three conditions (Table~\ref{tab:coverage}); the rule passed correct patches more often than wrong ones in all three, clearly only in C1 (9 of 14 against 2 of 13). Because the rule was chosen after seeing these data, it was then tested on the 65 unused cases (RQ3). Two of them were incomplete because of the environment: a tornado client test that timed out waiting for a refused local connection, in code that the fix does not touch, and smolagents tests that found an API key in the environment. On the 63 complete cases the rule passed 12 of the 21 correct claims and 11 of the 40 wrong ones (57.1\% against 27.5\%; one-sided Fisher $p=0.0237$; difference 0.30, 95\% CI 0.04--0.51, hybrid score interval~\cite{Newcombe1998IntervalEstimationIndependent}). FAR fell from 65.6\% to 47.8\% on the same cases, so the hypothesis was confirmed by both criteria fixed beforehand (Figure~\ref{fig:coverage}). The rule removed 29 false assurances and lost 9 correct claims, and the safe yield fell from 33.3\% to 19.0\%. The secondary rule coverage75 gave a similar FAR (48.1\%) with fewer correct claims lost (7). One deviation is reported: the confirmatory analysis was first run while 3 cases had no verdict yet ($N=60$, $p=0.022$); it was rerun when the run ended, as the decisions file requires, and the conclusion did not change.
 
 \begin{table}[H]
-\caption{Hint-coverage rule. Discovery: post hoc on the main sample (C1 with the repairer's claims). Confirmation: C0 on the 63 complete unused cases. Pass rates are the share of correct and of wrong claimed patches that the rule keeps; $p$: one-sided Fisher exact test.\label{tab:coverage}}
+\caption{Hint-coverage rule. Discovery: post hoc on the main sample (C1 with the repairer's claims). Confirmation: C0 on the 63 complete unused cases. Replication (v5): the same rule in the three arms of v5 on the 95 cases, a secondary estimate without a confirmatory test (its C0 holds the patches of the discovery and the confirmation, re-evaluated with the v5 harness). Pass rates are the share of correct and of wrong claimed patches that the rule keeps; $p$: one-sided Fisher exact test.\label{tab:coverage}}
 \begin{adjustwidth}{-\extralength}{0cm}
 \footnotesize
 \begin{tabularx}{\fulllength}{@{}Xccccc@{}}
@@ -443,6 +443,10 @@ Discovery, C0g & 14/28 = 50.0\% & 5/13 = 38.5\% & 8/14 & 5/14 & 0.225 \\
 Discovery, C1 & 13/27 = 48.1\% & 2/11 = 18.2\% & 9/14 & 2/13 & 0.013 \\
 Confirmation, coverage (primary) & 40/61 = 65.6\% (53.0--76.3) & 11/23 = 47.8\% (29.2--67.0) & 12/21 & 11/40 & 0.024 \\
 Confirmation, coverage75 & 40/61 = 65.6\% (53.0--76.3) & 13/27 = 48.1\% (30.7--66.0) & 14/21 & 13/40 & 0.011 \\
+\midrule
+Replication (v5), C0 & 54/91 = 59.3\% (49.1--68.9) & 14/36 = 38.9\% (24.8--55.1) & 22/37 & 14/54 & 0.001 \\
+Replication (v5), M (Haiku 5.5) & 48/62 = 77.4\% (65.6--86.0) & 10/19 = 52.6\% (31.7--72.7) & 9/14 & 10/48 & 0.003 \\
+Replication (v5), M+RAG & 45/58 = 77.6\% (65.3--86.4) & 8/15 = 53.3\% (30.1--75.2) & 7/13 & 8/45 & 0.015 \\
 \bottomrule
 \end{tabularx}
 \end{adjustwidth}
@@ -456,10 +460,12 @@ Confirmation, coverage75 & 40/61 = 65.6\% (53.0--76.3) & 13/27 = 48.1\% (30.7--6
 
 \subsection{Retrieval for a Cheaper Model (v5)}\label{sec:resv5}
 
-In the development check on the five pilot cases, which is not part of the analysis, Claude Haiku 5.5 answered every case in both arms without refusals, and only one of its five patches without retrieval did not apply or broke functionality, so it passed the feasibility gate (the threshold for switching models was three). Both arms verified 2 of 5 repairs with 2 false claims out of 4; the retrieval sections had between 585 and 1269 tokens and none was flagged by the leakage audit. The ten calls cost 0.124~USD at list price. Table~\ref{tab:v5} gives the main run. \pend{v5 main run: VRR, FAR, safe yield and cost of C0, M and M+RAG on the 95 cases; H1 with the exact one-sided McNemar test (discordant pairs and $p$); H1 without flagged cases; the cost-ratio bootstrap interval; the Newcombe interval of VRR(M+RAG) - VRR(C0); the coverage rule in M and M+RAG; the C0 verdicts that changed with the corrected harness}
+In the development check on the five pilot cases, which is not part of the analysis, Claude Haiku 5.5 answered every case in both arms without refusals, and only one of its five patches without retrieval did not apply or broke functionality, so it passed the feasibility gate (the threshold for switching models was three). Both arms verified 2 of 5 repairs with 2 false claims out of 4; the retrieval sections had between 585 and 1269 tokens and none was flagged by the leakage audit. The ten calls cost 0.124~USD at list price. Table~\ref{tab:v5} gives the main run. In the main run, C0 and M+RAG were complete on 94 of the 95 cases and M on all 95: the orjson exploit again crashed the test process with the patches of C0 and M+RAG, and the patch of M did not apply. Re-evaluated with the corrected harness, C0 verified 38 of 94 repairs (40.4\%), and 54 of its 91 positive claims were false (FAR 59.3\%). The harness recovered both cases lost in v4, and C0 verified one of them; one earlier verdict changed, in CVE-2024-35195, where one of the 318 exploit tests that had passed in v4 failed. Claude Haiku 5.5 verified 14 of 95 repairs alone (14.7\%) and 13 of 94 with retrieval (13.8\%), and about three of every four of its positive claims were false (FAR 77.4\% and 77.6\%). It returned an empty patch in about a quarter of the cases (23 and 26), and, as with GPT-6.2 Sol, most of its false claims came with patches that failed only the exploit tests (34 of 48 and 33 of 45).
+
+H1 was not confirmed. On the 94 cases complete in both arms, retrieval turned 5 unverified repairs into verified ones and 6 verified ones into unverified ones (one-sided exact McNemar $p=0.73$; VRR 13.8\% against 14.9\%, difference $-1.1$ points, 95\% CI $-8.7$ to 6.5). The leakage audit flagged no case (largest similarity 0.095), so the analysis without flagged cases is the same. Against C0, M+RAG verified 26.6 points fewer repairs (95\% CI 16.8--36.0; 26 cases verified only by C0 and 1 only by M+RAG), but its repairs cost less: C0 cost 1.81 times as much per verified repair (paired bootstrap 95\% CI 0.99--2.85). The coverage rule replicated with the other model family: it kept 9 of 14 correct and 10 of 48 wrong claims of M, and 7 of 13 and 8 of 45 of M+RAG, and FAR fell to 52.6\% and 53.3\% (one-sided Fisher $p=0.003$ and 0.015; Table~\ref{tab:coverage}).
 
 \begin{table}[H]
-\caption{Retrieval for a cheaper model. Development: the five pilot cases (not analysed). Main run: the 95 cases of the main sample and the confirmation. Cost at list price.\label{tab:v5}}
+\caption{Retrieval for a cheaper model. Development: the five pilot cases (not analysed). Main run: the 95 cases of the main sample and the confirmation; N: complete cases. Cost: list price of the calls of the complete cases, the basis of the preregistered estimate (for C0, the generation of its frozen v3 and v4 patches, re-evaluated in v5 without model calls); Table~\ref{tab:costrepair} counts every call. Intervals are 95\% Wilson intervals.\label{tab:v5}}
 \begin{adjustwidth}{-\extralength}{0cm}
 \footnotesize
 \begin{tabularx}{\fulllength}{@{}Xcccccc@{}}
@@ -469,9 +475,9 @@ In the development check on the five pilot cases, which is not part of the analy
 Development, M (Haiku 5.5) & 5 & 2/5 & 4 & 2/4 & 0.059 & 0.029 \\
 Development, M+RAG & 5 & 2/5 & 4 & 2/4 & 0.065 & 0.033 \\
 \midrule
-Main run, C0 (GPT-6.2 Sol, v5 harness) & \multicolumn{6}{l}{\pend{N, VRR, claims, FAR (Wilson CI) and cost when the run ends}} \\
-Main run, M (Haiku 5.5) & \multicolumn{6}{l}{\pend{same columns}} \\
-Main run, M+RAG & \multicolumn{6}{l}{\pend{same columns}} \\
+Main run, C0 (GPT-6.2 Sol, v5 harness) & 94 & 38/94 = 40.4\% (31.1--50.5) & 91 & 54/91 = 59.3\% (49.1--68.9) & 8.88 & 0.234 \\
+Main run, M (Haiku 5.5) & 95 & 14/95 = 14.7\% (9.0--23.2) & 62 & 48/62 = 77.4\% (65.6--86.0) & 2.24 & 0.160 \\
+Main run, M+RAG & 94 & 13/94 = 13.8\% (8.3--22.2) & 58 & 45/58 = 77.6\% (65.3--86.4) & 1.68 & 0.129 \\
 \bottomrule
 \end{tabularx}
 \end{adjustwidth}
@@ -479,7 +485,7 @@ Main run, M+RAG & \multicolumn{6}{l}{\pend{same columns}} \\
 
 \subsection{Calls, Tokens, Time and Cost}\label{sec:rescost}
 
-Tables~\ref{tab:costrun}--\ref{tab:costrepair} and Figures~\ref{fig:calls} and~\ref{fig:cost} give the accounting (RQ4). The runs of v2--v4 and the v5 development check made 497 model calls, including the 25 of the juror calibration, and cost 50.0~USD at list price. Most of it went to the main sample (34.40~USD), and within it to C1 (27.40~USD), whose jurors read the case and every candidate in each round: the Opus and Sonnet jurors averaged more than 41,000 input tokens per call. DeepSeek V4 Pro was the slowest model (median 193.6~s per call) and wrote the most output tokens per call, about 22,500. In cost per verified repair, C0 was the cheapest configuration of the main sample (0.21~USD), C0g cost 0.26~USD and C1 1.96~USD, 9.4 times as much as C0 for the same or fewer verified repairs and no lower FAR. On the confirmation cases C0 cost 0.28~USD per verified repair. \pend{v5: calls, tokens and cost of M and M+RAG on the 95 cases, and their cost per verified repair against C0}
+Tables~\ref{tab:costrun}--\ref{tab:costrepair} and Figures~\ref{fig:calls} and~\ref{fig:cost} give the accounting (RQ4). The runs of v2--v4 and the v5 development check made 497 model calls, including the 25 of the juror calibration, and cost 50.0~USD at list price. Most of it went to the main sample (34.40~USD), and within it to C1 (27.40~USD), whose jurors read the case and every candidate in each round: the Opus and Sonnet jurors averaged more than 41,000 input tokens per call. DeepSeek V4 Pro was the slowest model (median 193.6~s per call), and with Claude Haiku 5.5 it wrote the most output tokens per call, about 22,500 and 23,000. In cost per verified repair, C0 was the cheapest configuration of the main sample (0.21~USD), C0g cost 0.26~USD and C1 1.96~USD, 9.4 times as much as C0 for the same or fewer verified repairs and no lower FAR. On the confirmation cases C0 cost 0.28~USD per verified repair. In v5, the two Haiku arms made 190 calls with 4.60 million input and 4.39 million output tokens, 4.68~h of call time and 4.15~USD at list price (5.33~USD in the client's own report). Counting every call, a verified repair cost 0.16~USD with M and 0.15~USD with M+RAG, against 0.25~USD with GPT-6.2 Sol on the same 95 cases: a list price 20 times lower per token gave verified repairs only 1.6 to 1.7 times cheaper, because Haiku wrote about three times as many output tokens per call (21,000--25,000 against 7,100) and verified fewer repairs.
 
 \begin{table}[H]
 \caption{Calls, tokens, summed call time and list-price cost per run. Client report: the cost that the Claude client reports for the Claude calls made through the subscription, which counts input tokens at twice the input price; the list price of the same calls is in parentheses.\label{tab:costrun}}
@@ -495,14 +501,14 @@ v2 juror calibration & 25 & 349,054 & 572,872 & -- & 2.14 & 1.55 (1.05) \\
 v3 main sample (C0, C0g, C1) & 280 & 8,105,924 & 2,356,785 & 6.87 & 34.40 & 27.60 (15.70) \\
 v4 confirmation (C0) & 65 & 848,338 & 442,252 & 1.70 & 6.12 & -- \\
 v5 development check & 10 & 138,975 & 220,165 & 0.24 & 0.12 & 0.14 (0.12) \\
-v5 main run (M and M+RAG) & \multicolumn{6}{l}{\pend{calls, tokens, time and cost when the run ends}} \\
+v5 main run (M and M+RAG) & 190 & 4,604,832 & 4,385,390 & 4.68 & 4.15 & 5.33 (4.15) \\
 \bottomrule
 \end{tabularx}
 \end{adjustwidth}
 \end{table}
 
 \begin{table}[H]
-\caption{Calls by model and role over every per-call record (v0, v2--v4 and the v5 development check; the 25 calibration calls are recorded as totals and not included). Latency: median seconds per call. In parentheses: the Claude client's own report. The rows do not add up exactly to the total because of rounding.\label{tab:costmodel}}
+\caption{Calls by model and role over every per-call record (v0 and v2--v5; the 25 calibration calls are recorded as totals and not included). Latency: median seconds per call. In parentheses: the Claude client's own report. The rows do not add up exactly to the total because of rounding.\label{tab:costmodel}}
 \begin{adjustwidth}{-\extralength}{0cm}
 \footnotesize
 \begin{tabularx}{\fulllength}{@{}Xlrrrrr@{}}
@@ -513,15 +519,15 @@ GPT-6.2 Sol & repairer & 193 & 3,361,372 & 1,336,030 & 91.7 & 20.08 \\
 Claude Opus 5.5 & juror & 57 & 2,134,275 & 169,842 & 26.4 & 11.93 (20.47) \\
 DeepSeek V4 Pro & juror & 57 & 1,406,726 & 1,284,226 & 193.6 & 6.94 \\
 Claude Sonnet 5.5 & juror & 57 & 2,139,020 & 105,212 & 13.4 & 5.33 (9.61) \\
+Claude Haiku 5.5 & repairer & 200 & 4,743,807 & 4,605,555 & 74.9 & 4.28 (5.47) \\
 GPT-5.4 mini & repairer & 22 & 210,005 & 365,519 & 72.8 & 1.80 \\
 GPT-6.1 Sol & juror & 12 & 132,328 & 81,999 & 111.0 & 1.08 \\
 GPT-6.1 Terra & juror & 12 & 135,380 & 29,568 & 39.9 & 0.28 \\
 GPT-6 Luna & analyst & 40 & 584,093 & 353,525 & 57.3 & 0.24 \\
 GPT-6 Luna & juror & 12 & 134,793 & 59,400 & 36.3 & 0.04 \\
-Claude Haiku 5.5 & repairer & 10 & 138,975 & 220,165 & 83.3 & 0.12 (0.14) \\
 laguna-xs-2.1 & repairer & 5 & 18,989 & 845 & 49.7 & 0 \\
 \midrule
-Total & & 477 & 10,395,956 & 4,006,331 & & 47.86 \\
+Total & & 667 & 15,000,788 & 8,391,721 & & 52.02 \\
 \bottomrule
 \end{tabularx}
 \end{adjustwidth}
@@ -539,8 +545,8 @@ C0, main sample & 30 (29) & 16 & 3.32 & 0.111 & 0.208 \\
 C0g, main sample & 30 (29) & 14 & 3.68 & 0.123 & 0.263 \\
 C1, main sample & 30 (29) & 14 & 27.40 & 0.913 & 1.957 \\
 C0, confirmation cases & 65 (63) & 22 & 6.12 & 0.094 & 0.278 \\
-M, v5 main run & \multicolumn{5}{l}{\pend{when the run ends}} \\
-M+RAG, v5 main run & \multicolumn{5}{l}{\pend{when the run ends}} \\
+M, v5 main run & 95 (95) & 14 & 2.24 & 0.024 & 0.160 \\
+M+RAG, v5 main run & 95 (94) & 13 & 1.91 & 0.020 & 0.147 \\
 \bottomrule
 \end{tabularx}
 \end{adjustwidth}
@@ -551,7 +557,7 @@ M+RAG, v5 main run & \multicolumn{5}{l}{\pend{when the run ends}} \\
 \centering
 \includegraphics[width=\linewidth]{figures/fig_calls_tokens_time.pdf}
 \end{adjustwidth}
-\caption{Input tokens, output tokens and latency of every recorded call (v0, v2--v4 and the v5 development check), one point per call, by model and role (colour), on log scales; boxes give the quartiles. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{results/logs/calls/*.csv}.\label{fig:calls}}
+\caption{Input tokens, output tokens and latency of every recorded call (v0 and v2--v5), one point per call, by model and role (colour), on log scales; boxes give the quartiles. Drawn by \texttt{results/figures/make\_figures.py} from \texttt{results/logs/calls/*.csv}.\label{fig:calls}}
 \end{figure}
 
 \begin{figure}[H]
@@ -575,11 +581,11 @@ M+RAG, v5 main run & \multicolumn{5}{l}{\pend{when the run ends}} \\
 
 \textbf{RQ3.} Exploit tests written by a model did not lower FAR either. They were in some cases weaker than the benchmark's exploit tests, since six wrong patches passed them, and in other cases stricter or about something else, since nine correct patches were rejected for bypasses, unblocked attacks or missing evidence. Generated tests helped to detect incorrect patches in test-based repair~\cite{Xiong2018IdentifyingPatchCorrectness}, but tests that must reproduce a vulnerability from a short report are a harder target. The localization rule, in contrast, was confirmed on cases not used to find it: a patch that leaves some hinted line range untouched is more often an incomplete fix, and refusing to claim it removed 29 of 40 false assurances. Two limits keep this from being a general solution. In Vul4Py the hint is the footprint of the upstream fix, so the rule partly measures agreement with the location the maintainers changed; outside the dataset it needs a report with locations (an advisory that names the functions, a scanner finding) and should be expected to be weaker. And it lost 9 of 21 correct claims, so it trades yield for precision, as the confident majority did.
 
-\textbf{RQ4.} The repairer alone was the cheapest configuration of the main sample, at 0.21--0.28~USD per verified repair at list price, and the jury cost 1.96~USD per verified repair without lowering FAR. \pend{v5: whether retrieval raised the VRR of Claude Haiku 5.5 (H1), its FAR, and its cost per verified repair against C0, in two or three sentences}
+\textbf{RQ4.} The repairer alone was the cheapest configuration of the main sample, at 0.21--0.28~USD per verified repair at list price, and the jury cost 1.96~USD per verified repair without lowering FAR. Retrieval did not raise the VRR of Claude Haiku 5.5: on the same 94 cases it verified 13 repairs with retrieval and 14 without ($p=0.73$), so H1 was not confirmed, although the interval of the difference ($-8.7$ to 6.5 points) does not exclude a small benefit. Its verified repairs cost less (0.15--0.16 against 0.25~USD at list price), but it verified 26.6 points fewer repairs than GPT-6.2 Sol and three of every four of its positive claims were false, so the cheaper repairer traded cost for false assurance; the coverage rule lowered that rate here too.
 
 \subsection{Limitations and Threats to Validity}\label{sec:limits}
 
-\textbf{Oracle.} The installation repairs never changed a test or its expectations, but deselecting tests (in 65 cases by the automatic mechanism, in 26 because the tests asserted the vulnerable behaviour and in 3 because they failed only on the vulnerable version) narrows the functional oracle, so a regression in a deselected test goes unseen. The exploit tests are finite: a patch that passes them may still be exploitable in another way, which would make the true FAR higher, and a test may demand more than the vulnerability requires, which would make it lower. Flaky tests and secrets in the environment cost two cases in v4; v5 adds a rerun for flaky functional tests and a clean environment.
+\textbf{Oracle.} The installation repairs never changed a test or its expectations, but deselecting tests (in 65 cases by the automatic mechanism, in 26 because the tests asserted the vulnerable behaviour and in 3 because they failed only on the vulnerable version) narrows the functional oracle, so a regression in a deselected test goes unseen. The exploit tests are finite: a patch that passes them may still be exploitable in another way, which would make the true FAR higher, and a test may demand more than the vulnerability requires, which would make it lower. Flaky tests and secrets in the environment cost two cases in v4; with a rerun for flaky functional tests and a clean environment, v5 recovered both.
 
 \textbf{Inputs.} Every model received the files that the upstream fix changed and the hinted line ranges, as in Vul4Py's direct-prompting protocol. This makes the task easier than real repair, where the location is unknown, and it ties the coverage rule to the upstream fix. The vulnerabilities and their fixes are public, so models may have seen them during training, and the study cannot separate repair from recall.
 
@@ -589,20 +595,20 @@ M+RAG, v5 main run & \multicolumn{5}{l}{\pend{when the run ends}} \\
 
 \subsection{Next Steps}\label{sec:v6}
 
-The rule fixed before v5 decides what follows. If H1 is confirmed, v6 moves to an n8n workflow (Figure~\ref{fig:v6}) with two parts: environment automation, in which a failing oracle control retrieves similar repairs from the 91 override files and their notes, the 14 test overrides and the two new failures of v4, a cheap model proposes an override, and the override is accepted only if the control becomes healthy without excluding more than 10\% of the functional tests or any exploit test; and the repair with retrieval as a visual workflow. If H1 is not confirmed, the retrieval step is tuned on the five development cases first, and any new measurement on the 95 cases is reported as exploratory, since Vul4Py has no unused cases left. Independently of v5, the coverage rule should be tested with locations taken from advisories rather than from the upstream fix, and with repairers from other families.
+The rule fixed before v5 decides what follows. Since H1 was not confirmed, the n8n workflow planned as v6 (Figure~\ref{fig:v6}) waits; it has two parts: environment automation, in which a failing oracle control retrieves similar repairs from the 91 override files and their notes, the 14 test overrides and the two new failures of v4, a cheap model proposes an override, and the override is accepted only if the control becomes healthy without excluding more than 10\% of the functional tests or any exploit test; and the repair with retrieval as a visual workflow. First, the retrieval step is tuned on the five development cases, and any new measurement on the 95 cases will be reported as exploratory, since Vul4Py has no unused cases left. The coverage rule, which also held for Claude Haiku 5.5, should next be tested with locations taken from advisories rather than from the upstream fix. A static analyser could also join the jury at no model cost: Semgrep~\cite{Semgrep2026CommunityEdition}, run on the patched code, would veto a claim when a rule for the case's weakness still matches inside the hinted ranges; it would first be calibrated on the vulnerable and fixed versions of the 100 cases, to find the cases its rules cover, and then measured, as exploratory, on the frozen patches of v3--v5.
 
 \begin{figure}[H]
 \begin{adjustwidth}{-\extralength}{0cm}
 \centering
 \includegraphics[width=\linewidth]{figures/fig_v6_workflow_chatgpt.png}
 \end{adjustwidth}
-\caption{Planned v6, from the rule fixed in \texttt{decisiones\_v5}: (\textbf{a}) automatic environment repair with retrieval over the recorded overrides; (\textbf{b}) the repair with retrieval as a visual workflow. It runs only if v5 confirms H1, and it will have its own decisions file, which may change details such as the number of retries. Drawn with ChatGPT (OpenAI) from a prompt that listed every component, label and connection (Section~\ref{sec:ai}).\label{fig:v6}}
+\caption{Planned v6, from the rule fixed in \texttt{decisiones\_v5}: (\textbf{a}) automatic environment repair with retrieval over the recorded overrides; (\textbf{b}) the repair with retrieval as a visual workflow. It was to run only if v5 confirmed H1; since H1 was not confirmed, it waits for a tuned retrieval step, and it will have its own decisions file, which may change details such as the number of retries. Drawn with ChatGPT (OpenAI) from a prompt that listed every component, label and connection (Section~\ref{sec:ai}).\label{fig:v6}}
 \end{figure}
 
 %-----------------------------------------------------------------------------------------------
 \section{Conclusions}\label{sec:conclusions}
 
-On Vul4Py with a valid oracle on all 100 cases, 43--66\% of the positive repair claims of a strong LLM were false, and most false claims came with patches that kept the functional tests passing and the exploit tests failing. In these samples, verification by models, whether a mechanical gate, a calibrated cross-family jury with debate and revision, or exploit tests written by a model, did not lower the false assurance rate, and the jury multiplied the cost per verified repair by 9.4. A simple localization rule did lower it, confirmed on 63 unused cases, at the price of 9 of 21 correct claims and with a hint that comes from the upstream fix. \pend{v5: one sentence on retrieval for the cheaper model} Claims about a repair should therefore be backed by executable evidence of the kind the oracle uses, and the cost of every verification step should be reported with its effect.
+On Vul4Py with a valid oracle on all 100 cases, 43--66\% of the positive repair claims of a strong LLM were false, and most false claims came with patches that kept the functional tests passing and the exploit tests failing. In these samples, verification by models, whether a mechanical gate, a calibrated cross-family jury with debate and revision, or exploit tests written by a model, did not lower the false assurance rate, and the jury multiplied the cost per verified repair by 9.4. A simple localization rule did lower it, confirmed on 63 unused cases, at the price of 9 of 21 correct claims and with a hint that comes from the upstream fix. Retrieval of other projects' fixes did not raise the verified repair rate of a model 20 times cheaper per token, whose positive claims were false three times out of four, and the localization rule lowered that rate for it too. Claims about a repair should therefore be backed by executable evidence of the kind the oracle uses, and the cost of every verification step should be reported with its effect.
 
 \vspace{6pt}
 
@@ -614,7 +620,7 @@ On Vul4Py with a valid oracle on all 100 cases, 43--66\% of the positive repair 
 
 \informedconsent{Not applicable.}
 
-\dataavailability{The decisions files, case lists, results tables, per-call logs, console logs, environment repairs, scripts and figure code are available in the project repository (\url{https://github.com/Camimilo-11/Ai-Yachay-2026/tree/main/Project-Vul4py}), with one folder per version under \texttt{experiments/}. For v0 and for every case of v2--v4 and the v5 development check that went through the pipeline, these folders also hold the answers of every model, the patches, the oracle's evaluation and the frozen record of every call with the SHA-256 of its prompt; the prompts of v2--v5 are rebuilt from the benchmark and are not included. The prepared workspaces (about 100~GB) are not included; every result comes with the command that produced it. No API keys are included.}
+\dataavailability{The decisions files, case lists, results tables, per-call logs, console logs, environment repairs, scripts and figure code are available in the project repository (\url{https://github.com/Camimilo-11/Ai-Yachay-2026/tree/main/Project-Vul4py}), with one folder per version under \texttt{experiments/}. For v0 and for every case of v2--v5 that went through the pipeline, these folders also hold the answers of every model, the patches, the oracle's evaluation and the frozen record of every call with the SHA-256 of its prompt; the prompts of v2--v5 are rebuilt from the benchmark and are not included. The prepared workspaces (about 100~GB) are not included; every result comes with the command that produced it. No API keys are included.}
 
 \acknowledgments{The author thanks Eugenio Morocho for approving the use of NVIDIA's API catalog for the pilot. The OpenAI and DeepSeek API credit used in v2--v4 was provided for the course. During the preparation of this study and manuscript, the author used Claude Opus 5.5 (Anthropic) to write and review analysis code, organise the repository, write the TikZ code of two diagrams and the prompts of two others, and draft and edit the manuscript, and ChatGPT (OpenAI, model GPT-6.2 Sol) to draw Figures~\ref{fig:v5} and~\ref{fig:v6}, as described in Section~\ref{sec:ai}. The author has reviewed and edited the output and takes full responsibility for the content of this publication.}
 

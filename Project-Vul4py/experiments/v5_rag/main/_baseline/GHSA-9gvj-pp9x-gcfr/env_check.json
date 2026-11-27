@@ -1,0 +1,21 @@
+{
+  "session": "v5",
+  "checked_at_utc": "2026-11-27T02:33:40Z",
+  "harness": "eval_harness/2 + v5(clean env, flake rerun x2 if <= 3 fail)",
+  "exploit_unpatched_rc": 1,
+  "functional_unpatched": "12/0/0/0",
+  "exploit_unpatched": "11/1/0/0",
+  "functional_reference": "12/0/0/0",
+  "exploit_reference": "12/0/0/0",
+  "reference_apply_ok": true,
+  "reference_notes": "",
+  "reference_files": [
+    "setup.cfg",
+    "src/picklescan/scanner.py"
+  ],
+  "functional_ok": true,
+  "exploit_discriminates": true,
+  "reference_verified": true,
+  "healthy": true,
+  "reason": ""
+}

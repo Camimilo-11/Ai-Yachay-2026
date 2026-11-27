@@ -1,0 +1,11 @@
+--- a/src/picklescan/scanner.py
++++ b/src/picklescan/scanner.py
+@@ -405,7 +405,8 @@ def scan_zip_bytes(data: IO[bytes], file_id) -> ScanResult:
+             except (zipfile.BadZipFile, RuntimeError) as e:
+                 # Log decompression issues (password protected, corrupted, etc.)
+                 _log.warning(
+                     "Invalid file %s in zip archive %s: %s", file_name, file_id, str(e)
+                 )
++                result.scan_err = True
+ 
+     return result

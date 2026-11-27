@@ -1,0 +1,124 @@
+{
+ "schema": "fa-multiagent/2",
+ "vuln_id": "GHSA-3vg9-h568-4w9m",
+ "agent": "c0",
+ "run_index": 1,
+ "condition": "c0",
+ "pipeline": "repair1",
+ "models": {
+  "analyst": null,
+  "repairers": [
+   "openai:gpt-6.2-sol"
+  ],
+  "repairer": "openai:gpt-6.2-sol",
+  "jurors": [],
+  "reviewer": null
+ },
+ "context_files": [
+  "src/picklescan/scanner.py"
+ ],
+ "context_mode": "full",
+ "hint": "lines",
+ "hint_text": "- src/picklescan/scanner.py: lines 136, 140, 155",
+ "code_budget_tokens": 416000,
+ "stages": {
+  "cand0_r0_t0": {
+   "role": "repairer",
+   "model": "openai:gpt-6.2-sol",
+   "model_reported": "gpt-6.2-sol",
+   "response_id": "chatcmpl-EoUzNDrMUF0sNB40Y47PF6Fg8VtzZ",
+   "http_status": 200,
+   "http_headers": {
+    "x-ratelimit-limit-requests": "5000",
+    "x-ratelimit-limit-tokens": "1000000",
+    "x-ratelimit-remaining-requests": "4999",
+    "x-ratelimit-remaining-tokens": "994658",
+    "x-ratelimit-reset-requests": "12ms",
+    "x-ratelimit-reset-tokens": "320ms",
+    "x-request-id": "req_59a15962eecb429a815c7eaf76cf22d9"
+   },
+   "finish_reason": "stop",
+   "reasoning_content": null,
+   "input_tokens": 5151,
+   "output_tokens": 6141,
+   "latency_ms": 103918.7,
+   "request_sent_at_utc": "2026-11-26T14:43:49.314+00:00",
+   "http_attempts": [
+    {
+     "attempt": 1,
+     "started_at_utc": "2026-11-26T14:43:49.314+00:00",
+     "http_status": 200,
+     "latency_ms": 103918.7
+    }
+   ],
+   "params_dropped": [],
+   "status": "ok"
+  }
+ },
+ "candidates": [
+  {
+   "k": 0,
+   "model": "openai:gpt-6.2-sol",
+   "status": "ok",
+   "duplicate_of": null,
+   "merged": [],
+   "n_versions": 1,
+   "revised": 0,
+   "cross_decision": null,
+   "cross_critiques": null,
+   "versions": [
+    {
+     "key": "cand0_r0_t0",
+     "self": {
+      "claim": 1,
+      "confidence": 0.86,
+      "parse_status": "ok"
+     },
+     "grounding": {
+      "n": 9,
+      "grounded": 9,
+      "rejected": 0,
+      "rejected_items": []
+     },
+     "refused": false
+    }
+   ]
+  }
+ ],
+ "jury_rounds": [],
+ "generation_status": "complete",
+ "incomplete_reason": "",
+ "started_at_utc": "2026-11-26T13:56:59.105+00:00",
+ "selected_k": 0,
+ "generator": {
+  "claim": 1,
+  "confidence": 0.86,
+  "parse_status": "ok",
+  "diff_extracted": true,
+  "patch_bytes": 454,
+  "refused": false,
+  "model": "openai:gpt-6.2-sol"
+ },
+ "generator_initial": {
+  "claim": 1,
+  "confidence": 0.86,
+  "parse_status": "ok"
+ },
+ "n_rounds": 1,
+ "api_calls": 1,
+ "latency_ms_api_total": 103918.7,
+ "http_retries": 0,
+ "input_tokens_total": 5151,
+ "output_tokens_total": 6141,
+ "wall_time_s": 2914.14,
+ "finished_at_utc": "2026-11-26T14:45:33.245+00:00",
+ "frozen_at_utc": "2026-11-26T14:45:33.245+00:00",
+ "sha256": {
+  "cand0_final.diff": "0875b68b80fd7c19f5b9648e885396abc59e3a7e3771c61a39e96d85740a2356",
+  "cand0_r0_t0.diff": "0875b68b80fd7c19f5b9648e885396abc59e3a7e3771c61a39e96d85740a2356",
+  "cand0_r0_t0.md": "461f06b0fdb388c145a869655c21802e2baf2f004f2f7641da2151bfb3a080f5",
+  "context.md": "823774ab82c92f78b5fa6d6413c6940a661d91578c725627454f9cdb96570882",
+  "patch.diff": "0875b68b80fd7c19f5b9648e885396abc59e3a7e3771c61a39e96d85740a2356",
+  "patch_initial.diff": "0875b68b80fd7c19f5b9648e885396abc59e3a7e3771c61a39e96d85740a2356"
+ }
+}

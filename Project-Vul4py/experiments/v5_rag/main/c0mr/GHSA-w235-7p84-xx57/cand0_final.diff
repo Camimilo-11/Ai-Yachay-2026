@@ -1,0 +1,22 @@
+--- a/tornado/curl_httpclient.py
++++ b/tornado/curl_httpclient.py
+@@ -342,6 +342,11 @@ class CurlAsyncHTTPClient(AsyncHTTPClient):
+         # libcurl adds Pragma: no-cache by default; disable that too
+         if "Pragma" not in request.headers:
+             request.headers["Pragma"] = ""
+ 
++        for k, v in request.headers.get_all():
++            for s in (native_str(k), native_str(v)):
++                if "\r" in s or "\n" in s:
++                    raise ValueError("Illegal characters in header: %r" % (s,))
++
+         curl.setopt(
+             pycurl.HTTPHEADER,
+--- a/tornado/http1connection.py
++++ b/tornado/http1connection.py
+@@ -455,4 +455,4 @@ class HTTP1Connection(httputil.HTTPConnection):
+         for line in lines:
+-            if b"\n" in line:
++            if b"\r" in line or b"\n" in line:
+                 raise ValueError("Newline in header: " + repr(line))
+         future = None

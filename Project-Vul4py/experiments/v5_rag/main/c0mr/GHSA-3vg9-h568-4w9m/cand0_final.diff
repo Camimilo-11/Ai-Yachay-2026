@@ -1,0 +1,12 @@
+--- a/src/picklescan/scanner.py
++++ b/src/picklescan/scanner.py
+@@ -138,6 +138,9 @@
+     "pickle": "*",
+     "_pickle": "*",
+     "pip": "*",
++    "profile": "*",  # profile.run() executes a string statement
++    "cProfile": "*",  # cProfile.run() executes a string statement
++    "pty": "*",  # pty.spawn() runs a shell command
+     "pydoc": "pipepager",  # pydoc.pipepager('help','echo pwned')
+     "timeit": "*",
+     "torch._dynamo.guards": {"GuardBuilder.get"},

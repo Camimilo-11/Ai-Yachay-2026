@@ -1,0 +1,121 @@
+{
+ "schema": "fa-multiagent/2",
+ "vuln_id": "GHSA-3gf5-cxq9-w223",
+ "agent": "c0m",
+ "run_index": 1,
+ "condition": "c0",
+ "pipeline": "repair1",
+ "models": {
+  "analyst": null,
+  "repairers": [
+   "claudecode:claude-haiku-5-5"
+  ],
+  "repairer": "claudecode:claude-haiku-5-5",
+  "jurors": [],
+  "reviewer": null
+ },
+ "context_files": [
+  "src/picklescan/scanner.py"
+ ],
+ "context_mode": "full",
+ "hint": "lines",
+ "hint_text": "- src/picklescan/scanner.py: lines 136-141, 157",
+ "code_budget_tokens": 396000,
+ "stages": {
+  "cand0_r0_t0": {
+   "role": "repairer",
+   "model": "claudecode:claude-haiku-5-5",
+   "model_reported": "claude-haiku-5-5",
+   "response_id": "65b456fe-658b-45a0-9fa0-382eeffa8153",
+   "http_status": 200,
+   "http_headers": {},
+   "finish_reason": "end_turn",
+   "refusal_category": null,
+   "reasoning_content": null,
+   "input_tokens": 9043,
+   "output_tokens": 30138,
+   "latency_ms": 117584.4,
+   "thinking_tokens": 28481,
+   "api_equivalent_usd": 0.0168774,
+   "backend": "claude-code 2.1.332 (Claude Code)",
+   "flattened_turns": false,
+   "request_sent_at_utc": "2026-11-27T04:51:32.093+00:00",
+   "http_attempts": [
+    {
+     "attempt": 1,
+     "started_at_utc": "2026-11-27T04:51:32.093+00:00",
+     "outcome": "ok",
+     "latency_ms": 117584.4
+    }
+   ],
+   "params_dropped": [],
+   "status": "ok"
+  }
+ },
+ "candidates": [
+  {
+   "k": 0,
+   "model": "claudecode:claude-haiku-5-5",
+   "status": "ok",
+   "duplicate_of": null,
+   "merged": [],
+   "n_versions": 1,
+   "revised": 0,
+   "cross_decision": null,
+   "cross_critiques": null,
+   "versions": [
+    {
+     "key": "cand0_r0_t0",
+     "self": {
+      "claim": 0,
+      "confidence": 0.2,
+      "parse_status": "ok"
+     },
+     "grounding": {
+      "n": 6,
+      "grounded": 6,
+      "rejected": 0,
+      "rejected_items": []
+     },
+     "refused": false
+    }
+   ]
+  }
+ ],
+ "jury_rounds": [],
+ "generation_status": "complete",
+ "incomplete_reason": "",
+ "started_at_utc": "2026-11-27T03:44:42.743+00:00",
+ "selected_k": 0,
+ "generator": {
+  "claim": 0,
+  "confidence": 0.2,
+  "parse_status": "ok",
+  "diff_extracted": true,
+  "patch_bytes": 918,
+  "refused": false,
+  "model": "claudecode:claude-haiku-5-5"
+ },
+ "generator_initial": {
+  "claim": 0,
+  "confidence": 0.2,
+  "parse_status": "ok"
+ },
+ "n_rounds": 1,
+ "api_calls": 1,
+ "latency_ms_api_total": 117584.4,
+ "http_retries": 0,
+ "input_tokens_total": 9043,
+ "output_tokens_total": 30138,
+ "wall_time_s": 4126.94,
+ "finished_at_utc": "2026-11-27T04:53:29.679+00:00",
+ "frozen_at_utc": "2026-11-27T04:53:29.679+00:00",
+ "sha256": {
+  "cand0_final.diff": "57e78539e0b0b0724fa764f14608b22e5df83abe328100bf892dd341e2fee1f3",
+  "cand0_r0_t0.diff": "57e78539e0b0b0724fa764f14608b22e5df83abe328100bf892dd341e2fee1f3",
+  "cand0_r0_t0.md": "8350d7286e3fff4c2843bcba1cc992c31e11151932f2607fcbe31e80b5100d4b",
+  "context.md": "347ec341801f35039d2fa9e921e366c18fda33580b38fb67e4c59ef9bef1750c",
+  "patch.diff": "57e78539e0b0b0724fa764f14608b22e5df83abe328100bf892dd341e2fee1f3",
+  "patch_initial.diff": "57e78539e0b0b0724fa764f14608b22e5df83abe328100bf892dd341e2fee1f3"
+ }
+}
